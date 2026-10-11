@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.interpolate import PchipInterpolator
 
-from ursino_2010_model_v2 import Ursino2010Model
-from stepanik_csf_simulation import Stepanik2009Model
+from ursino_2010_model import Ursino2010Model
+from stepanik_2009_csf_model import Stepanik2009Model
 from vanek_2015_model import Vanek2015Model
 
 print("All model modules successfully loaded!")
@@ -170,5 +170,5 @@ ax.set_xlabel("Time [s]"); ax.set_ylabel("Lumbar Pressure P5 [mmHg]")
 ax.grid(True); ax.legend(fontsize=8)
 
 plt.tight_layout()
-plt.savefig("/workspace/scratch/model_comparison_plots_v2.png", dpi=150)
-print("\nPlot saved successfully to /workspace/scratch/model_comparison_plots_v2.png!")
+plt.savefig("./model_comparison_plots.png", dpi=150)
+print("\nPlot saved successfully to ./model_comparison_plots.png!")
