@@ -158,7 +158,7 @@ def run_lumbar_infusion_test():
     ax.legend(loc='upper left', fontsize=8)
     
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plot_path = "./lumbar_infusion_test_plot.png"
+    plot_path = "./stepanik_lumbar_infusion_test_plot.png"
     plt.savefig(plot_path, dpi=150)
     plt.close()
     print(f"Plot successfully generated and saved to {plot_path}")
