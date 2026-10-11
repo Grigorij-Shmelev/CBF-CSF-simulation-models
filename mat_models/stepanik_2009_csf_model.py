@@ -412,7 +412,7 @@ def run_default_simulation(duration_s=30.0, save_plot_path=None, strict_matlab_m
 
 if __name__ == "__main__":
     print("Testing translated CSF simulation model v3 (with PCHIP)...")
-    res = run_default_simulation(duration_s=10.0, save_plot_path="./csf_verification_plot_v3.png")
+    res = run_default_simulation(duration_s=10.0, save_plot_path="./stepanik_csf_verification_plot.png")
     print("Simulation finished successfully!")
     print(f"Mean p1 (Ventricles): {np.mean(res['p1']):.2f} mmHg")
     print(f"Mean p2 (ICP): {np.mean(res['p2']):.2f} mmHg")
