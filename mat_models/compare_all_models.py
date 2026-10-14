@@ -14,7 +14,7 @@ from vanek_2015_model import Vanek2015Model
 print("All model modules successfully loaded!")
 
 # %% [2] Run Ursino (2010) Cerebrovascular Simulation
-print("\n1. Running Ursino (2010) 3-Phase Simulation (Baseline -> Stenosis -> Hypercapnia)...")
+print("\n1. Running Ursino (2010) 3-Phase Simulation (Baseline -> Stenosis -> Hypercapnia + Stenosis)...")
 ursino_model = Ursino2010Model()
 y0_u = ursino_model.get_initial_state()
 
