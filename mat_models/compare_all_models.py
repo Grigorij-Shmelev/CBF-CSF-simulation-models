@@ -2,10 +2,11 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
+from scipy.interpolate import PchipInterpolator
 
 from ursino_2010_model import Ursino2010Model
 from stepanik_2009_csf_model import Stepanik2009Model, run_stepanik_simulation
-from vanek_2015_model import Vanek2015Model, run_vanek_simulation
+from vanek_2015_model import Vanek2015Model
 
 print("===========================================================================")
 print("                      MULTI-MODEL COMPARISON SCRIPT")
@@ -61,7 +62,43 @@ stepanik_model.infusion_duration[4] = 300.0
 res_step = run_stepanik_simulation(model=stepanik_model, duration_s=duration_s)
 
 # 2b. Vaněk (2015) Model under Native Boundary (Pb = 10.0 mmHg)
-res_vanek = run_vanek_simulation(duration_s=duration_s, infusion_rate_ml_min=1.5)
+time_grid = np.linspace(0, duration_s, int(duration_s * 100))
+Pa_v = 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * time_grid)
+Pb_v = 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * time_grid)
+PC_v = 2.0 + 0.3 * np.sin(2.0 * np.pi * 0.25 * time_grid)
+PT_v = 2.0 + 1.2 * np.sin(2.0 * np.pi * 0.25 * time_grid)
+PL_v = 2.0 + 0.4 * np.sin(2.0 * np.pi * 0.25 * time_grid)
+
+interp_vanek = {
+    'Pa': PchipInterpolator(time_grid, Pa_v),
+    'Pb': PchipInterpolator(time_grid, Pb_v),
+    'PC': PchipInterpolator(time_grid, PC_v),
+    'PT': PchipInterpolator(time_grid, PT_v),
+    'PL': PchipInterpolator(time_grid, PL_v),
+}
+
+def inf_func(t):
+    inf = np.zeros(5)
+    if 60.0 <= t <= 360.0:
+        inf[4] = 0.025  # 1.5 mL/min into Lumbar SAS (index 4)
+    return inf
+
+vanek_model = Vanek2015Model()
+sol_vanek = solve_ivp(
+    fun=lambda t, P: vanek_model.derivatives(t, P, interp_vanek, infusion_rates=inf_func(t)),
+    t_span=(0.0, duration_s),
+    y0=np.array([11.0, 10.0, 10.0, 10.0, 10.0]),
+    method='Radau', rtol=1e-5, atol=1e-5
+)
+
+res_vanek = {
+    't': sol_vanek.t,
+    'P1': sol_vanek.y[0],
+    'P2': sol_vanek.y[1],
+    'P3': sol_vanek.y[2],
+    'P4': sol_vanek.y[3],
+    'P5': sol_vanek.y[4],
+}
 
 # Calculate metrics
 t_s = res_step['t']
