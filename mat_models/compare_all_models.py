@@ -170,6 +170,6 @@ ax.set_xlabel("Time [s]"); ax.set_ylabel("Lumbar Pressure P5 [mmHg]")
 ax.grid(True, linestyle=':', alpha=0.6); ax.legend(fontsize=8)
 
 plt.tight_layout()
-plot_path = "model_comparison_plots.png"
+plot_path = "compare_all_models_plots.png"
 plt.savefig(plot_path, dpi=150)
-print("\nPlot saved successfully to ./model_comparison_plots.png!")
+print("\nPlot saved successfully to ./compare_all_models_plots.png!")
