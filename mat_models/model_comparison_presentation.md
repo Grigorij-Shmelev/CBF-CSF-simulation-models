@@ -4,14 +4,6 @@
 
 *Prepared for Bachelor Thesis Defense & Supervisory Committee Discussion*
 
----
-
-## Executive Summary & Research Scope Strategy
-
-### The Strategy: Preventing Scope Creep ("Košatění")
-- **Thesis Objective:** Formalize and simulate vascular resistance ($R$) and compliance ($C$) under physiological stress (e.g., hypercapnia challenge) for parameter fitting and potential reinforcement learning (RL) control.
-- **The Pitfall:** Fully coupling Ursino's 23-ODE active cerebrovascular network with Vaněk's 5-compartment craniospinal CSF model (including multi-frequency cardiac and respiratory pulsations) creates a 28+ ODE system. This multi-scale coupling is a PhD-level scope, not appropriate for a Bachelor thesis.
-- **The Solution:** Use **Ursino (2010)** as the primary engine for active microvascular reactivity ($R_d, C_d$) and hypercapnia modeling, while utilizing **Štěpáník (2009)** and **Vaněk (2015)** as benchmark hydrodynamics models for CSF absorption and craniospinal compliance.
 
 ---
 
@@ -130,7 +122,6 @@
 2. **Benchmark Comparison:** Use **Vaněk (2015)** as the benchmark model for craniospinal fluid transport and pressure-volume compliance.
 3. **Reinforcement Learning (RL) Focus:** Train the RL agent to tune resistance ($R$) and compliance ($C$) parameters inside Ursino's active control loop during hypercapnia challenges.
 
-### Specific Questions for David (Postdoc) & Supervisory Committee
-1. **Engine Selection:** *"Ursino's model directly exposes active microvascular resistance ($R_d$) and compliance ($C_d$) functions under hypercapnia. Vaněk's model focuses on craniospinal CSF absorption. Should our reinforcement learning agent tune parameters inside Ursino's active control loop?"*
-2. **Data Formats for Validation:** *"For David's upcoming MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities ($\text{mL/s}$) in the internal carotid arteries, or time-resolved ventricular volume changes ($V_1$)?"*
-3. **Thesis Scope Guard:** *"To strictly adhere to the bachelor thesis scope and prevent scope creep ('košatění'), should we use Ursino's model as the core engine for parameter fitting, keeping Vaněk's CSF model as a validated secondary benchmark?"*
+### Specific Questions 
+1. **Data Formats for Validation:** *"For David's upcoming MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities ($\text{mL/s}$) in the internal carotid arteries, or time-resolved ventricular volume changes ($V_1$)?"*
+
