@@ -1,5 +1,6 @@
 ### Model Comparison: Cerebrovascular Hemodynamics vs. Craniospinal CSF Hydrodynamics
 **A Mathematical & Clinical Comparison of Ursino (2010), Štěpáník (2009), and Vaněk (2015) Models**
+
 *Prepared for Bachelor Thesis*
 
 --------------------------------------------------------------------------------
