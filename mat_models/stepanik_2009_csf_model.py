@@ -192,7 +192,7 @@ class Stepanik2009Model:
         return dpdt
 
 
-def run_stepanik_simulation(model=None, duration_s=30.0, save_plot_path=None):
+def run_stepanik_simulation(model=None, duration_s=30.0, save_plot_path="stepanik_base_plots.png"):
     """
     Executes a complete simulation of Štěpáník's 2nd generation craniospinal model.
     """
