@@ -1,6 +1,6 @@
 ### Model Comparison: Cerebrovascular Hemodynamics vs. Craniospinal CSF Hydrodynamics
 **A Mathematical & Clinical Comparison of Ursino (2010), Štěpáník (2009), and Vaněk (2015) Models**
-*Prepared for Bachelor Thesis Defense & Supervisory Committee Discussion*
+*Prepared for Bachelor Thesis*
 
 --------------------------------------------------------------------------------
 
@@ -102,4 +102,9 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 --------------------------------------------------------------------------------
 
 #### Specific Questions
-1.  **Data Formats for Validation:** *For the MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities (mL/s) in the internal carotid arteries, or time-resolved ventricular volume changes?*
+1.  **Data Formats for Validation:** 
+*	For the MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities (mL/s) in the internal carotid arteries, or time-resolved ventricular volume changes?*
+2. **Sampling Frequency &amp; Time Grid:**
+*	"Our differential equation solver (* *solve\_ivp* *) outputs data on an* **adaptive time grid** *with sub-millisecond precision during pressure transients. Does your PC-MRI processing pipeline prefer our raw adaptive time steps, or should we export the CSV resampled to a fixed frequency (e.g., 50 Hz or 100 Hz) matching your scanner's cardiac cine frame rate?"*
+3. **Target Patient Parameters:**
+*	"Is your primary goal to overlay our simulated $F_{23}$ flow curves onto patient MRI scans to estimate non-invasive craniospinal compliance ($C = \frac{dV}{dP}$) and outflow resistance ($R_{\mathrm{out}}$)?"
