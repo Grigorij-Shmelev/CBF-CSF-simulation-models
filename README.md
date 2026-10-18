@@ -108,4 +108,4 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 2. **Sampling Frequency &amp; Time Grid:**
 *	"Our differential equation solver (* *solve\_ivp* *) outputs data on an* **adaptive time grid** *with sub-millisecond precision during pressure transients. Does your PC-MRI processing pipeline prefer our raw adaptive time steps, or should we export the CSV resampled to a fixed frequency (e.g., 50 Hz or 100 Hz) matching your scanner's cardiac cine frame rate?"*
 3. **Target Patient Parameters:**
-*	"Is your primary goal to overlay our simulated $F_{23}$ flow curves onto patient MRI scans to estimate non-invasive craniospinal compliance ($C = \frac{dV}{dP}$) and outflow resistance ($R_{\mathrm{out}}$)?"
+*	"Is primary goal to overlay our simulated $F_{23}$ flow curves onto patient MRI scans to estimate non-invasive craniospinal compliance ($C = \frac{dV}{dP}$) and outflow resistance ($R_{\mathrm{out}}$)?"
