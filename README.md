@@ -1,4 +1,4 @@
-# Model Comparison Presentation: Cerebrovascular Hemodynamics vs. Craniospinal CSF Hydrodynamics
+# Model Comparison: Cerebrovascular Hemodynamics vs. Craniospinal CSF Hydrodynamics
 
 **A Mathematical & Clinical Comparison of Ursino (2010), Štěpáník (2009), and Vaněk (2015) Models**
 
@@ -115,13 +115,6 @@
 
 ---
 
-## Part 6: Immediate Action Plan & Committee Discussion Strategy
-
-### Proposed Bachelor Thesis Architecture
-1. **Core Modeling Engine:** Use **Ursino (2010)** as the primary mathematical foundation. It natively exposes active microvascular resistance ($R_d$) and compliance ($C_d$) functions driven by $P_a\text{CO}_2$ and autoregulation.
-2. **Benchmark Comparison:** Use **Vaněk (2015)** as the benchmark model for craniospinal fluid transport and pressure-volume compliance.
-3. **Reinforcement Learning (RL) Focus:** Train the RL agent to tune resistance ($R$) and compliance ($C$) parameters inside Ursino's active control loop during hypercapnia challenges.
-
-### Specific Questions 
-1. **Data Formats for Validation:** *"For David's upcoming MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities ($\text{mL/s}$) in the internal carotid arteries, or time-resolved ventricular volume changes ($V_1$)?"*
+## Specific Questions 
+1. **Data Formats for Validation:** *For the MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities (mL/s) in the internal carotid arteries, or time-resolved ventricular volume changes?*
 
