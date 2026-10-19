@@ -13,11 +13,11 @@
 1.  **Anatomical Grid:**
     *   6 regional brain territories: Left/Right Middle ($ml, mr$), Anterior ($al, ar$), and Posterior ($pl, pr$) Cerebral Arteries.
     *   Circle of Willis collateral bridges: Anterior Communicating Artery ($\mathrm{ACoA}$) and Posterior Communicating Arteries ($\mathrm{PCoA}$).
-    *   Distal cortical anastomoses ($R_{c,ams}, R_{c,pms}, R_{c,aa}, R_{c,pp}$).
+    *   Distal cortical anastomoses ($R_{c,\mathrm{ams}}, R_{c,\mathrm{pms}}, R_{c,\mathrm{aa}}, R_{c,\mathrm{pp}}$).
 2.  **Active Control Mechanisms:**
-    *   **Autoregulation ($x_{\mathrm{aut}}$):** 1st-order low-pass filter ($\tau = 20\text{ s}$) driving vasomotion based on relative flow error $\mathrm{rel\_q} = (q - q_n)/q_n$.
-    *   **$\mathrm{CO}_2$ Reactivity ($x_{\mathrm{CO}_2}$):** Vasodilation/vasoconstriction response ($\tau = 40\text{ s}$) driven by $P_a\mathrm{CO}_2$ fluctuations.
-    *   **Ischemic Acidosis Suppression ($A_{\mathrm{CO}_2}$):** Sigmoidal switch suppressing $\mathrm{CO}_2$ reactivity when flow drops below $-50\%$ of normal ($\mathrm{rel\_q} < -0.5, b_{\mathrm{CO}_2} = -0.5$).
+    *   **Autoregulation ($x_{\mathrm{aut}}$):** 1st-order low-pass filter ($\tau = 20\text{ s}$) driving vasomotion based on relative flow error $\text{rel\_q} = (q - q_n)/q_n$.
+    *   **$\mathrm{CO}_2$ Reactivity ($x_{\mathrm{CO}_2}$):** Vasodilation/vasoconstriction response ($\tau = 40\text{ s}$) driven by $P_{a,\mathrm{CO}_2}$ fluctuations.
+    *   **Ischemic Acidosis Suppression ($A_{\mathrm{CO}_2}$):** Sigmoidal switch suppressing $\mathrm{CO}_2$ reactivity when flow drops below $-50\%$ of normal ($\text{rel\_q} < -0.5, b_{\mathrm{CO}_2} = -0.5$).
 3.  **Active Resistance & Compliance Coupling:**
 
 $$C_d(x) = C_{dn} \cdot \left[ \left(1 - \frac{\Delta C}{2}\right) + \frac{(1 + \frac{\Delta C}{2}) e^{x/k_{Cd}}}{1 + e^{x/k_{Cd}}} \right]$$
@@ -27,7 +27,7 @@ $$R_d = k_R \cdot \frac{C_{dn}^2}{V_d^2}$$
 ##### Key Simulation Benchmark: Unilateral ICA Occlusion & Steal Phenomenon
 *   **Baseline Left MCA Flow:** $3.75\text{ mL/s}$
 *   **100% Left ICA Occlusion (Pre-Hypercapnia):** Drops to $1.53\text{ mL/s}$ (Ischemic territory maximally dilates via autoregulation).
-*   **Hypercapnia Challenge ($P_a\mathrm{CO}_2 = 60\text{ mmHg}$):**
+*   **Hypercapnia Challenge ($P_{a,\mathrm{CO}_2} = 60\text{ mmHg}$):**
     *   **Healthy Right MCA Flow:** Surges from $3.79\text{ mL/s} \rightarrow 5.77\text{ mL/s}$ (+52%).
     *   **Ischemic Left MCA Flow:** Drops from $1.53\text{ mL/s} \rightarrow 1.43\text{ mL/s}$ (**Steal Phenomenon confirmed**).
     *   **Mechanism:** Vasodilation on the healthy side lowers Circle of Willis perfusion pressure, actively stealing blood away from the ischemic territory.
@@ -66,7 +66,7 @@ $$R_d = k_R \cdot \frac{C_{dn}^2}{V_d^2}$$
 
 $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt}}{C_{2a} + C_{2b}}$$
 
-    *The compressible venous cushion increases the overall system time constant ($\tau = R \cdot C$), preventing artificial pressure spikes during fluid infusion.*
+    *   The compressible venous cushion increases the overall system time constant ($\tau = R \cdot C$), preventing artificial pressure spikes during fluid infusion.
 ##### Lumbar Infusion Test Results ($P_b = 10.0\text{ mmHg}$)
 *   **5-Minute Peak ICP ($P_2$):** Reaches **$17.49\text{ mmHg}$ ($237.9\text{ mmH}_2\mathrm{O}$)**.
 *   **Damping Effect:** Shows a ~$48.3\text{ mmH}_2\mathrm{O}$ lower pressure elevation after 5 minutes (and up to ~$104\text{ mmH}_2\text{O}$ lower vs. Štěpáník's steady-state peak) due to venous cushioning.
@@ -84,7 +84,7 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 | **Baseline ICP ($P_{2,0}$)** | $9.98\text{ mmHg}$ | $9.96\text{ mmHg}$ | Normal baseline resting pressure |
 | **5-Min Peak Infusion ICP ($P_{2,\text{inf}}$)** | **$21.05\text{ mmHg}$** | **$17.49\text{ mmHg}$** | **$3.56\text{ mmHg}$ lower in Vaněk** |
 | **5-Min Peak ICP in $\text{mmH}_2\mathrm{O}$** | **$286.2\text{ mmH}_2\mathrm{O}$** | **$237.9\text{ mmH}_2\mathrm{O}$** | **$48.3\text{ mmH}_2\mathrm{O}$ lower in Vaněk** |
-| **Full Steady-State Peak ICP** | **$24.43\text{ mmHg}$ ($332.3\text{ mmH}_2\mathrm{O}$)** | **$23.40\text{ mmHg}$ ($318.2\text{ mmH}_2\text{O}$)** | Štěpáník climbs much faster to peak |
+| **Full Steady-State Peak ICP** | **$24.43\text{ mmHg}$ ($332.3\text{ mmH}_2\mathrm{O}$)** | **$23.40\text{ mmHg}$ ($318.2\text{ mmH}_2\mathrm{O}$)** | Štěpáník climbs much faster to peak |
 | **ICP Elevation ($\Delta P$)** | $11.07\text{ mmHg}$ | $7.53\text{ mmHg}$ | Vaněk dampens transient pressure rise |
 | **Apparent $R_{\text{out}}$ at $t=5\text{ min}$** | $7.38\text{ mmHg/(mL/min)}$ | $5.02\text{ mmHg/(mL/min)}$ | Longer time constant delays plateau in Vaněk |
 
@@ -103,49 +103,24 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 --------------------------------------------------------------------------------
 
 #### Part 6: Repository File Structure & Execution Guide
-
-This repository contains core mathematical model definitions, standalone clinical test runners, parameter sensitivity suites, and unified multi-scale integration pipelines.
-
 ##### 1. Core Model Definition Libraries
-*   **`ursino_2010_model.py`**
-    *   **Description:** Implements Ursino & Giannessi's (2010) 23-ODE lumped-parameter model of cerebral hemodynamics, Circle of Willis collateral circulation, active autoregulation, and $\mathrm{CO}_2$ reactivity across 6 regional brain territories.
-    *   **Usage:** Run standalone validation test via `python ursino_2010_model.py` or import `Ursino2010Model` into higher-level simulation scripts.
-*   **`stepanik_2009_csf_model.py`**
-    *   **Description:** Implements Zbyšek Štěpáník's (2009) 2nd-generation 5-compartment craniospinal CSF model, capturing non-linear tissue compliances and pressure-dependent dural resorption across ventricles and spinal subarachnoid spaces.
-    *   **Usage:** Run baseline 10s craniospinal simulation via `python stepanik_2009_csf_model.py` or import `Stepanik2009Model` / `run_stepanik_simulation`.
-*   **`vanek_2015_model.py`**
-    *   **Description:** Implements Petr Vaněk's (2015) 3rd-generation 5-compartment craniospinal CSF model featuring explicit dual arterial ($a$) and venous ($b$) sub-compartments for realistic vascular cushioning.
-    *   **Usage:** Core library file imported by downstream infusion and unified simulation scripts.
+*   `ursino_2010_model.py`: 23-ODE hemodynamics library implementing Circle of Willis collateral flow, active autoregulation, and $\mathrm{CO}_2$ reactivity across 6 brain districts. (Run: `python ursino_2010_model.py`)
+*   `stepanik_2009_csf_model.py`: 5-compartment craniospinal CSF hydrodynamics library with non-linear compliances and pressure-dependent dural resorption. (Run: `python stepanik_2009_csf_model.py`)
+*   `vanek_2015_model.py`: 3rd-generation 5-compartment CSF library with explicit dual arterial/venous sub-compartments ($a/b$) for vascular cushioning. (Import library)
 
 ##### 2. Integrated Multi-Scale & Benchmarking Pipelines
-*   **`VU_unified_brain_model.py`**
-    *   **Description:** Primary 28-ODE sequential multi-scale pipeline coupling Ursino's active vascular engine ($\Delta V_{\mathrm{blood}}, P_v$) as dynamic boundary conditions into Vaněk's 5-compartment CSF solver. Supports combined clinical stress tests (ICA occlusion, hypercapnia, lumbar infusion) and exports standardized CSV datasets formatted for David's PC-MRI validation pipeline.
-    *   **Usage:** Execute via `python VU_unified_brain_model.py`.
-*   **`unified_brain_model.py`**
-    *   **Description:** Initial baseline prototype of the sequential multi-scale vascular-CSF pipeline.
-    *   **Usage:** Execute via `python unified_brain_model.py`.
-*   **`compare_all_models.py`**
-    *   **Description:** Multi-model comparison script executing Ursino (2010), Štěpáník (2009), and Vaněk (2015) side-by-side under identical challenges to output comparative summary metrics ($R_{\mathrm{out}}$, peak ICP) and 4-panel publication plots.
-    *   **Usage:** Execute via `python compare_all_models.py`.
+*   `VU_unified_brain_model.py`: Primary 28-ODE sequential multi-scale pipeline coupling Ursino's vascular engine into Vaněk's CSF solver, exporting PC-MRI validation CSV datasets. (Run: `python VU_unified_brain_model.py`)
+*   `unified_brain_model.py`: Initial baseline prototype of the multi-scale vascular-CSF pipeline. (Run: `python unified_brain_model.py`)
+*   `compare_all_models.py`: Comparative benchmark executing Ursino (2010), Štěpáník (2009), and Vaněk (2015) side-by-side. (Run: `python compare_all_models.py`)
 
 ##### 3. Clinical Diagnostic Test Runners
-*   **`run_vanek_lumbar_infusion.py`**
-    *   **Description:** Standalone clinical simulation executing a standard 500-second Lumbar Infusion Test ($1.5\text{ mL/min}$ for 300s into lumbar SAS) on Vaněk's (2015) model. Calculates outflow resistance ($R_{\mathrm{out}}$) and outputs a 6-panel clinical diagnostic plot.
-    *   **Usage:** Execute via `python run_vanek_lumbar_infusion.py`.
-*   **`stepanik_run_lumbar_infusion.py`**
-    *   **Description:** Standalone clinical simulation executing a standard 500-second Lumbar Infusion Test on Štěpáník's (2009) model, evaluating CSF pressure elevation without venous cushioning and generating matching 6-panel diagnostic figures.
-    *   **Usage:** Execute via `python stepanik_run_lumbar_infusion.py`.
+*   `run_vanek_lumbar_infusion.py`: Standalone Lumbar Infusion Test simulation ($1.5\text{ mL/min}$ for 300s into lumbar SAS) on Vaněk's model, outputting 6-panel clinical diagnostic figures. (Run: `python run_vanek_lumbar_infusion.py`)
+*   `stepanik_run_lumbar_infusion.py`: Standalone Lumbar Infusion Test simulation on Štěpáník's model, generating matching 6-panel diagnostic figures. (Run: `python stepanik_run_lumbar_infusion.py`)
 
 ##### 4. Specialized Diagnostic & Sensitivity Analysis
-*   **`urs_steal_test.py`**
-    *   **Description:** Diagnostic script simulating Ursino's microvascular response during hypercapnia, visualizing the **microvascular steal phenomenon**, Starling resistor terminal venous collapse, and dynamic venous pressure backup ($P_v > P_{\mathrm{ic}}$).
-    *   **Usage:** Execute via `python urs_steal_test.py`.
-*   **`urs_occlusion_stiffness_test.py`**
-    *   **Description:** Sensitivity test script evaluating how altering pial microvascular compliance ($C_{dn}$ at $0.5\times, 1.0\times, 2.0\times$) modulates the height of the intracranial pressure (ICP) spike during hypercapnia and unilateral carotid occlusion.
-    *   **Usage:** Execute via `python urs_occlusion_stiffness_test.py`.
-*   **`vanek_icp_sensitivity_tests.py`**
-    *   **Description:** Parameter sensitivity suite evaluating how variations in Vaněk's venous compliance ($C_{2b0}$), dural sinus pressure ($P_b$), and CSF outflow resistance ($R_o$) alter peak plateau ICP and time constants during fluid infusion.
-    *   **Usage:** Execute via `python vanek_icp_sensitivity_tests.py`.
+*   `urs_steal_test.py`: Diagnostic script visualizing the microvascular steal phenomenon, Starling resistor terminal venous collapse, and dynamic venous pressure backup. (Run: `python urs_steal_test.py`)
+*   `urs_occlusion_stiffness_test.py`: Sensitivity test evaluating how altering microvascular compliance ($C_{dn}$) modulates the hypercapnic ICP spike. (Run: `python urs_occlusion_stiffness_test.py`)
+*   `vanek_icp_sensitivity_tests.py`: Parameter sensitivity suite evaluating how venous compliance ($C_{2b0}$), dural sinus pressure ($P_b$), and outflow resistance ($R_o$) alter peak plateau ICP. (Run: `python vanek_icp_sensitivity_tests.py`)
 
 --------------------------------------------------------------------------------
 
