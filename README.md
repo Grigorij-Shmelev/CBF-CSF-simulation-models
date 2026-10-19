@@ -66,7 +66,8 @@ $$R_d = k_R \cdot \frac{C_{dn}^2}{V_d^2}$$
 
 $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt}}{C_{2a} + C_{2b}}$$
 
-    *The compressible venous cushion increases the overall system time constant ($\tau = R \cdot C$), preventing artificial pressure spikes during fluid infusion.*
+The compressible venous cushion increases the overall system time constant ($\tau = R \cdot C$), preventing artificial pressure spikes during fluid infusion.
+
 ##### Lumbar Infusion Test Results ($P_b = 10.0\text{ mmHg}$)
 *   **5-Minute Peak ICP ($P_2$):** Reaches **$17.49\text{ mmHg}$ ($237.9\text{ mmH}_2\mathrm{O}$)**.
 *   **Damping Effect:** Shows a ~$48.3\text{ mmH}_2\mathrm{O}$ lower pressure elevation after 5 minutes (and up to ~$104\text{ mmH}_2\text{O}$ lower vs. Štěpáník's steady-state peak) due to venous cushioning.
