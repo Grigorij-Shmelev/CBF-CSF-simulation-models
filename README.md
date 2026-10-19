@@ -102,7 +102,54 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 
 --------------------------------------------------------------------------------
 
-#### Specific Questions
+#### Part 6: Repository File Structure & Execution Guide
+
+This repository contains core mathematical model definitions, standalone clinical test runners, parameter sensitivity suites, and unified multi-scale integration pipelines.
+
+##### 1. Core Model Definition Libraries
+*   **`ursino_2010_model.py`**
+    *   **Description:** Implements Ursino & Giannessi's (2010) 23-ODE lumped-parameter model of cerebral hemodynamics, Circle of Willis collateral circulation, active autoregulation, and $\mathrm{CO}_2$ reactivity across 6 regional brain territories.
+    *   **Usage:** Run standalone validation test via `python ursino_2010_model.py` or import `Ursino2010Model` into higher-level simulation scripts.
+*   **`stepanik_2009_csf_model.py`**
+    *   **Description:** Implements Zbyšek Štěpáník's (2009) 2nd-generation 5-compartment craniospinal CSF model, capturing non-linear tissue compliances and pressure-dependent dural resorption across ventricles and spinal subarachnoid spaces.
+    *   **Usage:** Run baseline 10s craniospinal simulation via `python stepanik_2009_csf_model.py` or import `Stepanik2009Model` / `run_stepanik_simulation`.
+*   **`vanek_2015_model.py`**
+    *   **Description:** Implements Petr Vaněk's (2015) 3rd-generation 5-compartment craniospinal CSF model featuring explicit dual arterial ($a$) and venous ($b$) sub-compartments for realistic vascular cushioning.
+    *   **Usage:** Core library file imported by downstream infusion and unified simulation scripts.
+
+##### 2. Integrated Multi-Scale & Benchmarking Pipelines
+*   **`VU_unified_brain_model.py`**
+    *   **Description:** Primary 28-ODE sequential multi-scale pipeline coupling Ursino's active vascular engine ($\Delta V_{\mathrm{blood}}, P_v$) as dynamic boundary conditions into Vaněk's 5-compartment CSF solver. Supports combined clinical stress tests (ICA occlusion, hypercapnia, lumbar infusion) and exports standardized CSV datasets formatted for David's PC-MRI validation pipeline.
+    *   **Usage:** Execute via `python VU_unified_brain_model.py`.
+*   **`unified_brain_model.py`**
+    *   **Description:** Initial baseline prototype of the sequential multi-scale vascular-CSF pipeline.
+    *   **Usage:** Execute via `python unified_brain_model.py`.
+*   **`compare_all_models.py`**
+    *   **Description:** Multi-model comparison script executing Ursino (2010), Štěpáník (2009), and Vaněk (2015) side-by-side under identical challenges to output comparative summary metrics ($R_{\mathrm{out}}$, peak ICP) and 4-panel publication plots.
+    *   **Usage:** Execute via `python compare_all_models.py`.
+
+##### 3. Clinical Diagnostic Test Runners
+*   **`run_vanek_lumbar_infusion.py`**
+    *   **Description:** Standalone clinical simulation executing a standard 500-second Lumbar Infusion Test ($1.5\text{ mL/min}$ for 300s into lumbar SAS) on Vaněk's (2015) model. Calculates outflow resistance ($R_{\mathrm{out}}$) and outputs a 6-panel clinical diagnostic plot.
+    *   **Usage:** Execute via `python run_vanek_lumbar_infusion.py`.
+*   **`stepanik_run_lumbar_infusion.py`**
+    *   **Description:** Standalone clinical simulation executing a standard 500-second Lumbar Infusion Test on Štěpáník's (2009) model, evaluating CSF pressure elevation without venous cushioning and generating matching 6-panel diagnostic figures.
+    *   **Usage:** Execute via `python stepanik_run_lumbar_infusion.py`.
+
+##### 4. Specialized Diagnostic & Sensitivity Analysis
+*   **`urs_steal_test.py`**
+    *   **Description:** Diagnostic script simulating Ursino's microvascular response during hypercapnia, visualizing the **microvascular steal phenomenon**, Starling resistor terminal venous collapse, and dynamic venous pressure backup ($P_v > P_{\mathrm{ic}}$).
+    *   **Usage:** Execute via `python urs_steal_test.py`.
+*   **`urs_occlusion_stiffness_test.py`**
+    *   **Description:** Sensitivity test script evaluating how altering pial microvascular compliance ($C_{dn}$ at $0.5\times, 1.0\times, 2.0\times$) modulates the height of the intracranial pressure (ICP) spike during hypercapnia and unilateral carotid occlusion.
+    *   **Usage:** Execute via `python urs_occlusion_stiffness_test.py`.
+*   **`vanek_icp_sensitivity_tests.py`**
+    *   **Description:** Parameter sensitivity suite evaluating how variations in Vaněk's venous compliance ($C_{2b0}$), dural sinus pressure ($P_b$), and CSF outflow resistance ($R_o$) alter peak plateau ICP and time constants during fluid infusion.
+    *   **Usage:** Execute via `python vanek_icp_sensitivity_tests.py`.
+
+--------------------------------------------------------------------------------
+
+#### Part 7: Specific Questions
 1.  **Data Formats for Validation:** 
 *	For the MRI project, what specific clinical data channels will be provided for model validation? Are we targeting Phase-Contrast MRI flow velocities (mL/s) in the internal carotid arteries, or time-resolved ventricular volume changes?*
 2. **Sampling Frequency &amp; Time Grid:**
