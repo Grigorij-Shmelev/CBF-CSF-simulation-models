@@ -8,6 +8,10 @@ ursino_2010_model.py is NOT modified: Pa(t) is passed through the existing
 Place in mat_models/ and run from there (like the other urs_* scripts):
     python urs_dynamic_pa_test.py            -> 10 s smoke test (normocapnia)
     python urs_dynamic_pa_test.py full       -> 400 s run, hypercapnia at t = 50 s
+    python urs_dynamic_pa_test.py check      -> verify aux_pressures() (D2.3 Step 3)
+    python urs_dynamic_pa_test.py table      -> node-pressure table, 1550 s runs (D2.3 Step 4)
+    python urs_dynamic_pa_test.py profile    -> pressure-profile plot from the table (Step 5)
+    python urs_dynamic_pa_test.py export     -> CSV time series for Vanek, 400 s runs (Step 6)
 
 Scenarios
     S     static Pa = 100 mmHg                    (current behaviour)
@@ -16,14 +20,14 @@ Scenarios
     D100  100 + 10 sin(2*pi*1.2*t)                (same pulse, Ursino's mean; separates
                                                    the effect of pulsatility from the mean shift)
 """
-from ursino_2010_model import Ursino2010Model
-from scipy.integrate import solve_ivp
-import matplotlib.pyplot as plt
 import sys
 import time as clock
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+from ursino_2010_model import Ursino2010Model
 
 # ----------------------------------------------------------------------------
 # 1. Arterial pressure inputs  Pa(t)  [mmHg]
@@ -43,8 +47,7 @@ NODES = {"Pic": 0, "Pv": 1, "PICA_l": 2, "PICA_r": 3, "PBA": 4,
          "Pd_ml": 5, "Pd_al": 6, "Pd_pl": 7, "Pd_mr": 8, "Pd_ar": 9, "Pd_pr": 10}
 
 DT_OUT = 0.005    # output sampling [s] -> ~167 points per 1.2 Hz cycle
-# solver step limit [s]; must resolve the pulse (>= ~80 steps/cycle)
-MAX_STEP = 0.01
+MAX_STEP = 0.01   # solver step limit [s]; must resolve the pulse (>= ~80 steps/cycle)
 
 
 # ----------------------------------------------------------------------------
@@ -75,16 +78,14 @@ def run_ursino(model, pa_func, y0, t_end, t_hyper=None, pco2_hyper=60.0):
                         max_step=MAX_STEP, rtol=1e-6, atol=1e-6)
         if not sol.success:
             raise RuntimeError(f"solver failed in phase {k}: {sol.message}")
-        t_all.append(sol.t[:-1])
-        y_all.append(sol.y[:, :-1])
+        t_all.append(sol.t[:-1]); y_all.append(sol.y[:, :-1])
         y_start = sol.y[:, -1]
     return np.concatenate(t_all), np.hstack(y_all)
 
 
 def flows(model, t, y, pa_func):
     """Flows need Pa at the SAME time point (get_flow_dict has no t argument)."""
-    out = {k: np.empty(len(t))
-           for k in ("q_ica_l", "q_ica_r", "q_mca_l", "q_mca_r")}
+    out = {k: np.empty(len(t)) for k in ("q_ica_l", "q_ica_r", "q_mca_l", "q_mca_r")}
     for i in range(len(t)):
         fl = model.get_flow_dict(y[:, i], Pa=pa_func(t[i]))
         for k in out:
@@ -104,8 +105,7 @@ def min_control_signal(model, y):
     for i, d in enumerate(model.districts):
         x_crit = model.Cdn[d] * model.sat1 / 2.0 * np.log(0.75)
         flag = "  <-- Cd <= 0 reached" if x[i].min() < x_crit else ""
-        print(
-            f"    {d}: min x = {x[i].min():+.4f}   (Cd = 0 at x = {x_crit:+.4f}){flag}")
+        print(f"    {d}: min x = {x[i].min():+.4f}   (Cd = 0 at x = {x_crit:+.4f}){flag}")
 
 
 # ----------------------------------------------------------------------------
@@ -140,11 +140,9 @@ def aux_pressures(model, y, mca_stenosis_l=1.0):
 
     # Posterior communicating junctions (PCA1/PCA2/PCoA meet)
     G_l = 1 / (R['PCA2'] + Rd['pl'] / 2) + 1 / R['PCoA'] + 1 / R['PCA1']
-    PPCA1l = (Pd['pl'] / (R['PCA2'] + Rd['pl'] / 2) +
-              PICAl / R['PCoA'] + PBA / R['PCA1']) / G_l
+    PPCA1l = (Pd['pl'] / (R['PCA2'] + Rd['pl'] / 2) + PICAl / R['PCoA'] + PBA / R['PCA1']) / G_l
     G_r = 1 / (R['PCA2'] + Rd['pr'] / 2) + 1 / R['PCoA'] + 1 / R['PCA1']
-    PPCA1r = (Pd['pr'] / (R['PCA2'] + Rd['pr'] / 2) +
-              PICAr / R['PCoA'] + PBA / R['PCA1']) / G_r
+    PPCA1r = (Pd['pr'] / (R['PCA2'] + Rd['pr'] / 2) + PICAr / R['PCoA'] + PBA / R['PCA1']) / G_r
 
     # Anterior junctions, coupled through ACoA -> 2x2 linear system (Cramer's rule)
     g_al = 1 / (R['ACA2'] + Rd['al'] / 2) + 1 / R['ACA1'] + 1 / R['ACoA']
@@ -156,10 +154,8 @@ def aux_pressures(model, y, mca_stenosis_l=1.0):
     PACA1r = (g_al * b_r + (1 / R['ACoA']) * b_l) / det
 
     # Capillary node (if Pc <= Pic, CSF formation stops: Rf branch removed)
-    G_cap = sum(2 / Rd[d] for d in model.districts) + \
-        1 / model.Rpv + 1 / model.Rf
-    num = sum(2 * Pd[d] / Rd[d]
-              for d in model.districts) + Pic / model.Rf + Pv / model.Rpv
+    G_cap = sum(2 / Rd[d] for d in model.districts) + 1 / model.Rpv + 1 / model.Rf
+    num = sum(2 * Pd[d] / Rd[d] for d in model.districts) + Pic / model.Rf + Pv / model.Rpv
     Pc = num / G_cap
     if Pc <= Pic:
         G_cap -= 1 / model.Rf
@@ -183,7 +179,6 @@ def check_aux(model, pa_func, t, y, label):
         with (dy[k] - dPic_dt) * C_k returned by derivatives()."""
     R = model.R_net
     worst = {}
-
     def keep(name, val):
         worst[name] = max(worst.get(name, 0.0), abs(val))
     for i in range(len(t)):
@@ -213,17 +208,14 @@ def check_aux(model, pa_func, t, y, label):
         net_r = ((Pa - PICAr) / R['ICA'] + (a['PPCA1_r'] - PICAr) / R['PCoA']
                  + (Pd['mr'] - PICAr) / (R['MCA'] + Rd['mr'] / 2) + (a['PACA1_r'] - PICAr) / R['ACA1'])
         keep("B  ICA_r node", net_r - (dy[3] - dy[0]) * model.C_ICA)
-        net_ba = ((Pa - PBA) / R['BA'] + (a['PPCA1_l'] - PBA) /
-                  R['PCA1'] + (a['PPCA1_r'] - PBA) / R['PCA1'])
+        net_ba = ((Pa - PBA) / R['BA'] + (a['PPCA1_l'] - PBA) / R['PCA1'] + (a['PPCA1_r'] - PBA) / R['PCA1'])
         keep("B  BA node", net_ba - (dy[4] - dy[0]) * model.C_BA)
-        Rvs = max((Pv - model.Pvs) / (Pv - Pic) *
-                  model.Rvs1 if model.Pvs < Pic else model.Rvs1, 1e-4)
+        Rvs = max((Pv - model.Pvs) / (Pv - Pic) * model.Rvs1 if model.Pvs < Pic else model.Rvs1, 1e-4)
         Cvi = 1.0 / (model.kven * max(Pv - Pic - model.Pv1, 0.1))
         net_v = (a['Pc'] - Pv) / model.Rpv - (Pv - model.Pvs) / Rvs
         keep("B  venous node", net_v - (dy[1] - dy[0]) * Cvi)
 
-    print(
-        f"\n--- check_aux: {label} ({len(t)} samples), max |residual| in mL/s ---")
+    print(f"\n--- check_aux: {label} ({len(t)} samples), max |residual| in mL/s ---")
     ok = True
     for name, val in worst.items():
         flag = "OK" if val < 1e-8 else "FAIL"
@@ -236,12 +228,10 @@ def check_aux(model, pa_func, t, y, label):
 # 4. Experiment
 # ----------------------------------------------------------------------------
 def main(full=False):
-    t_end, t_hyper = (400.0, 50.0) if full else (
-        10.0, None)  # ICP still drifts at 200 s
+    t_end, t_hyper = (400.0, 50.0) if full else (10.0, None)  # ICP still drifts at 200 s
     n_cyc = 6                                    # stats over whole cycles
     win = n_cyc / F_CARDIAC
-    windows = {"pre": (t_hyper - win, t_hyper)
-               if full else (t_end - win, t_end)}
+    windows = {"pre": (t_hyper - win, t_hyper) if full else (t_end - win, t_end)}
     if full:
         windows["hyper"] = (t_end - win, t_end)
 
@@ -253,11 +243,9 @@ def main(full=False):
         t, y = run_ursino(model, sc["func"], y0, t_end, t_hyper)
         q = flows(model, t, y, sc["func"])
         results[name] = (t, y, q)
-        print(
-            f"\n=== {name}: {clock.time() - tic:.1f} s wall time, {len(t)} samples")
+        print(f"\n=== {name}: {clock.time() - tic:.1f} s wall time, {len(t)} samples")
         for wname, (a, b) in windows.items():
-            print(
-                f"  window '{wname}' [{a:.1f}, {b:.1f}) s   mean / peak-to-peak")
+            print(f"  window '{wname}' [{a:.1f}, {b:.1f}) s   mean / peak-to-peak")
             pa = np.array([sc['func'](ti) for ti in t])
             mu, pp = window_stats(t, pa, a, b)
             print(f"    {'Pa':8s} {mu:8.2f} / {pp:6.3f}")
@@ -276,12 +264,10 @@ def main(full=False):
             ("q_mca_l", "MCA flow, left [mL/s]")]
     fig, ax = plt.subplots(len(rows), 2, figsize=(13, 11), sharex="col")
     for name, (t, y, q) in results.items():
-        def sig_of(key): return q[key] if key.startswith(
-            "q_") else y[NODES[key]]
+        sig_of = lambda key: q[key] if key.startswith("q_") else y[NODES[key]]
         zoom = t >= t_end - 3.0
         for r, (key, label) in enumerate(rows):
-            st = dict(lw=1.4, zorder=3) if name == "S" else dict(
-                lw=0.6)  # keep S visible
+            st = dict(lw=1.4, zorder=3) if name == "S" else dict(lw=0.6)  # keep S visible
             ax[r, 0].plot(t, sig_of(key), label=name, **st)
             ax[r, 1].plot(t[zoom], sig_of(key)[zoom], label=name, **st)
             ax[r, 0].set_ylabel(label, fontsize=8)
@@ -291,17 +277,157 @@ def main(full=False):
             if full and c == 0:
                 ax[r, c].axvline(t_hyper, color="k", ls=":", lw=0.8)
     ax[0, 0].legend(fontsize=8)
-    ax[0, 0].set_title(
-        "Full run" + (" (hypercapnia at dotted line)" if full else ""))
+    ax[0, 0].set_title("Full run" + (" (hypercapnia at dotted line)" if full else ""))
     ax[0, 1].set_title("Zoom: last 3 s")
-    ax[-1, 0].set_xlabel("t [s]")
-    ax[-1, 1].set_xlabel("t [s]")
-    fig.suptitle(
-        "Ursino (2010) driven by time-varying Pa(t): S vs D80 vs D100")
+    ax[-1, 0].set_xlabel("t [s]"); ax[-1, 1].set_xlabel("t [s]")
+    fig.suptitle("Ursino (2010) driven by time-varying Pa(t): S vs D80 vs D100")
     fig.tight_layout()
     out = "urs_dynamic_pa_full.png" if full else "urs_dynamic_pa_smoke.png"
     fig.savefig(out, dpi=150)
     print(f"\nPlot saved as {out}")
+
+
+# ----------------------------------------------------------------------------
+# 5. D2.3 Step 4: pressure table (mean and peak-to-peak per node and window)
+# ----------------------------------------------------------------------------
+TABLE_NODES = ["Pa", "PICA_l", "PBA", "PPCA1_l", "PACA1_l", "PMCA_end_l",
+               "Pd_ml", "Pd_al", "Pd_pl", "Pc", "Pv", "Pic", "q_mca_l"]   # ~ upstream -> downstream
+
+
+def node_signals(model, t, y, pa_func, idx):
+    """All TABLE_NODES at the sample indices idx (left side only: no stenosis -> l = r)."""
+    sig = {k: np.empty(len(idx)) for k in TABLE_NODES}
+    for j, i in enumerate(idx):
+        yi, pa = y[:, i], pa_func(t[i])
+        a = aux_pressures(model, yi)
+        sig["Pa"][j] = pa
+        for k in ("PICA_l", "PBA", "Pd_ml", "Pd_al", "Pd_pl", "Pv", "Pic"):
+            sig[k][j] = yi[NODES[k]]
+        for k in ("PPCA1_l", "PACA1_l", "PMCA_end_l", "Pc"):
+            sig[k][j] = a[k]
+        sig["q_mca_l"][j] = model.get_flow_dict(yi, Pa=pa)["q_mca_l"]
+    return sig
+
+
+def build_table(t_hyper=50.0, t_end=1550.0):
+    import pandas as pd
+    win = 6 / F_CARDIAC                                   # 6 whole cycles = 5 s
+    windows = {"pre": (t_hyper - win, t_hyper),
+               "early": (t_hyper + 350.0 - win, t_hyper + 350.0),   # ~realistic CO2-test length
+               "late": (t_end - win, t_end)}                       # ~steady state (ICP drifts slowly)
+    model = Ursino2010Model()
+    rows = []
+    for name, sc in SCENARIOS.items():
+        tic = clock.time()
+        t, y = run_ursino(model, sc["func"], settle(model, sc["mean"]), t_end, t_hyper)
+        stats = {}
+        for w, (a, b) in windows.items():
+            idx = np.where((t >= a) & (t < b))[0]
+            sig = node_signals(model, t, y, sc["func"], idx)
+            stats[w] = {k: (v.mean(), np.ptp(v)) for k, v in sig.items()}
+        pa_pp = stats["pre"]["Pa"][1]
+        for k in TABLE_NODES:
+            r = {"scenario": name, "node": k}
+            for w in windows:
+                r[f"{w}_mean"], r[f"{w}_ptp"] = stats[w][k]
+            r["d_early"] = r["early_mean"] - r["pre_mean"]
+            r["d_late"] = r["late_mean"] - r["pre_mean"]
+            r["ptp_rel_pre"] = r["pre_ptp"] / pa_pp if pa_pp > 0 else np.nan   # pulse transmission
+            rows.append(r)
+        print(f"{name}: {clock.time() - tic:.0f} s")
+    df = pd.DataFrame(rows)
+    df.to_csv("urs_pressure_table.csv", index=False, float_format="%.4f")
+
+    cols = ["node", "pre_mean", "early_mean", "late_mean", "d_early", "d_late",
+            "pre_ptp", "late_ptp", "ptp_rel_pre"]
+    with pd.option_context("display.float_format", "{:8.3f}".format, "display.width", 140):
+        for name in SCENARIOS:
+            print(f"\n=== {name}  (pressures mmHg, q_mca_l mL/s; windows "
+                  + ", ".join(f"{w} {a:.0f}-{b:.0f} s" for w, (a, b) in windows.items()) + ")")
+            print(df[df.scenario == name][cols].to_string(index=False))
+    print("\nSaved urs_pressure_table.csv")
+
+
+# ----------------------------------------------------------------------------
+# 6. D2.3 Step 5: pressure profile along one path (reads the Step 4 table,
+#    so no new simulation is needed -> run "table" first)
+# ----------------------------------------------------------------------------
+PROFILE_PATH = ["Pa", "PICA_l", "PMCA_end_l", "Pd_ml", "Pc", "Pv", "Pvs"]
+PROFILE_LABELS = ["Pa", "ICA", "MCA end", "pial (d,ml)", "capill. (c)", "vein (v)", "sinus (vs)"]
+
+
+def plot_profile(table_csv="urs_pressure_table.csv"):
+    import pandas as pd
+    try:
+        df = pd.read_csv(table_csv)
+    except FileNotFoundError:
+        sys.exit(f"{table_csv} not found -> run 'python urs_dynamic_pa_test.py table' first")
+    pvs = Ursino2010Model().Pvs                      # constant input, not in the table
+
+    def profile(scen, col):
+        d = df[df.scenario == scen].set_index("node")[col]
+        return [pvs if n == "Pvs" else d[n] for n in PROFILE_PATH], d["Pic"]
+
+    x = np.arange(len(PROFILE_PATH))
+    fig, ax = plt.subplots(1, 3, figsize=(16, 5))
+    styles = {"pre": ("k", "o-"), "early": ("tab:orange", "s--"), "late": ("tab:red", "^-")}
+
+    # (a) S: mean profile before vs during hypercapnia; dotted = ICP (vessels sit in the skull)
+    for w, (c, m) in styles.items():
+        p, pic = profile("S", f"{w}_mean")
+        ax[0].plot(x, p, m, color=c, label=f"S {w}")
+        ax[0].axhline(pic, color=c, ls=":", lw=0.8)
+    ax[0].set_title("(a) S: mean pressure profile\n(dotted lines = ICP in the same window)")
+
+    # (b) D80 vs S before hypercapnia, and D80 late (no CO2 response)
+    for scen, w, c, m in [("S", "pre", "k", "o-"), ("D80", "pre", "tab:blue", "o-"),
+                          ("D80", "late", "tab:cyan", "^--")]:
+        ax[1].plot(x, profile(scen, f"{w}_mean")[0], m, color=c, label=f"{scen} {w}")
+    ax[1].set_title("(b) mean profile: Pa mean 80 vs 100 mmHg")
+
+    # (c) D100: pulse amplitude (peak-to-peak) along the path
+    for w in ("pre", "late"):
+        c, m = styles[w]
+        p = [0.0 if n == "Pvs" else v for n, v in zip(PROFILE_PATH, profile("D100", f"{w}_ptp")[0])]
+        ax[2].plot(x, p, m, color=c, label=f"D100 {w}")
+    ax[2].set_title("(c) D100: pulse amplitude (peak-to-peak)")
+    ax[2].set_ylabel("peak-to-peak [mmHg]")
+
+    for a in ax:
+        a.set_xticks(x)
+        a.set_xticklabels(PROFILE_LABELS, rotation=30, ha="right")
+        a.grid(alpha=0.3)
+        a.legend(fontsize=8)
+    ax[0].set_ylabel("mean pressure [mmHg]")
+    fig.suptitle("Ursino (2010): pressure along Pa -> left MCA territory -> venous outflow "
+                 "(pre = before, early = 350 s, late = 1500 s after PaCO2 40->60)")
+    fig.tight_layout()
+    fig.savefig("urs_pressure_profile.png", dpi=150)
+    print("Plot saved as urs_pressure_profile.png")
+
+
+# ----------------------------------------------------------------------------
+# 7. D2.3 Step 6: export time series for the first file-based coupling (A5).
+#    One CSV per scenario; candidate Vanek inputs: PICA_l, PMCA_end_l, Pd_ml.
+# ----------------------------------------------------------------------------
+EXPORT_COLS = ["Pa", "PICA_l", "PMCA_end_l", "Pd_ml", "Pic", "Pv"]
+
+
+def export_csv(t_end=400.0, t_hyper=50.0, scenarios=("D100", "D80")):
+    import pandas as pd
+    model = Ursino2010Model()
+    for name in scenarios:
+        sc = SCENARIOS[name]
+        tic = clock.time()
+        t, y = run_ursino(model, sc["func"], settle(model, sc["mean"]), t_end, t_hyper)
+        sig = node_signals(model, t, y, sc["func"], np.arange(len(t)))
+        df = pd.DataFrame({"t": t, "PaCO2": np.where(t < t_hyper, 40.0, 60.0)})
+        for k in EXPORT_COLS:
+            df[k] = sig[k]
+        out = f"ursino_to_vanek_{name}.csv"
+        df.to_csv(out, index=False, float_format="%.5f")
+        print(f"{name}: {len(df)} rows ({DT_OUT * 1000:.0f} ms step), "
+              f"{clock.time() - tic:.0f} s -> {out}")
 
 
 def run_checks():
@@ -313,11 +439,9 @@ def run_checks():
         sc = SCENARIOS[name]
         y0 = settle(model, sc["mean"])
         t, y = run_ursino(model, sc["func"], y0, t_end=20.0, t_hyper=10.0)
-        ok &= check_aux(model, sc["func"], t, y,
-                        f"{name}, 20 s, hypercapnia at 10 s")
+        ok &= check_aux(model, sc["func"], t, y, f"{name}, 20 s, hypercapnia at 10 s")
         a = aux_pressures(model, y[:, -1])
-        print("    last sample: " +
-              ", ".join(f"{k}={v:.2f}" for k, v in a.items()))
+        print("    last sample: " + ", ".join(f"{k}={v:.2f}" for k, v in a.items()))
     print("\nALL CHECKS PASSED" if ok else "\nSOME CHECKS FAILED")
 
 
@@ -325,5 +449,11 @@ if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "smoke"
     if mode == "check":
         run_checks()
+    elif mode == "table":
+        build_table()
+    elif mode == "profile":
+        plot_profile()
+    elif mode == "export":
+        export_csv()
     else:
         main(full=(mode == "full"))
