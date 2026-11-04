@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 
 
 class Ursino2010Model:
-    """Full 23-state differential-equation model of human cerebral circulation."""
+    "Full 23-state differential-equation model of human cerebral circulation."
 
     def __init__(self):
         # Viscosity (Poise to mmHg s)
@@ -40,7 +40,7 @@ class Ursino2010Model:
             'ACoA': (0.040, 0.50),
         }
 
-        # Hagen-Poiseuille baseline resistances (mmHg s / mL)
+        # Hagen-Poiseuille baseline resistances (mmHg s/mL)
         self.R_net = {
             k: 8.0 * self.eta * l / (np.pi * r**4)
             for k, (r, l) in self.geom.items()
@@ -54,13 +54,14 @@ class Ursino2010Model:
         self.Rf = 2.38e3     # CSF formation resistance (mmHg s / mL)
         self.Ro = 526.3      # CSF outflow resistance (mmHg s / mL)
         self.Rpv = 0.880     # Proximal venous resistance (mmHg s / mL)
-        self.Rvs1 = 0.366    # Terminal venous resistance at zero collapse (mmHg s / mL)
+        # Terminal venous resistance at zero collapse (mmHg s / mL)
+        self.Rvs1 = 0.366
 
         # Cortical anastomoses resistances (Table 1)
         self.Rc_pms = 120.0  # Posterior-to-Middle (mmHg s / mL)
         self.Rc_ams = 105.0  # Anterior-to-Middle (mmHg s / mL)
-        self.Rc_pp  = 75.0   # Posterior-to-Posterior (mmHg s / mL)
-        self.Rc_aa  = 22.0   # Anterior-to-Anterior (mmHg s / mL)
+        self.Rc_pp = 75.0   # Posterior-to-Posterior (mmHg s / mL)
+        self.Rc_aa = 22.0   # Anterior-to-Anterior (mmHg s / mL)
 
         # ICP and Venous mechanics
         self.kE = 0.077      # Intracranial elastance coefficient (mL^-1)
@@ -69,7 +70,7 @@ class Ursino2010Model:
         self.Pvs = 6.0       # Dural sinus pressure (mmHg)
 
         # Baseline CBF and territory weights
-        self.qn_total = 12.5 # Total baseline CBF (mL/s)
+        self.qn_total = 12.5  # Total baseline CBF (mL/s)
         self.weights = {'m': 0.30, 'a': 0.08, 'p': 0.12}
 
         # 6 Districts: ml, al, pl, mr, ar, pr
@@ -110,23 +111,27 @@ class Ursino2010Model:
         y0[2] = 92.5    # PICAl
         y0[3] = 92.5    # PICAr
         y0[4] = 92.5    # PBA
-        y0[5:11] = 58.5 # Pd (6 districts)
-        y0[11:17] = 0.0 # xaut
-        y0[17:23] = 0.0 # xCO2
+        y0[5:11] = 58.5  # Pd (6 districts)
+        y0[11:17] = 0.0  # xaut
+        y0[17:23] = 0.0  # xCO2
         return y0
 
-    def derivatives(self, t, y, Pa=100.0, PaCO2=40.0, ica_stenosis_l=1.0, mca_stenosis_l=1.0):
+    def derivatives(self, t, y, Pa=100.0, PaCO2=40.0, ica_stenosis_l=1.0,
+                    mca_stenosis_l=1.0):
         """Right-hand-side differential equation system (dy/dt)."""
         Pic, Pv, PICAl, PICAr, PBA = y[0], y[1], y[2], y[3], y[4]
 
-        Pd = {'ml': y[5], 'al': y[6], 'pl': y[7], 'mr': y[8], 'ar': y[9], 'pr': y[10]}
-        xaut = {'ml': y[11], 'al': y[12], 'pl': y[13], 'mr': y[14], 'ar': y[15], 'pr': y[16]}
-        xCO2 = {'ml': y[17], 'al': y[18], 'pl': y[19], 'mr': y[20], 'ar': y[21], 'pr': y[22]}
+        Pd = {'ml': y[5], 'al': y[6], 'pl': y[7],
+              'mr': y[8], 'ar': y[9], 'pr': y[10]}
+        xaut = {'ml': y[11], 'al': y[12], 'pl': y[13],
+                'mr': y[14], 'ar': y[15], 'pr': y[16]}
+        xCO2 = {'ml': y[17], 'al': y[18], 'pl': y[19],
+                'mr': y[20], 'ar': y[21], 'pr': y[22]}
 
         # Large artery resistances with optional stenosis
         R_ICAl = self.R_net['ICA'] * ica_stenosis_l
         R_ICAr = self.R_net['ICA']
-        R_BA   = self.R_net['BA']
+        R_BA = self.R_net['BA']
 
         R_MCAl = self.R_net['MCA'] * mca_stenosis_l
         R_MCAr = self.R_net['MCA']
@@ -154,11 +159,15 @@ class Ursino2010Model:
             Rd[d] = self.kR[d] * (self.Cdn[d]**2) / (Vd**2)
 
         # Auxiliary pressures in Circle of Willis
-        G_PCA1l = 1.0 / (R_PCA2l + Rd['pl']/2.0) + 1.0 / R_PCoAl + 1.0 / R_PCA1l
-        PPCA1l = (Pd['pl'] / (R_PCA2l + Rd['pl']/2.0) + PICAl / R_PCoAl + PBA / R_PCA1l) / G_PCA1l
+        G_PCA1l = 1.0 / (R_PCA2l + Rd['pl']/2.0) + \
+            1.0 / R_PCoAl + 1.0 / R_PCA1l
+        PPCA1l = (Pd['pl'] / (R_PCA2l + Rd['pl']/2.0) +
+                  PICAl / R_PCoAl + PBA / R_PCA1l) / G_PCA1l
 
-        G_PCA1r = 1.0 / (R_PCA2r + Rd['pr']/2.0) + 1.0 / R_PCoAr + 1.0 / R_PCA1r
-        PPCA1r = (Pd['pr'] / (R_PCA2r + Rd['pr']/2.0) + PICAr / R_PCoAr + PBA / R_PCA1r) / G_PCA1r
+        G_PCA1r = 1.0 / (R_PCA2r + Rd['pr']/2.0) + \
+            1.0 / R_PCoAr + 1.0 / R_PCA1r
+        PPCA1r = (Pd['pr'] / (R_PCA2r + Rd['pr']/2.0) +
+                  PICAr / R_PCoAr + PBA / R_PCA1r) / G_PCA1r
 
         g_al = 1.0 / (R_ACA2l + Rd['al']/2.0) + 1.0 / R_ACA1l + 1.0 / R_ACoA
         g_ar = 1.0 / (R_ACA2r + Rd['ar']/2.0) + 1.0 / R_ACA1r + 1.0 / R_ACoA
@@ -170,12 +179,15 @@ class Ursino2010Model:
         PACA1r = (g_al * b_r + (1.0 / R_ACoA) * b_l) / det
 
         # Capillary pressure Pc
-        G_cap = sum(2.0 / Rd[d] for d in self.districts) + 1.0 / self.Rpv + 1.0 / self.Rf
-        num_cap = sum(2.0 * Pd[d] / Rd[d] for d in self.districts) + Pic / self.Rf + Pv / self.Rpv
+        G_cap = sum(2.0 / Rd[d] for d in self.districts) + \
+            1.0 / self.Rpv + 1.0 / self.Rf
+        num_cap = sum(2.0 * Pd[d] / Rd[d]
+                      for d in self.districts) + Pic / self.Rf + Pv / self.Rpv
         Pc = num_cap / G_cap
         if Pc <= Pic:
             G_cap -= 1.0 / self.Rf
-            num_cap = sum(2.0 * Pd[d] / Rd[d] for d in self.districts) + Pv / self.Rpv
+            num_cap = sum(2.0 * Pd[d] / Rd[d]
+                          for d in self.districts) + Pv / self.Rpv
             Pc = num_cap / G_cap
 
         # District flows
@@ -184,7 +196,8 @@ class Ursino2010Model:
         # Control mechanism dynamics
         dxaut_dt, dxCO2_dt, dx_dt = {}, {}, {}
         for d in self.districts:
-            dxaut_dt[d] = (-xaut[d] + self.Gaut * (q[d] - self.qn[d]) / self.qn[d]) / self.saut
+            dxaut_dt[d] = (-xaut[d] + self.Gaut *
+                           (q[d] - self.qn[d]) / self.qn[d]) / self.saut
             rel_q = (q[d] - self.qn[d]) / self.qn[d]
             clip_arg = np.clip(-self.kCO2 * (rel_q - self.bCO2), -50, 50)
             ACO2 = 1.0 / (1.0 + np.exp(clip_arg))
@@ -193,7 +206,8 @@ class Ursino2010Model:
             dx_dt[d] = dxCO2_dt[d] - dxaut_dt[d]
 
         # Venous and CSF dynamics
-        Rvs = (Pv - self.Pvs) / (Pv - Pic) * self.Rvs1 if self.Pvs < Pic else self.Rvs1
+        Rvs = (Pv - self.Pvs) / (Pv - Pic) * \
+            self.Rvs1 if self.Pvs < Pic else self.Rvs1
         Rvs = max(Rvs, 1e-4)
 
         qf = max((Pc - Pic) / self.Rf, 0.0)
@@ -218,17 +232,22 @@ class Ursino2010Model:
         dPv_dt = dPic_dt + (1.0 / Cvi) * dVvi_dt
 
         dPICAl_dt = dPic_dt + (1.0 / self.C_ICA) * (
-            (Pa - PICAl)/R_ICAl + (PPCA1l - PICAl)/R_PCoAl + (Pd['ml'] - PICAl)/(R_MCAl + Rd['ml']/2.0) + (PACA1l - PICAl)/R_ACA1l
+            (Pa - PICAl)/R_ICAl + (PPCA1l - PICAl)/R_PCoAl +
+            (Pd['ml'] - PICAl)/(R_MCAl + Rd['ml']/2.0) +
+            (PACA1l - PICAl)/R_ACA1l
         )
         dPICAr_dt = dPic_dt + (1.0 / self.C_ICA) * (
-            (Pa - PICAr)/R_ICAr + (PPCA1r - PICAr)/R_PCoAr + (Pd['mr'] - PICAr)/(R_MCAr + Rd['mr']/2.0) + (PACA1r - PICAr)/R_ACA1r
+            (Pa - PICAr)/R_ICAr + (PPCA1r - PICAr)/R_PCoAr +
+            (Pd['mr'] - PICAr)/(R_MCAr + Rd['mr']/2.0) +
+            (PACA1r - PICAr)/R_ACA1r
         )
         dPBA_dt = dPic_dt + (1.0 / self.C_BA) * (
             (Pa - PBA)/R_BA + (PPCA1l - PBA)/R_PCA1l + (PPCA1r - PBA)/R_PCA1r
         )
 
         dPd_dt = {
-            d: dPic_dt + (1.0 / Cd[d]) * (dVd[d] - (Pd[d] - Pic) * dCd_dx[d] * dx_dt[d])
+            d: dPic_dt + (1.0 / Cd[d]) * (dVd[d] -
+                                          (Pd[d] - Pic) * dCd_dx[d] * dx_dt[d])
             for d in self.districts
         }
 
@@ -239,18 +258,21 @@ class Ursino2010Model:
         dydt[3] = dPICAr_dt
         dydt[4] = dPBA_dt
         for i, d in enumerate(self.districts):
-            dydt[5 + i]  = dPd_dt[d]
+            dydt[5 + i] = dPd_dt[d]
             dydt[11 + i] = dxaut_dt[d]
             dydt[17 + i] = dxCO2_dt[d]
 
         return dydt
 
     def get_flow_dict(self, y, Pa=100.0, ica_stenosis_l=1.0, mca_stenosis_l=1.0):
-        """Extracts key vessel blood flows (in mL/s)."""
+        "Extracts key vessel blood flows (in mL/s)."
         Pic, Pv, PICAl, PICAr, PBA = y[0], y[1], y[2], y[3], y[4]
-        Pd = {'ml': y[5], 'al': y[6], 'pl': y[7], 'mr': y[8], 'ar': y[9], 'pr': y[10]}
-        xaut = {'ml': y[11], 'al': y[12], 'pl': y[13], 'mr': y[14], 'ar': y[15], 'pr': y[16]}
-        xCO2 = {'ml': y[17], 'al': y[18], 'pl': y[19], 'mr': y[20], 'ar': y[21], 'pr': y[22]}
+        Pd = {'ml': y[5], 'al': y[6], 'pl': y[7],
+              'mr': y[8], 'ar': y[9], 'pr': y[10]}
+        xaut = {'ml': y[11], 'al': y[12], 'pl': y[13],
+                'mr': y[14], 'ar': y[15], 'pr': y[16]}
+        xCO2 = {'ml': y[17], 'al': y[18], 'pl': y[19],
+                'mr': y[20], 'ar': y[21], 'pr': y[22]}
 
         Rd = {}
         for d in self.districts:
@@ -283,24 +305,35 @@ def main():
     y0 = model.get_initial_state()
 
     print("\n1. Running Baseline Steady State Simulation...")
-    sol_base = solve_ivp(lambda t, y: model.derivatives(t, y), [0, 50], y0, method='Radau')
+    sol_base = solve_ivp(lambda t, y: model.derivatives(t, y), [
+                         0, 50], y0, method='Radau')
     y_ss = sol_base.y[:, -1]
     flows = model.get_flow_dict(y_ss)
 
-    print(f"   - Intracranial Pressure (Pic): {y_ss[0]:.2f} mmHg (Target: 9.5)")
-    print(f"   - Cerebral Venous Pressure (Pv): {y_ss[1]:.2f} mmHg (Target: 14.0)")
-    print(f"   - Left ICA Blood Flow: {flows['q_ica_l']:.2f} mL/s (Target: 4.75)")
-    print(f"   - Left MCA Blood Flow: {flows['q_mca_l']:.2f} mL/s (Target: 3.75)")
+    print(
+        f"   - Intracranial Pressure (Pic): {y_ss[0]:.2f} mmHg (Target: 9.5)")
+    print(
+        f"   - Cerebral Venous Pressure (Pv): {y_ss[1]:.2f} mmHg (Target: 14.0)")
+    print(
+        f"   - Left ICA Blood Flow: {flows['q_ica_l']:.2f} mL/s (Target: 4.75)")
+    print(
+        f"   - Left MCA Blood Flow: {flows['q_mca_l']:.2f} mL/s (Target: 3.75)")
 
     print("\n2. Simulating Steal Phenomenon during ICA Occlusion & Hypercapnia...")
-    sol_st = solve_ivp(lambda t, y: model.derivatives(t, y, ica_stenosis_l=500.0), [0, 50], y_ss, method='Radau')
-    sol_h = solve_ivp(lambda t, y: model.derivatives(t, y, PaCO2=60.0, ica_stenosis_l=500.0), [0, 180], sol_st.y[:, -1], method='Radau')
+    sol_st = solve_ivp(lambda t, y: model.derivatives(
+        t, y, ica_stenosis_l=500.0), [0, 50], y_ss, method='Radau')
+    sol_h = solve_ivp(lambda t, y: model.derivatives(
+        t, y, PaCO2=60.0, ica_stenosis_l=500.0), [0, 180], sol_st.y[:, -1], method='Radau')
     f_occl_pre = model.get_flow_dict(sol_st.y[:, -1], ica_stenosis_l=500.0)
     f_occl_post = model.get_flow_dict(sol_h.y[:, -1], ica_stenosis_l=500.0)
 
-    print(f"   - Pre-Hypercapnia Ipsilateral MCA Flow:  {f_occl_pre['q_mca_l']:.2f} mL/s")
-    print(f"   - Post-Hypercapnia Ipsilateral MCA Flow: {f_occl_post['q_mca_l']:.2f} mL/s (Steal phenomenon confirmed)")
-    print(f"   - Post-Hypercapnia Contralateral MCA Flow: {f_occl_post['q_mca_r']:.2f} mL/s")
+    print(
+        f"   - Pre-Hypercapnia Ipsilateral MCA Flow:  {f_occl_pre['q_mca_l']:.2f} mL/s")
+    print(
+        f"   - Post-Hypercapnia Ipsilateral MCA Flow: {f_occl_post['q_mca_l']:.2f} mL/s (Steal phenomenon confirmed)")
+    print(
+        f"   - Post-Hypercapnia Contralateral MCA Flow: {f_occl_post['q_mca_r']:.2f} mL/s")
+
 
 if __name__ == "__main__":
     main()
