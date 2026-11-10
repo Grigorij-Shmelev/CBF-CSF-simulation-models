@@ -25,9 +25,10 @@ Algebraic unknowns, solved at every call (spec 3.5.6)
 Units: mmHg, mL, s.
 
 Usage (from mat_models/):
-    python new_model.py                 # tests of spec sections 7.1 and 7.3, figures to docs/figures/  (about 70 s)
+    python new_model.py                 # tests of spec 7.1, 7.3 and cross-checks of 7.8, figures to docs/figures/ (2 min)
     python new_model.py --calibrate     # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
     python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
+    python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 10 min)
     python new_model.py --all
 """
 
@@ -74,7 +75,7 @@ class Inputs:
 class NewModel:
     """New 0D model, spec section 3.5. Parameters: spec section 4 (source given next to each value)."""
 
-    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0, c_sp_scale=None, k_E=0.077):
+    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0, c_sp_scale=None, k_E=0.077, **overrides):
         # ---- Known: Ursino & Giannessi 2010, Table 1 -------------------------------------------------------------
         self.tau_aut, self.G_aut = 20.0, 0.9
         self.tau_CO2, self.G_CO2 = 40.0, 4.0
@@ -109,6 +110,13 @@ class NewModel:
         self.V_vn = 4.5                                         # venous stressed volume at rest [mL] (Ursino: 4-5)
         self.C_min_frac = 0.05                                  # bound C_k >= C_min_frac * C_n,k (default P11)
         self.Pa_n = 100.0
+        self.k_E = k_E                                          # Ursino's elastance coefficient, storage target only
+
+        # Parameter overrides for sensitivity studies (spec 7.8), applied before the resting state is computed
+        for name, value in overrides.items():
+            if not hasattr(self, name):
+                raise AttributeError(f"unknown parameter {name}")
+            setattr(self, name, value)
 
         self._calibrate()
 
@@ -410,6 +418,7 @@ def test_lit(rep, m):
 
     long = m.simulate(Inputs(infusion=lambda t: np.array([0, 0, 0, 0, rate])), 5000.0, t_eval=[5000.0], max_step=20.0)
     rep.check("L1 LIT plateau: |ICP - 23.11|", abs(long["ICP"][-1] - plateau), 0, 0.1, "mmHg")
+    plateau_sim = float(long["ICP"][-1])
 
     inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (t_on, 0), (t_on + 5, rate), (t_off, rate),
                                                     (t_off + 5, 0), (t_end, 0)])])
@@ -422,7 +431,7 @@ def test_lit(rep, m):
     rep.check("L6 recovery: ICP", r["ICP"][i2] - r["ICP"][i0], -0.5, 0.5, "mmHg")
     rep.check("L6 recovery: CBV", r["Vblood"][i2] / r["Vblood"][i0] - 1, -0.02, 0.02, "rel")
     common_checks(rep, "LIT", r)
-    r["marks"], r["span"], r["plateau"] = (i0, i1, i2), (t_on, t_off), plateau
+    r["marks"], r["span"], r["plateau"], r["plateau_sim"] = (i0, i1, i2), (t_on, t_off), plateau, plateau_sim
     return r
 
 
@@ -464,6 +473,126 @@ def test_co2_5pct(rep, m):
     common_checks(rep, "CO2 5%", r)
     r["marks"], r["span"] = (i0, i1, i2), (t_on, t_off)
     return r
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Fourth step (spec 7.8): cross-checks against the source models, ICA occlusion, parameter sensitivity
+# ----------------------------------------------------------------------------------------------------------------------
+def ursino_districts(u, y):
+    """District flows and volumes of the existing Ursino code, recomputed from its state vector with the formulas of
+    Ursino2010Model.derivatives() (that file is not modified). Order: ml, al, pl, mr, ar, pr."""
+    Pic, Pv = y[0], y[1]
+    Pd, x = np.asarray(y[5:11]), np.asarray(y[17:23]) - np.asarray(y[11:17])
+    Cd0 = np.array([u.Cdn[d] for d in u.districts])
+    kR = np.array([u.kR[d] for d in u.districts])
+    sat = np.where(x < 0, u.sat1, u.sat2)
+    uu = np.exp(x / (Cd0 * sat / 2.0))
+    Cd = Cd0 * ((1.0 - sat) + (1.0 + sat) * uu) / (1.0 + uu)
+    Vd = np.maximum(Cd * (Pd - Pic), 1e-4)
+    Rd = kR * Cd0 ** 2 / Vd ** 2
+    G = np.sum(2.0 / Rd) + 1.0 / u.Rpv + 1.0 / u.Rf
+    Pc = (np.sum(2.0 * Pd / Rd) + Pic / u.Rf + Pv / u.Rpv) / G
+    if Pc <= Pic:
+        Pc = (np.sum(2.0 * Pd / Rd) + Pv / u.Rpv) / (G - 1.0 / u.Rf)
+    return (Pd - Pc) / (Rd / 2.0), Vd
+
+
+def test_cross_stroke(rep, r):
+    """X1: left MCA occlusion in the existing Ursino code vs the new model (r = result of test_stroke)."""
+    from ursino_2010_model import Ursino2010Model
+    u = Ursino2010Model()
+    s0 = solve_ivp(lambda t, y: u.derivatives(t, y), (0, 600), u.get_initial_state(), method="Radau")
+    s1 = solve_ivp(lambda t, y: u.derivatives(t, y, mca_stenosis_l=1000.0), (0, 1800), s0.y[:, -1], method="Radau")
+    q0, V0 = ursino_districts(u, s0.y[:, -1])
+    q1, V1 = ursino_districts(u, s1.y[:, -1])
+    urs = dict(res=q1[0] / q0[0], dV=V1[0] / V0[0] - 1, dCBF=q1.sum() / q0.sum() - 1,
+               dVa=V1.sum() - V0.sum(), icp=(s0.y[0, -1], s1.y[0, -1]))
+    i0, i1, _ = r["marks"]
+    new = dict(res=r["q_k"][i1, 0] / r["q_k"][i0, 0], dV=r["Va"][i1, 0] / r["Va"][i0, 0] - 1,
+               dCBF=r["CBF"][i1] / r["CBF"][i0] - 1, dVa=r["Va_total"][i1] - r["Va_total"][i0])
+    rep.check("X1a residual MCA_L flow, new / Ursino code", new["res"] / urs["res"], 0.5, 2.0, "ratio")
+    rep.check("X1b MCA_L volume change, new - Ursino", new["dV"] - urs["dV"], -0.15, 0.15, "rel")
+    rep.check("X1c total CBF change, new - Ursino", new["dCBF"] - urs["dCBF"], -0.10, 0.10, "rel")
+    return urs, new
+
+
+def vanek_lit(rate, t_on=300.0, dur=600.0):
+    """Lumbar infusion in the existing Vanek code with constant boundary pressures (that file is not modified)."""
+    from vanek_2015_model import Vanek2015Model
+    v = Vanek2015Model()
+    const = {k: (lambda t, c=c: c) for k, c in dict(Pa=80.0, Pb=10.0, PC=2.0, PT=2.0, PL=2.0).items()}
+    P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])
+    inf = lambda t: np.array([0.0, 0.0, 0.0, 0.0, rate if t >= t_on else 0.0])
+    a = solve_ivp(lambda t, P: v.derivatives(t, P, const, infusion_rates=inf(t)), (0.0, t_on + dur), P0, method="Radau",
+                  t_eval=[t_on - 1.0, t_on + dur], max_step=5.0, rtol=1e-7, atol=1e-9)
+    b = solve_ivp(lambda t, P: v.derivatives(t, P, const, infusion_rates=np.array([0, 0, 0, 0, rate])), (0.0, 8000.0), P0,
+                  method="Radau", t_eval=[8000.0], max_step=50.0, rtol=1e-7, atol=1e-9)
+    return dict(rest=a.y[1, 0], rise=a.y[1, 1] - a.y[1, 0], plateau=b.y[1, -1])
+
+
+def test_cross_lit(rep, r):
+    """X2: lumbar infusion in the existing Vanek code vs the new model (r = result of test_lit)."""
+    van = vanek_lit(1.5 / 60.0)
+    i0, i1, _ = r["marks"]
+    rise_new = r["ICP"][i1] - r["ICP"][i0]
+    rep.check("X2a LIT plateau, Vanek code - new", van["plateau"] - r["plateau_sim"], 0.43, 0.63, "mmHg")
+    rep.check("X2b ICP rise after 10 min, new / Vanek code", rise_new / van["rise"], 0.5, 1.5, "ratio")
+    van["rise_new"] = rise_new
+    return van
+
+
+def test_ica(rep, m):
+    """I1: occlusion of the left ICA. The left side is then fed only through R_com."""
+    t_on, t_off, t_end = 120.0, 1920.0, 3120.0
+    occ = lambda t: np.array([1.0, 1.0, ramp(t, [(0, 1), (t_on, 1), (t_on + 5, 1000), (t_off, 1000), (t_off + 5, 1),
+                                                 (t_end, 1)]), 1.0])
+    r = m.simulate(Inputs(occlusion=occ), t_end, t_eval=np.linspace(0, t_end, 3121), max_step=5.0)
+    t = r["t"]
+    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    q0, q1 = r["q_k"][i0], r["q_k"][i1]
+    rep.check("I1 left-side flows, smallest fraction of rest", np.min(q1[:2] / q0[:2]), 0.20, 1.00, "rel")
+    rep.check("I1 left-side flows, largest fraction of rest", np.max(q1[:2] / q0[:2]), 0.20, 1.00, "rel")
+    rep.check("I1 right-side flows: max |change|", np.max(np.abs(q1[2:] / q0[2:] - 1)), 0, 0.10, "rel")
+    rep.check("I1 stressed CBV change", r["Vblood"][i1] - r["Vblood"][i0], -5.0, 0.0, "mL")
+    back = max(np.max(np.abs(r["q_k"][i2] / q0 - 1)), np.max(np.abs(r["Va"][i2] / r["Va"][i0] - 1)),
+               abs(r["Vv"][i2] / r["Vv"][i0] - 1))
+    rep.check("I1 after reopening: max |change|", back, 0, 0.02, "rel")
+    common_checks(rep, "ICA", r, symmetric=False)
+    r["marks"], r["span"] = (i0, i1, i2), (t_on, t_off)
+    return r
+
+
+SA_PARAMS = ("G_CO2", "G_aut", "sat2", "sat1", "C_n_total", "k_ven", "R_vs1", "R_pv", "alpha", "S1", "R_c", "R_com",
+             "V_vn", "k_E")
+
+
+def quick_outputs(m):
+    """Stressed CBV change in the three scenarios, shortened protocols (no recovery phase)."""
+    out = {}
+    pco2 = lambda t: ramp(t, [(0, 40), (120, 40), (130, 47.5), (720, 47.5)])
+    r = m.simulate(Inputs(PaCO2=pco2), 720.0, t_eval=[119.0, 719.0], max_step=5.0)
+    out["CO2"] = r["Vblood"][1] - r["Vblood"][0]
+    inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (120, 0), (125, 1.5 / 60.0), (720, 1.5 / 60.0)])])
+    r = m.simulate(Inputs(infusion=inf), 720.0, t_eval=[119.0, 719.0], max_step=5.0)
+    out["LIT"] = r["Vblood"][1] - r["Vblood"][0]
+    occ = lambda t: np.array([ramp(t, [(0, 1), (120, 1), (125, 1000), (1020, 1000)]), 1.0, 1.0, 1.0])
+    r = m.simulate(Inputs(occlusion=occ), 1020.0, t_eval=[119.0, 1019.0], max_step=5.0)
+    out["stroke"] = r["Vblood"][1] - r["Vblood"][0]
+    return out
+
+
+def sensitivity_params(step=0.2):
+    """SA (spec 7.8): one parameter at a time, x(1 - step) and x(1 + step); the model re-calibrates its own rest."""
+    base_m = NewModel()
+    base = quick_outputs(base_m)
+    rows = []
+    for name in SA_PARAMS:
+        p0 = getattr(base_m, name)
+        lo = quick_outputs(NewModel(**{name: p0 * (1 - step)}))
+        hi = quick_outputs(NewModel(**{name: p0 * (1 + step)}))
+        rows.append((name, p0, {k: (hi[k] - lo[k]) / (2 * step * base[k]) for k in base}, lo, hi))
+        print(f"  {name:<10} done", flush=True)
+    return base, rows
 
 
 def beat_pp(t, x, period):
@@ -585,7 +714,21 @@ def main(argv=()):
         "Stroke: left MCA occluded 30 min, then reopened": (test_stroke(rep, m), "new_model_stroke.png"),
     }
     test_pulsatile(rep, m)
+    # fourth step (spec 7.8): cross-checks against the source models and ICA occlusion
+    urs, new = test_cross_stroke(rep, runs["Stroke: left MCA occluded 30 min, then reopened"][0])
+    van = test_cross_lit(rep, runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0])
+    runs["Left ICA occluded 30 min, then reopened"] = (test_ica(rep, m), "new_model_ica.png")
     n_fail = rep.show()
+    print("\n=== X1: left MCA occlusion, new model vs existing Ursino code ===")
+    print(f"residual flow in the MCA_L territory: new {100 * new['res']:.1f} %, Ursino code {100 * urs['res']:.1f} % of rest")
+    print(f"stressed volume of that territory:    new {100 * new['dV']:+.1f} %, Ursino code {100 * urs['dV']:+.1f} %")
+    print(f"total CBF:                            new {100 * new['dCBF']:+.1f} %, Ursino code {100 * urs['dCBF']:+.1f} %")
+    print(f"arterial stressed volume, all:        new {new['dVa']:+.2f} mL, Ursino code {urs['dVa']:+.2f} mL")
+    print(f"Ursino code ICP: {urs['icp'][0]:.2f} -> {urs['icp'][1]:.2f} mmHg")
+    print("\n=== X2: lumbar infusion, new model vs existing Vanek code (constant inputs) ===")
+    lit = runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0]
+    print(f"plateau ICP:              new {lit['plateau_sim']:.2f}, Vanek code {van['plateau']:.2f} mmHg")
+    print(f"ICP rise after 10 min:    new {van['rise_new']:.2f}, Vanek code {van['rise']:.2f} mmHg (Vanek rest {van['rest']:.2f})")
 
     fig_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "figures"))
     os.makedirs(fig_dir, exist_ok=True)
@@ -601,6 +744,13 @@ def main(argv=()):
         n_fail += step_calibration(m, base_runs, fig_dir)
     if do_sens:
         n_fail += step_sensitivity(base_runs)
+    if "--params" in argv or "--all" in argv:
+        print("\n=== SA: parameter sensitivity of the stressed CBV change (spec 7.8) ===")
+        base, rows = sensitivity_params()
+        print(f"\nbase: CO2 {base['CO2']:+.3f} mL, LIT {base['LIT']:+.3f} mL, stroke {base['stroke']:+.3f} mL")
+        print(f"{'parameter':<12}{'value':>10}{'S CO2':>9}{'S LIT':>9}{'S stroke':>10}    (S = relative change of output / relative change of parameter)")
+        for name, p0, S, lo, hi in rows:
+            print(f"{name:<12}{p0:>10.4g}{S['CO2']:>9.2f}{S['LIT']:>9.2f}{S['stroke']:>10.2f}")
     return n_fail
 
 
