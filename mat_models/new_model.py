@@ -25,7 +25,10 @@ Algebraic unknowns, solved at every call (spec 3.5.6)
 Units: mmHg, mL, s.
 
 Usage (from mat_models/):
-    python new_model.py          # runs the tests of spec sections 7.1 and 7.3, saves figures to docs/figures/
+    python new_model.py                 # tests of spec sections 7.1 and 7.3, figures to docs/figures/  (about 70 s)
+    python new_model.py --calibrate     # + calibration K1 and recording K2 of spec 7.5                   (about 3 min)
+    python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
+    python new_model.py --all
 """
 
 import os
@@ -71,7 +74,7 @@ class Inputs:
 class NewModel:
     """New 0D model, spec section 3.5. Parameters: spec section 4 (source given next to each value)."""
 
-    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0):
+    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0, c_sp_scale=1.0):
         # ---- Known: Ursino & Giannessi 2010, Table 1 -------------------------------------------------------------
         self.tau_aut, self.G_aut = 20.0, 0.9
         self.tau_CO2, self.G_CO2 = 40.0, 4.0
@@ -93,6 +96,8 @@ class NewModel:
         # ---- Known: Vanek 2015 Tab. 6.2.1 / Stepanik MATLAB CSF_defSettings.m ------------------------------------
         self.R12, self.R23, self.R34, self.R45 = 160.0, 0.30, 0.40, 0.30
         self.C3C0, self.C4T0, self.C5L0 = 1.125, 1.500, 2.250
+        self.c_sp_scale = c_sp_scale                            # calibration knob (spec 7.5); 1 = Vanek's values
+        self.C3C0, self.C4T0, self.C5L0 = (c_sp_scale * c for c in (self.C3C0, self.C4T0, self.C5L0))
         self.a_sp, self.r_sp = 0.6, 0.6                         # spinal wall exponents (MATLAB only, spec 4.4)
         self.S1 = 550.0 / 86400.0                               # CSF production [mL/s]
         self.alpha = 0.11 / 60.0                                # resorption conductance [mL/(s mmHg)]
@@ -131,6 +136,18 @@ class NewModel:
 
         self.V_n = self.C_n * (self.Pk_n - self.Pout_a_n)                # arterial stressed volumes at rest
         self.u_n = self.Pv_n - self.Pout_v_n - self.P_v1                 # venous law reference
+
+    def storage_at_rest(self):
+        """Total spinal wall compliance at rest [mL/mmHg]: the only volume storage outside the skull."""
+        u = self.P2_n - self.P_epi_n
+        return (self.C3C0 + self.C4T0 + self.C5L0) * np.exp(-self.r_sp * abs(u) ** self.a_sp)
+
+    @classmethod
+    def calibrated_to_ursino(cls, k_E=0.077, **kw):
+        """Scale the spinal compliances so that storage at rest = Ursino's 1/(k_E * ICP) (spec 7.5)."""
+        base = cls(**kw)
+        target = 1.0 / (k_E * base.P2_n)
+        return cls(c_sp_scale=target / base.storage_at_rest(), **kw)
 
     def initial_state(self):
         y0 = np.zeros(18)
@@ -444,6 +461,56 @@ def test_co2_5pct(rep, m):
     return r
 
 
+def beat_pp(t, x, period):
+    """Median peak-to-peak of x over consecutive windows of one cardiac period."""
+    n = int((t[-1] - t[0]) / period)
+    pp = [np.ptp(x[(t >= t[0] + k * period) & (t < t[0] + (k + 1) * period)]) for k in range(n)]
+    return float(np.median(pp))
+
+
+def run_recording(m, path):
+    """Drive the model with Stepanik's recorded arterial pressure; compare the cardiac ICP pulse (spec 7.5, K2)."""
+    from scipy.io import loadmat
+    d = loadmat(path, squeeze_me=True, struct_as_record=False)["inputs"]
+    tr, pa, icp = np.asarray(d.time, float), np.asarray(d.pA, float), np.asarray(d.icp, float)
+    f = np.fft.rfftfreq(len(tr), tr[1] - tr[0])
+    amp = np.abs(np.fft.rfft(pa - pa.mean()))
+    band = (f > 0.7) & (f < 3.0)
+    period = 1.0 / f[band][np.argmax(amp[band])]
+
+    steady = m.simulate(Inputs(Pa=float(pa.mean())), 900.0, t_eval=[900.0], max_step=20.0)
+    T = float(tr[-1])
+    r = m.simulate(Inputs(Pa=lambda t: float(np.interp(t, tr, pa))), T, y0=steady["y"][:, -1],
+                   t_eval=np.arange(0.0, T, 0.004), max_step=0.01, rtol=1e-6, atol=1e-8)
+    sel_m, sel_r = r["t"] >= 10.0, tr >= 10.0
+    out = dict(period=period, Pa_mean=float(pa.mean()), Pa_pp=beat_pp(tr[sel_r], pa[sel_r], period),
+               icp_rec_pp=beat_pp(tr[sel_r], icp[sel_r], period), icp_rec_mean=float(icp[sel_r].mean()),
+               icp_mod_pp=beat_pp(r["t"][sel_m], r["ICP"][sel_m], period), icp_mod_mean=float(r["ICP"][sel_m].mean()),
+               cbv_pp=beat_pp(r["t"][sel_m], r["Vblood"][sel_m], period), t=r["t"], icp_mod=r["ICP"], tr=tr, icp_rec=icp)
+    out["ratio"] = out["icp_mod_pp"] / out["icp_rec_pp"]
+    return out
+
+
+def sensitivity_phi_v(rep, base, values=(1.0, 0.5)):
+    """V1 (spec 7.5): do the results depend on which CSF space the veins push on?
+    base = runs already made with phi_v = 1. The phi_v = 0.5 runs are stiff and slow (minutes)."""
+    res = {values[0]: base}
+    for pv in values[1:]:
+        m = NewModel(phi_v=pv)
+        dummy = Report()
+        res[pv] = {"5% CO2": test_co2_5pct(dummy, m), "LIT": test_lit(dummy, m), "stroke": test_stroke(dummy, m)}
+        res[pv]["fails"] = sum(1 for row in dummy.rows if row[5] == "FAIL")
+    rows = []
+    for name in ("5% CO2", "LIT", "stroke"):
+        d = []
+        for pv in values:
+            r = res[pv][name]; i0, i1, _ = r["marks"]
+            d.append((r["Vblood"][i1] - r["Vblood"][i0], r["ICP"].max(), r["ICP"].min()))
+        rep.check(f"V1 {name}: CBV change, phi_v {values[1]} vs {values[0]}", abs(d[1][0] / d[0][0] - 1), 0, 0.05, "rel")
+        rows.append((name, d))
+    return rows, res
+
+
 def plot_run(r, m, path, title):
     import matplotlib
     matplotlib.use("Agg")
@@ -494,7 +561,9 @@ def summary(name, r, m):
           f"spinal {r['dVspinal'][i1] - r['dVspinal'][i0]:+.2f} mL")
 
 
-def main():
+def main(argv=()):
+    do_cal = "--calibrate" in argv or "--all" in argv
+    do_sens = "--sensitivity" in argv or "--all" in argv
     m = NewModel()
     print("=== New model prototype: resting state (spec 4.2) ===")
     print(f"ICP (P2) {m.P2_n:.3f}  P1 {m.P1_n:.3f}  Pv {m.Pv_n:.3f}  Pc {m.Pc_n:.3f}  P_N {m.PN_n:.2f}  P_k {m.Pk_n:.2f} mmHg")
@@ -518,10 +587,88 @@ def main():
         summary(name, r, m)
         plot_run(r, m, os.path.join(fig_dir, fname), f"New model. {name} (shaded). Pa = 100 mmHg")
     co2 = runs["CO2 challenge 40 -> 60 mmHg"][0]
+    base_runs = {k: v[0] for k, v in runs.items()}
+
     print(f"\nMCA flow rise at 60 mmHg: new model {100 * co2['rise_new']:+.1f} %, existing Ursino code {100 * co2['rise_ursino']:+.1f} %")
     print(f"Figures saved in {fig_dir}")
+    if do_cal:
+        n_fail += step_calibration(m, base_runs, fig_dir)
+    if do_sens:
+        n_fail += step_sensitivity(base_runs)
     return n_fail
 
 
+def step_calibration(m, base_runs, fig_dir):
+    """Third step (spec 7.5): calibration to Ursino's storage (K1) and validation on a recording (K2)."""
+    n_fail = 0
+    mc = NewModel.calibrated_to_ursino()
+    print(f"\n=== Calibration to Ursino's storage (spec 7.5) ===")
+    print(f"storage at rest: Vanek values {m.storage_at_rest():.3f} mL/mmHg, target {mc.storage_at_rest():.3f} mL/mmHg, "
+          f"scale s = {mc.c_sp_scale:.3f}")
+    rep_c = Report()
+    test_rest(rep_c, mc)
+    cal_runs = {
+        "CO2 challenge 40 -> 60 mmHg": test_co2(rep_c, mc),
+        "5 % CO2 (PaCO2 47.5 mmHg)": test_co2_5pct(rep_c, mc),
+        "Lumbar infusion test, 1.5 mL/min for 10 min": test_lit(rep_c, mc),
+        "Stroke: left MCA occluded 30 min, then reopened": test_stroke(rep_c, mc),
+    }
+    puls_c = test_pulsatile(rep_c, mc)
+    print("K1: all checks again with the calibrated model")
+    n_fail += rep_c.show()
+    print(f"\n{'scenario':<50}{'dCBV [mL]':>22}{'ICP max [mmHg]':>22}{'ICP min [mmHg]':>22}")
+    print(f"{'':<50}{'Vanek':>11}{'calib.':>11}{'Vanek':>11}{'calib.':>11}{'Vanek':>11}{'calib.':>11}")
+    for k in cal_runs:
+        a_, c_ = base_runs[k], cal_runs[k]
+        i0, i1, _ = a_["marks"]
+        print(f"{k:<50}{a_['Vblood'][i1] - a_['Vblood'][i0]:>11.2f}{c_['Vblood'][i1] - c_['Vblood'][i0]:>11.2f}"
+              f"{a_['ICP'].max():>11.2f}{c_['ICP'].max():>11.2f}{a_['ICP'].min():>11.2f}{c_['ICP'].min():>11.2f}")
+    for k, fname in (("Lumbar infusion test, 1.5 mL/min for 10 min", "new_model_lit_calibrated.png"),):
+        plot_run(cal_runs[k], mc, os.path.join(fig_dir, fname), f"New model, CALIBRATED storage. {k} (shaded)")
+
+    rep2 = Report()
+    rec_path = os.path.normpath(os.path.join(fig_dir, "..", "..", "zbysek_matlab_code", "data", "inputs_OK.mat"))
+    if os.path.exists(rec_path):
+        vc, vb = run_recording(mc, rec_path), run_recording(m, rec_path)
+        print(f"\n=== K2: Stepanik's recording ({rec_path}) ===")
+        print(f"cardiac period {vc['period']:.3f} s, mean P_A {vc['Pa_mean']:.1f} mmHg, arterial pulse {vc['Pa_pp']:.1f} mmHg p-p")
+        print(f"ICP pulse p-p: recording {vc['icp_rec_pp']:.2f} mmHg | calibrated model {vc['icp_mod_pp']:.2f} | Vanek values {vb['icp_mod_pp']:.2f}")
+        print(f"ICP mean:      recording {vc['icp_rec_mean']:.2f} mmHg | calibrated model {vc['icp_mod_mean']:.2f} | Vanek values {vb['icp_mod_mean']:.2f}")
+        print(f"stressed CBV pulse p-p: calibrated {vc['cbv_pp']:.2f} mL | Vanek values {vb['cbv_pp']:.2f} mL")
+        rep2.check("K2 ICP pulse, calibrated model / recording", vc["ratio"], 0.5, 2.0, "ratio")
+        rep2.info("K2 ICP pulse, Vanek values / recording", vb["ratio"], 0.5, 2.0, "ratio")
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        fig, ax = plt.subplots(figsize=(11, 4))
+        w = (vc["tr"] >= 20) & (vc["tr"] <= 30)
+        ax.plot(vc["tr"][w], vc["icp_rec"][w] - vc["icp_rec_mean"], "k", label="recording (Stepanik data)")
+        for v, lab in ((vc, "model, calibrated storage"), (vb, "model, Vanek values")):
+            w2 = (v["t"] >= 20) & (v["t"] <= 30)
+            ax.plot(v["t"][w2], v["icp_mod"][w2] - v["icp_mod_mean"], label=lab)
+        ax.set_xlabel("time [s]"); ax.set_ylabel("ICP - mean [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+        ax.set_title("ICP pulse: model driven by the recorded arterial pressure vs recorded ICP")
+        fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "new_model_recording.png"), dpi=140); plt.close(fig)
+    else:
+        print(f"\nK2 skipped: recording not found at {rec_path}")
+
+    return n_fail + rep2.show()
+
+
+def step_sensitivity(base_runs):
+    """Third step (spec 7.5): V1, phi_v = 1 vs 0.5."""
+    rep2 = Report()
+    base = {"5% CO2": base_runs["5 % CO2 (PaCO2 47.5 mmHg)"], "LIT": base_runs["Lumbar infusion test, 1.5 mL/min for 10 min"],
+            "stroke": base_runs["Stroke: left MCA occluded 30 min, then reopened"]}
+    rows, res = sensitivity_phi_v(rep2, base)
+    print("\n=== V1: phi_v sensitivity (Vanek values) ===")
+    print(f"{'scenario':<10}{'dCBV phi_v=1':>14}{'phi_v=0.5':>11}{'ICP max 1':>11}{'0.5':>8}{'ICP min 1':>11}{'0.5':>8}")
+    for name, d in rows:
+        print(f"{name:<10}{d[0][0]:>14.3f}{d[1][0]:>11.3f}{d[0][1]:>11.2f}{d[1][1]:>8.2f}{d[0][2]:>11.2f}{d[1][2]:>8.2f}")
+    print(f"pre-set scenario bounds failed with phi_v = 0.5: {res[0.5]['fails']}")
+    return rep2.show()
+
+
 if __name__ == "__main__":
-    raise SystemExit(1 if main() else 0)
+    import sys
+    raise SystemExit(1 if main(sys.argv[1:]) else 0)

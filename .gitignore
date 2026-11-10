@@ -1,0 +1,11 @@
+# Not for the public repository: copyrighted papers, meeting recordings, third-party code with recorded patient data
+docs/papers/
+docs/transcripts/
+docs/readme/
+docs/supervisor_sketch.png
+zbysek_matlab_code/
+
+# Local clutter
+__pycache__/
+.Rhistory
+.vscode/
