@@ -12,3 +12,8 @@ __pycache__/
 
 # Project instructions for the assistant: kept local (quotes from supervisor meetings)
 CLAUDE.md
+
+# Working documents with quotes from supervisor meetings: kept local
+docs/specification.md
+docs/meeting_2026-11-16_notes.md
+docs/model_explained.md
