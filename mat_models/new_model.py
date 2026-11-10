@@ -26,7 +26,7 @@ Units: mmHg, mL, s.
 
 Usage (from mat_models/):
     python new_model.py                 # tests of spec sections 7.1 and 7.3, figures to docs/figures/  (about 70 s)
-    python new_model.py --calibrate     # + calibration K1 and recording K2 of spec 7.5                   (about 3 min)
+    python new_model.py --calibrate     # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
     python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
     python new_model.py --all
 """
@@ -74,7 +74,7 @@ class Inputs:
 class NewModel:
     """New 0D model, spec section 3.5. Parameters: spec section 4 (source given next to each value)."""
 
-    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0, c_sp_scale=1.0):
+    def __init__(self, phi_a=1.0, phi_v=1.0, R_com=15.0, c_sp_scale=None, k_E=0.077):
         # ---- Known: Ursino & Giannessi 2010, Table 1 -------------------------------------------------------------
         self.tau_aut, self.G_aut = 20.0, 0.9
         self.tau_CO2, self.G_CO2 = 40.0, 4.0
@@ -96,8 +96,6 @@ class NewModel:
         # ---- Known: Vanek 2015 Tab. 6.2.1 / Stepanik MATLAB CSF_defSettings.m ------------------------------------
         self.R12, self.R23, self.R34, self.R45 = 160.0, 0.30, 0.40, 0.30
         self.C3C0, self.C4T0, self.C5L0 = 1.125, 1.500, 2.250
-        self.c_sp_scale = c_sp_scale                            # calibration knob (spec 7.5); 1 = Vanek's values
-        self.C3C0, self.C4T0, self.C5L0 = (c_sp_scale * c for c in (self.C3C0, self.C4T0, self.C5L0))
         self.a_sp, self.r_sp = 0.6, 0.6                         # spinal wall exponents (MATLAB only, spec 4.4)
         self.S1 = 550.0 / 86400.0                               # CSF production [mL/s]
         self.alpha = 0.11 / 60.0                                # resorption conductance [mL/(s mmHg)]
@@ -105,13 +103,22 @@ class NewModel:
         self.P_epi_n = 2.0                                      # mean epidural pressure [mmHg]
 
         # ---- Unknown, start values (spec 4.4) --------------------------------------------------------------------
-        self.phi_a, self.phi_v = phi_a, phi_v                   # share of a blood wall that faces the SAS
+        self.phi_a, self.phi_v = phi_a, phi_v                   # share of a blood wall that faces the SAS. Fixed
+        #                                                         at 1 (decision 10 Nov, spec 7.6); kept as a test knob
         self.R_com = R_com                                      # left-right communicating resistance (ACoA: 14.9)
         self.V_vn = 4.5                                         # venous stressed volume at rest [mL] (Ursino: 4-5)
         self.C_min_frac = 0.05                                  # bound C_k >= C_min_frac * C_n,k (default P11)
         self.Pa_n = 100.0
 
         self._calibrate()
+
+        # Spinal compliance scale (spec 7.5, 7.6). Default: scale Vanek's three values by one factor so that the
+        # storage at rest equals Ursino's 1/(k_E * ICP) (Table 1, k_E = 0.077 /mL). Vanek's own model had extra
+        # storage in its venous walls (C1b, C2b), which do not exist here. c_sp_scale=1 gives Vanek's raw values.
+        if c_sp_scale is None:
+            c_sp_scale = 1.0 / (k_E * self.P2_n) / self.storage_at_rest()
+        self.c_sp_scale = c_sp_scale
+        self.C3C0, self.C4T0, self.C5L0 = (c_sp_scale * c for c in (self.C3C0, self.C4T0, self.C5L0))
 
     # ------------------------------------------------------------------------------------------------------------------
     def _calibrate(self):
@@ -143,11 +150,9 @@ class NewModel:
         return (self.C3C0 + self.C4T0 + self.C5L0) * np.exp(-self.r_sp * abs(u) ** self.a_sp)
 
     @classmethod
-    def calibrated_to_ursino(cls, k_E=0.077, **kw):
-        """Scale the spinal compliances so that storage at rest = Ursino's 1/(k_E * ICP) (spec 7.5)."""
-        base = cls(**kw)
-        target = 1.0 / (k_E * base.P2_n)
-        return cls(c_sp_scale=target / base.storage_at_rest(), **kw)
+    def vanek_values(cls, **kw):
+        """Variant with Vanek's raw spinal compliances (no scaling)."""
+        return cls(c_sp_scale=1.0, **kw)
 
     def initial_state(self):
         y0 = np.zeros(18)
@@ -493,7 +498,8 @@ def run_recording(m, path):
 
 def sensitivity_phi_v(rep, base, values=(1.0, 0.5)):
     """V1 (spec 7.5): do the results depend on which CSF space the veins push on?
-    base = runs already made with phi_v = 1. The phi_v = 0.5 runs are stiff and slow (minutes)."""
+    base = runs already made with phi_v = 1. The phi_v = 0.5 runs are stiff and slow (minutes).
+    Result of 10 Nov (spec 7.6): phi_v = 0.5 makes P1 unstable in the stroke run; phi_a = phi_v = 1 is fixed."""
     res = {values[0]: base}
     for pv in values[1:]:
         m = NewModel(phi_v=pv)
@@ -599,55 +605,55 @@ def main(argv=()):
 
 
 def step_calibration(m, base_runs, fig_dir):
-    """Third step (spec 7.5): calibration to Ursino's storage (K1) and validation on a recording (K2)."""
+    """Third step (spec 7.5): default (storage calibrated to Ursino) vs Vanek's raw values (K1), data-file check (K2)."""
     n_fail = 0
-    mc = NewModel.calibrated_to_ursino()
-    print(f"\n=== Calibration to Ursino's storage (spec 7.5) ===")
-    print(f"storage at rest: Vanek values {m.storage_at_rest():.3f} mL/mmHg, target {mc.storage_at_rest():.3f} mL/mmHg, "
+    mv = NewModel.vanek_values()
+    mc = m
+    print(f"\n=== Storage calibration (spec 7.5) ===")
+    print(f"storage at rest: Vanek values {mv.storage_at_rest():.3f} mL/mmHg, default (Ursino target) {mc.storage_at_rest():.3f} mL/mmHg, "
           f"scale s = {mc.c_sp_scale:.3f}")
-    rep_c = Report()
-    test_rest(rep_c, mc)
-    cal_runs = {
-        "CO2 challenge 40 -> 60 mmHg": test_co2(rep_c, mc),
-        "5 % CO2 (PaCO2 47.5 mmHg)": test_co2_5pct(rep_c, mc),
-        "Lumbar infusion test, 1.5 mL/min for 10 min": test_lit(rep_c, mc),
-        "Stroke: left MCA occluded 30 min, then reopened": test_stroke(rep_c, mc),
+    rep_v = Report()
+    test_rest(rep_v, mv)
+    van_runs = {
+        "CO2 challenge 40 -> 60 mmHg": test_co2(rep_v, mv),
+        "5 % CO2 (PaCO2 47.5 mmHg)": test_co2_5pct(rep_v, mv),
+        "Lumbar infusion test, 1.5 mL/min for 10 min": test_lit(rep_v, mv),
+        "Stroke: left MCA occluded 30 min, then reopened": test_stroke(rep_v, mv),
     }
-    puls_c = test_pulsatile(rep_c, mc)
-    print("K1: all checks again with the calibrated model")
-    n_fail += rep_c.show()
+    test_pulsatile(rep_v, mv)
+    print("K1: all checks again with Vanek's raw spinal compliances")
+    n_fail += rep_v.show()
     print(f"\n{'scenario':<50}{'dCBV [mL]':>22}{'ICP max [mmHg]':>22}{'ICP min [mmHg]':>22}")
-    print(f"{'':<50}{'Vanek':>11}{'calib.':>11}{'Vanek':>11}{'calib.':>11}{'Vanek':>11}{'calib.':>11}")
-    for k in cal_runs:
-        a_, c_ = base_runs[k], cal_runs[k]
+    print(f"{'':<50}{'Vanek':>11}{'default':>11}{'Vanek':>11}{'default':>11}{'Vanek':>11}{'default':>11}")
+    for k in van_runs:
+        a_, c_ = van_runs[k], base_runs[k]
         i0, i1, _ = a_["marks"]
         print(f"{k:<50}{a_['Vblood'][i1] - a_['Vblood'][i0]:>11.2f}{c_['Vblood'][i1] - c_['Vblood'][i0]:>11.2f}"
               f"{a_['ICP'].max():>11.2f}{c_['ICP'].max():>11.2f}{a_['ICP'].min():>11.2f}{c_['ICP'].min():>11.2f}")
-    for k, fname in (("Lumbar infusion test, 1.5 mL/min for 10 min", "new_model_lit_calibrated.png"),):
-        plot_run(cal_runs[k], mc, os.path.join(fig_dir, fname), f"New model, CALIBRATED storage. {k} (shaded)")
+    m = mv   # below: "m" = Vanek values, "mc" = default
 
     rep2 = Report()
     rec_path = os.path.normpath(os.path.join(fig_dir, "..", "..", "zbysek_matlab_code", "data", "inputs_OK.mat"))
     if os.path.exists(rec_path):
         vc, vb = run_recording(mc, rec_path), run_recording(m, rec_path)
-        print(f"\n=== K2: Stepanik's recording ({rec_path}) ===")
+        print(f"\n=== K2: Stepanik's data file, one beat repeated ({rec_path}) ===")
         print(f"cardiac period {vc['period']:.3f} s, mean P_A {vc['Pa_mean']:.1f} mmHg, arterial pulse {vc['Pa_pp']:.1f} mmHg p-p")
-        print(f"ICP pulse p-p: recording {vc['icp_rec_pp']:.2f} mmHg | calibrated model {vc['icp_mod_pp']:.2f} | Vanek values {vb['icp_mod_pp']:.2f}")
-        print(f"ICP mean:      recording {vc['icp_rec_mean']:.2f} mmHg | calibrated model {vc['icp_mod_mean']:.2f} | Vanek values {vb['icp_mod_mean']:.2f}")
-        print(f"stressed CBV pulse p-p: calibrated {vc['cbv_pp']:.2f} mL | Vanek values {vb['cbv_pp']:.2f} mL")
-        rep2.check("K2 ICP pulse, calibrated model / recording", vc["ratio"], 0.5, 2.0, "ratio")
-        rep2.info("K2 ICP pulse, Vanek values / recording", vb["ratio"], 0.5, 2.0, "ratio")
+        print(f"ICP pulse p-p: data file {vc['icp_rec_pp']:.2f} mmHg | default model {vc['icp_mod_pp']:.2f} | Vanek values {vb['icp_mod_pp']:.2f}")
+        print(f"ICP mean:      data file {vc['icp_rec_mean']:.2f} mmHg | default model {vc['icp_mod_mean']:.2f} | Vanek values {vb['icp_mod_mean']:.2f}")
+        print(f"stressed CBV pulse p-p: default {vc['cbv_pp']:.2f} mL | Vanek values {vb['cbv_pp']:.2f} mL")
+        rep2.check("K2 ICP pulse, default model / data file", vc["ratio"], 0.5, 2.0, "ratio")
+        rep2.info("K2 ICP pulse, Vanek values / data file", vb["ratio"], 0.5, 2.0, "ratio")
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(figsize=(11, 4))
         w = (vc["tr"] >= 20) & (vc["tr"] <= 30)
-        ax.plot(vc["tr"][w], vc["icp_rec"][w] - vc["icp_rec_mean"], "k", label="recording (Stepanik data)")
-        for v, lab in ((vc, "model, calibrated storage"), (vb, "model, Vanek values")):
+        ax.plot(vc["tr"][w], vc["icp_rec"][w] - vc["icp_rec_mean"], "k", label="Stepanik data file (one beat repeated)")
+        for v, lab in ((vc, "model, default (storage calibrated)"), (vb, "model, Vanek values")):
             w2 = (v["t"] >= 20) & (v["t"] <= 30)
             ax.plot(v["t"][w2], v["icp_mod"][w2] - v["icp_mod_mean"], label=lab)
         ax.set_xlabel("time [s]"); ax.set_ylabel("ICP - mean [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
-        ax.set_title("ICP pulse: model driven by the recorded arterial pressure vs recorded ICP")
+        ax.set_title("ICP pulse: model driven by the arterial pressure of the data file vs its ICP")
         fig.tight_layout(); fig.savefig(os.path.join(fig_dir, "new_model_recording.png"), dpi=140); plt.close(fig)
     else:
         print(f"\nK2 skipped: recording not found at {rec_path}")
@@ -661,7 +667,7 @@ def step_sensitivity(base_runs):
     base = {"5% CO2": base_runs["5 % CO2 (PaCO2 47.5 mmHg)"], "LIT": base_runs["Lumbar infusion test, 1.5 mL/min for 10 min"],
             "stroke": base_runs["Stroke: left MCA occluded 30 min, then reopened"]}
     rows, res = sensitivity_phi_v(rep2, base)
-    print("\n=== V1: phi_v sensitivity (Vanek values) ===")
+    print("\n=== V1: phi_v sensitivity ===")
     print(f"{'scenario':<10}{'dCBV phi_v=1':>14}{'phi_v=0.5':>11}{'ICP max 1':>11}{'0.5':>8}{'ICP min 1':>11}{'0.5':>8}")
     for name, d in rows:
         print(f"{name:<10}{d[0][0]:>14.3f}{d[1][0]:>11.3f}{d[0][1]:>11.2f}{d[1][1]:>8.2f}{d[0][2]:>11.2f}{d[1][2]:>8.2f}")

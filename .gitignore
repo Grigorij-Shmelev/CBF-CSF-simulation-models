@@ -9,3 +9,6 @@ zbysek_matlab_code/
 __pycache__/
 .Rhistory
 .vscode/
+
+# Project instructions for the assistant: kept local (quotes from supervisor meetings)
+CLAUDE.md
