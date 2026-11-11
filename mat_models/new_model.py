@@ -31,6 +31,7 @@ Usage (from mat_models/):
     python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 2 min)
     python new_model.py --options       # + venous squeeze and sigmoid width of spec 7.10               (about 2 min)
     python new_model.py --fit           # + LIT fitting tool on synthetic data of spec 7.10             (a few min, 8 processes)
+    python new_model.py --fit-mismatch  # only: fit when the data come from a modified model, spec 7.13 (a few min)
     python new_model.py --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900
                                         # fit a measured LIT (CSV header, columns: time_s, pressure_mmHg)
     python new_model.py --all
@@ -790,11 +791,12 @@ def lit_protocol(rate_ml_min=1.5, t_base=300.0, t_inf=600.0, t_post=300.0):
     return dict(rate=rate_ml_min / 60.0, t_on=t_base, t_off=t_base + t_inf, t_end=t_base + t_inf + t_post)
 
 
-def lit_curve(theta, t_eval, proto):
-    """Lumbar pressure P5(t) of the model for theta = (R_out [mmHg min/mL], s, P0 [mmHg]); constant-rate infusion."""
+def lit_curve(theta, t_eval, proto, **extra):
+    """Lumbar pressure P5(t) of the model for theta = (R_out [mmHg min/mL], s, P0 [mmHg]); constant-rate infusion.
+    extra: further NewModel parameters, e.g. kappa_v=0.2 to generate data from a modified model."""
     R_out, s, P0 = theta
     alpha = 1.0 / (60.0 * R_out)
-    m = NewModel(alpha=alpha, Pvs_n=P0 - LIT_S1 / alpha, c_sp_scale=s)
+    m = NewModel(alpha=alpha, Pvs_n=P0 - LIT_S1 / alpha, c_sp_scale=s, **extra)
     r0, t_on, t_off, t_end = proto["rate"], proto["t_on"], proto["t_off"], proto["t_end"]
     inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (t_on, 0), (t_on + 5, r0), (t_off, r0), (t_off + 5, 0), (t_end, 0)])])
     inp = Inputs(Pvs=m.Pvs_n, infusion=inf)
@@ -844,6 +846,31 @@ def _fit_task(kind, seed):
         y = y + 0.3 * np.random.default_rng(seed).standard_normal(len(t))
     out = fit_lit(t, y, proto)
     out.update(kind=kind, seed=seed, t=t, y=y, fit=lit_curve(out["theta"], t, proto))
+    return out
+
+
+def _mismatch_task(kappa):
+    """Data from a model with venous squeeze kappa, fitted with the default model (spec 7.13)."""
+    proto = lit_protocol()
+    t = np.arange(0.0, proto["t_end"], 2.0)
+    y = lit_curve(LIT_TRUTH, t, proto, kappa_v=kappa) + 0.3 * np.random.default_rng(1).standard_normal(len(t))
+    out = fit_lit(t, y, proto)
+    out.update(kappa=kappa)
+    return out
+
+
+def test_fit_mismatch(rep, kappas=(0.1, 0.2)):
+    """M1-M4 (spec 7.13)."""
+    from concurrent.futures import ProcessPoolExecutor
+    for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+        os.environ[var] = "1"
+    with ProcessPoolExecutor(max_workers=len(kappas)) as ex:
+        out = list(ex.map(_mismatch_task, kappas))
+    for f in out:
+        rep.check(f"M1 kappa_v = {f['kappa']}: P0 error", f["theta"][2] - LIT_TRUTH[2], -0.3, 0.3, "mmHg")
+        rep.check(f"M2 kappa_v = {f['kappa']}: R_out error", f["theta"][0] / LIT_TRUTH[0] - 1, -0.25, 0.25, "rel")
+        rep.info(f"M3 kappa_v = {f['kappa']}: spinal scale error", f["theta"][1] / LIT_TRUTH[1] - 1, 0.0, np.inf, "rel")
+        rep.info(f"M4 kappa_v = {f['kappa']}: rms residual", f["rms"], 0.0, 0.35, "mmHg")
     return out
 
 
@@ -907,6 +934,15 @@ def fit_file(path, rate_ml_min, t_on, t_off):
 
 
 def main(argv=()):
+    if "--fit-mismatch" in argv:        # stand-alone stage (spec 7.13), does not need the base runs
+        repm = Report()
+        out = test_fit_mismatch(repm)
+        print("=== M: fit with the default model, data from a model with venous squeeze (spec 7.13) ===")
+        print(f"truth: R_out {LIT_TRUTH[0]}, spinal scale {LIT_TRUTH[1]}, P0 {LIT_TRUTH[2]}")
+        for f in out:
+            print(f"kappa_v {f['kappa']}: R_out {f['theta'][0]:.2f} (SE {100 * f['se_rel'][0]:.1f} %), scale {f['theta'][1]:.2f} "
+                  f"(SE {100 * f['se_rel'][1]:.1f} %), P0 {f['theta'][2]:.2f} (SE {f['se_P0']:.2f}), rms {f['rms']:.2f}, nfev {f['nfev']}")
+        return repm.show()
     do_cal = "--calibrate" in argv or "--all" in argv
     do_sens = "--sensitivity" in argv or "--all" in argv
     m = NewModel()
