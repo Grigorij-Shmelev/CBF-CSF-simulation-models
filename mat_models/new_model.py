@@ -28,7 +28,11 @@ Usage (from mat_models/):
     python new_model.py                 # tests of spec 7.1, 7.3 and cross-checks of 7.8, figures to docs/figures/ (2 min)
     python new_model.py --calibrate     # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
     python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
-    python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 10 min)
+    python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 2 min)
+    python new_model.py --options       # + venous squeeze and sigmoid width of spec 7.10               (about 2 min)
+    python new_model.py --fit           # + LIT fitting tool on synthetic data of spec 7.10             (a few min, 8 processes)
+    python new_model.py --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900
+                                        # fit a measured LIT (CSV header, columns: time_s, pressure_mmHg)
     python new_model.py --all
 """
 
@@ -112,6 +116,13 @@ class NewModel:
         self.Pa_n = 100.0
         self.k_E = k_E                                          # Ursino's elastance coefficient, storage target only
 
+        # Switchable options (spec 7.10). Defaults reproduce the model without them exactly.
+        self.kappa_v = 0.0         # venous squeeze: extra venous pressure per mmHg of ICP rise. 0 = Ursino's law
+        self.kC_scale = 1.0        # width of the C(x) sigmoid relative to Ursino's. 1 = Ursino
+        # Outputs (spec 7.10)
+        self.CBV_total_n = 56.0    # total CBV at rest [mL]. PLACEHOLDER: 4 mL/100 g x 1400 g, not from the project sources
+        self.r_MCA_n, self.k_MCA = 0.14, 12.0   # MCA radius at rest [cm] and rigidity (Ursino Table 1, Eq. 20)
+
         # Parameter overrides for sensitivity studies (spec 7.8), applied before the resting state is computed
         for name, value in overrides.items():
             if not hasattr(self, name):
@@ -176,7 +187,7 @@ class NewModel:
         Va = np.maximum(y[0:4], 1e-6)
         x = y[14:18] - y[10:14]                                          # x_CO2 - x_aut
         sat = np.where(x < 0, self.sat1, self.sat2)
-        kC = self.C_n * sat / 2.0
+        kC = self.C_n * sat / 2.0 * self.kC_scale
         C = self.C_n * np.maximum((1.0 - sat) + 2.0 * sat * expit(x / kC), self.C_min_frac)
         e = Va / C                                                       # P_k - P_out,a
         R = self.R_n * (self.V_n / Va) ** 2
@@ -190,7 +201,7 @@ class NewModel:
         Pout_a = self.phi_a * P2 + (1 - self.phi_a) * P1
         Pout_v = self.phi_v * P2 + (1 - self.phi_v) * P1
         Pk = Pout_a + e
-        Pv = Pout_v + wv
+        Pv = Pout_v + wv + self.kappa_v * (P2 - self.P2_n)             # venous squeeze (spec 7.10), 0 by default
         PN = np.array([PNL, PNL, PNR, PNR])
         R_feed = np.array([self.R_MCA * occ[0], self.R_rest, self.R_MCA * occ[1], self.R_rest])
         q_in = (PN - Pk) / (R_feed + R / 2.0)
@@ -286,13 +297,15 @@ class NewModel:
         keys = ("P1", "P2", "Pc", "Pv", "q_vs", "F_out", "F23", "res")
         r = {k: np.empty(len(t)) for k in keys}
         r.update(Pk=np.empty((len(t), 4)), q_k=np.empty((len(t), 4)), C=np.empty((len(t), 4)),
-                 q_ICA=np.empty((len(t), 2)), q_c=np.empty((len(t), 4)))
+                 q_ICA=np.empty((len(t), 2)), q_c=np.empty((len(t), 4)), q_in=np.empty((len(t), 4)),
+                 PN=np.empty((len(t), 2)))
         for i, ti in enumerate(t):
             o = self.solve_algebraic(ti, Y[:, i], inp)
             for k in keys:
                 r[k][i] = o[k]
-            for k in ("Pk", "q_k", "C", "q_ICA", "q_c"):
+            for k in ("Pk", "q_k", "C", "q_ICA", "q_c", "q_in"):
                 r[k][i] = o[k]
+            r["PN"][i] = (o["PNL"], o["PNR"])
         r.update(t=t, y=Y, Va=Y[0:4].T, Vv=Y[4], V1=Y[5], V2=Y[6], P3=Y[7], P4=Y[8], P5=Y[9],
                  x_aut=Y[10:14].T, x_CO2=Y[14:18].T)
         r["ICP"] = r["P2"]
@@ -300,6 +313,13 @@ class NewModel:
         r["Va_total"] = r["Va"].sum(axis=1)
         r["Vblood"] = r["Va_total"] + r["Vv"]                # stressed blood volume (CBV minus unstressed part)
         r["Vcranial"] = r["Vblood"] + r["V1"] + r["V2"]      # must stay constant (rigid skull)
+        # Outputs of spec 7.10. CBV in percent of the (placeholder) total CBV at rest.
+        r["Vblood0"] = self.V_n.sum() + self.V_vn
+        r["CBV_pct"] = 100.0 * (r["Vblood"] - r["Vblood0"]) / self.CBV_total_n
+        # MCA velocity, Ursino Eq. 19-20 with the transmural pressure (P_N - ICP) of the MCA inlet
+        x_p = np.clip((r["PN"] - r["P2"][:, None]) / (self.PN_n - self.P2_n), 1e-6, None)
+        r["r_MCA"] = self.r_MCA_n * (np.log(x_p) / self.k_MCA + 1.0)
+        r["v_MCA"] = r["q_in"][:, [0, 2]] / (np.pi * r["r_MCA"] ** 2)      # [cm/s], columns: left, right
         # Spinal CSF volume: dV = C(u) du with u = P_i - P_epidural, so the volume is a function of u alone.
         # Integrate the wall law exactly (Gauss-Legendre) instead of integrating flows on the output grid,
         # which loses volume at abrupt events.
@@ -696,6 +716,196 @@ def summary(name, r, m):
           f"spinal {r['dVspinal'][i1] - r['dVspinal'][i0]:+.2f} mL")
 
 
+# ----------------------------------------------------------------------------------------------------------------------
+# Fifth step (spec 7.10): new outputs, switchable options, LIT fitting tool
+# ----------------------------------------------------------------------------------------------------------------------
+def test_outputs(rep, r_rest, r_co2, r_stroke):
+    """O1-O4: CBV in percent and MCA velocity."""
+    rep.check("O1 rest: MCA velocity", float(np.mean(r_rest["v_MCA"][:, 0])), 60.4, 61.4, "cm/s")
+    rep.check("O1 rest: max |CBV_pct|", float(np.max(np.abs(r_rest["CBV_pct"]))), 0, 1e-6, "%")
+    i0, i1, _ = r_co2["marks"]
+    expected = 100.0 * (r_co2["Vblood"][i1] - r_co2["Vblood"][i0]) / 56.0
+    rep.check("O2 5 % CO2: CBV_pct vs 100*dV/56", abs(r_co2["CBV_pct"][i1] - expected), 0, 1e-6, "%")
+    rep.check("O3 5 % CO2: MCA velocity rise", r_co2["v_MCA"][i1, 0] / r_co2["v_MCA"][i0, 0] - 1, 0.30, 0.55, "rel")
+    j0, j1, _ = r_stroke["marks"]
+    rep.check("O4 occlusion: MCA_L velocity / rest", r_stroke["v_MCA"][j1, 0] / r_stroke["v_MCA"][j0, 0], 0, 0.15, "rel")
+
+
+def conservation_fails(rep_local):
+    return [row[0] for row in rep_local.rows if any(t in row[0] for t in ("T2", "T3", "T7")) and row[5] == "FAIL"]
+
+
+def test_venous_squeeze(rep, base_runs):
+    """V0-V4 (spec 7.10): venous squeeze option kappa_v."""
+    lit_name = "Lumbar infusion test, 1.5 mL/min for 10 min"
+    co2_name, stroke_name = "5 % CO2 (PaCO2 47.5 mmHg)", "Stroke: left MCA occluded 30 min, then reopened"
+    dV = lambda r: r["Vblood"][r["marks"][1]] - r["Vblood"][r["marks"][0]]
+    kappas = (0.0, 0.05, 0.1, 0.2)
+    res, fails, scen_fails = {}, [], {}
+    for k in kappas:
+        d = Report()
+        res[k] = test_lit(d, NewModel(kappa_v=k))
+        fails += conservation_fails(d)
+        scen_fails[k] = [row[0] for row in d.rows if row[5] == "FAIL" and row[0].startswith("L")]
+    rep.check("V0 kappa_v = 0: LIT CBV change vs default", abs(dV(res[0.0]) - dV(base_runs[lit_name])), 0, 1e-9, "mL")
+    rep.check("V1 kappa_v = 0.1: LIT stressed CBV change", dV(res[0.1]), -1.0, 0.0, "mL")
+    vals = [dV(res[k]) for k in kappas]
+    rep.check("V2 LIT CBV change strictly decreasing with kappa_v", float(all(np.diff(vals) < 0)), 1, 1, "")
+    d = Report()
+    co2 = test_co2_5pct(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
+    d = Report()
+    stroke = test_stroke(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
+    rep.check("V3 kappa_v = 0.1: 5 % CO2 CBV change vs default", dV(co2) - dV(base_runs[co2_name]), -0.5, 0.5, "mL")
+    rep.check("V3 kappa_v = 0.1: stroke CBV change vs default", dV(stroke) - dV(base_runs[stroke_name]), -0.5, 0.5, "mL")
+    rep.check("V4 conservation checks failing in all runs", float(len(fails)), 0, 0, "")
+    return res, co2, stroke, scen_fails
+
+
+def onset_metrics(m):
+    """Onset fraction at 10 s and steady CBF rise for a CO2 step; steady CBF fall for a pressure step."""
+    r = m.simulate(Inputs(PaCO2=lambda t: ramp(t, [(0, 40), (1, 60)])), 600.0, t_eval=[0.0, 10.0, 600.0], max_step=2.0)
+    rise = r["CBF"][2] / r["CBF"][0] - 1
+    onset = (r["CBF"][1] - r["CBF"][0]) / (r["CBF"][2] - r["CBF"][0])
+    r = m.simulate(Inputs(Pa=lambda t: ramp(t, [(0, 100), (1, 80)])), 600.0, t_eval=[0.0, 600.0], max_step=2.0)
+    return onset, rise, 1.0 - r["CBF"][1] / r["CBF"][0]
+
+
+def test_sigmoid_width(rep, scales=(1.0, 3.0, 10.0, 30.0)):
+    """S0-S2 (spec 7.10): width of the C(x) sigmoid."""
+    rows = [(sc,) + onset_metrics(NewModel(kC_scale=sc)) for sc in scales]
+    dflt = onset_metrics(NewModel())
+    rep.check("S0 kC_scale = 1: onset fraction vs default", abs(rows[0][1] - dflt[0]), 0, 1e-9, "")
+    rep.check("S1 onset fraction strictly decreasing with kC_scale", float(all(np.diff([r[1] for r in rows]) < 0)), 1, 1, "")
+    rep.check("S2 steady CBF fall at Pa = 80 non-decreasing with kC_scale", float(all(np.diff([r[3] for r in rows]) >= -1e-9)), 1, 1, "")
+    return rows
+
+
+# ---- LIT fitting tool ---------------------------------------------------------------------------------------------
+LIT_S1 = 550.0 / 86400.0
+LIT_TRUTH = (13.0, 2.5, 11.0)           # synthetic "patient": R_out [mmHg min/mL], spinal scale s, resting ICP P0 [mmHg]
+LIT_DEFAULT = (1.0 / 0.11, 2.0896, 9.472)                                  # start of the fit: default model (R_out = 1/0.11)
+
+
+def lit_protocol(rate_ml_min=1.5, t_base=300.0, t_inf=600.0, t_post=300.0):
+    return dict(rate=rate_ml_min / 60.0, t_on=t_base, t_off=t_base + t_inf, t_end=t_base + t_inf + t_post)
+
+
+def lit_curve(theta, t_eval, proto):
+    """Lumbar pressure P5(t) of the model for theta = (R_out [mmHg min/mL], s, P0 [mmHg]); constant-rate infusion."""
+    R_out, s, P0 = theta
+    alpha = 1.0 / (60.0 * R_out)
+    m = NewModel(alpha=alpha, Pvs_n=P0 - LIT_S1 / alpha, c_sp_scale=s)
+    r0, t_on, t_off, t_end = proto["rate"], proto["t_on"], proto["t_off"], proto["t_end"]
+    inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (t_on, 0), (t_on + 5, r0), (t_off, r0), (t_off + 5, 0), (t_end, 0)])])
+    inp = Inputs(Pvs=m.Pvs_n, infusion=inf)
+    sol = solve_ivp(lambda t, y: m.rhs(t, y, inp), (0.0, t_end), m.initial_state(), method="Radau",
+                    t_eval=t_eval, rtol=1e-6, atol=1e-8, max_step=10.0)
+    return sol.y[9]
+
+
+def fit_lit(t, p, proto, theta0=LIT_DEFAULT):
+    """Fit (R_out, s, P0) to a measured LIT curve (time [s], pressure [mmHg]). Errors from the Jacobian at the optimum."""
+    from scipy.optimize import least_squares
+    resid = lambda x: lit_curve((np.exp(x[0]), np.exp(x[1]), x[2]), t, proto) - p
+    x0 = np.array([np.log(theta0[0]), np.log(theta0[1]), theta0[2]])
+    res = least_squares(resid, x0, x_scale=[0.2, 0.2, 1.0], diff_step=1e-3, ftol=1e-10, xtol=1e-10, max_nfev=60,
+                        bounds=([np.log(2.0), np.log(0.3), 0.0], [np.log(60.0), np.log(10.0), 30.0]))
+    dof = max(len(p) - 3, 1)
+    sigma2 = 2.0 * res.cost / dof
+    se = np.sqrt(np.diag(sigma2 * np.linalg.inv(res.jac.T @ res.jac)))
+    return dict(theta=(float(np.exp(res.x[0])), float(np.exp(res.x[1])), float(res.x[2])),
+                se_rel=(float(se[0]), float(se[1])), se_P0=float(se[2]), rms=float(np.sqrt(sigma2)),
+                nfev=int(res.nfev), x=res.x, se=se)
+
+
+def resample_mean(t, p, dt=2.0):
+    """Average a densely sampled recording into dt-second bins (the fit needs about one point per 2 s)."""
+    idx = np.floor((t - t[0]) / dt).astype(int)
+    n = idx.max() + 1
+    cnt = np.bincount(idx, minlength=n)
+    return t[0] + dt * (np.arange(n) + 0.5), np.bincount(idx, weights=p, minlength=n) / np.maximum(cnt, 1)
+
+
+def load_lit_csv(path):
+    """CSV with a header and two columns: time [s], pressure [mmHg] (assumed format, spec 7.10)."""
+    data = np.genfromtxt(path, delimiter=",", names=True, dtype=float)
+    return data[data.dtype.names[0]], data[data.dtype.names[1]]
+
+
+def _fit_task(kind, seed):
+    """One fit, run in a worker process. kind: 'clean', 'noisy', 'long'."""
+    if kind == "long":
+        proto = lit_protocol(t_inf=1800.0)
+    else:
+        proto = lit_protocol()
+    t = np.arange(0.0, proto["t_end"], 2.0)
+    y = lit_curve(LIT_TRUTH, t, proto)
+    if kind != "clean":
+        y = y + 0.3 * np.random.default_rng(seed).standard_normal(len(t))
+    out = fit_lit(t, y, proto)
+    out.update(kind=kind, seed=seed, t=t, y=y, fit=lit_curve(out["theta"], t, proto))
+    return out
+
+
+def test_fit(rep, n_seeds=8, workers=8):
+    """F1-F4 (spec 7.10): fit tool on synthetic LIT curves."""
+    from concurrent.futures import ProcessPoolExecutor
+    # One thread per worker: the linear algebra here is tiny and many BLAS threads per process slow everything down
+    for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+        os.environ[var] = "1"
+    tasks = [("clean", 0)] + [("noisy", sd) for sd in range(1, n_seeds + 1)] + [("long", 1)]
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        out = list(ex.map(_fit_task, *zip(*tasks)))
+    f1, noisy, flong = out[0], out[1:-1], out[-1]
+    rel = lambda a, b: a / b - 1.0
+    rep.check("F1 noiseless: R_out", rel(f1["theta"][0], LIT_TRUTH[0]), -0.01, 0.01, "rel")
+    rep.check("F1 noiseless: spinal scale", rel(f1["theta"][1], LIT_TRUTH[1]), -0.02, 0.02, "rel")
+    rep.check("F1 noiseless: P0", f1["theta"][2] - LIT_TRUTH[2], -0.02, 0.02, "mmHg")
+    f2 = noisy[0]
+    rep.check("F2 noisy (seed 1): R_out", rel(f2["theta"][0], LIT_TRUTH[0]), -0.25, 0.25, "rel")
+    rep.check("F2 noisy (seed 1): spinal scale", rel(f2["theta"][1], LIT_TRUTH[1]), -0.15, 0.15, "rel")
+    rep.check("F2 noisy (seed 1): P0", f2["theta"][2] - LIT_TRUTH[2], -0.3, 0.3, "mmHg")
+    xt = np.array([np.log(LIT_TRUTH[0]), np.log(LIT_TRUTH[1]), LIT_TRUTH[2]])
+    z = np.abs(f2["x"] - xt) / f2["se"]
+    rep.check("F2 noisy (seed 1): largest |error| / standard error", float(z.max()), 0, 3.0, "")
+    ok = [abs(rel(f["theta"][0], LIT_TRUTH[0])) <= 0.25 and abs(rel(f["theta"][1], LIT_TRUTH[1])) <= 0.15
+          and abs(f["theta"][2] - LIT_TRUTH[2]) <= 0.3 for f in noisy]
+    rep.check(f"F3 seeds 1-{n_seeds}: number within the F2 bounds", float(sum(ok)), 0.75 * n_seeds, n_seeds, "")
+    rep.info("F4 R_out standard error, 10-min / 30-min infusion", f2["se_rel"][0] / flong["se_rel"][0], 2.0, np.inf, "ratio")
+    return f1, noisy, flong
+
+
+def plot_fit(f, path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(figsize=(10, 4.2))
+    ax.plot(f["t"], f["y"], ".", ms=3, color="0.6", label="synthetic data (truth + 0.3 mmHg noise)")
+    ax.plot(f["t"], lit_curve(LIT_TRUTH, f["t"], lit_protocol()), "k", lw=1.2, label="truth")
+    ax.plot(f["t"], f["fit"], "r--", lw=1.4, label="fit")
+    R, sc, P0 = f["theta"]
+    ax.set_title(f"LIT fit on synthetic data: R_out {R:.1f} (truth {LIT_TRUTH[0]}) mmHg min/mL, "
+                 f"scale {sc:.2f} ({LIT_TRUTH[1]}), P0 {P0:.2f} ({LIT_TRUTH[2]}) mmHg", fontsize=9)
+    ax.set_xlabel("time [s]"); ax.set_ylabel("lumbar pressure P5 [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def _argval(argv, name, default):
+    return float(argv[argv.index(name) + 1]) if name in argv else default
+
+
+def fit_file(path, rate_ml_min, t_on, t_off):
+    """Fit a measured LIT (CSV: time [s], pressure [mmHg]; constant infusion rate [mL/min] from t_on to t_off [s])."""
+    t, p = resample_mean(*load_lit_csv(path))
+    proto = dict(rate=rate_ml_min / 60.0, t_on=t_on, t_off=t_off, t_end=float(t[-1]) + 1.0)
+    f = fit_lit(t, p, proto)
+    R, sc, P0 = f["theta"]
+    m = NewModel(alpha=1 / (60 * R), Pvs_n=P0 - LIT_S1 * 60 * R, c_sp_scale=sc)
+    print(f"R_out = {R:.2f} mmHg min/mL (+-{100 * f['se_rel'][0]:.0f} %)   spinal scale = {sc:.2f} (+-{100 * f['se_rel'][1]:.0f} %)   "
+          f"P0 = {P0:.2f} +- {f['se_P0']:.2f} mmHg   storage at rest {m.storage_at_rest():.2f} mL/mmHg   rms residual {f['rms']:.2f} mmHg")
+    return f
+
+
 def main(argv=()):
     do_cal = "--calibrate" in argv or "--all" in argv
     do_sens = "--sensitivity" in argv or "--all" in argv
@@ -706,7 +916,7 @@ def main(argv=()):
     print(f"V_n arterial {m.V_n.round(3)} (total {m.V_n.sum():.2f} mL)   V_vn {m.V_vn} mL")
 
     rep = Report()
-    test_rest(rep, m)
+    r_rest = test_rest(rep, m)
     runs = {
         "CO2 challenge 40 -> 60 mmHg": (test_co2(rep, m), "new_model_co2.png"),
         "5 % CO2 (PaCO2 47.5 mmHg)": (test_co2_5pct(rep, m), "new_model_co2_5pct.png"),
@@ -718,6 +928,8 @@ def main(argv=()):
     urs, new = test_cross_stroke(rep, runs["Stroke: left MCA occluded 30 min, then reopened"][0])
     van = test_cross_lit(rep, runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0])
     runs["Left ICA occluded 30 min, then reopened"] = (test_ica(rep, m), "new_model_ica.png")
+    # fifth step (spec 7.10): new outputs
+    test_outputs(rep, r_rest, runs["5 % CO2 (PaCO2 47.5 mmHg)"][0], runs["Stroke: left MCA occluded 30 min, then reopened"][0])
     n_fail = rep.show()
     print("\n=== X1: left MCA occlusion, new model vs existing Ursino code ===")
     print(f"residual flow in the MCA_L territory: new {100 * new['res']:.1f} %, Ursino code {100 * urs['res']:.1f} % of rest")
@@ -744,6 +956,13 @@ def main(argv=()):
         n_fail += step_calibration(m, base_runs, fig_dir)
     if do_sens:
         n_fail += step_sensitivity(base_runs)
+    if "--options" in argv or "--all" in argv:
+        n_fail += step_options(base_runs, fig_dir)
+    if "--fit" in argv or "--all" in argv:
+        n_fail += step_fit(fig_dir)
+    if "--fit-csv" in argv:
+        fit_file(argv[argv.index("--fit-csv") + 1], _argval(argv, "--rate", 1.5), _argval(argv, "--t-on", 300.0),
+                 _argval(argv, "--t-off", 900.0))
     if "--params" in argv or "--all" in argv:
         print("\n=== SA: parameter sensitivity of the stressed CBV change (spec 7.8) ===")
         base, rows = sensitivity_params()
@@ -752,6 +971,49 @@ def main(argv=()):
         for name, p0, S, lo, hi in rows:
             print(f"{name:<12}{p0:>10.4g}{S['CO2']:>9.2f}{S['LIT']:>9.2f}{S['stroke']:>10.2f}")
     return n_fail
+
+
+def step_options(base_runs, fig_dir):
+    """Fifth step (spec 7.10): venous squeeze and sigmoid width."""
+    rep3 = Report()
+    res, co2, stroke, scen_fails = test_venous_squeeze(rep3, base_runs)
+    dV = lambda r: r["Vblood"][r["marks"][1]] - r["Vblood"][r["marks"][0]]
+    print("\n=== V: venous squeeze kappa_v (spec 7.10) ===")
+    print(f"{'kappa_v':>8}{'LIT dCBV [mL]':>15}{'arterial':>10}{'venous':>9}{'CBF change':>12}{'ICP end [mmHg]':>16}   LIT scenario bounds failing")
+    for k, r in res.items():
+        i0, i1, _ = r["marks"]
+        print(f"{k:>8}{dV(r):>15.2f}{r['Va_total'][i1] - r['Va_total'][i0]:>10.2f}{r['Vv'][i1] - r['Vv'][i0]:>9.2f}"
+              f"{100 * (r['CBF'][i1] / r['CBF'][i0] - 1):>11.1f}%{r['ICP'][i1]:>16.2f}   {scen_fails[k] or '-'}")
+    print(f"kappa_v = 0.1: 5 % CO2 dCBV {dV(co2):+.2f} mL (default {dV(base_runs['5 % CO2 (PaCO2 47.5 mmHg)']):+.2f}), "
+          f"stroke dCBV {dV(stroke):+.2f} mL (default {dV(base_runs['Stroke: left MCA occluded 30 min, then reopened']):+.2f})")
+    plot_run(res[0.1], NewModel(kappa_v=0.1), os.path.join(fig_dir, "new_model_lit_squeeze.png"),
+             "New model, venous squeeze kappa_v = 0.1. Lumbar infusion test (shaded)")
+    rows = test_sigmoid_width(rep3)
+    print("\n=== S: sigmoid width kC_scale (spec 7.10) ===")
+    print(f"{'kC_scale':>9}{'onset at 10 s':>15}{'CBF rise, 60 mmHg':>19}{'CBF fall, Pa 80':>17}")
+    for sc, onset, rise, fall in rows:
+        print(f"{sc:>9.0f}{100 * onset:>14.0f}%{100 * rise:>18.1f}%{100 * fall:>16.1f}%")
+    return rep3.show()
+
+
+def step_fit(fig_dir):
+    """Fifth step (spec 7.10): LIT fitting tool on synthetic data."""
+    import time
+    t0 = time.time()
+    rep4 = Report()
+    f1, noisy, flong = test_fit(rep4)
+    print("\n=== F: LIT fit on synthetic data (spec 7.10) ===")
+    print(f"truth: R_out {LIT_TRUTH[0]} mmHg min/mL, spinal scale {LIT_TRUTH[1]}, P0 {LIT_TRUTH[2]} mmHg; start of fit {np.round(LIT_DEFAULT, 2)}")
+    print(f"{'run':<22}{'R_out':>8}{'(SE %)':>8}{'scale':>8}{'(SE %)':>8}{'P0':>8}{'(SE)':>7}{'rms':>7}{'nfev':>6}")
+    for name, f in [("noiseless", f1)] + [(f"noisy seed {f['seed']}", f) for f in noisy] + [("30-min infusion", flong)]:
+        print(f"{name:<22}{f['theta'][0]:>8.2f}{100 * f['se_rel'][0]:>8.1f}{f['theta'][1]:>8.2f}{100 * f['se_rel'][1]:>8.1f}"
+              f"{f['theta'][2]:>8.2f}{f['se_P0']:>7.2f}{f['rms']:>7.2f}{f['nfev']:>6}")
+    errs = np.array([[f["theta"][0] / LIT_TRUTH[0] - 1, f["theta"][1] / LIT_TRUTH[1] - 1, f["theta"][2] - LIT_TRUTH[2]] for f in noisy])
+    print(f"over {len(noisy)} seeds: R_out error {100 * errs[:, 0].mean():+.1f} % (sd {100 * errs[:, 0].std():.1f} %), "
+          f"scale error {100 * errs[:, 1].mean():+.1f} % (sd {100 * errs[:, 1].std():.1f} %), P0 error {errs[:, 2].mean():+.2f} mmHg (sd {errs[:, 2].std():.2f})")
+    plot_fit(noisy[0], os.path.join(fig_dir, "new_model_fit.png"))
+    print(f"fit stage took {time.time() - t0:.0f} s")
+    return rep4.show()
 
 
 def step_calibration(m, base_runs, fig_dir):
