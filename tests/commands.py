@@ -78,7 +78,6 @@ COMMANDS = [
     Cmd("coupling.export", new(["@run.py", "exp", "urs_dynamic_pa_test", "export"], M + "urs_dynamic_pa_test.py", "export"), masks=(T_EXPORT,), chain="coupling"),
     Cmd("coupling.driven_D100", new(["@run.py", "exp", "vanek_driven_by_ursino"], M + "vanek_driven_by_ursino.py"), masks=(T_NAME_S,), chain="coupling"),
     Cmd("coupling.driven_D80", new(["@run.py", "exp", "vanek_driven_by_ursino", "D80"], M + "vanek_driven_by_ursino.py", "D80"), masks=(T_NAME_S,), chain="coupling"),
-    Cmd("coupling.unified", old(M + "unified_brain_model.py")),
     Cmd("coupling.VU_unified", new(["@run.py", "exp", "VU_unified_brain_model"], M + "VU_unified_brain_model.py")),
     # ---- direct calls of the model functions ----------------------------------------------------------------------
     Cmd("direct.new", old("@tests/direct.py", "new"), cwd="."),
