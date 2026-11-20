@@ -19,6 +19,8 @@ import numpy as np
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 
+from cbfcsf.common.physics import hagen_poiseuille
+
 
 class Ursino2010Model:
     "Full 23-state differential-equation model of human cerebral circulation."
@@ -42,7 +44,7 @@ class Ursino2010Model:
 
         # Hagen-Poiseuille baseline resistances (mmHg s/mL)
         self.R_net = {
-            k: 8.0 * self.eta * l / (np.pi * r**4)
+            k: hagen_poiseuille(r, l, self.eta)
             for k, (r, l) in self.geom.items()
         }
 

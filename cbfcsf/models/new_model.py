@@ -42,6 +42,7 @@ import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.special import expit
 
+from cbfcsf.common.physics import hagen_poiseuille
 from cbfcsf.paths import ZBYSEK_DATA, out_dir
 
 NAMES = ("mL", "rL", "mR", "rR")
@@ -97,9 +98,8 @@ class NewModel:
         self.C_n_total = 0.200
         self.w = np.array([0.30, 0.20, 0.30, 0.20])          # territory weights (MCA; ACA2 + PCA2)
         eta = 0.04 / 1333.22                                    # blood viscosity, Poise -> mmHg s
-        hp = lambda r, l: 8.0 * eta * l / (np.pi * r ** 4)      # Hagen-Poiseuille
-        self.R_ICA = hp(0.205, 13.15)                           # 0.569
-        self.R_MCA = hp(0.14, 7.25)                             # 1.44
+        self.R_ICA = hagen_poiseuille(0.205, 13.15, eta)        # 0.569
+        self.R_MCA = hagen_poiseuille(0.14, 7.25, eta)          # 1.44
         self.Pc_target = 25.0                                   # basal capillary pressure (Ursino p. 962), check only
         self.R_c = 1.0 / (1.0 / 105.0 + 1.0 / 120.0)            # MCA <-> rest anastomosis: R_c,am || R_c,pm = 56
 
