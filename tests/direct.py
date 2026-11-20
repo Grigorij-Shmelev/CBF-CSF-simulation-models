@@ -30,28 +30,28 @@ def attrs(obj):
 
 # ---- imports (the only part that follows the layout) ----------------------------------------------------------------
 def api_new():
-    sys.path.insert(0, str(ROOT / "mat_models"))
-    import new_model
+    sys.path.insert(0, str(ROOT))
+    from cbfcsf.models import new_model
     return new_model
 
 
 def api_ursino():
-    sys.path.insert(0, str(ROOT / "mat_models"))
-    import ursino_2010_model
-    import urs_dynamic_pa_test
-    return ursino_2010_model, urs_dynamic_pa_test
+    sys.path.insert(0, str(ROOT))
+    from cbfcsf.models import ursino_2010
+    from experiments import urs_dynamic_pa_test
+    return ursino_2010, urs_dynamic_pa_test
 
 
 def api_vanek():
-    sys.path.insert(0, str(ROOT / "mat_models"))
-    import vanek_2015_model
-    return vanek_2015_model
+    sys.path.insert(0, str(ROOT))
+    from cbfcsf.models import vanek_2015
+    return vanek_2015
 
 
 def api_stepanik():
-    sys.path.insert(0, str(ROOT / "mat_models"))
-    import stepanik_2009_csf_model
-    return stepanik_2009_csf_model
+    sys.path.insert(0, str(ROOT))
+    from cbfcsf.models import stepanik_2009
+    return stepanik_2009
 
 
 # ---- groups ---------------------------------------------------------------------------------------------------------
