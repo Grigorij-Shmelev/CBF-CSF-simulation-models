@@ -30,9 +30,17 @@ def attrs(obj):
 
 # ---- imports (the only part that follows the layout) ----------------------------------------------------------------
 def api_new():
+    """The functions of the new model, from the modules they live in."""
+    import types
     sys.path.insert(0, str(ROOT))
+    from cbfcsf import crosscheck, fit_lit
+    from cbfcsf.checks import new as checks
+    from cbfcsf.common import report, signals
     from cbfcsf.models import new_model
-    return new_model
+    ns = {}
+    for mod in (new_model, signals, report, crosscheck, fit_lit, checks):
+        ns.update({k: v for k, v in vars(mod).items() if not k.startswith("__")})
+    return types.SimpleNamespace(**ns)
 
 
 def api_ursino():

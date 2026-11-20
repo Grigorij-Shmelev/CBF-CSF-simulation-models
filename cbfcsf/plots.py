@@ -1,5 +1,7 @@
-"""Figures shared by several checks."""
-import matplotlib.pyplot as plt
+"""Figures of the checks. pyplot is imported inside the functions (as in the original new_model.py): importing it
+resets Python's record of warnings already shown, so importing it earlier would change what the runs print on stderr."""
+from cbfcsf.fit_lit import LIT_TRUTH, lit_curve, lit_protocol
+from cbfcsf.models.new_model import NAMES
 
 
 def plot_lit_figure(model, t, p1, p2, p5, formation, resorption, infusion_i5, flows, volumes, compliances, title,
@@ -7,6 +9,7 @@ def plot_lit_figure(model, t, p1, p2, p5, formation, resorption, infusion_i5, fl
     """6-panel figure of a lumbar infusion test in a 5-compartment CSF model (Vanek or Stepanik).
     flows = (F12, F23, F34, F45), volumes = (V1..V5), compliances = [(array, label), ...] (5 curves);
     formation = S1 on the time grid [mL/s]."""
+    import matplotlib.pyplot as plt
     F12, F23, F34, F45 = flows
     V1, V2, V3, V4, V5 = volumes
     # Generate plot figure
@@ -85,3 +88,69 @@ def plot_lit_figure(model, t, p1, p2, p5, formation, resorption, infusion_i5, fl
     plt.savefig(plot_path, dpi=150)
     plt.close()
     print(f"Plot successfully saved to {plot_path}")
+
+
+def plot_run(r, m, path, title):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    t = r["t"] / 60.0
+    fig, ax = plt.subplots(2, 3, figsize=(15, 7.5), sharex=True)
+    ax[0, 0].plot(t, r["CBF"], "k", label="total")
+    for j, n in enumerate(NAMES):
+        ax[0, 0].plot(t, r["q_k"][:, j], label=n, ls="-" if j < 2 else "--")
+    ax[0, 0].set_title("Flow [mL/s]"); ax[0, 0].legend(fontsize=8, ncol=2)
+    for j, n in enumerate(NAMES):
+        ax[0, 1].plot(t, r["Va"][:, j], label=n, ls="-" if j < 2 else "--")
+    ax[0, 1].plot(t, r["Vv"], color="tab:purple", label="venous")
+    ax[0, 1].set_title("Stressed blood volume per compartment [mL]"); ax[0, 1].legend(fontsize=8, ncol=2)
+    ax[0, 2].plot(t, r["ICP"], label="ICP = P2"); ax[0, 2].plot(t, r["P5"], "--", label="P5 lumbar")
+    ax[0, 2].axhline(m.Pvs_n, color="gray", lw=0.8, ls=":"); ax[0, 2].set_title("CSF pressure [mmHg]")
+    ax[0, 2].legend(fontsize=8)
+    ax[1, 0].plot(t, r["Vblood"] - r["Vblood"][0], label="blood (stressed CBV)")
+    ax[1, 0].plot(t, r["V1"] + r["V2"] - (r["V1"][0] + r["V2"][0]), label="cranial CSF")
+    ax[1, 0].plot(t, r["dVspinal"], label="spinal CSF")
+    ax[1, 0].set_title("Volume change [mL]"); ax[1, 0].legend(fontsize=8)
+    ax[1, 1].plot(t, r["x_CO2"][:, 0] - r["x_aut"][:, 0], label="mL"); ax[1, 1].plot(t, r["x_CO2"][:, 1] - r["x_aut"][:, 1], label="rL")
+    ax[1, 1].plot(t, r["x_CO2"][:, 2] - r["x_aut"][:, 2], "--", label="mR")
+    ax[1, 1].set_title("Control x = x_CO2 - x_aut (> 0: dilation)"); ax[1, 1].legend(fontsize=8)
+    ax[1, 2].plot(t, r["Pk"][:, 0], label="P arterial mL"); ax[1, 2].plot(t, r["Pk"][:, 1], label="P arterial rL")
+    ax[1, 2].plot(t, r["Pc"], label="P capillary"); ax[1, 2].plot(t, r["Pv"], label="P venous")
+    ax[1, 2].set_title("Blood pressures [mmHg]"); ax[1, 2].legend(fontsize=8)
+    for a in ax.ravel():
+        a.axvspan(r["span"][0] / 60.0, r["span"][1] / 60.0, color="tab:orange", alpha=0.10); a.grid(alpha=0.3)
+    for a in ax[1]:
+        a.set_xlabel("time [min]")
+    fig.suptitle(title)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def plot_fit(f, path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(figsize=(10, 4.2))
+    ax.plot(f["t"], f["y"], ".", ms=3, color="0.6", label="synthetic data (truth + 0.3 mmHg noise)")
+    ax.plot(f["t"], lit_curve(LIT_TRUTH, f["t"], lit_protocol()), "k", lw=1.2, label="truth")
+    ax.plot(f["t"], f["fit"], "r--", lw=1.4, label="fit")
+    R, sc, P0 = f["theta"]
+    ax.set_title(f"LIT fit on synthetic data: R_out {R:.1f} (truth {LIT_TRUTH[0]}) mmHg min/mL, "
+                 f"scale {sc:.2f} ({LIT_TRUTH[1]}), P0 {P0:.2f} ({LIT_TRUTH[2]}) mmHg", fontsize=9)
+    ax.set_xlabel("time [s]"); ax.set_ylabel("lumbar pressure P5 [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def plot_recording(vc, vb, path):
+    """K2: ICP pulse of the model (default and Vanek values) driven by the data file, vs the ICP of the data file."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(figsize=(11, 4))
+    w = (vc["tr"] >= 20) & (vc["tr"] <= 30)
+    ax.plot(vc["tr"][w], vc["icp_rec"][w] - vc["icp_rec_mean"], "k", label="Stepanik data file (one beat repeated)")
+    for v, lab in ((vc, "model, default (storage calibrated)"), (vb, "model, Vanek values")):
+        w2 = (v["t"] >= 20) & (v["t"] <= 30)
+        ax.plot(v["t"][w2], v["icp_mod"][w2] - v["icp_mod_mean"], label=lab)
+    ax.set_xlabel("time [s]"); ax.set_ylabel("ICP - mean [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+    ax.set_title("ICP pulse: model driven by the arterial pressure of the data file vs its ICP")
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
