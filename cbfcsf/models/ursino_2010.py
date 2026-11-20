@@ -129,6 +129,49 @@ class Ursino2010Model:
         Rd = self.kR[d] * (self.Cdn[d]**2) / (Vd**2)
         return Cd, Rd, u
 
+    def node_pressures(self, Pd, Rd, Pic, Pv, PICAl, PICAr, PBA):
+        """Pressures of the algebraic nodes: the PCA1 and ACA1 junctions of the circle of Willis and the capillary
+        pressure P_c. Pd, Rd: dicts per district. No stenosis enters these nodes."""
+        R_PCA1l, R_PCA1r = self.R_net['PCA1'], self.R_net['PCA1']
+        R_ACA1l, R_ACA1r = self.R_net['ACA1'], self.R_net['ACA1']
+        R_PCA2l, R_PCA2r = self.R_net['PCA2'], self.R_net['PCA2']
+        R_ACA2l, R_ACA2r = self.R_net['ACA2'], self.R_net['ACA2']
+        R_PCoAl, R_PCoAr = self.R_net['PCoA'], self.R_net['PCoA']
+        R_ACoA = self.R_net['ACoA']
+
+        # Auxiliary pressures in Circle of Willis
+        G_PCA1l = 1.0 / (R_PCA2l + Rd['pl']/2.0) + \
+            1.0 / R_PCoAl + 1.0 / R_PCA1l
+        PPCA1l = (Pd['pl'] / (R_PCA2l + Rd['pl']/2.0) +
+                  PICAl / R_PCoAl + PBA / R_PCA1l) / G_PCA1l
+
+        G_PCA1r = 1.0 / (R_PCA2r + Rd['pr']/2.0) + \
+            1.0 / R_PCoAr + 1.0 / R_PCA1r
+        PPCA1r = (Pd['pr'] / (R_PCA2r + Rd['pr']/2.0) +
+                  PICAr / R_PCoAr + PBA / R_PCA1r) / G_PCA1r
+
+        g_al = 1.0 / (R_ACA2l + Rd['al']/2.0) + 1.0 / R_ACA1l + 1.0 / R_ACoA
+        g_ar = 1.0 / (R_ACA2r + Rd['ar']/2.0) + 1.0 / R_ACA1r + 1.0 / R_ACoA
+        b_l = Pd['al'] / (R_ACA2l + Rd['al']/2.0) + PICAl / R_ACA1l
+        b_r = Pd['ar'] / (R_ACA2r + Rd['ar']/2.0) + PICAr / R_ACA1r
+
+        det = g_al * g_ar - (1.0 / R_ACoA)**2
+        PACA1l = (g_ar * b_l + (1.0 / R_ACoA) * b_r) / det
+        PACA1r = (g_al * b_r + (1.0 / R_ACoA) * b_l) / det
+
+        # Capillary pressure Pc
+        G_cap = sum(2.0 / Rd[d] for d in self.districts) + \
+            1.0 / self.Rpv + 1.0 / self.Rf
+        num_cap = sum(2.0 * Pd[d] / Rd[d]
+                      for d in self.districts) + Pic / self.Rf + Pv / self.Rpv
+        Pc = num_cap / G_cap
+        if Pc <= Pic:
+            G_cap -= 1.0 / self.Rf
+            num_cap = sum(2.0 * Pd[d] / Rd[d]
+                          for d in self.districts) + Pv / self.Rpv
+            Pc = num_cap / G_cap
+        return PPCA1l, PPCA1r, PACA1l, PACA1r, Pc
+
     def derivatives(self, t, y, Pa=100.0, PaCO2=40.0, ica_stenosis_l=1.0,
                     mca_stenosis_l=1.0):
         """Right-hand-side differential equation system (dy/dt)."""
@@ -162,37 +205,8 @@ class Ursino2010Model:
             Cd[d], Rd[d], u = self.district_wall(d, xCO2[d] - xaut[d], Pd[d], Pic)
             dCd_dx[d] = 4.0 * u / ((1.0 + u)**2)
 
-        # Auxiliary pressures in Circle of Willis
-        G_PCA1l = 1.0 / (R_PCA2l + Rd['pl']/2.0) + \
-            1.0 / R_PCoAl + 1.0 / R_PCA1l
-        PPCA1l = (Pd['pl'] / (R_PCA2l + Rd['pl']/2.0) +
-                  PICAl / R_PCoAl + PBA / R_PCA1l) / G_PCA1l
-
-        G_PCA1r = 1.0 / (R_PCA2r + Rd['pr']/2.0) + \
-            1.0 / R_PCoAr + 1.0 / R_PCA1r
-        PPCA1r = (Pd['pr'] / (R_PCA2r + Rd['pr']/2.0) +
-                  PICAr / R_PCoAr + PBA / R_PCA1r) / G_PCA1r
-
-        g_al = 1.0 / (R_ACA2l + Rd['al']/2.0) + 1.0 / R_ACA1l + 1.0 / R_ACoA
-        g_ar = 1.0 / (R_ACA2r + Rd['ar']/2.0) + 1.0 / R_ACA1r + 1.0 / R_ACoA
-        b_l = Pd['al'] / (R_ACA2l + Rd['al']/2.0) + PICAl / R_ACA1l
-        b_r = Pd['ar'] / (R_ACA2r + Rd['ar']/2.0) + PICAr / R_ACA1r
-
-        det = g_al * g_ar - (1.0 / R_ACoA)**2
-        PACA1l = (g_ar * b_l + (1.0 / R_ACoA) * b_r) / det
-        PACA1r = (g_al * b_r + (1.0 / R_ACoA) * b_l) / det
-
-        # Capillary pressure Pc
-        G_cap = sum(2.0 / Rd[d] for d in self.districts) + \
-            1.0 / self.Rpv + 1.0 / self.Rf
-        num_cap = sum(2.0 * Pd[d] / Rd[d]
-                      for d in self.districts) + Pic / self.Rf + Pv / self.Rpv
-        Pc = num_cap / G_cap
-        if Pc <= Pic:
-            G_cap -= 1.0 / self.Rf
-            num_cap = sum(2.0 * Pd[d] / Rd[d]
-                          for d in self.districts) + Pv / self.Rpv
-            Pc = num_cap / G_cap
+        # Auxiliary pressures in Circle of Willis, capillary pressure Pc
+        PPCA1l, PPCA1r, PACA1l, PACA1r, Pc = self.node_pressures(Pd, Rd, Pic, Pv, PICAl, PICAr, PBA)
 
         # District flows
         q = {d: (Pd[d] - Pc) / (Rd[d]/2.0) for d in self.districts}

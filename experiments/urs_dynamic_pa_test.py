@@ -129,29 +129,9 @@ def aux_pressures(model, y, mca_stenosis_l=1.0):
     R = model.R_net
     R_MCAl, R_MCAr = R['MCA'] * mca_stenosis_l, R['MCA']
 
-    # Posterior communicating junctions (PCA1/PCA2/PCoA meet)
-    G_l = 1 / (R['PCA2'] + Rd['pl'] / 2) + 1 / R['PCoA'] + 1 / R['PCA1']
-    PPCA1l = (Pd['pl'] / (R['PCA2'] + Rd['pl'] / 2) + PICAl / R['PCoA'] + PBA / R['PCA1']) / G_l
-    G_r = 1 / (R['PCA2'] + Rd['pr'] / 2) + 1 / R['PCoA'] + 1 / R['PCA1']
-    PPCA1r = (Pd['pr'] / (R['PCA2'] + Rd['pr'] / 2) + PICAr / R['PCoA'] + PBA / R['PCA1']) / G_r
-
-    # Anterior junctions, coupled through ACoA -> 2x2 linear system (Cramer's rule)
-    g_al = 1 / (R['ACA2'] + Rd['al'] / 2) + 1 / R['ACA1'] + 1 / R['ACoA']
-    g_ar = 1 / (R['ACA2'] + Rd['ar'] / 2) + 1 / R['ACA1'] + 1 / R['ACoA']
-    b_l = Pd['al'] / (R['ACA2'] + Rd['al'] / 2) + PICAl / R['ACA1']
-    b_r = Pd['ar'] / (R['ACA2'] + Rd['ar'] / 2) + PICAr / R['ACA1']
-    det = g_al * g_ar - (1 / R['ACoA']) ** 2
-    PACA1l = (g_ar * b_l + (1 / R['ACoA']) * b_r) / det
-    PACA1r = (g_al * b_r + (1 / R['ACoA']) * b_l) / det
-
-    # Capillary node (if Pc <= Pic, CSF formation stops: Rf branch removed)
-    G_cap = sum(2 / Rd[d] for d in model.districts) + 1 / model.Rpv + 1 / model.Rf
-    num = sum(2 * Pd[d] / Rd[d] for d in model.districts) + Pic / model.Rf + Pv / model.Rpv
-    Pc = num / G_cap
-    if Pc <= Pic:
-        G_cap -= 1 / model.Rf
-        num = sum(2 * Pd[d] / Rd[d] for d in model.districts) + Pv / model.Rpv
-        Pc = num / G_cap
+    # PCA1 and ACA1 junctions (the ACA1 pair is coupled through ACoA) and the capillary node
+    # (if Pc <= Pic, CSF formation stops: Rf branch removed): Ursino2010Model.node_pressures()
+    PPCA1l, PPCA1r, PACA1l, PACA1r, Pc = model.node_pressures(Pd, Rd, Pic, Pv, PICAl, PICAr, PBA)
 
     # Derived (NOT an Ursino node): pressure at the distal end of the MCA trunk,
     # i.e. after R_MCA, before the pial resistance Rd/2
