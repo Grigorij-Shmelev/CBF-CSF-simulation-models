@@ -111,24 +111,14 @@ def min_control_signal(model, y):
 
 # ----------------------------------------------------------------------------
 # 3b. D2.3 Step 2: auxiliary node pressures.
-#     derivatives() computes these internally but does not return them, so the
-#     formulas are COPIED here 1:1 from Ursino2010Model.derivatives().
-#     If you ever change them in the model, change them here too -> check_aux().
+#     derivatives() computes these internally but does not return them. The
+#     district resistances come from the model's own Ursino2010Model.district_wall()
+#     (the method derivatives() uses); check_aux() verifies the node pressures.
 # ----------------------------------------------------------------------------
 def district_Rd(model, y):
-    """Pial arterial resistance Rd per district (copy of the loop in derivatives)."""
-    Pic, Rd = y[0], {}
-    for i, d in enumerate(model.districts):
-        x = y[17 + i] - y[11 + i]                       # xCO2 - xaut
-        Cd0 = model.Cdn[d]
-        sat = model.sat1 if x < 0 else model.sat2
-        DCd = 2.0 * sat
-        kCd = Cd0 * sat / 2.0
-        u = np.exp(x / kCd)
-        Cd = Cd0 * ((1.0 - DCd / 2.0) + (1.0 + DCd / 2.0) * u) / (1.0 + u)
-        Vd = max(Cd * (y[5 + i] - Pic), 1e-4)
-        Rd[d] = model.kR[d] * (model.Cdn[d] ** 2) / (Vd ** 2)
-    return Rd
+    """Pial arterial resistance Rd per district (Ursino2010Model.district_wall, as in derivatives)."""
+    return {d: model.district_wall(d, y[17 + i] - y[11 + i], y[5 + i], y[0])[1]   # x = xCO2 - xaut
+            for i, d in enumerate(model.districts)}
 
 
 def aux_pressures(model, y, mca_stenosis_l=1.0):

@@ -116,6 +116,19 @@ class Ursino2010Model:
         y0[17:23] = 0.0  # xCO2
         return y0
 
+    def district_wall(self, d, x, Pd, Pic):
+        """Active compliance C_d and resistance R_d of district d for the control state x = x_CO2 - x_aut,
+        distal pressure Pd and ICP Pic. Also returns u = exp(x / k_Cd), from which derivatives() gets dC_d/dx."""
+        Cd0 = self.Cdn[d]
+        sat = self.sat1 if x < 0 else self.sat2
+        DCd = 2.0 * sat
+        kCd = Cd0 * sat / 2.0
+        u = np.exp(x / kCd)
+        Cd = Cd0 * ((1.0 - DCd/2.0) + (1.0 + DCd/2.0)*u) / (1.0 + u)
+        Vd = max(Cd * (Pd - Pic), 1e-4)
+        Rd = self.kR[d] * (self.Cdn[d]**2) / (Vd**2)
+        return Cd, Rd, u
+
     def derivatives(self, t, y, Pa=100.0, PaCO2=40.0, ica_stenosis_l=1.0,
                     mca_stenosis_l=1.0):
         """Right-hand-side differential equation system (dy/dt)."""
@@ -146,17 +159,8 @@ class Ursino2010Model:
         # District active compliance & resistance
         Cd, Rd, dCd_dx = {}, {}, {}
         for d in self.districts:
-            x = xCO2[d] - xaut[d]
-            Cd0 = self.Cdn[d]
-            sat = self.sat1 if x < 0 else self.sat2
-            DCd = 2.0 * sat
-            kCd = Cd0 * sat / 2.0
-            u = np.exp(x / kCd)
-            Cd[d] = Cd0 * ((1.0 - DCd/2.0) + (1.0 + DCd/2.0)*u) / (1.0 + u)
+            Cd[d], Rd[d], u = self.district_wall(d, xCO2[d] - xaut[d], Pd[d], Pic)
             dCd_dx[d] = 4.0 * u / ((1.0 + u)**2)
-
-            Vd = max(Cd[d] * (Pd[d] - Pic), 1e-4)
-            Rd[d] = self.kR[d] * (self.Cdn[d]**2) / (Vd**2)
 
         # Auxiliary pressures in Circle of Willis
         G_PCA1l = 1.0 / (R_PCA2l + Rd['pl']/2.0) + \
@@ -274,17 +278,7 @@ class Ursino2010Model:
         xCO2 = {'ml': y[17], 'al': y[18], 'pl': y[19],
                 'mr': y[20], 'ar': y[21], 'pr': y[22]}
 
-        Rd = {}
-        for d in self.districts:
-            x = xCO2[d] - xaut[d]
-            Cd0 = self.Cdn[d]
-            sat = self.sat1 if x < 0 else self.sat2
-            DCd = 2.0 * sat
-            kCd = Cd0 * sat / 2.0
-            u = np.exp(x / kCd)
-            Cd = Cd0 * ((1.0 - DCd/2.0) + (1.0 + DCd/2.0)*u) / (1.0 + u)
-            Vd = max(Cd * (Pd[d] - Pic), 1e-4)
-            Rd[d] = self.kR[d] * (self.Cdn[d]**2) / (Vd**2)
+        Rd = {d: self.district_wall(d, xCO2[d] - xaut[d], Pd[d], Pic)[1] for d in self.districts}
 
         R_ICAl = self.R_net['ICA'] * ica_stenosis_l
         R_ICAr = self.R_net['ICA']
