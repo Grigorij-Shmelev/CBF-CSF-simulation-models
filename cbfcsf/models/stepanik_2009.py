@@ -30,6 +30,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+from cbfcsf.common.physics import wall_compliance
 from cbfcsf.common.signals import pchip
 from cbfcsf.paths import out_path
 
@@ -147,13 +148,13 @@ class Stepanik2009Model:
         pVi = float(interpolators['pV'](t))
 
         # Active non-linear compartmental compliances
-        C1Ai = self.C1A0 * np.exp(-self.r1A * (abs(p[0])**self.a1A))
-        C2Ai = self.C2A0 * np.exp(-self.r2A * (abs(p[1] - pAVi)**self.a2A))
-        C1Vi = self.C1V0 * np.exp(-self.r1V * (abs(p[0] + pAVi)**self.a1V))
-        C2Vi = self.C2V0 * np.exp(-self.r2V * (abs(p[1])**self.a2V))
-        C3Ci = self.C3C0 * np.exp(-self.r3C * (abs(p[2])**self.a3C))
-        C4Ti = self.C4T0 * np.exp(-self.r4T * (abs(p[3])**self.a4T))
-        C5Li = self.C5L0 * np.exp(-self.r5L * (abs(p[4])**self.a5L))
+        C1Ai = wall_compliance(self.C1A0, self.r1A, self.a1A, p[0])
+        C2Ai = wall_compliance(self.C2A0, self.r2A, self.a2A, p[1] - pAVi)
+        C1Vi = wall_compliance(self.C1V0, self.r1V, self.a1V, p[0] + pAVi)
+        C2Vi = wall_compliance(self.C2V0, self.r2V, self.a2V, p[1])
+        C3Ci = wall_compliance(self.C3C0, self.r3C, self.a3C, p[2])
+        C4Ti = wall_compliance(self.C4T0, self.r4T, self.a4T, p[3])
+        C5Li = wall_compliance(self.C5L0, self.r5L, self.a5L, p[4])
 
         # Resorption target pressure
         resorption_p = (p[1] + pAi) if self.strict_matlab_mode else (p[1] + pVi)
@@ -300,13 +301,13 @@ def run_stepanik_simulation(model=None, duration_s=30.0, save_plot_path="stepani
     results['V5'] = cumulative_trapezoid(d_V5, t, initial=0) + model.V50
 
     # Non-linear compartmental compliances [mL/mmHg]
-    results['C1A'] = model.C1A0 * np.exp(-model.r1A * (abs(results['p1'] - results['pA'])**model.a1A))
-    results['C2A'] = model.C2A0 * np.exp(-model.r2A * (abs(results['p2'] - results['pA'])**model.a2A))
-    results['C1V'] = model.C1V0 * np.exp(-model.r1V * (abs(results['p1'] - results['pV'])**model.a1V))
-    results['C2V'] = model.C2V0 * np.exp(-model.r2V * (abs(results['p2'] - results['pV'])**model.a2V))
-    results['C3C'] = model.C3C0 * np.exp(-model.r3C * (abs(results['p3'] - results['pC'])**model.a3C))
-    results['C4T'] = model.C4T0 * np.exp(-model.r4T * (abs(results['p4'] - results['pT'])**model.a4T))
-    results['C5L'] = model.C5L0 * np.exp(-model.r5L * (abs(results['p5'] - results['pL'])**model.a5L))
+    results['C1A'] = wall_compliance(model.C1A0, model.r1A, model.a1A, results['p1'] - results['pA'])
+    results['C2A'] = wall_compliance(model.C2A0, model.r2A, model.a2A, results['p2'] - results['pA'])
+    results['C1V'] = wall_compliance(model.C1V0, model.r1V, model.a1V, results['p1'] - results['pV'])
+    results['C2V'] = wall_compliance(model.C2V0, model.r2V, model.a2V, results['p2'] - results['pV'])
+    results['C3C'] = wall_compliance(model.C3C0, model.r3C, model.a3C, results['p3'] - results['pC'])
+    results['C4T'] = wall_compliance(model.C4T0, model.r4T, model.a4T, results['p4'] - results['pT'])
+    results['C5L'] = wall_compliance(model.C5L0, model.r5L, model.a5L, results['p5'] - results['pL'])
 
     if save_plot_path:
         fig, axes = plt.subplots(3, 2, figsize=(14, 10))

@@ -23,6 +23,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+from cbfcsf.common.physics import wall_compliance
 from cbfcsf.common.signals import pchip
 
 
@@ -85,15 +86,15 @@ class Vanek2015Model:
 
     def compute_compliances(self, P1, P2, P3, P4, P5, Pa, Pb, PC, PT, PL):
         """Calculates non-linear exponential compliances for all interfaces."""
-        C1a = self.C1a0 * np.exp(-self.r1a * (abs(P1 - Pa)**self.a1a))
-        C2a = self.C2a0 * np.exp(-self.r2a * (abs(P2 - Pa)**self.a2a))
+        C1a = wall_compliance(self.C1a0, self.r1a, self.a1a, P1 - Pa)
+        C2a = wall_compliance(self.C2a0, self.r2a, self.a2a, P2 - Pa)
         
-        C1b = self.C1b0 * np.exp(-self.r1b * (abs(P1 - Pb)**self.a1b))
-        C2b = self.C2b0 * np.exp(-self.r2b * (abs(P2 - Pb)**self.a2b))
+        C1b = wall_compliance(self.C1b0, self.r1b, self.a1b, P1 - Pb)
+        C2b = wall_compliance(self.C2b0, self.r2b, self.a2b, P2 - Pb)
 
-        C3C = self.C3C0 * np.exp(-self.r3C * (abs(P3 - PC)**self.a3C))
-        C4T = self.C4T0 * np.exp(-self.r4T * (abs(P4 - PT)**self.a4T))
-        C5L = self.C5L0 * np.exp(-self.r5L * (abs(P5 - PL)**self.a5L))
+        C3C = wall_compliance(self.C3C0, self.r3C, self.a3C, P3 - PC)
+        C4T = wall_compliance(self.C4T0, self.r4T, self.a4T, P4 - PT)
+        C5L = wall_compliance(self.C5L0, self.r5L, self.a5L, P5 - PL)
 
         return C1a, C2a, C1b, C2b, C3C, C4T, C5L
 

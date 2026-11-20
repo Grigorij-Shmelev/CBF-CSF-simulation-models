@@ -42,7 +42,7 @@ import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.special import expit
 
-from cbfcsf.common.physics import hagen_poiseuille
+from cbfcsf.common.physics import hagen_poiseuille, wall_compliance
 from cbfcsf.paths import ZBYSEK_DATA, out_dir
 
 NAMES = ("mL", "rL", "mR", "rR")
@@ -171,7 +171,7 @@ class NewModel:
     def storage_at_rest(self):
         """Total spinal wall compliance at rest [mL/mmHg]: the only volume storage outside the skull."""
         u = self.P2_n - self.P_epi_n
-        return (self.C3C0 + self.C4T0 + self.C5L0) * np.exp(-self.r_sp * abs(u) ** self.a_sp)
+        return wall_compliance(self.C3C0 + self.C4T0 + self.C5L0, self.r_sp, self.a_sp, u)
 
     @classmethod
     def vanek_values(cls, **kw):
@@ -279,7 +279,7 @@ class NewModel:
                 (P3, self.C3C0, inp.PC, o["F23"] - F34 + I[2]),
                 (P4, self.C4T0, inp.PT, F34 - F45 + I[3]),
                 (P5, self.C5L0, inp.PL, F45 + I[4]))):
-            C = C0 * np.exp(-self.r_sp * abs(P - f(t)) ** self.a_sp)
+            C = wall_compliance(C0, self.r_sp, self.a_sp, P - f(t))
             dy[7 + i] = Inputs.ddt(f, t) + net / C
 
         # control (Ursino Eq. 21-23)
@@ -334,7 +334,7 @@ class NewModel:
             u = P - np.array([f(ti) for ti in t])
             half = (u - u[0]) / 2.0
             nodes = u[0] + half[:, None] * (xi[None, :] + 1.0)
-            r["dVspinal"] += half * (C0 * np.exp(-self.r_sp * np.abs(nodes) ** self.a_sp) @ wi)
+            r["dVspinal"] += half * (wall_compliance(C0, self.r_sp, self.a_sp, nodes) @ wi)
         I = np.array([np.asarray(inp.infusion(ti), float) for ti in t])
         r["I_total"] = I.sum(axis=1)
         r["dVcsf"] = (r["V1"] + r["V2"]) - (r["V1"][0] + r["V2"][0]) + r["dVspinal"]
