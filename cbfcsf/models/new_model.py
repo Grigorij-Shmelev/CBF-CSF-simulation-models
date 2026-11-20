@@ -351,6 +351,24 @@ def ramp(t, pts):
     return float(np.interp(t, tt, vv))
 
 
+def pulse(t, t_on, t_off, t_end, base, level, rise):
+    """Scenario input: base, ramp to level in `rise` s from t_on, hold, ramp back from t_off, base until t_end."""
+    return ramp(t, [(0, base), (t_on, base), (t_on + rise, level), (t_off, level), (t_off + rise, base), (t_end, base)])
+
+
+def marks(t, t_on, t_off):
+    """Sample indices: 1 s before the intervention, 1 s before its end, last sample."""
+    return np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+
+
+# Scenario names (headings of the summaries, keys of the runs)
+SC_CO2_60 = "CO2 challenge 40 -> 60 mmHg"
+SC_CO2_5 = "5 % CO2 (PaCO2 47.5 mmHg)"
+SC_LIT = "Lumbar infusion test, 1.5 mL/min for 10 min"
+SC_STROKE = "Stroke: left MCA occluded 30 min, then reopened"
+SC_ICA = "Left ICA occluded 30 min, then reopened"
+
+
 class Report:
     def __init__(self):
         self.rows = []
@@ -384,6 +402,17 @@ def common_checks(rep, tag, r, symmetric=True):
         rep.check(f"{tag} T4 left-right asymmetry", asym, 0, 1e-6, "rel")
 
 
+def after_reopening(r, q0, i0, i2):
+    """Largest relative deviation of flows, arterial and venous volumes at the end of the run from rest."""
+    return max(np.max(np.abs(r["q_k"][i2] / q0 - 1)), np.max(np.abs(r["Va"][i2] / r["Va"][i0] - 1)),
+               abs(r["Vv"][i2] / r["Vv"][i0] - 1))
+
+
+def dcbv(r):
+    """Stressed CBV change from rest to the end of the intervention."""
+    return r["Vblood"][r["marks"][1]] - r["Vblood"][r["marks"][0]]
+
+
 def test_rest(rep, m):
     r = m.simulate(Inputs(), 600.0, t_eval=np.linspace(0, 600, 601))
     rep.check("T1 rest: max |ICP - 9.47|", np.max(np.abs(r["ICP"] - m.P2_n)), 0, 0.05, "mmHg")
@@ -397,10 +426,10 @@ def test_rest(rep, m):
 
 def test_co2(rep, m):
     t_on, t_off, t_end = 120.0, 720.0, 3600.0
-    pco2 = lambda t: ramp(t, [(0, 40), (t_on, 40), (t_on + 10, 60), (t_off, 60), (t_off + 10, 40), (t_end, 40)])
+    pco2 = lambda t: pulse(t, t_on, t_off, t_end, 40, 60, 10)
     r = m.simulate(Inputs(PaCO2=pco2), t_end, t_eval=np.linspace(0, t_end, 3601), max_step=5.0)
     t = r["t"]
-    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    i0, i1, i2 = marks(t, t_on, t_off)
 
     rep.check("T5a CBF rise at end of hypercapnia", r["CBF"][i1] / r["CBF"][i0] - 1, 0.30, 1.00, "rel")
     rep.check("T5b arterial stressed volume rise", r["Va_total"][i1] / r["Va_total"][i0] - 1, 0.10, 0.45, "rel")
@@ -446,11 +475,10 @@ def test_lit(rep, m):
     rep.check("L1 LIT plateau: |ICP - 23.11|", abs(long["ICP"][-1] - plateau), 0, 0.1, "mmHg")
     plateau_sim = float(long["ICP"][-1])
 
-    inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (t_on, 0), (t_on + 5, rate), (t_off, rate),
-                                                    (t_off + 5, 0), (t_end, 0)])])
+    inf = lambda t: np.array([0, 0, 0, 0, pulse(t, t_on, t_off, t_end, 0, rate, 5)])
     r = m.simulate(Inputs(infusion=inf), t_end, t_eval=np.linspace(0, t_end, 3121), max_step=5.0)
     t = r["t"]
-    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    i0, i1, i2 = marks(t, t_on, t_off)
     rep.check("L2 ICP at end of infusion", r["ICP"][i1], r["ICP"][i0] + 5.0, 23.2, "mmHg")
     rep.check("L3 max |CBF/CBF_rest - 1|", np.max(np.abs(r["CBF"] / r["CBF"][i0] - 1)), 0, 0.10, "rel")
     rep.check("L4 |stressed CBV change| at end of infusion", abs(r["Vblood"][i1] - r["Vblood"][i0]), 0, 3.0, "mL")
@@ -464,11 +492,10 @@ def test_lit(rep, m):
 def test_stroke(rep, m):
     """Occlusion of the left MCA: R_MCA,L x 1000 for 30 min, then reopened."""
     t_on, t_off, t_end = 120.0, 1920.0, 3120.0
-    occ = lambda t: np.array([ramp(t, [(0, 1), (t_on, 1), (t_on + 5, 1000), (t_off, 1000), (t_off + 5, 1), (t_end, 1)]),
-                              1.0, 1.0, 1.0])
+    occ = lambda t: np.array([pulse(t, t_on, t_off, t_end, 1, 1000, 5), 1.0, 1.0, 1.0])
     r = m.simulate(Inputs(occlusion=occ), t_end, t_eval=np.linspace(0, t_end, 3121), max_step=5.0)
     t = r["t"]
-    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    i0, i1, i2 = marks(t, t_on, t_off)
     q0, q1 = r["q_k"][i0], r["q_k"][i1]
     rep.check("S1 residual flow MCA_L", q1[0] / q0[0], 0.02, 0.60, "rel")
     rep.check("S2 stressed volume MCA_L", r["Va"][i1, 0] / r["Va"][i0, 0] - 1, -0.70, -0.05, "rel")
@@ -476,8 +503,7 @@ def test_stroke(rep, m):
     rep.check("S3 rest_L flow: |change|", abs(q1[1] / q0[1] - 1), 0, 0.10, "rel")
     rep.check("S4 total CBF", r["CBF"][i1] / r["CBF"][i0] - 1, -0.30, -0.10, "rel")
     rep.check("S5 ICP at end of occlusion", r["ICP"][i1] - r["ICP"][i0], -0.5, 0.5, "mmHg")
-    back = max(np.max(np.abs(r["q_k"][i2] / q0 - 1)), np.max(np.abs(r["Va"][i2] / r["Va"][i0] - 1)),
-               abs(r["Vv"][i2] / r["Vv"][i0] - 1))
+    back = after_reopening(r, q0, i0, i2)
     rep.check("S6 after reopening: max |change|", back, 0, 0.02, "rel")
     common_checks(rep, "stroke", r, symmetric=False)
     r["marks"], r["span"] = (i0, i1, i2), (t_on, t_off)
@@ -487,10 +513,10 @@ def test_stroke(rep, m):
 def test_co2_5pct(rep, m):
     """5 % CO2 inhalation, taken as PaCO2 = 47.5 mmHg (student's figure, not from the project sources)."""
     t_on, t_off, t_end = 120.0, 720.0, 1920.0
-    pco2 = lambda t: ramp(t, [(0, 40), (t_on, 40), (t_on + 10, 47.5), (t_off, 47.5), (t_off + 10, 40), (t_end, 40)])
+    pco2 = lambda t: pulse(t, t_on, t_off, t_end, 40, 47.5, 10)
     r = m.simulate(Inputs(PaCO2=pco2), t_end, t_eval=np.linspace(0, t_end, 1921), max_step=5.0)
     t = r["t"]
-    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    i0, i1, i2 = marks(t, t_on, t_off)
     rep.check("C1 CBF rise, 47.5 mmHg", r["CBF"][i1] / r["CBF"][i0] - 1, 0.10, 0.55, "rel")
     last = r["CBF"][(t >= t_off - 100) & (t <= t_off - 1)]
     rep.check("C2 chatter: CBF spread over last 100 s", np.ptp(last) / np.mean(last), 0, 0.01, "rel")
@@ -627,18 +653,16 @@ def test_cross_more(rep, m, r_co2, r_lit, r_ica, van):
 def test_ica(rep, m):
     """I1: occlusion of the left ICA. The left side is then fed only through R_com."""
     t_on, t_off, t_end = 120.0, 1920.0, 3120.0
-    occ = lambda t: np.array([1.0, 1.0, ramp(t, [(0, 1), (t_on, 1), (t_on + 5, 1000), (t_off, 1000), (t_off + 5, 1),
-                                                 (t_end, 1)]), 1.0])
+    occ = lambda t: np.array([1.0, 1.0, pulse(t, t_on, t_off, t_end, 1, 1000, 5), 1.0])
     r = m.simulate(Inputs(occlusion=occ), t_end, t_eval=np.linspace(0, t_end, 3121), max_step=5.0)
     t = r["t"]
-    i0, i1, i2 = np.searchsorted(t, t_on - 1), np.searchsorted(t, t_off - 1), len(t) - 1
+    i0, i1, i2 = marks(t, t_on, t_off)
     q0, q1 = r["q_k"][i0], r["q_k"][i1]
     rep.check("I1 left-side flows, smallest fraction of rest", np.min(q1[:2] / q0[:2]), 0.20, 1.00, "rel")
     rep.check("I1 left-side flows, largest fraction of rest", np.max(q1[:2] / q0[:2]), 0.20, 1.00, "rel")
     rep.check("I1 right-side flows: max |change|", np.max(np.abs(q1[2:] / q0[2:] - 1)), 0, 0.10, "rel")
     rep.check("I1 stressed CBV change", r["Vblood"][i1] - r["Vblood"][i0], -5.0, 0.0, "mL")
-    back = max(np.max(np.abs(r["q_k"][i2] / q0 - 1)), np.max(np.abs(r["Va"][i2] / r["Va"][i0] - 1)),
-               abs(r["Vv"][i2] / r["Vv"][i0] - 1))
+    back = after_reopening(r, q0, i0, i2)
     rep.check("I1 after reopening: max |change|", back, 0, 0.02, "rel")
     common_checks(rep, "ICA", r, symmetric=False)
     r["marks"], r["span"] = (i0, i1, i2), (t_on, t_off)
@@ -800,9 +824,6 @@ def conservation_fails(rep_local):
 
 def test_venous_squeeze(rep, base_runs):
     """V0-V4 (spec 7.10): venous squeeze option kappa_v."""
-    lit_name = "Lumbar infusion test, 1.5 mL/min for 10 min"
-    co2_name, stroke_name = "5 % CO2 (PaCO2 47.5 mmHg)", "Stroke: left MCA occluded 30 min, then reopened"
-    dV = lambda r: r["Vblood"][r["marks"][1]] - r["Vblood"][r["marks"][0]]
     kappas = (0.0, 0.05, 0.1, 0.2)
     res, fails, scen_fails = {}, [], {}
     for k in kappas:
@@ -810,16 +831,16 @@ def test_venous_squeeze(rep, base_runs):
         res[k] = test_lit(d, NewModel(kappa_v=k))
         fails += conservation_fails(d)
         scen_fails[k] = [row[0] for row in d.rows if row[5] == "FAIL" and row[0].startswith("L")]
-    rep.check("V0 kappa_v = 0: LIT CBV change vs default", abs(dV(res[0.0]) - dV(base_runs[lit_name])), 0, 1e-9, "mL")
-    rep.check("V1 kappa_v = 0.1: LIT stressed CBV change", dV(res[0.1]), -1.0, 0.0, "mL")
-    vals = [dV(res[k]) for k in kappas]
+    rep.check("V0 kappa_v = 0: LIT CBV change vs default", abs(dcbv(res[0.0]) - dcbv(base_runs[SC_LIT])), 0, 1e-9, "mL")
+    rep.check("V1 kappa_v = 0.1: LIT stressed CBV change", dcbv(res[0.1]), -1.0, 0.0, "mL")
+    vals = [dcbv(res[k]) for k in kappas]
     rep.check("V2 LIT CBV change strictly decreasing with kappa_v", float(all(np.diff(vals) < 0)), 1, 1, "")
     d = Report()
     co2 = test_co2_5pct(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
     d = Report()
     stroke = test_stroke(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
-    rep.check("V3 kappa_v = 0.1: 5 % CO2 CBV change vs default", dV(co2) - dV(base_runs[co2_name]), -0.5, 0.5, "mL")
-    rep.check("V3 kappa_v = 0.1: stroke CBV change vs default", dV(stroke) - dV(base_runs[stroke_name]), -0.5, 0.5, "mL")
+    rep.check("V3 kappa_v = 0.1: 5 % CO2 CBV change vs default", dcbv(co2) - dcbv(base_runs[SC_CO2_5]), -0.5, 0.5, "mL")
+    rep.check("V3 kappa_v = 0.1: stroke CBV change vs default", dcbv(stroke) - dcbv(base_runs[SC_STROKE]), -0.5, 0.5, "mL")
     rep.check("V4 conservation checks failing in all runs", float(len(fails)), 0, 0, "")
     return res, co2, stroke, scen_fails
 
@@ -860,7 +881,7 @@ def lit_curve(theta, t_eval, proto, **extra):
     alpha = 1.0 / (60.0 * R_out)
     m = NewModel(alpha=alpha, Pvs_n=P0 - LIT_S1 / alpha, c_sp_scale=s, **extra)
     r0, t_on, t_off, t_end = proto["rate"], proto["t_on"], proto["t_off"], proto["t_end"]
-    inf = lambda t: np.array([0, 0, 0, 0, ramp(t, [(0, 0), (t_on, 0), (t_on + 5, r0), (t_off, r0), (t_off + 5, 0), (t_end, 0)])])
+    inf = lambda t: np.array([0, 0, 0, 0, pulse(t, t_on, t_off, t_end, 0, r0, 5)])
     inp = Inputs(Pvs=m.Pvs_n, infusion=inf)
     sol = solve_ivp(lambda t, y: m.rhs(t, y, inp), (0.0, t_end), m.initial_state(), method="Radau",
                     t_eval=t_eval, rtol=1e-6, atol=1e-8, max_step=10.0)
@@ -928,11 +949,16 @@ def _mismatch_task(kappa):
     return out
 
 
+def _one_thread_per_worker():
+    """One BLAS thread per worker process: the linear algebra here is tiny and many threads per process slow it down."""
+    for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+        os.environ[var] = "1"
+
+
 def test_fit_mismatch(rep, kappas=(0.1, 0.2)):
     """M1-M4 (spec 7.13)."""
     from concurrent.futures import ProcessPoolExecutor
-    for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
-        os.environ[var] = "1"
+    _one_thread_per_worker()
     with ProcessPoolExecutor(max_workers=len(kappas)) as ex:
         out = list(ex.map(_mismatch_task, kappas))
     for f in out:
@@ -946,9 +972,7 @@ def test_fit_mismatch(rep, kappas=(0.1, 0.2)):
 def test_fit(rep, n_seeds=8, workers=8):
     """F1-F4 (spec 7.10): fit tool on synthetic LIT curves."""
     from concurrent.futures import ProcessPoolExecutor
-    # One thread per worker: the linear algebra here is tiny and many BLAS threads per process slow everything down
-    for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
-        os.environ[var] = "1"
+    _one_thread_per_worker()
     tasks = [("clean", 0)] + [("noisy", sd) for sd in range(1, n_seeds + 1)] + [("long", 1)]
     with ProcessPoolExecutor(max_workers=workers) as ex:
         out = list(ex.map(_fit_task, *zip(*tasks)))
@@ -1023,21 +1047,21 @@ def main(argv=()):
     rep = Report()
     r_rest = test_rest(rep, m)
     runs = {
-        "CO2 challenge 40 -> 60 mmHg": (test_co2(rep, m), "new_model_co2.png"),
-        "5 % CO2 (PaCO2 47.5 mmHg)": (test_co2_5pct(rep, m), "new_model_co2_5pct.png"),
-        "Lumbar infusion test, 1.5 mL/min for 10 min": (test_lit(rep, m), "new_model_lit.png"),
-        "Stroke: left MCA occluded 30 min, then reopened": (test_stroke(rep, m), "new_model_stroke.png"),
+        SC_CO2_60: (test_co2(rep, m), "new_model_co2.png"),
+        SC_CO2_5: (test_co2_5pct(rep, m), "new_model_co2_5pct.png"),
+        SC_LIT: (test_lit(rep, m), "new_model_lit.png"),
+        SC_STROKE: (test_stroke(rep, m), "new_model_stroke.png"),
     }
     test_pulsatile(rep, m)
     # fourth step (spec 7.8): cross-checks against the source models and ICA occlusion
-    urs, new = test_cross_stroke(rep, runs["Stroke: left MCA occluded 30 min, then reopened"][0])
-    van = test_cross_lit(rep, runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0])
-    runs["Left ICA occluded 30 min, then reopened"] = (test_ica(rep, m), "new_model_ica.png")
+    urs, new = test_cross_stroke(rep, runs[SC_STROKE][0])
+    van = test_cross_lit(rep, runs[SC_LIT][0])
+    runs[SC_ICA] = (test_ica(rep, m), "new_model_ica.png")
     # sixth step (spec 7.15): further cross-checks against the source codes
-    more = test_cross_more(rep, m, runs["5 % CO2 (PaCO2 47.5 mmHg)"][0], runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0],
-                           runs["Left ICA occluded 30 min, then reopened"][0], van)
+    more = test_cross_more(rep, m, runs[SC_CO2_5][0], runs[SC_LIT][0],
+                           runs[SC_ICA][0], van)
     # fifth step (spec 7.10): new outputs
-    test_outputs(rep, r_rest, runs["5 % CO2 (PaCO2 47.5 mmHg)"][0], runs["Stroke: left MCA occluded 30 min, then reopened"][0])
+    test_outputs(rep, r_rest, runs[SC_CO2_5][0], runs[SC_STROKE][0])
     n_fail = rep.show()
     print("\n=== X1: left MCA occlusion, new model vs existing Ursino code ===")
     print(f"residual flow in the MCA_L territory: new {100 * new['res']:.1f} %, Ursino code {100 * urs['res']:.1f} % of rest")
@@ -1046,7 +1070,7 @@ def main(argv=()):
     print(f"arterial stressed volume, all:        new {new['dVa']:+.2f} mL, Ursino code {urs['dVa']:+.2f} mL")
     print(f"Ursino code ICP: {urs['icp'][0]:.2f} -> {urs['icp'][1]:.2f} mmHg")
     print("\n=== X2: lumbar infusion, new model vs existing Vanek code (constant inputs) ===")
-    lit = runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0]
+    lit = runs[SC_LIT][0]
     print(f"plateau ICP:              new {lit['plateau_sim']:.2f}, Vanek code {van['plateau']:.2f} mmHg")
     print(f"ICP rise after 10 min:    new {van['rise_new']:.2f}, Vanek code {van['rise']:.2f} mmHg (Vanek rest {van['rest']:.2f})")
     print(f"ICP rise after 5 min:     new {more['lit'][0]:.2f}, Vanek code {more['lit'][1]:.2f} mmHg (Pb = 10), {more['lit'][2]:.2f} mmHg (Pb = 12)")
@@ -1068,7 +1092,7 @@ def main(argv=()):
     for name, (r, fname) in runs.items():
         summary(name, r, m)
         plot_run(r, m, os.path.join(fig_dir, fname), f"New model. {name} (shaded). Pa = 100 mmHg")
-    co2 = runs["CO2 challenge 40 -> 60 mmHg"][0]
+    co2 = runs[SC_CO2_60][0]
     base_runs = {k: v[0] for k, v in runs.items()}
 
     print(f"\nMCA flow rise at 60 mmHg: new model {100 * co2['rise_new']:+.1f} %, existing Ursino code {100 * co2['rise_ursino']:+.1f} %")
@@ -1098,15 +1122,14 @@ def step_options(base_runs, fig_dir):
     """Fifth step (spec 7.10): venous squeeze and sigmoid width."""
     rep3 = Report()
     res, co2, stroke, scen_fails = test_venous_squeeze(rep3, base_runs)
-    dV = lambda r: r["Vblood"][r["marks"][1]] - r["Vblood"][r["marks"][0]]
     print("\n=== V: venous squeeze kappa_v (spec 7.10) ===")
     print(f"{'kappa_v':>8}{'LIT dCBV [mL]':>15}{'arterial':>10}{'venous':>9}{'CBF change':>12}{'ICP end [mmHg]':>16}   LIT scenario bounds failing")
     for k, r in res.items():
         i0, i1, _ = r["marks"]
-        print(f"{k:>8}{dV(r):>15.2f}{r['Va_total'][i1] - r['Va_total'][i0]:>10.2f}{r['Vv'][i1] - r['Vv'][i0]:>9.2f}"
+        print(f"{k:>8}{dcbv(r):>15.2f}{r['Va_total'][i1] - r['Va_total'][i0]:>10.2f}{r['Vv'][i1] - r['Vv'][i0]:>9.2f}"
               f"{100 * (r['CBF'][i1] / r['CBF'][i0] - 1):>11.1f}%{r['ICP'][i1]:>16.2f}   {scen_fails[k] or '-'}")
-    print(f"kappa_v = 0.1: 5 % CO2 dCBV {dV(co2):+.2f} mL (default {dV(base_runs['5 % CO2 (PaCO2 47.5 mmHg)']):+.2f}), "
-          f"stroke dCBV {dV(stroke):+.2f} mL (default {dV(base_runs['Stroke: left MCA occluded 30 min, then reopened']):+.2f})")
+    print(f"kappa_v = 0.1: 5 % CO2 dCBV {dcbv(co2):+.2f} mL (default {dcbv(base_runs[SC_CO2_5]):+.2f}), "
+          f"stroke dCBV {dcbv(stroke):+.2f} mL (default {dcbv(base_runs[SC_STROKE]):+.2f})")
     plot_run(res[0.1], NewModel(kappa_v=0.1), os.path.join(fig_dir, "new_model_lit_squeeze.png"),
              "New model, venous squeeze kappa_v = 0.1. Lumbar infusion test (shaded)")
     rows = test_sigmoid_width(rep3)
@@ -1148,10 +1171,10 @@ def step_calibration(m, base_runs, fig_dir):
     rep_v = Report()
     test_rest(rep_v, mv)
     van_runs = {
-        "CO2 challenge 40 -> 60 mmHg": test_co2(rep_v, mv),
-        "5 % CO2 (PaCO2 47.5 mmHg)": test_co2_5pct(rep_v, mv),
-        "Lumbar infusion test, 1.5 mL/min for 10 min": test_lit(rep_v, mv),
-        "Stroke: left MCA occluded 30 min, then reopened": test_stroke(rep_v, mv),
+        SC_CO2_60: test_co2(rep_v, mv),
+        SC_CO2_5: test_co2_5pct(rep_v, mv),
+        SC_LIT: test_lit(rep_v, mv),
+        SC_STROKE: test_stroke(rep_v, mv),
     }
     test_pulsatile(rep_v, mv)
     print("K1: all checks again with Vanek's raw spinal compliances")
@@ -1197,8 +1220,8 @@ def step_calibration(m, base_runs, fig_dir):
 def step_sensitivity(base_runs):
     """Third step (spec 7.5): V1, phi_v = 1 vs 0.5."""
     rep2 = Report()
-    base = {"5% CO2": base_runs["5 % CO2 (PaCO2 47.5 mmHg)"], "LIT": base_runs["Lumbar infusion test, 1.5 mL/min for 10 min"],
-            "stroke": base_runs["Stroke: left MCA occluded 30 min, then reopened"]}
+    base = {"5% CO2": base_runs[SC_CO2_5], "LIT": base_runs[SC_LIT],
+            "stroke": base_runs[SC_STROKE]}
     rows, res = sensitivity_phi_v(rep2, base)
     print("\n=== V1: phi_v sensitivity ===")
     print(f"{'scenario':<10}{'dCBV phi_v=1':>14}{'phi_v=0.5':>11}{'ICP max 1':>11}{'0.5':>8}{'ICP min 1':>11}{'0.5':>8}")
