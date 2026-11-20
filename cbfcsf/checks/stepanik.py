@@ -22,6 +22,16 @@ from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulati
 from cbfcsf.paths import out_path
 
 
+def lit_model():
+    """Stepanik's model configured for the lumbar infusion test: 0.025 mL/s into compartment 5 from 60 s for 300 s."""
+    model = Stepanik2009Model()
+    # Configure infusion into compartment 5 (Lumbar SAS, index 4)
+    model.infusion_rate[4] = 0.025      # 1.5 mL/min = 0.025 mL/s
+    model.infusion_start[4] = 60.0       # start at t = 60s
+    model.infusion_duration[4] = 300.0   # duration = 300s (ends at t = 360s)
+    return model
+
+
 def run_stepanik_lumbar_infusion_test():
     """
     Executes a standard Lumbar Infusion Test (LIT) on Zbyšek Štěpáník's (2009) 2nd Generation Model.
@@ -31,16 +41,11 @@ def run_stepanik_lumbar_infusion_test():
     - Infusion Phase: t = 60 to 360s (1.5 mL/min = 0.025 mL/s into Lumbar SAS / compartment 5)
     - Recovery Phase: t = 360 to 500s
     """
-    model = Stepanik2009Model()
-    
+    model = lit_model()
+
     duration_s = 500.0
     model.Tmax = duration_s
-    
-    # Configure infusion into compartment 5 (Lumbar SAS, index 4)
-    model.infusion_rate[4] = 0.025      # 1.5 mL/min = 0.025 mL/s
-    model.infusion_start[4] = 60.0       # start at t = 60s
-    model.infusion_duration[4] = 300.0   # duration = 300s (ends at t = 360s)
-    
+
     print("Running Lumbar Infusion Test simulation on Štěpáník (2009) model (500s)...")
     
     # Execute full 500s simulation

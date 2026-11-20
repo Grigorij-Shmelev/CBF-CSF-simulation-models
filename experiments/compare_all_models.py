@@ -3,10 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from cbfcsf.models.ursino_2010 import Ursino2010Model
-from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
+from cbfcsf.models.stepanik_2009 import run_stepanik_simulation
 from cbfcsf.models.vanek_2015 import Vanek2015Model
 from cbfcsf.checks.ursino import steal_run
 from cbfcsf.checks.vanek import lit_run
+from cbfcsf.checks.stepanik import lit_model
 from cbfcsf.paths import out_path
 
 print("===========================================================================")
@@ -35,10 +36,7 @@ print("\n2. Running Lumbar Infusion Test (1.5 mL/min for 300s) on Štěpáník v
 duration_s = 500.0
 
 # 2a. Štěpáník (2009) Model under Native Boundary (pV = 2.0 mmHg)
-stepanik_model = Stepanik2009Model()
-stepanik_model.infusion_rate[4] = 0.025  # 1.5 mL/min = 0.025 mL/s into Lumbar SAS
-stepanik_model.infusion_start[4] = 60.0
-stepanik_model.infusion_duration[4] = 300.0
+stepanik_model = lit_model()  # 1.5 mL/min = 0.025 mL/s into Lumbar SAS from 60 s for 300 s
 
 res_step = run_stepanik_simulation(model=stepanik_model, duration_s=duration_s,
                                    save_plot_path=out_path("compare", "stepanik_base_plots.png"))
