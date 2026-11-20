@@ -25,7 +25,7 @@ Algebraic unknowns, solved at every call (spec 3.5.6)
 Units: mmHg, mL, s.
 
 Usage (from mat_models/):
-    python new_model.py                 # tests of spec 7.1, 7.3 and cross-checks of 7.8, figures to docs/figures/ (2 min)
+    python new_model.py                 # tests of spec 7.1, 7.3, cross-checks of 7.8 and 7.15, figures to docs/figures/ (2 min)
     python new_model.py --calibrate     # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
     python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
     python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 2 min)
@@ -51,7 +51,9 @@ IS_MCA = np.array([True, False, True, False])
 # Inputs
 # ----------------------------------------------------------------------------------------------------------------------
 class Inputs:
-    """Time-dependent inputs. Every entry is a function of time t [s]."""
+    """Time-dependent inputs. Every entry is a function of time t [s].
+    Note: the model's resting state is computed for its own parameter Pvs_n (6 mmHg). A model built with another
+    Pvs_n must be run with Inputs(Pvs=m.Pvs_n), otherwise it does not start in equilibrium (lit_curve() does this)."""
 
     def __init__(self, Pa=100.0, PaCO2=40.0, Pvs=6.0, PC=2.0, PT=2.0, PL=2.0, infusion=None, occlusion=None):
         self.Pa = self._fn(Pa)            # arterial input pressure (AIF) [mmHg]
@@ -365,7 +367,8 @@ class Report:
         for name, v, lo, hi, unit, res in self.rows:
             print(f"{name:<46}{v:>12.5g}  [{lo:.4g}, {hi:.4g}] {unit:<10}{res}")
         n_fail = sum(1 for r in self.rows if r[5] == "FAIL")
-        print(f"\n{len(self.rows)} checks, {n_fail} failed")
+        n_info = sum(1 for r in self.rows if r[5].startswith("info"))
+        print(f"\n{len(self.rows) - n_info} pass/fail checks, {n_fail} failed; {n_info} informational")
         return n_fail
 
 
@@ -537,18 +540,19 @@ def test_cross_stroke(rep, r):
     return urs, new
 
 
-def vanek_lit(rate, t_on=300.0, dur=600.0):
-    """Lumbar infusion in the existing Vanek code with constant boundary pressures (that file is not modified)."""
+def vanek_lit(rate, t_on=300.0, dur=600.0, Pb=10.0):
+    """Lumbar infusion in the existing Vanek code with constant boundary pressures (that file is not modified).
+    rise = ICP rise at the end of the infusion, rise5 = after 300 s of infusion (needs dur >= 300)."""
     from vanek_2015_model import Vanek2015Model
     v = Vanek2015Model()
-    const = {k: (lambda t, c=c: c) for k, c in dict(Pa=80.0, Pb=10.0, PC=2.0, PT=2.0, PL=2.0).items()}
+    const = {k: (lambda t, c=c: c) for k, c in dict(Pa=80.0, Pb=Pb, PC=2.0, PT=2.0, PL=2.0).items()}
     P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])
     inf = lambda t: np.array([0.0, 0.0, 0.0, 0.0, rate if t >= t_on else 0.0])
     a = solve_ivp(lambda t, P: v.derivatives(t, P, const, infusion_rates=inf(t)), (0.0, t_on + dur), P0, method="Radau",
-                  t_eval=[t_on - 1.0, t_on + dur], max_step=5.0, rtol=1e-7, atol=1e-9)
+                  t_eval=[t_on - 1.0, t_on + 300.0, t_on + dur], max_step=5.0, rtol=1e-7, atol=1e-9)
     b = solve_ivp(lambda t, P: v.derivatives(t, P, const, infusion_rates=np.array([0, 0, 0, 0, rate])), (0.0, 8000.0), P0,
                   method="Radau", t_eval=[8000.0], max_step=50.0, rtol=1e-7, atol=1e-9)
-    return dict(rest=a.y[1, 0], rise=a.y[1, 1] - a.y[1, 0], plateau=b.y[1, -1])
+    return dict(rest=a.y[1, 0], rise5=a.y[1, 1] - a.y[1, 0], rise=a.y[1, 2] - a.y[1, 0], plateau=b.y[1, -1])
 
 
 def test_cross_lit(rep, r):
@@ -560,6 +564,62 @@ def test_cross_lit(rep, r):
     rep.check("X2b ICP rise after 10 min, new / Vanek code", rise_new / van["rise"], 0.5, 1.5, "ratio")
     van["rise_new"] = rise_new
     return van
+
+
+def test_cross_more(rep, m, r_co2, r_lit, r_ica, van):
+    """X3, X4, X2c, X5 (spec 7.15): further comparisons with the source codes, added in the review of 16 Nov.
+    r_co2 = 5 % CO2 run, r_lit = LIT run, r_ica = ICA run, van = result of test_cross_lit. X5 is informational:
+    it records a known disagreement (the lumped circle has no basilar inlet, spec 3.2.2)."""
+    from ursino_2010_model import Ursino2010Model
+    u = Ursino2010Model()
+    end = lambda y0, T, **kw: solve_ivp(lambda t, y: u.derivatives(t, y, **kw), (0.0, T), y0, method="Radau",
+                                        rtol=1e-7, atol=1e-9).y[:, -1]
+    y_rest = end(u.get_initial_state(), 600.0)
+    q0, V0 = ursino_districts(u, y_rest)
+
+    def urs(T, **kw):
+        """Ursino code after T s with the given inputs: district flows, total CBF change, arterial volume change."""
+        q, V = ursino_districts(u, end(y_rest, T, **kw))
+        return q, q.sum() / q0.sum() - 1, V.sum() - V0.sum()
+
+    out = {}
+    # X3: graded CO2 range (T5g compares at 60 mmHg, where the response is saturated)
+    _, dq_u, dV_u = urs(600.0, PaCO2=47.5)
+    i0, i1, _ = r_co2["marks"]
+    dq_n, dV_n = r_co2["CBF"][i1] / r_co2["CBF"][i0] - 1, r_co2["Va_total"][i1] - r_co2["Va_total"][i0]
+    rep.check("X3a 5 % CO2: total CBF rise, new - Ursino", dq_n - dq_u, -0.03, 0.03, "rel")
+    rep.check("X3b 5 % CO2: arterial volume change, new / Ursino", dV_n / dV_u, 0.85, 1.15, "ratio")
+    out["co2"] = (dq_n, dq_u, dV_n, dV_u)
+
+    # X4: autoregulation, Pa 100 -> 80 mmHg held 600 s
+    _, dq_u, dV_u = urs(600.0, Pa=80.0)
+    r = m.simulate(Inputs(Pa=lambda t: ramp(t, [(0, 100), (1, 80)])), 600.0, t_eval=[0.0, 600.0], max_step=2.0)
+    dq_n, dV_n = r["CBF"][1] / r["CBF"][0] - 1, r["Va_total"][1] - r["Va_total"][0]
+    rep.check("X4a Pa 100 -> 80: total CBF change, new - Ursino", dq_n - dq_u, -0.03, 0.03, "rel")
+    rep.check("X4b Pa 100 -> 80: arterial volume change, new / Ursino", dV_n / dV_u, 0.85, 1.15, "ratio")
+    out["pa"] = (dq_n, dq_u, dV_n, dV_u)
+
+    # X2c: LIT half-way up the curve (X2b compares at 10 min, where both models are close to the same plateau)
+    j0 = r_lit["marks"][0]
+    j5 = np.searchsorted(r_lit["t"], r_lit["span"][0] + 300.0)
+    rise5 = r_lit["ICP"][j5] - r_lit["ICP"][j0]
+    van12 = vanek_lit(1.5 / 60.0, Pb=12.0)
+    rep.check("X2c ICP rise after 5 min, new / Vanek code", rise5 / van["rise5"], 0.75, 1.25, "ratio")
+    rep.info("X2c same, Vanek code with Pb = 12", rise5 / van12["rise5"], 0.75, 1.25, "ratio")
+    out["lit"] = (rise5, van["rise5"], van12["rise5"])
+
+    # X5 (info): left ICA occlusion. Ursino's order of districts: ml, al, pl, mr, ar, pr; his "rest_L" = al + pl
+    q1, dq_u, dV_u = urs(1800.0, ica_stenosis_l=1000.0)
+    k0, k1, _ = r_ica["marks"]
+    dq_n, dV_n = r_ica["CBF"][k1] / r_ica["CBF"][k0] - 1, r_ica["Va_total"][k1] - r_ica["Va_total"][k0]
+    rest_u = (q1[1] + q1[2]) / (q0[1] + q0[2]) - 1
+    rest_n = r_ica["q_k"][k1, 1] / r_ica["q_k"][k0, 1] - 1
+    rep.info("X5a ICA occlusion: total CBF change, new - Ursino", dq_n - dq_u, -0.10, 0.10, "rel")
+    rep.info("X5b ICA occlusion: rest_L flow change, new - Ursino", rest_n - rest_u, -0.10, 0.10, "rel")
+    out["ica"] = dict(dq=(dq_n, dq_u), dV=(dV_n, dV_u), rest=(rest_n, rest_u),
+                      mca=(r_ica["q_k"][k1, 0] / r_ica["q_k"][k0, 0] - 1, q1[0] / q0[0] - 1),
+                      urs_districts=q1[:3] / q0[:3] - 1)
+    return out
 
 
 def test_ica(rep, m):
@@ -821,11 +881,18 @@ def fit_lit(t, p, proto, theta0=LIT_DEFAULT):
 
 
 def resample_mean(t, p, dt=2.0):
-    """Average a densely sampled recording into dt-second bins (the fit needs about one point per 2 s)."""
+    """Average a recording into dt-second bins (the fit needs about one point per 2 s).
+    Bins without a sample (gaps, or sampling slower than dt) and non-finite samples are dropped; they must not enter
+    the fit as zeros. Each bin is placed at the mean time of its samples."""
+    t, p = np.asarray(t, float), np.asarray(p, float)
+    ok = np.isfinite(t) & np.isfinite(p)
+    t, p = t[ok], p[ok]
     idx = np.floor((t - t[0]) / dt).astype(int)
     n = idx.max() + 1
     cnt = np.bincount(idx, minlength=n)
-    return t[0] + dt * (np.arange(n) + 0.5), np.bincount(idx, weights=p, minlength=n) / np.maximum(cnt, 1)
+    keep = cnt > 0
+    return (np.bincount(idx, weights=t, minlength=n)[keep] / cnt[keep],
+            np.bincount(idx, weights=p, minlength=n)[keep] / cnt[keep])
 
 
 def load_lit_csv(path):
@@ -964,6 +1031,9 @@ def main(argv=()):
     urs, new = test_cross_stroke(rep, runs["Stroke: left MCA occluded 30 min, then reopened"][0])
     van = test_cross_lit(rep, runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0])
     runs["Left ICA occluded 30 min, then reopened"] = (test_ica(rep, m), "new_model_ica.png")
+    # sixth step (spec 7.15): further cross-checks against the source codes
+    more = test_cross_more(rep, m, runs["5 % CO2 (PaCO2 47.5 mmHg)"][0], runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0],
+                           runs["Left ICA occluded 30 min, then reopened"][0], van)
     # fifth step (spec 7.10): new outputs
     test_outputs(rep, r_rest, runs["5 % CO2 (PaCO2 47.5 mmHg)"][0], runs["Stroke: left MCA occluded 30 min, then reopened"][0])
     n_fail = rep.show()
@@ -977,6 +1047,19 @@ def main(argv=()):
     lit = runs["Lumbar infusion test, 1.5 mL/min for 10 min"][0]
     print(f"plateau ICP:              new {lit['plateau_sim']:.2f}, Vanek code {van['plateau']:.2f} mmHg")
     print(f"ICP rise after 10 min:    new {van['rise_new']:.2f}, Vanek code {van['rise']:.2f} mmHg (Vanek rest {van['rest']:.2f})")
+    print(f"ICP rise after 5 min:     new {more['lit'][0]:.2f}, Vanek code {more['lit'][1]:.2f} mmHg (Pb = 10), {more['lit'][2]:.2f} mmHg (Pb = 12)")
+    print("\n=== X3, X4: graded CO2 range and autoregulation, new model vs existing Ursino code (spec 7.15) ===")
+    for name, key in (("5 % CO2 (47.5 mmHg)", "co2"), ("Pa 100 -> 80 mmHg", "pa")):
+        dq_n, dq_u, dV_n, dV_u = more[key]
+        print(f"{name:<20} total CBF: new {100 * dq_n:+.1f} %, Ursino code {100 * dq_u:+.1f} %;   "
+              f"arterial stressed volume: new {dV_n:+.2f} mL, Ursino code {dV_u:+.2f} mL")
+    ica = more["ica"]
+    print("\n=== X5 (info): left ICA occlusion, new model vs existing Ursino code. NOT validated: no basilar inlet (spec 3.2.2) ===")
+    print(f"MCA_L flow:                new {100 * ica['mca'][0]:+.1f} %, Ursino code {100 * ica['mca'][1]:+.1f} %")
+    print(f"rest_L flow:               new {100 * ica['rest'][0]:+.1f} %, Ursino code {100 * ica['rest'][1]:+.1f} % "
+          f"(his ACA_L {100 * ica['urs_districts'][1]:+.1f} %, PCA_L {100 * ica['urs_districts'][2]:+.1f} %)")
+    print(f"total CBF:                 new {100 * ica['dq'][0]:+.1f} %, Ursino code {100 * ica['dq'][1]:+.1f} %")
+    print(f"arterial stressed volume:  new {ica['dV'][0]:+.2f} mL, Ursino code {ica['dV'][1]:+.2f} mL")
 
     fig_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "figures"))
     os.makedirs(fig_dir, exist_ok=True)
