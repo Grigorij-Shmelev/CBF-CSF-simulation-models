@@ -30,6 +30,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+from cbfcsf.common.signals import pchip
 from cbfcsf.paths import out_path
 
 
@@ -219,17 +220,8 @@ def run_stepanik_simulation(model=None, duration_s=30.0, save_plot_path="stepani
     pTL = pT - pL
 
     # Pre-build shape-preserving PCHIP interpolators
-    interpolators = {
-        'pA': PchipInterpolator(time, pA),
-        'pV': PchipInterpolator(time, pV),
-        'pC': PchipInterpolator(time, pC),
-        'pT': PchipInterpolator(time, pT),
-        'pL': PchipInterpolator(time, pL),
-        'pAV': PchipInterpolator(time, pAV),
-        'pVC': PchipInterpolator(time, pVC),
-        'pCT': PchipInterpolator(time, pCT),
-        'pTL': PchipInterpolator(time, pTL),
-    }
+    interpolators = pchip(time, {'pA': pA, 'pV': pV, 'pC': pC, 'pT': pT, 'pL': pL,
+                                 'pAV': pAV, 'pVC': pVC, 'pCT': pCT, 'pTL': pTL})
 
     # Initial state vector p0 = [p1A, p2V, p3C, p4T, p5L]
     p0 = np.array([model.p1A0, model.p2V0, model.p3C0, model.p4T0, model.p5L0], dtype=float)

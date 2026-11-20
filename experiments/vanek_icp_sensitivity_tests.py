@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import solve_ivp
-from scipy.interpolate import PchipInterpolator
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
 
@@ -19,19 +19,7 @@ def run_custom_infusion(
   time = np.linspace(0, duration_s, int(duration_s * 100))
 
   # Synthetic boundary pressures
-  Pa = 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * time)
-  Pb = 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * time)
-  PC = 2.0 + 0.3 * np.sin(2.0 * np.pi * 0.25 * time)
-  PT = 2.0 + 1.2 * np.sin(2.0 * np.pi * 0.25 * time)
-  PL = 2.0 + 0.4 * np.sin(2.0 * np.pi * 0.25 * time)
-
-  interpolators = {
-      "Pa": PchipInterpolator(time, Pa),
-      "Pb": PchipInterpolator(time, Pb),
-      "PC": PchipInterpolator(time, PC),
-      "PT": PchipInterpolator(time, PT),
-      "PL": PchipInterpolator(time, PL),
-  }
+  interpolators = pchip(time, synthetic_signals(time))
 
   # Infusion rate: 1.5 mL/min (0.025 mL/s) between t=50s and t=300s
   def infusion_func(t):

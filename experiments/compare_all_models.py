@@ -2,11 +2,11 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-from scipy.interpolate import PchipInterpolator
 
 from cbfcsf.models.ursino_2010 import Ursino2010Model
 from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.checks.ursino import steal_run
 from cbfcsf.paths import out_path
 
@@ -46,19 +46,7 @@ res_step = run_stepanik_simulation(model=stepanik_model, duration_s=duration_s,
 
 # 2b. Vaněk (2015) Model under Native Boundary (Pb = 10.0 mmHg)
 time_grid = np.linspace(0, duration_s, int(duration_s * 100))
-Pa_v = 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * time_grid)
-Pb_v = 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * time_grid)
-PC_v = 2.0 + 0.3 * np.sin(2.0 * np.pi * 0.25 * time_grid)
-PT_v = 2.0 + 1.2 * np.sin(2.0 * np.pi * 0.25 * time_grid)
-PL_v = 2.0 + 0.4 * np.sin(2.0 * np.pi * 0.25 * time_grid)
-
-interp_vanek = {
-    'Pa': PchipInterpolator(time_grid, Pa_v),
-    'Pb': PchipInterpolator(time_grid, Pb_v),
-    'PC': PchipInterpolator(time_grid, PC_v),
-    'PT': PchipInterpolator(time_grid, PT_v),
-    'PL': PchipInterpolator(time_grid, PL_v),
-}
+interp_vanek = pchip(time_grid, synthetic_signals(time_grid))
 
 def inf_func(t):
     inf = np.zeros(5)

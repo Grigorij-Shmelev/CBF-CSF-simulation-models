@@ -19,8 +19,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-from scipy.interpolate import PchipInterpolator
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
 SCEN = sys.argv[1] if len(sys.argv) > 1 else "D100"
@@ -46,11 +46,7 @@ RUNS = {
 
 def synthetic(t):
     """Boundary signals exactly as in vanek_2015_model.run_vanek_simulation."""
-    return {"Pa": 80.0 + 10.0 * np.sin(2 * np.pi * 1.2 * t),
-            "Pb": 10.0 + 1.5 * np.sin(2 * np.pi * 1.2 * t),
-            "PC": 2.0 + 0.3 * np.sin(2 * np.pi * 0.25 * t),
-            "PT": 2.0 + 1.2 * np.sin(2 * np.pi * 0.25 * t),
-            "PL": 2.0 + 0.4 * np.sin(2 * np.pi * 0.25 * t)}
+    return synthetic_signals(t)
 
 
 def make_interpolators(df, run):
@@ -62,7 +58,7 @@ def make_interpolators(df, run):
         sig["Pb"] = np.full_like(t, 10.0)
     elif run["pb"] != "synthetic":
         sig["Pb"] = df[run["pb"]].to_numpy()
-    return {k: PchipInterpolator(t, v) for k, v in sig.items()}
+    return pchip(t, sig)
 
 
 def run_vanek(model, interp):

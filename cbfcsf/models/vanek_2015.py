@@ -19,10 +19,11 @@ Usage:
 
 import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
-from scipy.interpolate import PchipInterpolator
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
+from cbfcsf.common.signals import pchip
 
 
 class Vanek2015Model:
@@ -161,6 +162,18 @@ class Vanek2015Model:
         return dPdt
 
 
+def synthetic_signals(t, resp=1.0):
+    """Synthetic driving pressures on the time grid t (cardiac 1.2 Hz + respiratory 0.25 Hz).
+    resp multiplies the respiratory (epidural) oscillation: 1 = as in run_vanek_simulation, 0 = constant 2 mmHg."""
+    return {
+        'Pa': 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * t),            # Arterial pressure (mean 80 mmHg)
+        'Pb': 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * t),             # Intracranial Venous pressure (mean 10 mmHg)
+        'PC': 2.0 + resp * (0.3 * np.sin(2.0 * np.pi * 0.25 * t)),    # Cervical epidural (mean 2 mmHg)
+        'PT': 2.0 + resp * (1.2 * np.sin(2.0 * np.pi * 0.25 * t)),    # Thoracic epidural (Respiration)
+        'PL': 2.0 + resp * (0.4 * np.sin(2.0 * np.pi * 0.25 * t)),    # Lumbar epidural
+    }
+
+
 def run_vanek_simulation(duration_s=10.0, infusion_rate_ml_min=0.0):
     """
     Executes a complete simulation of Vaněk's 3rd generation craniospinal model.
@@ -171,19 +184,7 @@ def run_vanek_simulation(duration_s=10.0, infusion_rate_ml_min=0.0):
     time = np.linspace(0, duration_s, int(duration_s * 500))
 
     # Synthetic driving pressure signals (Cardiac 1.2 Hz + Respiratory 0.25 Hz)
-    Pa = 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * time)  # Arterial pressure (mean 80 mmHg)
-    Pb = 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * time)   # Intracranial Venous pressure (mean 10 mmHg)
-    PC = 2.0 + 0.3 * np.sin(2.0 * np.pi * 0.25 * time)   # Cervical epidural (mean 2 mmHg)
-    PT = 2.0 + 1.2 * np.sin(2.0 * np.pi * 0.25 * time)   # Thoracic epidural (Respiration)
-    PL = 2.0 + 0.4 * np.sin(2.0 * np.pi * 0.25 * time)   # Lumbar epidural
-
-    interpolators = {
-        'Pa': PchipInterpolator(time, Pa),
-        'Pb': PchipInterpolator(time, Pb),
-        'PC': PchipInterpolator(time, PC),
-        'PT': PchipInterpolator(time, PT),
-        'PL': PchipInterpolator(time, PL),
-    }
+    interpolators = pchip(time, synthetic_signals(time))
 
     # Initial state: Resting compartmental pressures [P1, P2, P3, P4, P5]
     P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])

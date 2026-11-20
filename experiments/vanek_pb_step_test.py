@@ -12,8 +12,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-from scipy.interpolate import PchipInterpolator
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
 T_END, DT_IN, DT_OUT = 4000.0, 0.05, 0.5
@@ -23,17 +23,15 @@ WINDOWS = (40, 100, 200, 400, 800, 1500, 2500, 3900)        # window starts [s],
 
 def synthetic(t):
     """Boundary signals as in vanek_2015_model.run_vanek_simulation (Pa replaced below)."""
-    return {"Pa": np.full_like(t, 97.3),
-            "Pb": 10.0 + 1.5 * np.sin(2 * np.pi * 1.2 * t),
-            "PC": 2.0 + 0.3 * np.sin(2 * np.pi * 0.25 * t),
-            "PT": 2.0 + 1.2 * np.sin(2 * np.pi * 0.25 * t),
-            "PL": 2.0 + 0.4 * np.sin(2 * np.pi * 0.25 * t)}
+    sig = synthetic_signals(t)
+    sig["Pa"] = np.full_like(t, 97.3)
+    return sig
 
 
 def run(model, pb):
     sig = synthetic(t)
     sig["Pb"] = pb
-    interp = {k: PchipInterpolator(t, v) for k, v in sig.items()}
+    interp = pchip(t, sig)
     sol = solve_ivp(lambda tt, P: model.derivatives(tt, P, interp), (0.0, T_END),
                     np.array([11.0, 10.0, 10.0, 10.0, 10.0]), method="Radau",
                     t_eval=np.arange(0.0, T_END, DT_OUT), rtol=1e-5, atol=1e-5)

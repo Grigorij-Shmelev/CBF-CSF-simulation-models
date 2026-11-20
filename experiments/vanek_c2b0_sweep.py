@@ -14,8 +14,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-from scipy.interpolate import PchipInterpolator
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
 VALUES = (0.6, 0.1, 0.02, 0.005, 0.001)
@@ -24,10 +24,9 @@ VALUES = (0.6, 0.1, 0.02, 0.005, 0.001)
 def run(c2b0, T, pa, pb, resp, infusion):
     m = Vanek2015Model(); m.C2b0 = c2b0
     t = np.linspace(0.0, T, int(T * 100))
-    s = lambda f, A: A * np.sin(2 * np.pi * f * t)
-    sig = {"Pa": pa(t), "Pb": pb(t), "PC": 2 + resp * s(0.25, 0.3),
-           "PT": 2 + resp * s(0.25, 1.2), "PL": 2 + resp * s(0.25, 0.4)}
-    it = {k: PchipInterpolator(t, v) for k, v in sig.items()}
+    sig = synthetic_signals(t, resp=resp)
+    sig["Pa"], sig["Pb"] = pa(t), pb(t)
+    it = pchip(t, sig)
     inf = (lambda tt: np.array([0, 0, 0, 0, 0.025]) if 50 <= tt <= 300 else np.zeros(5)) if infusion \
         else (lambda tt: np.zeros(5))
     r = solve_ivp(lambda tt, P: m.derivatives(tt, P, it, infusion_rates=inf(tt)), (0.0, T),

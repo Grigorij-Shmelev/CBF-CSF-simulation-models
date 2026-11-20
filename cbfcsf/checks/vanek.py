@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumulative_trapezoid
-from scipy.interpolate import PchipInterpolator
-from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.common.signals import pchip
+from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
 def run_vanek_lumbar_infusion_test():
@@ -20,19 +20,7 @@ def run_vanek_lumbar_infusion_test():
     time = np.linspace(0, duration_s, int(duration_s * 100))  # 100 Hz sampling
     
     # Driving boundary pressures (Cardiac 1.2 Hz + Respiratory 0.25 Hz)
-    Pa = 80.0 + 10.0 * np.sin(2.0 * np.pi * 1.2 * time)  # Arterial pressure
-    Pb = 10.0 + 1.5 * np.sin(2.0 * np.pi * 1.2 * time)   # Venous pressure (b)
-    PC = 2.0 + 0.3 * np.sin(2.0 * np.pi * 0.25 * time)   # Cervical epidural
-    PT = 2.0 + 1.2 * np.sin(2.0 * np.pi * 0.25 * time)   # Thoracic epidural
-    PL = 2.0 + 0.4 * np.sin(2.0 * np.pi * 0.25 * time)   # Lumbar epidural
-
-    interpolators = {
-        'Pa': PchipInterpolator(time, Pa),
-        'Pb': PchipInterpolator(time, Pb),
-        'PC': PchipInterpolator(time, PC),
-        'PT': PchipInterpolator(time, PT),
-        'PL': PchipInterpolator(time, PL),
-    }
+    interpolators = pchip(time, synthetic_signals(time))
 
     # Infusion function (0.025 mL/s = 1.5 mL/min between t=60s and t=360s into Lumbar SAS)
     def infusion_rate_func(t):
