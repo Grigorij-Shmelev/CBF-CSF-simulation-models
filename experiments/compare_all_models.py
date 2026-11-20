@@ -7,6 +7,7 @@ from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.ursino_2010 import Ursino2010Model
 from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.checks.ursino import steal_run
 from cbfcsf.paths import out_path
 
 print("===========================================================================")
@@ -16,30 +17,10 @@ print("=========================================================================
 # %% [1] Run Ursino (2010) Cerebrovascular Simulation
 print("\n1. Running Ursino (2010) 3-Phase Simulation (Baseline -> Stenosis -> Hypercapnia)...")
 ursino_model = Ursino2010Model()
-y0_u = ursino_model.get_initial_state()
-
-# Phase 1: Baseline (0 to 50s) -> Steady state baseline
-sol_u1 = solve_ivp(lambda t, y: ursino_model.derivatives(t, y), [0, 50], y0_u, method='Radau')
-y_ss = sol_u1.y[:, -1]
-
-# Phase 2: Left ICA Occlusion (50 to 100s) -> Steady state occluded
-sol_u2 = solve_ivp(lambda t, y: ursino_model.derivatives(t, y, ica_stenosis_l=500.0), [50, 100], y_ss, method='Radau')
-y_occ = sol_u2.y[:, -1]
-
-# Phase 3: Hypercapnia Challenge (100 to 250s, PaCO2 = 60 mmHg) -> Steady state hypercapnia
-sol_u3 = solve_ivp(lambda t, y: ursino_model.derivatives(t, y, PaCO2=60.0, ica_stenosis_l=500.0), [100, 250], y_occ, method='Radau')
-y_hyp = sol_u3.y[:, -1]
-
-t_u = np.concatenate([sol_u1.t, sol_u2.t, sol_u3.t])
-y_u = np.hstack([sol_u1.y, sol_u2.y, sol_u3.y])
-
-q_mca_l, q_mca_r = [], []
-for i in range(len(t_u)):
-    st = y_u[:, i]
-    sten = 500.0 if t_u[i] >= 50 else 1.0
-    fl = ursino_model.get_flow_dict(st, ica_stenosis_l=sten)
-    q_mca_l.append(fl['q_mca_l'])
-    q_mca_r.append(fl['q_mca_r'])
+# Baseline 0-50 s -> left ICA occlusion 50-100 s -> hypercapnia (PaCO2 = 60 mmHg) 100-250 s
+steal = steal_run(ursino_model)
+t_u, y_u, q_mca_l, q_mca_r = steal["t"], steal["y"], steal["q_mca_l"], steal["q_mca_r"]
+y_ss, y_occ, y_hyp = steal["y_ss"], steal["y_occ"], steal["y_hyp"]
 
 f_base = ursino_model.get_flow_dict(y_ss)
 f_occ = ursino_model.get_flow_dict(y_occ, ica_stenosis_l=500.0)
