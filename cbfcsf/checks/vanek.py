@@ -5,6 +5,7 @@ from cbfcsf.common.signals import pchip
 from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.common.lit import lit_metrics, print_lit_metrics
 from cbfcsf.paths import out_path
+from cbfcsf.plots import plot_lit_figure
 
 def lit_run(model, duration_s=500.0, t_on=60.0, t_off=360.0, signals=synthetic_signals, t_eval=None):
     """Lumbar infusion of 0.025 mL/s (1.5 mL/min) into compartment 5 for t_on <= t <= t_off (t_on=None: no infusion),
@@ -99,86 +100,12 @@ def run_vanek_lumbar_infusion_test():
     m = lit_metrics(t, p2, p5)
     print_lit_metrics(m)
 
-    # Generate plot figure
-    fig, axes = plt.subplots(3, 2, figsize=(14, 11))
-    fig.suptitle("Lumbar Infusion Test (LIT) Simulation — Vaněk (2015) 3rd Gen Model", fontsize=14, fontweight='bold')
-
-    # Panel 1: Craniospinal Pressures
-    ax = axes[0, 0]
-    ax.plot(t, p1, label='P1 (Ventricles)', alpha=0.8)
-    ax.plot(t, p2, label='P2 (Intracranial SAS / ICP)', linewidth=1.5, color='crimson')
-    ax.plot(t, p5, label='P5 (Lumbar SAS)', linewidth=1.5, color='darkblue', linestyle='--')
-    ax.axvspan(60, 360, color='orange', alpha=0.15, label='Infusion Phase (1.5 mL/min)')
-    ax.set_title("Craniospinal Pressures During Infusion [mmHg]")
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Pressure [mmHg]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='upper right', fontsize=8)
-
-    # Panel 2: Fluid Mass Balance
-    ax = axes[0, 1]
-    ax.plot(t, np.ones_like(t) * model.S1 * 60, label='Formation (S1)', color='green')
-    ax.plot(t, resorption * 60, label='Resorption (F_res)', color='red')
-    ax.plot(t, infusion_i5 * 60, label='Lumbar Infusion (I5)', color='orange', linewidth=2)
-    ax.set_title("Fluid Mass Balance [mL/min]")
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Rate [mL/min]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='center right', fontsize=8)
-
-    # Panel 3: Inter-compartmental Flows
-    ax = axes[1, 0]
-    ax.plot(t, F12 * 60, label='F12 (Ventr -> Cranial SAS)', alpha=0.7)
-    ax.plot(t, F23 * 60, label='F23 (Cranial -> Cervical SAS)', alpha=0.7)
-    ax.plot(t, F34 * 60, label='F34 (Cervical -> Thoracic SAS)', alpha=0.7)
-    ax.plot(t, F45 * 60, label='F45 (Thoracic -> Lumbar SAS)', alpha=0.7)
-    ax.set_title("Inter-compartmental CSF Flows [mL/min]")
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Flow [mL/min]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='upper right', fontsize=8)
-
-    # Panel 4: Compartmental Volumes
-    ax = axes[1, 1]
-    ax.plot(t, V1, label='V1 (Ventricles)')
-    ax.plot(t, V2, label='V2 (Intracranial SAS)')
-    ax.plot(t, V3, label='V3 (Cervical)')
-    ax.plot(t, V4, label='V4 (Thoracic)')
-    ax.plot(t, V5, label='V5 (Lumbar)')
-    ax.set_title("Compartmental Volumes [mL]")
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Volume [mL]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='upper right', fontsize=8)
-
-    # Panel 5: Non-linear Compliances
-    ax = axes[2, 0]
-    ax.plot(t, C1a, label='C1a (Arterial-Ventricle)', alpha=0.7)
-    ax.plot(t, C1b, label='C1b (Venous-Ventricle)', alpha=0.7)
-    ax.plot(t, C2a, label='C2a (Arterial-Cranial SAS)', alpha=0.7)
-    ax.plot(t, C2b, label='C2b (Venous-Cranial SAS)', alpha=0.7)
-    ax.plot(t, C5L, label='C5L (Lumbar)', alpha=0.7)
-    ax.set_title("Non-linear Compliances [mL/mmHg]")
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Compliance [mL/mmHg]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='upper right', fontsize=8)
-
-    # Panel 6: Dynamic Pressure-Volume Curve
-    ax = axes[2, 1]
-    dV_total = (V1 + V2 + V3 + V4 + V5) - (model.V10 + model.V20 + model.V30 + model.V40 + model.V50)
-    ax.plot(dV_total, p2, color='purple', label='Global P-V Curve')
-    ax.set_title("Dynamic Pressure-Volume (P-V) Curve")
-    ax.set_xlabel("Total CSF Volume Change ΔV [mL]")
-    ax.set_ylabel("ICP P2 [mmHg]")
-    ax.grid(True, linestyle=':', alpha=0.6)
-    ax.legend(loc='upper left', fontsize=8)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plot_path = out_path("vanek", "vanek_lumbar_infusion_test.png")
-    plt.savefig(plot_path, dpi=150)
-    plt.close()
-    print(f"Plot successfully saved to {plot_path}")
+    plot_lit_figure(model, t, p1, p2, p5, np.ones_like(t) * model.S1, resorption, infusion_i5, (F12, F23, F34, F45),
+                    (V1, V2, V3, V4, V5),
+                    [(C1a, 'C1a (Arterial-Ventricle)'), (C1b, 'C1b (Venous-Ventricle)'),
+                     (C2a, 'C2a (Arterial-Cranial SAS)'), (C2b, 'C2b (Venous-Cranial SAS)'), (C5L, 'C5L (Lumbar)')],
+                    "Lumbar Infusion Test (LIT) Simulation — Vaněk (2015) 3rd Gen Model",
+                    out_path("vanek", "vanek_lumbar_infusion_test.png"))
 
     return {
         't': t, 'p1': p1, 'p2': p2, 'p5': p5,
