@@ -8,6 +8,7 @@ from cbfcsf.models.vanek_2015 import Vanek2015Model
 from cbfcsf.checks.ursino import steal_run
 from cbfcsf.checks.vanek import lit_run
 from cbfcsf.checks.stepanik import lit_model
+from cbfcsf.common.lit import lit_metrics
 from cbfcsf.paths import out_path
 
 print("===========================================================================")
@@ -54,22 +55,14 @@ res_vanek = {
     'P5': sol_vanek.y[4],
 }
 
-# Calculate metrics
+# Calculate metrics (baseline 10-50 s, plateau 300-350 s)
 t_s = res_step['t']
-mask_base_s = (t_s >= 10) & (t_s <= 50)
-mask_plat_s = (t_s >= 300) & (t_s <= 350)
-p0_s = np.mean(res_step['p2'][mask_base_s])
-pinf_s = np.mean(res_step['p2'][mask_plat_s])
-dp_s = pinf_s - p0_s
-Rout_s = (dp_s / 0.025) / 60.0
+m_s = lit_metrics(t_s, res_step['p2'], res_step['p5'])
+p0_s, pinf_s, dp_s, Rout_s = m_s['p0_icp'], m_s['pinf_icp'], m_s['dp_icp'], m_s['R_out_clinical']
 
 t_v = res_vanek['t']
-mask_base_v = (t_v >= 10) & (t_v <= 50)
-mask_plat_v = (t_v >= 300) & (t_v <= 350)
-p0_v = np.mean(res_vanek['P2'][mask_base_v])
-pinf_v = np.mean(res_vanek['P2'][mask_plat_v])
-dp_v = pinf_v - p0_v
-Rout_v = (dp_v / 0.025) / 60.0
+m_v = lit_metrics(t_v, res_vanek['P2'], res_vanek['P5'])
+p0_v, pinf_v, dp_v, Rout_v = m_v['p0_icp'], m_v['pinf_icp'], m_v['dp_icp'], m_v['R_out_clinical']
 
 # %% [3] Print Quantitative Comparison Summary Table
 print("\n" + "="*80)

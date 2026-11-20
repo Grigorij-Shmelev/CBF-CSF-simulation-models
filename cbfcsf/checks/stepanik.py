@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
+from cbfcsf.common.lit import lit_metrics, print_lit_metrics
 from cbfcsf.paths import out_path
 
 
@@ -64,28 +65,8 @@ def run_stepanik_lumbar_infusion_test():
     C3C, C4T, C5L = results['C3C'], results['C4T'], results['C5L']
 
     # Calculate key clinical metrics
-    baseline_mask = (t >= 10) & (t <= 50)
-    infusion_plateau_mask = (t >= 300) & (t <= 350)
-
-    p0_icp = np.mean(p2[baseline_mask])
-    pinf_icp = np.mean(p2[infusion_plateau_mask])
-    dp_icp = pinf_icp - p0_icp
-
-    p0_lumb = np.mean(p5[baseline_mask])
-    pinf_lumb = np.mean(p5[infusion_plateau_mask])
-    dp_lumb = pinf_lumb - p0_lumb
-
-    I_inf = 0.025  # mL/s
-    R_out_calc = dp_icp / I_inf  # mmHg * s / mL
-    R_out_clinical = R_out_calc / 60.0  # mmHg / (mL/min)
-
-    print("\n--- Infusion Test Metrics ---")
-    print(f"Baseline ICP (P2): {p0_icp:.2f} mmHg ({p0_icp * 13.6:.1f} mmH2O)")
-    print(f"Plateau ICP (P2):  {pinf_icp:.2f} mmHg ({pinf_icp * 13.6:.1f} mmH2O)")
-    print(f"ICP Elevation (ΔP): {dp_icp:.2f} mmHg ({dp_icp * 13.6:.1f} mmH2O)")
-    print(f"Baseline Lumbar Pressure (P5): {p0_lumb:.2f} mmHg ({p0_lumb * 13.6:.1f} mmH2O)")
-    print(f"Plateau Lumbar Pressure (P5):  {pinf_lumb:.2f} mmHg ({pinf_lumb * 13.6:.1f} mmH2O)")
-    print(f"Calculated Outflow Resistance Rout: {R_out_calc:.2f} mmHg*s/mL ({R_out_clinical:.2f} mmHg/(mL/min))")
+    m = lit_metrics(t, p2, p5)
+    print_lit_metrics(m)
 
     # Generate 6-panel visualization figure matching run_vanek_lumbar_infusion style
     fig, axes = plt.subplots(3, 2, figsize=(14, 11))
@@ -170,7 +151,7 @@ def run_stepanik_lumbar_infusion_test():
 
     return {
         't': t, 'p1': p1, 'p2': p2, 'p5': p5,
-        'p0_icp': p0_icp, 'pinf_icp': pinf_icp, 'R_out_clinical': R_out_clinical
+        'p0_icp': m['p0_icp'], 'pinf_icp': m['pinf_icp'], 'R_out_clinical': m['R_out_clinical']
     }
 
 

@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from cbfcsf.common.signals import pchip
 from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
+from cbfcsf.common.lit import lit_metrics, print_lit_metrics
 from cbfcsf.paths import out_path
 
 def lit_run(model, duration_s=500.0, t_on=60.0, t_off=360.0, signals=synthetic_signals, t_eval=None):
@@ -95,28 +96,8 @@ def run_vanek_lumbar_infusion_test():
     V5 = cumulative_trapezoid(dV5_dt, t, initial=0) + model.V50
 
     # Calculate key clinical metrics
-    baseline_mask = (t >= 10) & (t <= 50)
-    infusion_plateau_mask = (t >= 300) & (t <= 350)
-
-    p0_icp = np.mean(p2[baseline_mask])
-    pinf_icp = np.mean(p2[infusion_plateau_mask])
-    dp_icp = pinf_icp - p0_icp
-
-    p0_lumb = np.mean(p5[baseline_mask])
-    pinf_lumb = np.mean(p5[infusion_plateau_mask])
-    dp_lumb = pinf_lumb - p0_lumb
-
-    I_inf = 0.025  # mL/s
-    R_out_calc = dp_icp / I_inf  # mmHg * s / mL
-    R_out_clinical = R_out_calc / 60.0  # mmHg / (mL/min)
-
-    print("\n--- Infusion Test Metrics ---")
-    print(f"Baseline ICP (P2): {p0_icp:.2f} mmHg ({p0_icp * 13.6:.1f} mmH2O)")
-    print(f"Plateau ICP (P2):  {pinf_icp:.2f} mmHg ({pinf_icp * 13.6:.1f} mmH2O)")
-    print(f"ICP Elevation (ΔP): {dp_icp:.2f} mmHg ({dp_icp * 13.6:.1f} mmH2O)")
-    print(f"Baseline Lumbar Pressure (P5): {p0_lumb:.2f} mmHg ({p0_lumb * 13.6:.1f} mmH2O)")
-    print(f"Plateau Lumbar Pressure (P5):  {pinf_lumb:.2f} mmHg ({pinf_lumb * 13.6:.1f} mmH2O)")
-    print(f"Calculated Outflow Resistance Rout: {R_out_calc:.2f} mmHg*s/mL ({R_out_clinical:.2f} mmHg/(mL/min))")
+    m = lit_metrics(t, p2, p5)
+    print_lit_metrics(m)
 
     # Generate plot figure
     fig, axes = plt.subplots(3, 2, figsize=(14, 11))
@@ -201,7 +182,7 @@ def run_vanek_lumbar_infusion_test():
 
     return {
         't': t, 'p1': p1, 'p2': p2, 'p5': p5,
-        'p0_icp': p0_icp, 'pinf_icp': pinf_icp, 'R_out_clinical': R_out_clinical
+        'p0_icp': m['p0_icp'], 'pinf_icp': m['pinf_icp'], 'R_out_clinical': m['R_out_clinical']
     }
 
 if __name__ == "__main__":
