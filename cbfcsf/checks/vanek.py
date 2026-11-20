@@ -5,6 +5,37 @@ from cbfcsf.common.signals import pchip
 from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
+def lit_run(model, duration_s=500.0, t_on=60.0, t_off=360.0, signals=synthetic_signals, t_eval=None):
+    """Lumbar infusion of 0.025 mL/s (1.5 mL/min) into compartment 5 for t_on <= t <= t_off (t_on=None: no infusion),
+    inputs = signals(time) sampled at 100 Hz. Returns the solution, the interpolators and the infusion function."""
+    time = np.linspace(0, duration_s, int(duration_s * 100))  # 100 Hz sampling
+
+    # Driving boundary pressures (Cardiac 1.2 Hz + Respiratory 0.25 Hz)
+    interpolators = pchip(time, signals(time))
+
+    # Infusion function (0.025 mL/s = 1.5 mL/min between t_on and t_off into Lumbar SAS)
+    def infusion_rate_func(t):
+        inf = np.zeros(5)
+        if t_on is not None and t_on <= t <= t_off:
+            inf[4] = 0.025  # mL/s
+        return inf
+
+    # Initial resting pressures [P1, P2, P3, P4, P5]
+    P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])
+
+    # Solve system of ODEs
+    sol = solve_ivp(
+        fun=lambda t, P: model.derivatives(t, P, interpolators, infusion_rates=infusion_rate_func(t)),
+        t_span=(0.0, duration_s),
+        y0=P0,
+        method='Radau',
+        t_eval=t_eval,
+        rtol=1e-5,
+        atol=1e-5
+    )
+    return sol, interpolators, infusion_rate_func
+
+
 def run_vanek_lumbar_infusion_test():
     """
     Executes a standard Lumbar Infusion Test (LIT) on Petr Vaněk's (2015) 3rd Generation Model.
@@ -15,34 +46,10 @@ def run_vanek_lumbar_infusion_test():
     - Recovery Phase: t = 360 to 500s
     """
     model = Vanek2015Model()
-    
-    duration_s = 500.0
-    time = np.linspace(0, duration_s, int(duration_s * 100))  # 100 Hz sampling
-    
-    # Driving boundary pressures (Cardiac 1.2 Hz + Respiratory 0.25 Hz)
-    interpolators = pchip(time, synthetic_signals(time))
-
-    # Infusion function (0.025 mL/s = 1.5 mL/min between t=60s and t=360s into Lumbar SAS)
-    def infusion_rate_func(t):
-        inf = np.zeros(5)
-        if 60.0 <= t <= 360.0:
-            inf[4] = 0.025  # mL/s
-        return inf
-
-    # Initial resting pressures [P1, P2, P3, P4, P5]
-    P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])
 
     print("Running Lumbar Infusion Test simulation on Vaněk (2015) model (500s)...")
-    
-    # Solve system of ODEs
-    sol = solve_ivp(
-        fun=lambda t, P: model.derivatives(t, P, interpolators, infusion_rates=infusion_rate_func(t)),
-        t_span=(0.0, duration_s),
-        y0=P0,
-        method='Radau',
-        rtol=1e-5,
-        atol=1e-5
-    )
+    # Baseline 0-60 s, infusion 60-360 s, recovery 360-500 s
+    sol, interpolators, infusion_rate_func = lit_run(model, 500.0, t_on=60.0, t_off=360.0)
 
     t = sol.t
     P = sol.y  # Shape (5, N)

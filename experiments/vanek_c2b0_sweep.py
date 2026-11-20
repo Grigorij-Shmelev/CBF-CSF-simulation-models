@@ -13,8 +13,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-from cbfcsf.common.signals import pchip
+from cbfcsf.checks.vanek import lit_run
 from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
 from cbfcsf.paths import out_path
 
@@ -23,15 +22,14 @@ VALUES = (0.6, 0.1, 0.02, 0.005, 0.001)
 
 def run(c2b0, T, pa, pb, resp, infusion):
     m = Vanek2015Model(); m.C2b0 = c2b0
-    t = np.linspace(0.0, T, int(T * 100))
-    sig = synthetic_signals(t, resp=resp)
-    sig["Pa"], sig["Pb"] = pa(t), pb(t)
-    it = pchip(t, sig)
-    inf = (lambda tt: np.array([0, 0, 0, 0, 0.025]) if 50 <= tt <= 300 else np.zeros(5)) if infusion \
-        else (lambda tt: np.zeros(5))
-    r = solve_ivp(lambda tt, P: m.derivatives(tt, P, it, infusion_rates=inf(tt)), (0.0, T),
-                  np.array([11.0, 10.0, 10.0, 10.0, 10.0]), method="Radau",
-                  t_eval=np.arange(0.0, T, 0.05), rtol=1e-5, atol=1e-5)
+
+    def signals(t):
+        sig = synthetic_signals(t, resp=resp)
+        sig["Pa"], sig["Pb"] = pa(t), pb(t)
+        return sig
+
+    window = (50.0, 300.0) if infusion else (None, None)
+    r = lit_run(m, T, *window, signals=signals, t_eval=np.arange(0.0, T, 0.05))[0]
     return r.t, r.y[1]
 
 

@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.integrate import solve_ivp
-from cbfcsf.common.signals import pchip
-from cbfcsf.models.vanek_2015 import Vanek2015Model, synthetic_signals
+from cbfcsf.checks.vanek import lit_run
+from cbfcsf.models.vanek_2015 import Vanek2015Model
 from cbfcsf.paths import out_path
 
 
@@ -16,30 +15,8 @@ def run_custom_infusion(
   model.R23 = r23_val  # Cervical SAS resistance
   model.Z23 = 1.0 / model.R23
 
-  time = np.linspace(0, duration_s, int(duration_s * 100))
-
-  # Synthetic boundary pressures
-  interpolators = pchip(time, synthetic_signals(time))
-
-  # Infusion rate: 1.5 mL/min (0.025 mL/s) between t=50s and t=300s
-  def infusion_func(t):
-    inf = np.zeros(5)
-    if 50.0 <= t <= 300.0:
-      inf[4] = 0.025
-    return inf
-
-  P0 = np.array([11.0, 10.0, 10.0, 10.0, 10.0])
-
-  sol = solve_ivp(
-      fun=lambda t, P: model.derivatives(
-          t, P, interpolators, infusion_rates=infusion_func(t)
-      ),
-      t_span=(0.0, duration_s),
-      y0=P0,
-      method="Radau",
-      rtol=1e-5,
-      atol=1e-5,
-  )
+  # Synthetic boundary pressures; infusion rate 1.5 mL/min (0.025 mL/s) between t=50s and t=300s
+  sol = lit_run(model, duration_s, t_on=50.0, t_off=300.0)[0]
   return sol.t, sol.y[1]  # Return time and ICP (P2)
 
 
