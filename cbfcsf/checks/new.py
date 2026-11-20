@@ -360,7 +360,12 @@ def _argval(argv, name, default):
     return float(argv[argv.index(name) + 1]) if name in argv else default
 
 
-def main(argv=()):
+PARTS = ("rest", "co2", "co2_5pct", "lit", "stroke", "pulsatile", "ica", "cross", "outputs")
+
+
+def main(argv=(), parts=None):
+    """argv: the old flags (--calibrate, --fit, ...). parts: subset of PARTS to run of the default run (run.py new
+    --rest --lit ...); None = all of it. Stages need the whole default run, so they ignore parts."""
     if "--fit-mismatch" in argv:        # stand-alone stage (spec 7.13), does not need the base runs
         repm = Report()
         out = test_fit_mismatch(repm)
@@ -372,6 +377,13 @@ def main(argv=()):
         return repm.show()
     do_cal = "--calibrate" in argv or "--all" in argv
     do_sens = "--sensitivity" in argv or "--all" in argv
+    stage = any(f in argv for f in ("--calibrate", "--sensitivity", "--params", "--options", "--fit", "--fit-csv",
+                                    "--all"))
+    sel = set(parts) if parts and not stage else set(PARTS)
+    if "cross" in sel:
+        sel |= {"stroke", "lit", "co2_5pct", "ica"}
+    if "outputs" in sel:
+        sel |= {"rest", "co2_5pct", "stroke"}
     m = NewModel()
     print("=== New model prototype: resting state (spec 4.2) ===")
     print(f"ICP (P2) {m.P2_n:.3f}  P1 {m.P1_n:.3f}  Pv {m.Pv_n:.3f}  Pc {m.Pc_n:.3f}  P_N {m.PN_n:.2f}  P_k {m.Pk_n:.2f} mmHg")
@@ -379,57 +391,65 @@ def main(argv=()):
     print(f"V_n arterial {m.V_n.round(3)} (total {m.V_n.sum():.2f} mL)   V_vn {m.V_vn} mL")
 
     rep = Report()
-    r_rest = test_rest(rep, m)
-    runs = {
-        SC_CO2_60: (test_co2(rep, m), "new_model_co2.png"),
-        SC_CO2_5: (test_co2_5pct(rep, m), "new_model_co2_5pct.png"),
-        SC_LIT: (test_lit(rep, m), "new_model_lit.png"),
-        SC_STROKE: (test_stroke(rep, m), "new_model_stroke.png"),
-    }
-    test_pulsatile(rep, m)
-    # fourth step (spec 7.8): cross-checks against the source models and ICA occlusion
-    urs, new = test_cross_stroke(rep, runs[SC_STROKE][0])
-    van = test_cross_lit(rep, runs[SC_LIT][0])
-    runs[SC_ICA] = (test_ica(rep, m), "new_model_ica.png")
-    # sixth step (spec 7.15): further cross-checks against the source codes
-    more = test_cross_more(rep, m, runs[SC_CO2_5][0], runs[SC_LIT][0],
-                           runs[SC_ICA][0], van)
-    # fifth step (spec 7.10): new outputs
-    test_outputs(rep, r_rest, runs[SC_CO2_5][0], runs[SC_STROKE][0])
+    r_rest = test_rest(rep, m) if "rest" in sel else None
+    runs = {}
+    for part, name, test, fname in (("co2", SC_CO2_60, test_co2, "new_model_co2.png"),
+                                    ("co2_5pct", SC_CO2_5, test_co2_5pct, "new_model_co2_5pct.png"),
+                                    ("lit", SC_LIT, test_lit, "new_model_lit.png"),
+                                    ("stroke", SC_STROKE, test_stroke, "new_model_stroke.png")):
+        if part in sel:
+            runs[name] = (test(rep, m), fname)
+    if "pulsatile" in sel:
+        test_pulsatile(rep, m)
+    if "cross" in sel:
+        # fourth step (spec 7.8): cross-checks against the source models and ICA occlusion
+        urs, new = test_cross_stroke(rep, runs[SC_STROKE][0])
+        van = test_cross_lit(rep, runs[SC_LIT][0])
+    if "ica" in sel:
+        runs[SC_ICA] = (test_ica(rep, m), "new_model_ica.png")
+    if "cross" in sel:
+        # sixth step (spec 7.15): further cross-checks against the source codes
+        more = test_cross_more(rep, m, runs[SC_CO2_5][0], runs[SC_LIT][0],
+                               runs[SC_ICA][0], van)
+    if "outputs" in sel:
+        # fifth step (spec 7.10): new outputs
+        test_outputs(rep, r_rest, runs[SC_CO2_5][0], runs[SC_STROKE][0])
     n_fail = rep.show()
-    print("\n=== X1: left MCA occlusion, new model vs existing Ursino code ===")
-    print(f"residual flow in the MCA_L territory: new {100 * new['res']:.1f} %, Ursino code {100 * urs['res']:.1f} % of rest")
-    print(f"stressed volume of that territory:    new {100 * new['dV']:+.1f} %, Ursino code {100 * urs['dV']:+.1f} %")
-    print(f"total CBF:                            new {100 * new['dCBF']:+.1f} %, Ursino code {100 * urs['dCBF']:+.1f} %")
-    print(f"arterial stressed volume, all:        new {new['dVa']:+.2f} mL, Ursino code {urs['dVa']:+.2f} mL")
-    print(f"Ursino code ICP: {urs['icp'][0]:.2f} -> {urs['icp'][1]:.2f} mmHg")
-    print("\n=== X2: lumbar infusion, new model vs existing Vanek code (constant inputs) ===")
-    lit = runs[SC_LIT][0]
-    print(f"plateau ICP:              new {lit['plateau_sim']:.2f}, Vanek code {van['plateau']:.2f} mmHg")
-    print(f"ICP rise after 10 min:    new {van['rise_new']:.2f}, Vanek code {van['rise']:.2f} mmHg (Vanek rest {van['rest']:.2f})")
-    print(f"ICP rise after 5 min:     new {more['lit'][0]:.2f}, Vanek code {more['lit'][1]:.2f} mmHg (Pb = 10), {more['lit'][2]:.2f} mmHg (Pb = 12)")
-    print("\n=== X3, X4: graded CO2 range and autoregulation, new model vs existing Ursino code (spec 7.15) ===")
-    for name, key in (("5 % CO2 (47.5 mmHg)", "co2"), ("Pa 100 -> 80 mmHg", "pa")):
-        dq_n, dq_u, dV_n, dV_u = more[key]
-        print(f"{name:<20} total CBF: new {100 * dq_n:+.1f} %, Ursino code {100 * dq_u:+.1f} %;   "
-              f"arterial stressed volume: new {dV_n:+.2f} mL, Ursino code {dV_u:+.2f} mL")
-    ica = more["ica"]
-    print("\n=== X5 (info): left ICA occlusion, new model vs existing Ursino code. NOT validated: no basilar inlet (spec 3.2.2) ===")
-    print(f"MCA_L flow:                new {100 * ica['mca'][0]:+.1f} %, Ursino code {100 * ica['mca'][1]:+.1f} %")
-    print(f"rest_L flow:               new {100 * ica['rest'][0]:+.1f} %, Ursino code {100 * ica['rest'][1]:+.1f} % "
-          f"(his ACA_L {100 * ica['urs_districts'][1]:+.1f} %, PCA_L {100 * ica['urs_districts'][2]:+.1f} %)")
-    print(f"total CBF:                 new {100 * ica['dq'][0]:+.1f} %, Ursino code {100 * ica['dq'][1]:+.1f} %")
-    print(f"arterial stressed volume:  new {ica['dV'][0]:+.2f} mL, Ursino code {ica['dV'][1]:+.2f} mL")
+    if "cross" in sel:
+        print("\n=== X1: left MCA occlusion, new model vs existing Ursino code ===")
+        print(f"residual flow in the MCA_L territory: new {100 * new['res']:.1f} %, Ursino code {100 * urs['res']:.1f} % of rest")
+        print(f"stressed volume of that territory:    new {100 * new['dV']:+.1f} %, Ursino code {100 * urs['dV']:+.1f} %")
+        print(f"total CBF:                            new {100 * new['dCBF']:+.1f} %, Ursino code {100 * urs['dCBF']:+.1f} %")
+        print(f"arterial stressed volume, all:        new {new['dVa']:+.2f} mL, Ursino code {urs['dVa']:+.2f} mL")
+        print(f"Ursino code ICP: {urs['icp'][0]:.2f} -> {urs['icp'][1]:.2f} mmHg")
+        print("\n=== X2: lumbar infusion, new model vs existing Vanek code (constant inputs) ===")
+        lit = runs[SC_LIT][0]
+        print(f"plateau ICP:              new {lit['plateau_sim']:.2f}, Vanek code {van['plateau']:.2f} mmHg")
+        print(f"ICP rise after 10 min:    new {van['rise_new']:.2f}, Vanek code {van['rise']:.2f} mmHg (Vanek rest {van['rest']:.2f})")
+        print(f"ICP rise after 5 min:     new {more['lit'][0]:.2f}, Vanek code {more['lit'][1]:.2f} mmHg (Pb = 10), {more['lit'][2]:.2f} mmHg (Pb = 12)")
+        print("\n=== X3, X4: graded CO2 range and autoregulation, new model vs existing Ursino code (spec 7.15) ===")
+        for name, key in (("5 % CO2 (47.5 mmHg)", "co2"), ("Pa 100 -> 80 mmHg", "pa")):
+            dq_n, dq_u, dV_n, dV_u = more[key]
+            print(f"{name:<20} total CBF: new {100 * dq_n:+.1f} %, Ursino code {100 * dq_u:+.1f} %;   "
+                  f"arterial stressed volume: new {dV_n:+.2f} mL, Ursino code {dV_u:+.2f} mL")
+        ica = more["ica"]
+        print("\n=== X5 (info): left ICA occlusion, new model vs existing Ursino code. NOT validated: no basilar inlet (spec 3.2.2) ===")
+        print(f"MCA_L flow:                new {100 * ica['mca'][0]:+.1f} %, Ursino code {100 * ica['mca'][1]:+.1f} %")
+        print(f"rest_L flow:               new {100 * ica['rest'][0]:+.1f} %, Ursino code {100 * ica['rest'][1]:+.1f} % "
+              f"(his ACA_L {100 * ica['urs_districts'][1]:+.1f} %, PCA_L {100 * ica['urs_districts'][2]:+.1f} %)")
+        print(f"total CBF:                 new {100 * ica['dq'][0]:+.1f} %, Ursino code {100 * ica['dq'][1]:+.1f} %")
+        print(f"arterial stressed volume:  new {ica['dV'][0]:+.2f} mL, Ursino code {ica['dV'][1]:+.2f} mL")
 
     fig_dir = out_dir("new")
     os.makedirs(fig_dir, exist_ok=True)
     for name, (r, fname) in runs.items():
         summary(name, r, m)
         plot_run(r, m, os.path.join(fig_dir, fname), f"New model. {name} (shaded). Pa = 100 mmHg")
-    co2 = runs[SC_CO2_60][0]
     base_runs = {k: v[0] for k, v in runs.items()}
 
-    print(f"\nMCA flow rise at 60 mmHg: new model {100 * co2['rise_new']:+.1f} %, existing Ursino code {100 * co2['rise_ursino']:+.1f} %")
+    if "co2" in sel:
+        co2 = runs[SC_CO2_60][0]
+        print(f"\nMCA flow rise at 60 mmHg: new model {100 * co2['rise_new']:+.1f} %, existing Ursino code {100 * co2['rise_ursino']:+.1f} %")
     print(f"Figures saved in {fig_dir}")
     if do_cal:
         n_fail += step_calibration(m, base_runs, fig_dir)

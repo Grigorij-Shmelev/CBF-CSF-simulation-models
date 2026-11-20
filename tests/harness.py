@@ -97,7 +97,8 @@ def run_chain(cmds, variant, base, out_base, python, src):
         before = snapshot(root)
         t0 = time.time()
         try:
-            p = subprocess.run(full, cwd=root / cmd.cwd, env=env, capture_output=True, text=True, timeout=cmd.timeout)
+            cwd = root / (cmd.cwd if variant == "old" else cmd.cwd_new)
+            p = subprocess.run(full, cwd=cwd, env=env, capture_output=True, text=True, timeout=cmd.timeout)
             rc, so, se = p.returncode, p.stdout, p.stderr
         except subprocess.TimeoutExpired as e:
             rc, so, se = "timeout", e.stdout or "", e.stderr or ""
@@ -250,6 +251,8 @@ def deps(cmd, variant):
     """Files a command depends on: its scripts and everything they import from the repo (transitively)."""
     todo = [REPO / a[1:] for a in cmd.argv[variant] if a.startswith("@") and a.endswith(".py")]
     todo += [REPO / d for d in cmd.deps]
+    if variant == "new" and "exp" in cmd.argv["new"]:          # run.py exp <name>: the experiment file
+        todo.append(REPO / "experiments" / (cmd.argv["new"][cmd.argv["new"].index("exp") + 1] + ".py"))
     seen = set()
     while todo:
         f = todo.pop()
