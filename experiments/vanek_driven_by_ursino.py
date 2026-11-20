@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 SCEN = sys.argv[1] if len(sys.argv) > 1 else "D100"
 CSV = f"ursino_to_vanek_{SCEN}.csv"
@@ -78,7 +79,7 @@ def run_vanek(model, interp):
 
 def main():
     try:
-        df = pd.read_csv(CSV)
+        df = pd.read_csv(out_path("coupling", CSV))
     except FileNotFoundError:
         sys.exit(f"{CSV} not found -> run 'python urs_dynamic_pa_test.py export' first")
     model = Vanek2015Model()
@@ -96,7 +97,7 @@ def main():
         print(f"{name}: {clock.time() - tic:.0f} s")
 
     tab = pd.DataFrame(rows)
-    tab.to_csv(f"vanek_driven_by_ursino_{SCEN}.csv", index=False, float_format="%.4f")
+    tab.to_csv(out_path("coupling", f"vanek_driven_by_ursino_{SCEN}.csv"), index=False, float_format="%.4f")
     show = ["run", "pre_Pa_in_mean", "late_Pa_in_mean", "pre_P2_mean", "late_P2_mean",
             "pre_P2_ptp", "late_P2_ptp", "pre_F23_ptp", "late_F23_ptp"]
     with pd.option_context("display.float_format", "{:7.3f}".format, "display.width", 160):
@@ -123,7 +124,7 @@ def main():
     ax[-1, 0].set_xlabel("t [s]"); ax[-1, 1].set_xlabel("t [s]")
     fig.suptitle(f"Vanek (2015) driven by Ursino output ({CSV}), one-way, file-based")
     fig.tight_layout()
-    fig.savefig(f"vanek_driven_by_ursino_{SCEN}.png", dpi=150)
+    fig.savefig(out_path("coupling", f"vanek_driven_by_ursino_{SCEN}.png"), dpi=150)
     print(f"\nSaved vanek_driven_by_ursino_{SCEN}.csv and .png")
 
 

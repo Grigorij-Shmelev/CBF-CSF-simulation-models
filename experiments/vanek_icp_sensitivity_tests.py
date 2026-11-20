@@ -3,6 +3,7 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 
 def run_custom_infusion(
@@ -87,5 +88,5 @@ plt.ylabel("Intracranial Pressure P2 (mmHg)")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("vanek_icp_plots.png", dpi=150)
+plt.savefig(out_path("vanek", "vanek_icp_plots.png"), dpi=150)
 print("Plot saved as vanek_icp_plots.png!")

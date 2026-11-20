@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 def run_vanek_lumbar_infusion_test():
     """
@@ -198,7 +199,7 @@ def run_vanek_lumbar_infusion_test():
     ax.legend(loc='upper left', fontsize=8)
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plot_path = "vanek_lumbar_infusion_test.png"
+    plot_path = out_path("vanek", "vanek_lumbar_infusion_test.png")
     plt.savefig(plot_path, dpi=150)
     plt.close()
     print(f"Plot successfully saved to {plot_path}")

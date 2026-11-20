@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 T_END, DT_IN, DT_OUT = 4000.0, 0.05, 0.5
 t = np.arange(0.0, T_END + DT_IN, DT_IN)
@@ -56,7 +57,7 @@ def main():
     print(f"equilibrium from the constants: P2 = Pmin + S1/alpha = {model.Pmin + model.S1 / model.alpha:.3f}")
     ax.set_xlabel("t [s]"); ax.set_ylabel("P2, 20 s moving mean [mmHg]"); ax.grid(alpha=0.3); ax.legend()
     ax.set_title("Vanek: effect of a lasting step in Pb on the mean ICP (P2)")
-    fig.tight_layout(); fig.savefig("vanek_pb_step_test.png", dpi=150)
+    fig.tight_layout(); fig.savefig(out_path("vanek", "vanek_pb_step_test.png"), dpi=150)
     print("Saved vanek_pb_step_test.png")
 
 

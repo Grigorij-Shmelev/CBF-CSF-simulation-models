@@ -28,6 +28,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from cbfcsf.models.ursino_2010 import Ursino2010Model
+from cbfcsf.paths import out_path
 
 # ----------------------------------------------------------------------------
 # 1. Arterial pressure inputs  Pa(t)  [mmHg]
@@ -283,7 +284,7 @@ def main(full=False):
     fig.suptitle("Ursino (2010) driven by time-varying Pa(t): S vs D80 vs D100")
     fig.tight_layout()
     out = "urs_dynamic_pa_full.png" if full else "urs_dynamic_pa_smoke.png"
-    fig.savefig(out, dpi=150)
+    fig.savefig(out_path("ursino", out), dpi=150)
     print(f"\nPlot saved as {out}")
 
 
@@ -336,7 +337,7 @@ def build_table(t_hyper=50.0, t_end=1550.0):
             rows.append(r)
         print(f"{name}: {clock.time() - tic:.0f} s")
     df = pd.DataFrame(rows)
-    df.to_csv("urs_pressure_table.csv", index=False, float_format="%.4f")
+    df.to_csv(out_path("ursino", "urs_pressure_table.csv"), index=False, float_format="%.4f")
 
     cols = ["node", "pre_mean", "early_mean", "late_mean", "d_early", "d_late",
             "pre_ptp", "late_ptp", "ptp_rel_pre"]
@@ -359,7 +360,7 @@ PROFILE_LABELS = ["Pa", "ICA", "MCA end", "pial (d,ml)", "capill. (c)", "vein (v
 def plot_profile(table_csv="urs_pressure_table.csv"):
     import pandas as pd
     try:
-        df = pd.read_csv(table_csv)
+        df = pd.read_csv(out_path("ursino", table_csv))
     except FileNotFoundError:
         sys.exit(f"{table_csv} not found -> run 'python urs_dynamic_pa_test.py table' first")
     pvs = Ursino2010Model().Pvs                      # constant input, not in the table
@@ -402,7 +403,7 @@ def plot_profile(table_csv="urs_pressure_table.csv"):
     fig.suptitle("Ursino (2010): pressure along Pa -> left MCA territory -> venous outflow "
                  "(pre = before, early = 350 s, late = 1500 s after PaCO2 40->60)")
     fig.tight_layout()
-    fig.savefig("urs_pressure_profile.png", dpi=150)
+    fig.savefig(out_path("ursino", "urs_pressure_profile.png"), dpi=150)
     print("Plot saved as urs_pressure_profile.png")
 
 
@@ -425,7 +426,7 @@ def export_csv(t_end=400.0, t_hyper=50.0, scenarios=("D100", "D80")):
         for k in EXPORT_COLS:
             df[k] = sig[k]
         out = f"ursino_to_vanek_{name}.csv"
-        df.to_csv(out, index=False, float_format="%.5f")
+        df.to_csv(out_path("coupling", out), index=False, float_format="%.5f")
         print(f"{name}: {len(df)} rows ({DT_OUT * 1000:.0f} ms step), "
               f"{clock.time() - tic:.0f} s -> {out}")
 

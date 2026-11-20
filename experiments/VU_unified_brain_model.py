@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 from cbfcsf.models.ursino_2010 import Ursino2010Model
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 
 class UnifiedBrainModel:
@@ -216,8 +217,8 @@ def main():
         infusion_duration=300.0
     )
     
-    sim.export_mri_validation_data(results, output_csv_path="VU_mri_validation_dataset.csv")
-    sim.generate_summary_plots(results, save_path="VU_unified_brain_simulation.png")
+    sim.export_mri_validation_data(results, output_csv_path=out_path("coupling", "VU_mri_validation_dataset.csv"))
+    sim.generate_summary_plots(results, save_path=out_path("coupling", "VU_unified_brain_simulation.png"))
     print("Unified pipeline execution completed successfully!")
 
 

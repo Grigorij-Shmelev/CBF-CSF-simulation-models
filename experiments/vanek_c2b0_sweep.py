@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 VALUES = (0.6, 0.1, 0.02, 0.005, 0.001)
 
@@ -59,5 +60,5 @@ ax[1].loglog(c, vb, "s-", label="pulse from Pb only (±1.5 mmHg)")
 ax[1].set_title("Cardiac pulse in P2, peak-to-peak [mmHg]"); ax[1].legend(fontsize=8)
 for a in ax:
     a.set_xlabel("C2b0 [mL/mmHg]"); a.grid(alpha=0.3, which="both"); a.axvline(0.6, color="k", ls=":", lw=0.8)
-fig.tight_layout(); fig.savefig("vanek_c2b0_sweep.png", dpi=150)
+fig.tight_layout(); fig.savefig(out_path("vanek", "vanek_c2b0_sweep.png"), dpi=150)
 print("Saved vanek_c2b0_sweep.png")

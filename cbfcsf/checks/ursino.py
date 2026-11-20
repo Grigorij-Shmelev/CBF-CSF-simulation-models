@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import solve_ivp
 from cbfcsf.models.ursino_2010 import Ursino2010Model
+from cbfcsf.paths import out_path
 
 # Initialize model
 model = Ursino2010Model()
@@ -61,5 +62,5 @@ plt.ylabel("Blood Flow (mL/s)")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("urs_steal_phenomenon.png", dpi=300, bbox_inches="tight")
+plt.savefig(out_path("ursino", "urs_steal_phenomenon.png"), dpi=300, bbox_inches="tight")
 print("Plot saved as steal_phenomenon.png!")

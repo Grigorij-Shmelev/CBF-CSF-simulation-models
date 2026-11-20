@@ -23,3 +23,7 @@ docs/questions_for_supervisor*
 
 # Golden-output arrays of the regression test: large, kept locally (the committed manifests hold their SHA-256)
 tests/golden/*/arrays.npz
+
+# Ursino -> Vanek coupling CSVs (11.6 MB, regenerable with: urs_dynamic_pa_test.py export): not tracked
+outputs/coupling/ursino_to_vanek_D100.csv
+outputs/coupling/ursino_to_vanek_D80.csv

@@ -42,7 +42,7 @@ import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.special import expit
 
-from cbfcsf.paths import ROOT
+from cbfcsf.paths import ZBYSEK_DATA, out_dir
 
 NAMES = ("mL", "rL", "mR", "rR")
 SIDE = np.array([0, 0, 1, 1])        # node index of each arterial compartment (0 = left, 1 = right)
@@ -1063,7 +1063,7 @@ def main(argv=()):
     print(f"total CBF:                 new {100 * ica['dq'][0]:+.1f} %, Ursino code {100 * ica['dq'][1]:+.1f} %")
     print(f"arterial stressed volume:  new {ica['dV'][0]:+.2f} mL, Ursino code {ica['dV'][1]:+.2f} mL")
 
-    fig_dir = os.path.join(ROOT, "docs", "figures")
+    fig_dir = out_dir("new")
     os.makedirs(fig_dir, exist_ok=True)
     for name, (r, fname) in runs.items():
         summary(name, r, m)
@@ -1166,7 +1166,7 @@ def step_calibration(m, base_runs, fig_dir):
     m = mv   # below: "m" = Vanek values, "mc" = default
 
     rep2 = Report()
-    rec_path = os.path.normpath(os.path.join(fig_dir, "..", "..", "zbysek_matlab_code", "data", "inputs_OK.mat"))
+    rec_path = ZBYSEK_DATA
     if os.path.exists(rec_path):
         vc, vb = run_recording(mc, rec_path), run_recording(m, rec_path)
         print(f"\n=== K2: Stepanik's data file, one beat repeated ({rec_path}) ===")

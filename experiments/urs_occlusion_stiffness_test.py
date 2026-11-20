@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import solve_ivp
 from cbfcsf.models.ursino_2010 import Ursino2010Model
+from cbfcsf.paths import out_path
 
 # 1. Setup Normal Model
 model_normal = Ursino2010Model()
@@ -46,5 +47,5 @@ plt.ylabel("Intracranial Pressure Pic (mmHg)")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("urs_occ_stiffness_plots.png", dpi=150)
+plt.savefig(out_path("ursino", "urs_occ_stiffness_plots.png"), dpi=150)
 print("Plot saved as urs_occ_stiffness_plots.png!")

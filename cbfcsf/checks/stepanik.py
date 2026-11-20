@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
+from cbfcsf.paths import out_path
 
 
 def run_stepanik_lumbar_infusion_test():
@@ -157,7 +158,7 @@ def run_stepanik_lumbar_infusion_test():
     ax.legend(loc='upper left', fontsize=8)
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plot_path = "stepanik_lumbar_infusion_test.png"
+    plot_path = out_path("stepanik", "stepanik_lumbar_infusion_test.png")
     plt.savefig(plot_path, dpi=150)
     plt.close()
     print(f"Plot successfully saved to {plot_path}")

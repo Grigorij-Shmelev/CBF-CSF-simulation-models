@@ -11,6 +11,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from cbfcsf.models.ursino_2010 import Ursino2010Model
+from cbfcsf.paths import out_path
 
 m = Ursino2010Model()
 
@@ -37,5 +38,5 @@ ax[1].axvspan(-0.0021, 0.05, color="tab:green", alpha=0.08, label="range of x in
 ax[0].set_title("Full range: ceiling 1 + sat2 = 1.4, floor 1 − sat1 = −6")
 ax[1].set_title("Zoom around x = 0 (below the dotted line: C_d < 0)")
 ax[0].legend(fontsize=8); ax[1].legend(fontsize=8)
-fig.tight_layout(); fig.savefig("urs_cd_sigmoid.png", dpi=150)
+fig.tight_layout(); fig.savefig(out_path("ursino", "urs_cd_sigmoid.png"), dpi=150)
 print("Saved urs_cd_sigmoid.png")

@@ -30,6 +30,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+from cbfcsf.paths import out_path
+
 
 class Stepanik2009Model:
     """2nd Generation 5-compartment craniospinal CSF model (Štěpáník 2009)."""
@@ -398,7 +400,7 @@ def run_stepanik_simulation(model=None, duration_s=30.0, save_plot_path="stepani
 
 def main():
     print("=== Zbyšek Štěpáník (2009) 2nd Generation Craniospinal Model Simulation ===")
-    results = run_stepanik_simulation(duration_s=10.0)
+    results = run_stepanik_simulation(duration_s=10.0, save_plot_path=out_path("stepanik", "stepanik_base_plots.png"))
     
     print("\nBaseline Simulation Results (Mean Values over 10s):")
     print(f"  - Ventricular Pressure (p1):      {np.mean(results['p1']):.2f} mmHg")

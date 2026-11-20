@@ -7,6 +7,7 @@ from scipy.interpolate import PchipInterpolator
 from cbfcsf.models.ursino_2010 import Ursino2010Model
 from cbfcsf.models.stepanik_2009 import Stepanik2009Model, run_stepanik_simulation
 from cbfcsf.models.vanek_2015 import Vanek2015Model
+from cbfcsf.paths import out_path
 
 print("===========================================================================")
 print("                      MULTI-MODEL COMPARISON SCRIPT")
@@ -59,7 +60,8 @@ stepanik_model.infusion_rate[4] = 0.025  # 1.5 mL/min = 0.025 mL/s into Lumbar S
 stepanik_model.infusion_start[4] = 60.0
 stepanik_model.infusion_duration[4] = 300.0
 
-res_step = run_stepanik_simulation(model=stepanik_model, duration_s=duration_s)
+res_step = run_stepanik_simulation(model=stepanik_model, duration_s=duration_s,
+                                   save_plot_path=out_path("compare", "stepanik_base_plots.png"))
 
 # 2b. Vaněk (2015) Model under Native Boundary (Pb = 10.0 mmHg)
 time_grid = np.linspace(0, duration_s, int(duration_s * 100))
@@ -171,5 +173,5 @@ ax.grid(True, linestyle=':', alpha=0.6); ax.legend(fontsize=8)
 
 plt.tight_layout()
 plot_path = "compare_all_models_plots.png"
-plt.savefig(plot_path, dpi=150)
+plt.savefig(out_path("compare", plot_path), dpi=150)
 print("\nPlot saved successfully to ./compare_all_models_plots.png!")
