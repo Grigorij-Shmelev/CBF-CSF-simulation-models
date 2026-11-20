@@ -5,6 +5,60 @@
 
 --------------------------------------------------------------------------------
 
+#### How to run (layout since 20 Nov 2026)
+
+Python 3.14, packages in `requirements.txt` (`pip install -r requirements.txt`). Run from the repository root:
+
+```
+python run.py --list                    models, flags and experiments
+python run.py new                       new 0D model: default run (all scenarios, cross-checks, figures; ~2 min)
+python run.py new --rest --co2 --lit    only these parts of the default run
+python run.py new --all                 + calibration, sensitivity, options, LIT fit, parameter sensitivity (~20 min)
+python run.py ursino --all              Ursino 2010: baseline, steal figure, node-pressure check
+python run.py vanek --all               Vanek 2015: baseline, lumbar infusion test
+python run.py stepanik --all            Stepanik: baseline, lumbar infusion test
+python run.py exp <name> [args]         analyses in experiments/
+python run.py <model> --help            every flag explained
+```
+
+Figures and tables go to `outputs/<model>/` (new, ursino, vanek, stepanik, compare, coupling).
+
+| Folder | Content |
+| ------ | ------ |
+| `cbfcsf/models/` | `ursino_2010.py`, `vanek_2015.py`, `stepanik_2009.py`, `new_model.py` (`Inputs`, `NewModel`) |
+| `cbfcsf/checks/` | the checks of each model (`new.py`: tests of the new model and its main run) |
+| `cbfcsf/` | `crosscheck.py` (new model vs the source codes), `fit_lit.py` (LIT fitting tool), `plots.py`, `common/` (shared helpers), `cli.py` (behind `run.py`) |
+| `experiments/` | analyses (not checks) |
+| `mat_models/` | thin wrappers: every old command still works |
+| `tests/` | `test_regression.py`: re-runs every command and compares with `tests/golden/` exactly |
+
+Old commands (from `mat_models/`) and their new form (from the repository root):
+
+| Old command | New command |
+| ------ | ------ |
+| `python new_model.py` and its flags (`--calibrate`, `--sensitivity`, `--params`, `--options`, `--fit`, `--fit-mismatch`, `--all`, `--fit-csv FILE --rate R --t-on A --t-off B`) | `python run.py new` with the same flags |
+| `python ursino_2010_model.py` | `python run.py ursino --baseline` |
+| `python urs_steal_test.py` | `python run.py ursino --steal` |
+| `python urs_dynamic_pa_test.py check` | `python run.py ursino --aux-check` |
+| `python vanek_2015_model.py` | `python run.py vanek --baseline` |
+| `python run_vanek_lumbar_infusion.py` | `python run.py vanek --lit` |
+| `python stepanik_2009_csf_model.py` | `python run.py stepanik --baseline` |
+| `python stepanik_run_lumbar_infusion.py` | `python run.py stepanik --lit` |
+| `python urs_dynamic_pa_test.py` (or `full`, `table`, `profile`, `export`) | `python run.py exp urs_dynamic_pa_test` (same mode) |
+| `python urs_cd_sigmoid.py` | `python run.py exp urs_cd_sigmoid` |
+| `python urs_occlusion_stiffness_test.py` | `python run.py exp urs_occlusion_stiffness_test` |
+| `python vanek_icp_sensitivity_tests.py` | `python run.py exp vanek_icp_sensitivity_tests` |
+| `python vanek_c2b0_sweep.py` | `python run.py exp vanek_c2b0_sweep` |
+| `python vanek_pb_step_test.py` | `python run.py exp vanek_pb_step_test` |
+| `python compare_all_models.py` | `python run.py exp compare_all_models` |
+| `python vanek_driven_by_ursino.py` (or `D80`) | `python run.py exp vanek_driven_by_ursino` (same argument) |
+| `python VU_unified_brain_model.py` | `python run.py exp VU_unified_brain_model` |
+| `python unified_brain_model.py` | removed (superseded by `VU_unified_brain_model.py`) |
+
+Parts 1-6 below were written before this layout; the file names in Part 6 are the old ones (still valid as commands).
+
+--------------------------------------------------------------------------------
+
 #### Part 1: Ursino & Giannessi (2010) Model
 ##### Core Biophysical Purpose
 *   **Primary Domain:** Regional Cerebral Blood Flow (CBF), Circle of Willis collateral redistribution, active autoregulation, and $\mathrm{CO}_2$ reactivity.
@@ -122,9 +176,7 @@ This repository contains core mathematical model definitions, standalone clinica
 *   **`VU_unified_brain_model.py`**
     *   **Description:** Primary 28-ODE sequential multi-scale pipeline coupling Ursino's active vascular engine ($\Delta V_{\mathrm{blood}}, P_v$) as dynamic boundary conditions into Vaněk's 5-compartment CSF solver. Supports combined clinical stress tests (ICA occlusion, hypercapnia, lumbar infusion) and exports standardized CSV datasets formatted for David's PC-MRI validation pipeline.
     *   **Usage:** Execute via `python VU_unified_brain_model.py`.
-*   **`unified_brain_model.py`**
-    *   **Description:** Initial baseline prototype of the sequential multi-scale vascular-CSF pipeline.
-    *   **Usage:** Execute via `python unified_brain_model.py`.
+*   **`unified_brain_model.py`**: removed on 20 Nov 2026 (initial prototype, superseded by `VU_unified_brain_model.py`; its outputs stay in `outputs/coupling/`).
 *   **`compare_all_models.py`**
     *   **Description:** Multi-model comparison script executing Ursino (2010), Štěpáník (2009), and Vaněk (2015) side-by-side under identical challenges to output comparative summary metrics ($R_{\mathrm{out}}$, peak ICP) and 4-panel publication plots.
     *   **Usage:** Execute via `python compare_all_models.py`.

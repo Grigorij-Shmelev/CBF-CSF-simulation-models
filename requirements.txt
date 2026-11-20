@@ -1,0 +1,7 @@
+# Python 3.14. Versions pinned from the thesis venv; only packages the code imports.
+numpy==2.5.5
+scipy==1.18.1
+matplotlib==3.11.2
+# pandas: only experiments/urs_dynamic_pa_test.py (table, profile, export), vanek_driven_by_ursino.py,
+# VU_unified_brain_model.py, and the regression test (reads the CSVs they write)
+pandas==3.1.1
