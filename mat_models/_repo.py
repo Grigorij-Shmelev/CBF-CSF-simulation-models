@@ -1,0 +1,7 @@
+"""Puts the repository root on sys.path, so that the old commands in mat_models/ can import the cbfcsf package."""
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
