@@ -1,0 +1,265 @@
+{
+ "argv": [
+  "@mat_models/vanek_icp_sensitivity_tests.py"
+ ],
+ "arrays": {
+  "main:fig/00:vanek_icp_plots.png/ax0/line0/x": [
+   "ca892971b9f4084fbf5793a64eabe0ee8b3d6fe9f4196a7a93b8691ee1d7541c",
+   "<f8",
+   [
+    26483
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/line0/y": [
+   "b1a9df14f520c1f872cf8e06c59cebe6ef03a9478e9e984c08df5a1f5f2e5fb9",
+   "<f8",
+   [
+    26483
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/line1/x": [
+   "ad9c9c8a1402010596fb34d029c03b657ffc0c025321472a4bc6751459890864",
+   "<f8",
+   [
+    24369
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/line1/y": [
+   "7d4be98b549e6759ed30a63fd02632e39afffea446b06a74ca85f8b67505528f",
+   "<f8",
+   [
+    24369
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/line2/x": [
+   "67e464649761284c4a046e78644ab903ef8fef9fe7881aab2058fa281f81fc98",
+   "<f8",
+   [
+    25049
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/line2/y": [
+   "469993ea9cc2cffe1d5e032f7b234083d14154d7c71c4dca56c81e97b8e42d88",
+   "<f8",
+   [
+    25049
+   ]
+  ],
+  "main:fig/00:vanek_icp_plots.png/ax0/patch0/xy": [
+   "2635e83d8ed714557073cbfd726e499d45b852bc790bc6e71132a1d5fe48ba00",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "9ece8226c31c36a3551543f1fc359fa39e2c531bba67e5a836b7436fa0971253",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "ca892971b9f4084fbf5793a64eabe0ee8b3d6fe9f4196a7a93b8691ee1d7541c",
+   "<f8",
+   [
+    26483
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "e19cffa9d90f28b77adac88bfee0e2a3c21595ced28e2a50fe01922ad2eb214d",
+   "<f8",
+   [
+    5,
+    26483
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "266d06de4234abee9ef3b01c40750b49dc9f604a01048759f78db012ab5e6ff6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "ad9c9c8a1402010596fb34d029c03b657ffc0c025321472a4bc6751459890864",
+   "<f8",
+   [
+    24369
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "1efb9435c34623bfd450ccedeec2568233c8cd50fe5942a085625ba4a2549e86",
+   "<f8",
+   [
+    5,
+    24369
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "439cb2c2716d504f8f81228375b654f089de58009dc5c064299ad5b6880820da",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "67e464649761284c4a046e78644ab903ef8fef9fe7881aab2058fa281f81fc98",
+   "<f8",
+   [
+    25049
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "afea9aa93093d3c0b0e81f163c310122c94d447cf3e0d0f95db412ea62e5d1eb",
+   "<f8",
+   [
+    5,
+    25049
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "vanek_icp_plots.png": "bf73efcefd45d548d36fbe0410434262d4f05784d934bfd03076d1c9791355fc"
+ },
+ "id": "vanek.icp_sensitivity",
+ "rc": 0,
+ "runtime_s": 165.8,
+ "texts": {
+  "main:fig/00:vanek_icp_plots.png/ax0/axes": {
+   "legend": [
+    "Normal Baseline",
+    "Hydrocephalus (High Outflow Resistance Rout)",
+    "Stiff Venous Bed (C2b0 = 0.05 vs 0.60 mL/mmHg)",
+    "Infusion Phase"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Van\u011bk Model: Sensitivity of ICP Plateau to Compliance & Resistance",
+    ""
+   ],
+   "xlabel": "Time (s)",
+   "ylabel": "Intracranial Pressure P2 (mmHg)"
+  },
+  "main:fig/00:vanek_icp_plots.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Normal Baseline",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_icp_plots.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Hydrocephalus (High Outflow Resistance Rout)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_icp_plots.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#bf00bfff",
+   "label": "Stiff Venous Bed (C2b0 = 0.05 vs 0.60 mL/mmHg)",
+   "ls": "-.",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_icp_plots.png/ax0/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "Infusion Phase",
+   "type": "Rectangle"
+  },
+  "main:fig/00:vanek_icp_plots.png/figure": {
+   "size": [
+    10.0,
+    5.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:vanek_icp_plots.png/png_sha256": "bf73efcefd45d548d36fbe0410434262d4f05784d934bfd03076d1c9791355fc",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

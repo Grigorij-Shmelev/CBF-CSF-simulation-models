@@ -1,0 +1,1013 @@
+{
+ "argv": [
+  "@mat_models/urs_dynamic_pa_test.py"
+ ],
+ "arrays": {
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line0/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line0/y": [
+   "573eaf1cf3ea7360f3e52e78c07ea2c36792ee2e6bed2281d8138300d674a060",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line1/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line1/y": [
+   "18a247a5635122083596ef1f3de9b962f27369914b624577128d5c7fabac11aa",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line2/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line2/y": [
+   "ffd21876d69f71884d41940f02291dcf18ab528004e6edcc85e90061755b8051",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line0/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line0/y": [
+   "18756132e3b0d143b47ba8f9f8e6bdb7323ad861bea6cd91fc811e671d10cee1",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line1/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line1/y": [
+   "1d03f728c02314b49655214c21ef0f08b17ef2eb0c09e327c97808e9ff82db7f",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line2/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line2/y": [
+   "4d0402877d845beb28b5247b11fa98b2aeec11f308f7b415ed4d33c712c7a610",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line0/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line0/y": [
+   "67680c8e795b8298c0ab233996baa5d9e1a620a758578f19178e7864d7aa9dd6",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line1/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line1/y": [
+   "f0b8f9760f8f7ccf15d4ed24becee0b5dec25a21c43c05069777ec5cbe3964cf",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line2/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line2/y": [
+   "040b3a9e278e206d3459b9f01b630849f8d7fc321846a58292149b240ae99d4a",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line0/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line0/y": [
+   "9fc388142d79f8a76b1256a24fb1c5994b9d89c3d0a4158b02c5f855b388bb2a",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line1/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line1/y": [
+   "8afffa7dbab0a84b6259111527834689df6a62f86f5297f721a8e6a4278557b8",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line2/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line2/y": [
+   "ff997eb50128aba9757928982f2e5d79c95521cc7e27569532f5863a70f959c1",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line0/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line0/y": [
+   "92f6ccbd4abd7e48110eca62bfef4153466707003dacfb9a0ef9dacfd11adfa3",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line1/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line1/y": [
+   "27c5089fbe0d4b8fc0bec4fe99ceca28bb0a650070232d596d5976ad3b5ceb8c",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line2/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line2/y": [
+   "647ee789a32f106b541f0df6956a10380b78868453131c286b0225d506436711",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line0/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line0/y": [
+   "4d07cd6915929edf59ec8537f7b96818975a4d1910ca2236614f97e2dce95146",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line1/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line1/y": [
+   "2f28e4a153809d76c9064795c9676640eb1076747e803da091703798eb7ced0c",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line2/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line2/y": [
+   "009a8fec26b50b53f13e6994e328f0c4bb9acf628244b2d19f81c715ba6e59ad",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line0/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line0/y": [
+   "c4cb6497662519df15a0cdddd73409af6fb118824286f603aab9cf787fc6f58d",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line1/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line1/y": [
+   "c568687235d64f8c23594bfc1d242fb8f5623f15b005871082e5f164c8a83626",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line2/x": [
+   "c03b4e00e6067f4c0ead17c91a8025616c950230e9c8e1568983c17d00f89c62",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line2/y": [
+   "eec1ba694b422b89abc82fe0a02d90186f9d0dc778667d374f146fc70c8a5dfa",
+   "<f8",
+   [
+    2000
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line0/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line0/y": [
+   "d85a89d95587fa54c3956e841ffd759735b4a0f2e1ddb971067029b5056cbb4c",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line1/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line1/y": [
+   "86ec744acdaba19faf95980aba1bc22c8ccfaac586f6653d8c755bd4222f77e7",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line2/x": [
+   "0c60ad0ce2f4001edaf80934c813278d2b6bb6c6ae349391588f067a188e792d",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line2/y": [
+   "5fecbb18e2aaf72d069955aa4119344c1f8f25276852f9e9549c960d7d8d5cb3",
+   "<f8",
+   [
+    600
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "38026d0d39690ee80943010c2f5e18185d69e55a463f00acc46bf2dd506fac1a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "309c88e7c38489c96da333cb14f70f916149823b7b45814f68a407e5af81a356",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "70e7f8fe23754d235508c9471859dbb3c4575898683cdae5e04d14b5e62c1612",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "1ba700b3e9484147460124b6754332c1038eda45a15caec22226e84cf5e33848",
+   "<f8",
+   [
+    93
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "3eea0478e07078feed8854bbca54a97b854ff96c859c7d92a38de076c843a5e1",
+   "<f8",
+   [
+    23,
+    93
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "e5f199de2840be1da9d9b0cb37bb051e4b77725dce3f33b86f81c0a1e352e91f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0003/t_eval": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "f477e64c915a699096d163e897b95c732301e0efbf25ed44888299daafe9ac1e",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "c1480db2cea9571fc04d6057d72ef480540264e09d66a88551ac08f2ef30b1c6",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "e5f199de2840be1da9d9b0cb37bb051e4b77725dce3f33b86f81c0a1e352e91f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "f341ae21c5cce01017047636b9006f0fa37a4e43dd9eb05e89bd2febed83d75d",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ]
+ },
+ "files": {
+  "urs_dynamic_pa_smoke.png": "a488905264fd0e67466d7d4450a53ea1625d609e38e1106d092e6f3dcbff14a4"
+ },
+ "id": "ursino.dpa_smoke",
+ "rc": 0,
+ "runtime_s": 7.8,
+ "texts": {
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/axes": {
+   "legend": [
+    "S",
+    "D80",
+    "D100"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Full run",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "ICA pressure, left [mmHg]"
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Zoom: last 3 s",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "Distal pial pressure, MCA-l [mmHg]"
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "Intracranial pressure [mmHg]"
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "t [s]",
+   "ylabel": "MCA flow, left [mL/s]"
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax6/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "t [s]",
+   "ylabel": ""
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "S",
+   "ls": "-",
+   "lw": 1.4,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 3.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "D80",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/ax7/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "D100",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/figure": {
+   "size": [
+    13.0,
+    11.0
+   ],
+   "suptitle": "Ursino (2010) driven by time-varying Pa(t): S vs D80 vs D100"
+  },
+  "main:fig/00:urs_dynamic_pa_smoke.png/png_sha256": "a488905264fd0e67466d7d4450a53ea1625d609e38e1106d092e6f3dcbff14a4",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

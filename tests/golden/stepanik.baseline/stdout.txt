@@ -1,0 +1,7 @@
+=== Zbyšek Štěpáník (2009) 2nd Generation Craniospinal Model Simulation ===
+
+Baseline Simulation Results (Mean Values over 10s):
+  - Ventricular Pressure (p1):      11.09 mmHg
+  - Intracranial SAS Pressure (p2): 10.09 mmHg (ICP Target: ~10.0)
+  - Lumbar SAS Pressure (p5):       10.09 mmHg
+  - Peak Cervical CSF Flow (F23):   0.39 mL/s

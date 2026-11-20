@@ -1,0 +1,182 @@
+{
+ "argv": [
+  "@mat_models/urs_occlusion_stiffness_test.py"
+ ],
+ "arrays": {
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line0/x": [
+   "64e9c4cec37745cea8f9d7fbea3054575b8afe1f7f00dd73d8c77404292d9dbc",
+   "<f8",
+   [
+    29
+   ]
+  ],
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line0/y": [
+   "fcc1c68bac21f8c47f6591b1e9efa8ba03c18410d366215dce748ad9d33506c8",
+   "<f8",
+   [
+    29
+   ]
+  ],
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line1/x": [
+   "fbed8da79a9d2c5ae109381f3f9dfffc7f4d5112431178cff5157b74618dd79b",
+   "<f8",
+   [
+    31
+   ]
+  ],
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line1/y": [
+   "9dfe12460864f2351e44b3e2071b2a18bf3057c26cedbbbd7f8770353240cf64",
+   "<f8",
+   [
+    31
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "906cf97e0ba47a12132654fb5b0e84c4f7fb371e97f58c94e5a0d07ac5d86f2f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "64e9c4cec37745cea8f9d7fbea3054575b8afe1f7f00dd73d8c77404292d9dbc",
+   "<f8",
+   [
+    29
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "d665804225d3a3c07987730db2ad3e23808c8d5bd5b78b4cc6bdd7dcaf630750",
+   "<f8",
+   [
+    23,
+    29
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "6dd6c0c4c75f11adcf95bcd81fd2ebbfcbca1bcf305bdc16284d3f5e4a8a5bf1",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "fbed8da79a9d2c5ae109381f3f9dfffc7f4d5112431178cff5157b74618dd79b",
+   "<f8",
+   [
+    31
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "602b18fbbdf1c790592d6491d5278365a419b51e673c8e41e0ae25325a2d5d2f",
+   "<f8",
+   [
+    23,
+    31
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ]
+ },
+ "files": {
+  "urs_occ_stiffness_plots.png": "150434c9753f3db7ea89ab2a3c796eb9bf3d6f292c5da933fe9bef892e673ecf"
+ },
+ "id": "ursino.stiffness",
+ "rc": 0,
+ "runtime_s": 1.5,
+ "texts": {
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/axes": {
+   "legend": [
+    "Normal Skull (kE = 0.077)",
+    "Stiff / Low-Compliance Skull (kE = 0.15)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Ursino Model: Responses to ICP Occlusion under Different Compliances",
+    ""
+   ],
+   "xlabel": "Time (s)",
+   "ylabel": "Intracranial Pressure Pic (mmHg)"
+  },
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#0000ffff",
+   "label": "Normal Skull (kE = 0.077)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_occ_stiffness_plots.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Stiff / Low-Compliance Skull (kE = 0.15)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_occ_stiffness_plots.png/figure": {
+   "size": [
+    9.0,
+    5.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:urs_occ_stiffness_plots.png/png_sha256": "150434c9753f3db7ea89ab2a3c796eb9bf3d6f292c5da933fe9bef892e673ecf",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

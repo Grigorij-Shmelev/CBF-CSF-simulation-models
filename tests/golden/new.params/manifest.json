@@ -1,0 +1,9257 @@
+{
+ "argv": [
+  "@mat_models/new_model.py",
+  "--params"
+ ],
+ "arrays": {
+  "main:fig/00:new_model_co2.png/ax0/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line0/y": [
+   "1e971943670309fc00d76c4be0bb4d34227542a07bd69de14f8e2ce336f56d7d",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line1/y": [
+   "8776970af6ff9c0e12eab30a1f46b8c4ed4fb5aa6e78238069d15577edc4e811",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line2/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line2/y": [
+   "2ae2c771d76c557902e59880ce1d091402f1b694d91c24a68c7fe72078c86054",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line3/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line3/y": [
+   "f0a03bb2019f88f73efa3c00268e24bcedd5ac3fc1bcbc6f1d04d1894dadde89",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line4/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/line4/y": [
+   "112858a67862cfa5de2ea7123f4e08818750fd20514c1456bef626f058c9eb73",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax0/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line0/y": [
+   "f3e8eb096581ef2e0522f41f35c72c61e15530309a0d6934aa00b28364e25fb1",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line1/y": [
+   "544b73097fdb2e951b712cdc40ba52b8bf56986f8c424ef141a8aad904d09864",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line2/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line2/y": [
+   "ce120159843c9ea7521ff5533685538d67a6002a14d258e4c12f19de918b52b0",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line3/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line3/y": [
+   "8ee4ed94ed1ff44f085d2cf9bd575f981c9239c70dbc8b6bd02959dc02f3186c",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line4/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/line4/y": [
+   "ff11abbbc132ec5c7111f93f3b9988ec200099e2805c04d9e4c3dd66af986c1e",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax1/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line0/y": [
+   "dcb1b581a4bb94df13fc58278caafb1407c0e9c492d1942c9246616fb78f4ebe",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line1/y": [
+   "f274c2ad9362c00cbcff7313857d38a9b1b940650541c5b1fd7012b55e5674ba",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line2/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/line2/y": [
+   "09517ba85122bb7855fad4ea101474cd8f7ed7a7a1a178425aa47dd36e8a4413",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax2/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line0/y": [
+   "f15fc8eeb07148599c218615968bded1e0e85cf0cc7ba210ba54b08ebbf3ac67",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line1/y": [
+   "a993c81ca2f0362d91f27585d1098dad74e0cc322c5991d0e14dfb2de50a3008",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line2/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/line2/y": [
+   "130c167e559e3f3a944592a6fe65887e3064246a63048c97f4bcc4855e17eae1",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax3/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line0/y": [
+   "13dd60ad772e1bac237035634827360f2a331616a3be10e9840bd42ea019bd32",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line1/y": [
+   "6a8114f27a29a01209e03c94b96211326c82bb4b1e8cbfd79ce8b8e2c3dedd4d",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line2/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/line2/y": [
+   "aeade41bd030a7120169ec1abc170d0f6f433264f23a4470aeac721fb2a2d920",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax4/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line0/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line0/y": [
+   "827652606ea4acc1a3a7fee76a66a0b77492c9368646ff1342e41afec6fbce25",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line1/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line1/y": [
+   "604adecf4cfff77aa7335cb9cec3f4275ed460b926424a5c47745971223d5655",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line2/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line2/y": [
+   "5d688d7134138347c64756ec0a5bbe52b324a673559967bea5adc3b17b7723fc",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line3/x": [
+   "d341c3636c8d92ecd957f0f7ac3d6985492bc01f59278e1aba9f4a136fc5bae8",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/line3/y": [
+   "bf4c002f6101d5c8291e653293ec70f60615eb779f9259e85fa9a9c41712a1e7",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:fig/00:new_model_co2.png/ax5/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line0/y": [
+   "2c34da81f30995dd8ee465648e87d7ef19a67d00355ff097cfbd71f222aecce4",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line1/y": [
+   "37da5b4ac190b71df631b0322e919e1141a0d4cd9c96de962d266fef7938c55d",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line2/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line2/y": [
+   "97a7efa132f712e9fc14de62e1bfbb02d3025138ba3ebe3d3b6968c44b8d561f",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line3/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line3/y": [
+   "bc7e10c920bf13a03501c032558f39c533caaab20bdb8902e249db3d18e106c6",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line4/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/line4/y": [
+   "58dbc6ff901d892a66d65d28f438c165a0dda16130593fa748287d01d4293b49",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax0/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line0/y": [
+   "18d0c18e7ef10eef4dd3d8f820fb8aea2e54497ccfe7136c5402b0177c62bca0",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line1/y": [
+   "2feade6bd1848be20e309670d2066cddf4e5b940092679e18a2ef805791f5b08",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line2/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line2/y": [
+   "b0deddbfe8efc9608e78070369039cc6f41e68590d2dc68065de4dba5478a76a",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line3/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line3/y": [
+   "93e6c97e0e4f19a5a08e774fd56e375694398c9f195b734ee0eadbffeb22f9b7",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line4/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/line4/y": [
+   "6b4c8dea019453a9801e200b43e967cba631b6076638c26db66dc3b6eba89d17",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax1/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line0/y": [
+   "8d8776ed34c51c972053386e33a87c33fa8be1743fadcb06d1412f7f07281a5f",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line1/y": [
+   "f488ead866b5bdbf44d4b612aba143b9946c2c53f352cbb50d1838fe1bdb277a",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line2/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/line2/y": [
+   "09517ba85122bb7855fad4ea101474cd8f7ed7a7a1a178425aa47dd36e8a4413",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax2/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line0/y": [
+   "17b05cdb1c5a1383c55c8793efd36cdf955492d0f36606f58a10376d080489c7",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line1/y": [
+   "9bc7229dfa99f15197c98695e4454e3ed3b1da2dd602afb4c9c77a11b81c9bcd",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line2/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/line2/y": [
+   "7c65e40f42f0f89dceb90bdf1102d41cdedc2c62cbb1d20c695aa7a93c4f841d",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax3/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line0/y": [
+   "44dcfae5190264256fd822d479a383ebde22ba816c85ce89fb5ce8c205985a80",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line1/y": [
+   "ed671bdc3e998261b1b762adcb341a928a301d681db979db3b0e7dce8202a999",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line2/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/line2/y": [
+   "76a300ce8c9153fd2999ded886bd155060f0c272f545cb78a9b60fd7540c9c67",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax4/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line0/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line0/y": [
+   "5cc559a5a88f228a7156642bea611eba40a4041155c9f66be95f131da0a92e03",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line1/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line1/y": [
+   "035001f9a1494e944aed1c8db65685396f49d3e8c0eb274b87acd617f83addaa",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line2/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line2/y": [
+   "33d7a9775ca7a03809de8dd3e83fad5c83255ae9b3ed66981d27ed4610b4755a",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line3/x": [
+   "f7b48a22b0f39942ece6a8348666295cf2bf4921d08cb7498554a8c91d09d39b",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/line3/y": [
+   "12647e44b83c289378b6c9ee46a0ead4649341e07a7ed075bea16b6a5616dfd5",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:fig/01:new_model_co2_5pct.png/ax5/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line0/y": [
+   "44be0510755d998d48fa9da8fc1ce1b7b37f7d43392a65176883f5bae4bceb9c",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line1/y": [
+   "93a0d308f0e84a5629b2ee4b41e93aa6a3c1a2b3c6787085876fdcf22ce2cd7b",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line2/y": [
+   "44fb3ee9cf8a0939e0fad305bea05fd07f24b606f3190ba2775b0e54c2a9a4fa",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line3/y": [
+   "751a239f0aa16fbc6e8093bdc194f1bdb6ce1761b16e65ffd1dcfba75cd12b46",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/line4/y": [
+   "65fe7ab6b25727ed30a7f009952a098dddf57781c7b58969d2300b0724fd9b65",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax0/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line0/y": [
+   "607f1c190feed64babb361327a06f33788744bfdea4c85d98d00956794c717cc",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line1/y": [
+   "bdfbb247164cdfac06009033771d1456e1ad61d86af3b1c73ef284b2769dda03",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line2/y": [
+   "d7a10da6a78dfea1d324a9d4f343c6396cb18e7c2dc8bbd105e66b35c7a41d36",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line3/y": [
+   "d4379b8fed6baa0e1a7143eb66d11e8c4e557241c728256dacc1f80c712134c0",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/line4/y": [
+   "87070fd1eda79c1fa691e42cc2b3ff9e98cbba7062bcb2b408fa51ef5acb4165",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax1/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line0/y": [
+   "2c583726a6e3a52bbbd223c1ed111ffa91ff1a10b418eb94a3eff28f7a415f46",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line1/y": [
+   "82a263e7442e2b0da6493cd56dfb52ecf0e53536a6c13cd81d236297b4f6ce37",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line2/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/line2/y": [
+   "09517ba85122bb7855fad4ea101474cd8f7ed7a7a1a178425aa47dd36e8a4413",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax2/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line0/y": [
+   "111f00e4f1db1b160ef8113d897d93f5cd28e3f40df06b4440c3e8e3f76f4de1",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line1/y": [
+   "57d679d1d1f229ca039da3786676ec7cc607da0f433011f8aef99ce896f4f152",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/line2/y": [
+   "b8a7845c22579035a97ea174e5ddef8e9c5aefffcc36586b400e220913c8188d",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax3/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line0/y": [
+   "10519aee07ea8cc6532c595180443245e598cf2ce78a41473a18d2d369f01be6",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line1/y": [
+   "3ed7dab957130b00892fc8cbe49ce6533c7091043ea39d3408f95a9fb37d0871",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/line2/y": [
+   "425a66799b48e3e3de711784c5bc52a78c3a88d1358146a12ed00969348ef865",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax4/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line0/y": [
+   "278d789b2b0ef60cd8c1eb01705e77bc12a293a1dfc22f965ae3699f9a72e896",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line1/y": [
+   "df66349d8136e357158e596a4656868eccbe2a170725c6c51693779f6795805f",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line2/y": [
+   "8ef85b02ce0fa670f3b95beffd5aad08b5edf2920af4d1d66238e55172f9a407",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/line3/y": [
+   "b71872b97a388f0edba6432b8f81e52a3273ef72283b1aca1b99ae5f2c6adb9a",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/02:new_model_lit.png/ax5/patch0/xy": [
+   "df7373669fd0a7ebe522076afc01903e9eeb8d93ae9db04f70ea9f43d9590b2b",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line0/y": [
+   "9418de100cb8b6dbd9e5a713d628509802a026b76a7b655a7382b134ca7e1928",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line1/y": [
+   "38ac010b9f0286ac504a82ed273b756da7cbae297cd590bb6b4797ae2740035d",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line2/y": [
+   "3ff421e89dbaef2c65e3d9790aca0a25daed42f03846271f0a59c22c678adfc4",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line3/y": [
+   "854d860902292fb86cb2bc2cff0cde121383db0fd769162e38ad7e053e98b19f",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/line4/y": [
+   "25d70384622b42ae597e7a80fcde426548f0841f8e76170e6cb4aa42cb3e87d4",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax0/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line0/y": [
+   "8dc494c09ea34bbae39891fa840e5e558a558531b44920b30e7dd566445dff57",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line1/y": [
+   "120fc9cf1dcc92963821dfdea527aa3a12f4ac294e4647d8916a1d3c4f5f0eaf",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line2/y": [
+   "72720ae513d24f52750834df70e413cf0dcec653bf059f374fb3432ce65bcdac",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line3/y": [
+   "854c821f3744da698309eaad464a6c6609c675576c55ad064583d6ef910da98b",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/line4/y": [
+   "0b9c14f949ec8ee9feb0130de2b3fb3fee89c30ec3eb11b8b41d00399e37efa8",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax1/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line0/y": [
+   "4e223ee9d9f03dfa009dbaeca5fa44f5a931fffb7ed193f07fc139c362051375",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line1/y": [
+   "aa871919d67a99e8d0c7db161c4eea8d30401894008bd74c30ea33f0f740e30a",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line2/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/line2/y": [
+   "09517ba85122bb7855fad4ea101474cd8f7ed7a7a1a178425aa47dd36e8a4413",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax2/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line0/y": [
+   "8d93f48b8cb1f8b8374ea45075614a72f972e803b9baad62b3cd8240553cef67",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line1/y": [
+   "32d1c42de019cd17adbeb437358ab7249f2f41386c7e32f01212cff5db55acbd",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/line2/y": [
+   "b710f95f4f94b81851ecb6a0bac7336b02b875519dd71cb134939dceecac75b0",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax3/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line0/y": [
+   "c8ff80ce5de9505e8466484bc5ede8f457898735c026632986fe57489e2b0efb",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line1/y": [
+   "a55b436fbba322b95141692e0b3825fd3d427e3acc0af215c6cd8ff5997f6718",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/line2/y": [
+   "d63cf9a9b00c5662b5cb1ffffe90daf1c7b181cc0b5e8b06ae0ac1152d9b2a07",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax4/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line0/y": [
+   "a3bb82bbf38b9fcf93748402fa74293d12ee0540f251736f5448a0b7c186e56c",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line1/y": [
+   "d84ece9565c668d4951edd10bf33408b31c945db211403ee6beb0fd2cfea0248",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line2/y": [
+   "d031a52be30fc78110c52767698be36bbd00f4df0c5a820b1bc66994a2ad807f",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/line3/y": [
+   "cdbe73ad3d59d997f170f8a834e57edc22c388bc06e293848ac3ea172a219c27",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/03:new_model_stroke.png/ax5/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line0/y": [
+   "77e8c181f0a0b3c46ef29929942a64237d94799474d84696edb54f83cc338ba9",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line1/y": [
+   "ca59caed1e2ad1eaaa3bda0c3cc598f8d608937c8a6faeebb2122b412e826aca",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line2/y": [
+   "870f68824d99780bc6079c8b906747aa34ea0824e25fa4ee48f4aecbb707c4cf",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line3/y": [
+   "19c9f963546709550a23f7819ebbe5139be63b62d6e0317eb46f955f05285d6a",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/line4/y": [
+   "78e9767f55d292edca077cc4c5f3f8fd1f016e1f7e0dcafc1580ddf770345820",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax0/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line0/y": [
+   "ef8a2be25332ebb14f4ade4a2f19635e19767abec38cdaf71a91715e34a225ba",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line1/y": [
+   "aea5f5038784485f57961df253941ddf05c257480817442c4ac8e7a5119ded87",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line2/y": [
+   "6107af24363799a537c37da577dd1e2b29f62548579328f9e1fe04655a887061",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line3/y": [
+   "1aad6339905f16f911057ba4f5b6ead7b1e2033dda2bfe9ca4e60c70feed5045",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line4/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/line4/y": [
+   "2a45bcb87e1b579174b34da361dab5d2cd3ae3bdf8bc72029d1e03b2052b93c4",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax1/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line0/y": [
+   "e47adfdd5a56564fd01491a7f6c1b20cfa3d7fce784b0b8e0cd0d1a5aeb54242",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line1/y": [
+   "7c55d1899078cadd7adda51920c93e953d9bb4dd28b45842bcfb2c41a96f5ecd",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line2/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/line2/y": [
+   "09517ba85122bb7855fad4ea101474cd8f7ed7a7a1a178425aa47dd36e8a4413",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax2/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line0/y": [
+   "de59b69ed0eaaf671bea48cd8d66062af9d39d30e8620d6aa650312a31ccc187",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line1/y": [
+   "7ec984f05eda8bdaa7b809f6fc486e3634913040e3c74ef9640a155cc89eddfc",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/line2/y": [
+   "d8c18a9f344df11d1fd1859cfe366f135eb12fa19818c0eac69133f7a601ae3a",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax3/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line0/y": [
+   "c3b509024370503881a748e4db999a5207e3ce67651e891e068588c51b14ed63",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line1/y": [
+   "021b6717490589c8fb277cbff92b783a26be42ec9c98a2be79de7cb908a166ad",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/line2/y": [
+   "72d167f7d54e8e250f07ddf192a3e238af547105bb0974113cfbeb156d0682f1",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax4/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line0/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line0/y": [
+   "4178292cc5e8b4236cdebe8cfbe92453e57c123033168722c1192a0240db9cc5",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line1/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line1/y": [
+   "29c6341060cf7ed23eeb2d2b591847b47eeb9c68b74372dd64c5245f7ecd99ae",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line2/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line2/y": [
+   "e03d8d8b2201d01a6fa79a03a128db6836b079f62f3e15e4fb9adf4907c97b18",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line3/x": [
+   "03fc4eacc1e3dbc4dcda4c6755e257dfb7fcd26dd7b5637fa1730c74491e521e",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/line3/y": [
+   "c2206da771eae3a4e848887d461b1d2c569d13af42b918d84953d421da42d39f",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:fig/04:new_model_ica.png/ax5/patch0/xy": [
+   "b2e1d829fc7b29dc1d2b068d0999365d6882df3a8ac7f5fcaf4727a7dea54f46",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "a3f9ce28345a724f9dc750c9a09ac3e6800810cc929deac89e44062510ca1687",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "2d5eee13bac12f6e147c0bd3e04da9183b31dd9327fcffaa298ac5db1d85225a",
+   "<f8",
+   [
+    601
+   ]
+  ],
+  "main:solve/0000/t_eval": [
+   "2d5eee13bac12f6e147c0bd3e04da9183b31dd9327fcffaa298ac5db1d85225a",
+   "<f8",
+   [
+    601
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "6dac0984f6b26d1e7aed259c2ac731354332a181c364dd341364ac7cc8837559",
+   "<f8",
+   [
+    18,
+    601
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "84154197e36432bcb0abb25fa0469b9955f790522814a303362883d902c65bcc",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "7a909a0c961717bf0047f5eda02c7df5e978a5128be89c23c602456ef77b8d23",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "7a909a0c961717bf0047f5eda02c7df5e978a5128be89c23c602456ef77b8d23",
+   "<f8",
+   [
+    3601
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "cc6dafe4a116d456a811e8030101c4b05dedaf7df156449b92881564644b5f03",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "baa45460bfc5f5cb4da0842c2dcebedf060aeab49f956938fc60642b89ab5802",
+   "<f8",
+   [
+    18,
+    3601
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "efd63d75871d567eefff3f219592fd1bd2679286448f2a40996c4822e7f74191",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "496d9dc3cfaf2ca384d96500acf022b22645e6210e2e3871135558713dbf4c08",
+   "<f8",
+   [
+    32
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "06d1502a72cc4539926c509265e152d003a8a949e8454f890958da5c590d226f",
+   "<f8",
+   [
+    23,
+    32
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "333dd21fc1239c928013a62203123fba1edacffe43ae151948146be1adc4f0a9",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "c1fe353b73122efb8f75b5ebb23fb0fab3345b1d4d3051ce5f1417da4e717a98",
+   "<f8",
+   [
+    25
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "ee16a9653e3ab4f52350e2257d6930aabb43e19e299adce029f7889fef4cc4e6",
+   "<f8",
+   [
+    23,
+    25
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "a99f0634210404fe5d441f6a8725070087ec0ea1c44c2b9d6c3b4e095f64aa0b",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "40e84b16f1384293d84b5ee2e959729ee27d1232f6bb09c38511ef222ac0b76b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "02d9a7c3f774998c2133d9670e609673075933397afe02535f7ea676433f126a",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:solve/0004/t_eval": [
+   "02d9a7c3f774998c2133d9670e609673075933397afe02535f7ea676433f126a",
+   "<f8",
+   [
+    1921
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "35507bbb09539b78cbfaf5c148697f782708b63352c3e5c76cdec7a8c1adc398",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "3aefe9dcfbbd7a58796bf125b2664458dd48de4df7d4b51f6738559ca39d5b0b",
+   "<f8",
+   [
+    18,
+    1921
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "ca4759f6eea703d26bb86484d381a4d27144072ba2f90b9a2c277498ac84fd57",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "23dc1373d9fe2312a6f4de70532420c654ec02cdaf69baaecbed513f70290e79",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "23dc1373d9fe2312a6f4de70532420c654ec02cdaf69baaecbed513f70290e79",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "8e87d24ceb11ce2631c7b3e0e8b78ea8920726ad647556ff45590f0b5bc1ff9e",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "3d59f817a28e2b4b90c4c2f7ef87d6905fd5c011664dc0d5b154c33d2d9609ad",
+   "<f8",
+   [
+    18,
+    1
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0006/stats": [
+   "693d95ec7153219e30f286b0f9325de3fc688c81605bf9636419fb95a2f24043",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0006/t": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0006/t_eval": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0006/t_span": [
+   "9da8e1496ba0d7fcfc6925c4e3509f4c48202a1b693df16b7657cb94c8b14ae5",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0006/y": [
+   "69cfe5cb30fee4714ffadff83c24ce93e489bd6b0b18cd87c7b0bbbf3e69cac0",
+   "<f8",
+   [
+    18,
+    3121
+   ]
+  ],
+  "main:solve/0006/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0007/stats": [
+   "feb029b99ea341ad87da3f52180464e4fdf70a68c26aa20ce85133f4e94d58a0",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0007/t": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0007/t_eval": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0007/t_span": [
+   "9da8e1496ba0d7fcfc6925c4e3509f4c48202a1b693df16b7657cb94c8b14ae5",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0007/y": [
+   "ba4496675fbcffc131ba21cb004a96e39921db79a7e511ed705b021382ca3c78",
+   "<f8",
+   [
+    18,
+    3121
+   ]
+  ],
+  "main:solve/0007/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0008/stats": [
+   "df76837d21667c5e1fcd57bf8e1f401ff552b91c69b9a3c7e87d1db6d7238588",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0008/t": [
+   "48788d612202f913c2b785b236ae08420ad9ddc2736deaa88fa7e7357b213f15",
+   "<f8",
+   [
+    6000
+   ]
+  ],
+  "main:solve/0008/t_eval": [
+   "48788d612202f913c2b785b236ae08420ad9ddc2736deaa88fa7e7357b213f15",
+   "<f8",
+   [
+    6000
+   ]
+  ],
+  "main:solve/0008/t_span": [
+   "38b7a66c170cc0cb433c9a8aef5f497f8e8a558ed6bb0dcd777e582c975da7d2",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0008/y": [
+   "80bda4928899a298f27e302d71854226a351c09da44b30dd9125b4ea5539af19",
+   "<f8",
+   [
+    18,
+    6000
+   ]
+  ],
+  "main:solve/0008/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0009/stats": [
+   "946cb3bceb14549a5c4b1b311adcddfc01ef6883d65e49125018a2fe948f0d7f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0009/t": [
+   "6e30940ddd9277d40e1a45536dcd841e47aa8bd4fc2a0053533292a8f4219d6e",
+   "<f8",
+   [
+    33
+   ]
+  ],
+  "main:solve/0009/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0009/y": [
+   "4abc20bcf14e01ace8bf397334c05b7985538b1131ccec6c9fffaed7a9c5ab14",
+   "<f8",
+   [
+    23,
+    33
+   ]
+  ],
+  "main:solve/0009/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0010/stats": [
+   "ce55d74a389cffad1a27d393c6725601082a69952922afc1b57377ae610b7f1b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0010/t": [
+   "4066e812307c1c02201ce263face30a1adde5631be36ab7581c375c835121220",
+   "<f8",
+   [
+    62
+   ]
+  ],
+  "main:solve/0010/t_span": [
+   "e56761b4f6eabc33bb522bd300f68739adf05ca7a78f1003dc252107fac8d4a3",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0010/y": [
+   "065e09383814ce7a081de297c34d81098622b0da9f9161a96dd8dbd5f36c1a77",
+   "<f8",
+   [
+    23,
+    62
+   ]
+  ],
+  "main:solve/0010/y0": [
+   "6ef861b1804a724810164620fd9407c45c876cf1cd0eb6a9ceca22fa105670cb",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0011/stats": [
+   "b44f47ea0ac1555a9dcb204ecb1b370facbfc52abbb7f18ff9e050118d867707",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0011/t": [
+   "1c797ba5637ebb8706376745e774807ce0845af64f679bf98ab7c1bd302e311c",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:solve/0011/t_eval": [
+   "1c797ba5637ebb8706376745e774807ce0845af64f679bf98ab7c1bd302e311c",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:solve/0011/t_span": [
+   "ff5a18e3ea16dc08f4be9530b6c94529050f95e0876eb40f64007d6d9d19f667",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0011/y": [
+   "2646971159d78f66040e8555c14947e94a6d1a6afb5c860e222541931889d9de",
+   "<f8",
+   [
+    5,
+    3
+   ]
+  ],
+  "main:solve/0011/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0012/stats": [
+   "a39f1fd3beb51dc48a00ffa01c84c412ca25ba904320191e10733f313e585377",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0012/t": [
+   "e84762c45fbb095ee3636f5f09bc47740046d8b92b5f01faab5ef96deb062ea6",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0012/t_eval": [
+   "e84762c45fbb095ee3636f5f09bc47740046d8b92b5f01faab5ef96deb062ea6",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0012/t_span": [
+   "0db75f204767bbe657afbd0acd754773a0b137889013e582edd5ffe463428401",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0012/y": [
+   "5c82760738b9cd63406e4d7baeda33016e5ddca423e756256e26ef200503ce72",
+   "<f8",
+   [
+    5,
+    1
+   ]
+  ],
+  "main:solve/0012/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0013/stats": [
+   "e05fe36edf2589ab1189f25b812503342c8e438f0b0ccbca904ab212ad7af0e6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0013/t": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0013/t_eval": [
+   "b08246c410cd958cb3ff026945393f3468fabccaf338d9801f342dda5192b6be",
+   "<f8",
+   [
+    3121
+   ]
+  ],
+  "main:solve/0013/t_span": [
+   "9da8e1496ba0d7fcfc6925c4e3509f4c48202a1b693df16b7657cb94c8b14ae5",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0013/y": [
+   "9ed69a367bb9422ee11cf26d8a1fdb381c49e3742761cb6337d5bb8acdb2ab02",
+   "<f8",
+   [
+    18,
+    3121
+   ]
+  ],
+  "main:solve/0013/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0014/stats": [
+   "75496bbab29844031b2f17ad5ec46140f5b7dcdcce8dab601f2a4fe84a4fb9c4",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0014/t": [
+   "d0245ad8c66584349970d3ae48373e946a0119be8f12c7dade99c4a6eb3f1d21",
+   "<f8",
+   [
+    310
+   ]
+  ],
+  "main:solve/0014/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0014/y": [
+   "99e254a6b886477723a0b10bd20b97ee035303572a1c6e1981c378a011bfc4c9",
+   "<f8",
+   [
+    23,
+    310
+   ]
+  ],
+  "main:solve/0014/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0015/stats": [
+   "1a055e81f417d71077687e7551e0a52ef1485141cd31842eca9efee77f4e619c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0015/t": [
+   "c8504b5f995d5b0fe7e0c5466f631c43b94f30798b9618668bd903ec7119c2bd",
+   "<f8",
+   [
+    276
+   ]
+  ],
+  "main:solve/0015/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0015/y": [
+   "25e07e2f88e152c16bfca703dc5f102233891f25ec06da9be4d3c2a690500865",
+   "<f8",
+   [
+    23,
+    276
+   ]
+  ],
+  "main:solve/0015/y0": [
+   "7f8f5298f8a8afc4f0dd94ee599279e9cc2f5de5955a80bd924f322f8989f654",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0016/stats": [
+   "e0015f53d5986a70f4fac809dac0036f99624b3787aefdc854e640b477753e18",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0016/t": [
+   "597e05dc36e85646953547cc9310ba2267dd9bd30b4fd38b2e628999a369ae85",
+   "<f8",
+   [
+    200
+   ]
+  ],
+  "main:solve/0016/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0016/y": [
+   "3dc8c162dc9435ef5b73f32c723d9fccb6c9ac3cbf5060aad57d1dd4af84cd92",
+   "<f8",
+   [
+    23,
+    200
+   ]
+  ],
+  "main:solve/0016/y0": [
+   "7f8f5298f8a8afc4f0dd94ee599279e9cc2f5de5955a80bd924f322f8989f654",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0017/stats": [
+   "72a9a1a1ff3d71524cc44014cff7adf62077b856b7eef305f1c1c06409ea15c7",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0017/t": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0017/t_eval": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0017/t_span": [
+   "eed5cf498dca81406fede654f85504285bcbb558358f0594dd35a62f13281597",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0017/y": [
+   "37d559498070a2bccce06172b20616d0762b80e3d665673d56a61505619b1640",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0017/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0018/stats": [
+   "6659a02c7cd2283ea81fac96da57d8d86cb7b68bd00a076a8fcfbc32e29d1d27",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0018/t": [
+   "1c797ba5637ebb8706376745e774807ce0845af64f679bf98ab7c1bd302e311c",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:solve/0018/t_eval": [
+   "1c797ba5637ebb8706376745e774807ce0845af64f679bf98ab7c1bd302e311c",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:solve/0018/t_span": [
+   "ff5a18e3ea16dc08f4be9530b6c94529050f95e0876eb40f64007d6d9d19f667",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0018/y": [
+   "17cd5e0b6121b677da30a50be79a89323545f92a4c26ef844e7e387dfbcbe30c",
+   "<f8",
+   [
+    5,
+    3
+   ]
+  ],
+  "main:solve/0018/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0019/stats": [
+   "075a74c9c71aaaab6a8a52865ab69b7728f130e708bfc599901d57e15a7e5165",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0019/t": [
+   "e84762c45fbb095ee3636f5f09bc47740046d8b92b5f01faab5ef96deb062ea6",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0019/t_eval": [
+   "e84762c45fbb095ee3636f5f09bc47740046d8b92b5f01faab5ef96deb062ea6",
+   "<f8",
+   [
+    1
+   ]
+  ],
+  "main:solve/0019/t_span": [
+   "0db75f204767bbe657afbd0acd754773a0b137889013e582edd5ffe463428401",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0019/y": [
+   "04db4e4bdfce1cf89155bb90987e327788af266e9473bc3b20b3c869a4c7d34a",
+   "<f8",
+   [
+    5,
+    1
+   ]
+  ],
+  "main:solve/0019/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0020/stats": [
+   "753437d2b61c2e999ad8d9c111e429dd5e14580f2a18522e7643fcc2f13baa16",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0020/t": [
+   "dc190e33e62dc17b00c03dd7f93454eade295bcca9d1321c03bdc5f5b36f33d6",
+   "<f8",
+   [
+    224
+   ]
+  ],
+  "main:solve/0020/t_span": [
+   "e56761b4f6eabc33bb522bd300f68739adf05ca7a78f1003dc252107fac8d4a3",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0020/y": [
+   "0759bcde44d543cdc01f11bef7addcd723710a36b966c3ae9f20b3d25f3565d3",
+   "<f8",
+   [
+    23,
+    224
+   ]
+  ],
+  "main:solve/0020/y0": [
+   "7f8f5298f8a8afc4f0dd94ee599279e9cc2f5de5955a80bd924f322f8989f654",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0021/stats": [
+   "094fd67a405fd7bf4e8b68df7a825df5782fc3a742ea633e33fe75643ce87b8d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0021/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0021/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0021/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0021/y": [
+   "add461628aefeef0de12be49efa42961eaf69005cae96e2ec15ac88789ae479d",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0021/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0022/stats": [
+   "10c17190f2d88280578dca2ab919dbbdaa8a46e7ec65821900a57691fbade877",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0022/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0022/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0022/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0022/y": [
+   "e2495023fe42ac9b4a067f699013cf85871594e6ad1cda55ef2cddb0b34d08bb",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0022/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0023/stats": [
+   "2d81139ddcba7bf70e27ebb449a3f5b2b98ac362ba8ada277f780fa90c453388",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0023/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0023/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0023/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0023/y": [
+   "910315c7bde2631eda143629b808ead72ab2ed095379662149246818539eb7d4",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0023/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0024/stats": [
+   "d53f9fee7416c8eea7f85576000e54cce5f19e132211e7b95620b2bea1a80cea",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0024/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0024/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0024/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0024/y": [
+   "0c25d11b26be9011550cbc0e727d28e50910ab03ac53e040b77085cbb9ead4ec",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0024/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0025/stats": [
+   "10c17190f2d88280578dca2ab919dbbdaa8a46e7ec65821900a57691fbade877",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0025/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0025/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0025/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0025/y": [
+   "e2495023fe42ac9b4a067f699013cf85871594e6ad1cda55ef2cddb0b34d08bb",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0025/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0026/stats": [
+   "2d81139ddcba7bf70e27ebb449a3f5b2b98ac362ba8ada277f780fa90c453388",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0026/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0026/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0026/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0026/y": [
+   "910315c7bde2631eda143629b808ead72ab2ed095379662149246818539eb7d4",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0026/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0027/stats": [
+   "114179024ac706bb2ac6c5f378148a40530b220604b575c6a673b2fab7d50d2e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0027/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0027/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0027/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0027/y": [
+   "905b5454f494edc1b5526f5bcfc5493c509e7c4ea5eab47b13dabdc6f1e1a5c3",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0027/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0028/stats": [
+   "10c17190f2d88280578dca2ab919dbbdaa8a46e7ec65821900a57691fbade877",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0028/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0028/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0028/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0028/y": [
+   "e2495023fe42ac9b4a067f699013cf85871594e6ad1cda55ef2cddb0b34d08bb",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0028/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0029/stats": [
+   "2d81139ddcba7bf70e27ebb449a3f5b2b98ac362ba8ada277f780fa90c453388",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0029/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0029/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0029/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0029/y": [
+   "910315c7bde2631eda143629b808ead72ab2ed095379662149246818539eb7d4",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0029/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0030/stats": [
+   "cbfb930ad2b1abc706468565a8abe1920269f564383c65e1235e83c92daf5ae8",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0030/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0030/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0030/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0030/y": [
+   "13fcc880f4d5cbe24a193ef203df715ba08df70ab5b58ccf2f049e6c0c86b1a6",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0030/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0031/stats": [
+   "8db7586e4c0023517cc962afe63b814d463c2a80ba7bbe2144ae23b0c7059906",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0031/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0031/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0031/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0031/y": [
+   "c287a24d57041bd027906be736f46e554e2267e688bbd92123383d9fa134d345",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0031/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0032/stats": [
+   "ccb5ac0ca41f827c420ccb65d2101d833fbf2af550963c8b7d8002cbc8e93d47",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0032/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0032/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0032/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0032/y": [
+   "2149a92a24f7b8b7e532129daae48a8b7cc700745979d2be884424677f6c5e7a",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0032/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0033/stats": [
+   "d50ec6a767ab6ef386ad25615bc79c8e8388a75dd271be0aee2d33f9c72c6e64",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0033/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0033/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0033/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0033/y": [
+   "62374dce920fbcb052779da37ab2bea181dc5cdec2abcfa1d4f1478bd5d1282c",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0033/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0034/stats": [
+   "10ba4f7f84b070bf02227d8dc9f831d73e354e39fc33bbae6380383b901895e0",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0034/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0034/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0034/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0034/y": [
+   "582aea3de182e1c685df81b4c29ea7b515573cb524445ef05f6bca2f19005d63",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0034/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0035/stats": [
+   "9c7a45178513c2bdc7e2f6c965d0a5b56c35471de7d1a8e387fa140cf802e7bb",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0035/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0035/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0035/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0035/y": [
+   "a2ff99ebf02957a36bb2a83a5127ff9a12d5c74610ab5cc3e86ac1bb0b186114",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0035/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0036/stats": [
+   "13853926e64d44459ab7e9ec1ec9066349d6010d641a3020c1612415f1cde2e0",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0036/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0036/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0036/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0036/y": [
+   "1ae998263de27bed9a370d8acf415a7159b61997b5d7d0b1a05af95a8ce4e45f",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0036/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0037/stats": [
+   "b3ecf1151aa90d238fd64b978c5898125b624640848e2af96f710aaf160d927e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0037/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0037/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0037/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0037/y": [
+   "32696cbdab098867a00a4b046ad19e39a7fcff7317f9c3198ac6ad3de9f521b0",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0037/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0038/stats": [
+   "28d517a3c8af067bfab88b0d1fbfa4715ce6ea1eb4f093332cb74fc9d0fab318",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0038/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0038/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0038/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0038/y": [
+   "38050a6c21dadba15dbbe79329b7830043b020f47804795f96f0e806df8f4742",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0038/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0039/stats": [
+   "da7df5ffd4e2fc7bbc999026e3052f143b9932a0d52841678ffffb3b81000799",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0039/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0039/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0039/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0039/y": [
+   "00c0f0b73f9bb2df8a1fc604698476e8aa7cc519b385e5de4d9b765632ca2ac6",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0039/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0040/stats": [
+   "837fb46b5f62f420ae02f17159072732fdec8bd393bc63bb058a1607a3386a0f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0040/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0040/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0040/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0040/y": [
+   "6c3be90f05e1d8dff894a8380469970e2f604a8a77e09239d17e2a6f28407094",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0040/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0041/stats": [
+   "858b04ba861e26f6e2fef1e6ec479998ff41aebc2be8e83eeb775235c10d5f64",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0041/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0041/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0041/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0041/y": [
+   "d0638e4559cc35b7ec00d59e8c55c510193bf516ee7307e6520a138d8b4a5146",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0041/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0042/stats": [
+   "d31d5388111e261248dc530c4b3642fc7626a349686e0c51cc8c1a2604e6df84",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0042/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0042/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0042/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0042/y": [
+   "a26606db11e42bca91c196fd7033f09e227cb18a6da98697c7e91c539e72ff98",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0042/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0043/stats": [
+   "c775adc7f6e9dd3d533760bee295ed41ebffdcc879b4087b245d4c4a939997d7",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0043/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0043/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0043/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0043/y": [
+   "a4a20510267c654accf3e7d586812a11a044513833c57013e7de58419e58d8bd",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0043/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0044/stats": [
+   "fc3db1a54749177761b95673b405bb4a1bf440e698abdafc82604ecb037f464a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0044/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0044/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0044/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0044/y": [
+   "fe31d6312191d76234d12ccad24e9a29b4ff019c6ec1ddfbe2934a833e275267",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0044/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0045/stats": [
+   "5c149d920e9dfd2d6a11cc7f81d5ada8aac82da1e5aff2c7297da0d379f7a924",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0045/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0045/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0045/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0045/y": [
+   "949bb8155ec38eed21914eda0d8e95b85aa4c1182a045c8b9d5ec3721265048b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0045/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0046/stats": [
+   "796c702c886d13ffd315750cb2781e01e5a15f65663b18515e718a65b87d6d72",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0046/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0046/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0046/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0046/y": [
+   "94ce0250f6fe5e355761f26dd5b7f2d8125ef69bdd6373cb673c610f1833d328",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0046/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0047/stats": [
+   "1ace8c952daf609c010ac952ac3e6e2fa192108e0a67890c2efbda38032b4be6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0047/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0047/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0047/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0047/y": [
+   "997789a7cdc44217fcc212fcc706de461f8597bdd58a26f5c3444d652c691836",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0047/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0048/stats": [
+   "6d93834ff003b5d9a47ba561e1a590609c807482f08188fd53b5dcac02b78291",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0048/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0048/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0048/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0048/y": [
+   "c6455776fa8efaef49ba7e42c15a30ce1525d893fc7814e7250c272119e77e05",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0048/y0": [
+   "498474b266d4d9c5e704279ffa3b6cd5889f64eb69bca9f5382d1ac77b37d5f6",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0049/stats": [
+   "a28a664430f7f89620941c2e827758c2a7adced38263cf0315a61bda4f1dfbd9",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0049/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0049/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0049/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0049/y": [
+   "4346694c0c6887b42a1b883082e1b68c53d2f6dc983ebe30da3b6a59af0c8534",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0049/y0": [
+   "498474b266d4d9c5e704279ffa3b6cd5889f64eb69bca9f5382d1ac77b37d5f6",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0050/stats": [
+   "525d75b6fec409821ebc6fcfe732182bdd92570d02cceaa8f33a759820e176df",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0050/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0050/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0050/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0050/y": [
+   "5205cca5c6db392e0f176d4d41b25814850dab8a0e68c4949f23ab09f947d18a",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0050/y0": [
+   "498474b266d4d9c5e704279ffa3b6cd5889f64eb69bca9f5382d1ac77b37d5f6",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0051/stats": [
+   "46c9e1950d4b5cba964379325bee619e6818ea2638aa98a597e80fe5be06fefd",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0051/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0051/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0051/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0051/y": [
+   "3d9aadfaf3ca42538296633b597a74b027410d89105609f87af9bf40504a882a",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0051/y0": [
+   "065f82814833dbe324cea396918fddb88eb9ac962858952e00153c6d5c1bdebc",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0052/stats": [
+   "9acb88d5956124d32b845c9b56ae9053c1f2059e3e334c3ef301cc140cbdb92b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0052/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0052/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0052/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0052/y": [
+   "743bdd5734765f4df8e6b66fc212af9edd404b2098f727194d9f0a232a3e05a2",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0052/y0": [
+   "065f82814833dbe324cea396918fddb88eb9ac962858952e00153c6d5c1bdebc",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0053/stats": [
+   "087f122c7898ca8a55b7c66b73fcbe487de79a1c47eed4a8eeca5d9a2cd90753",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0053/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0053/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0053/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0053/y": [
+   "08a7a8ab7fef15678e3168270cc85f5d879944606b4b22ec667cb70081d06fbb",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0053/y0": [
+   "065f82814833dbe324cea396918fddb88eb9ac962858952e00153c6d5c1bdebc",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0054/stats": [
+   "9bebabd5babf5c12bfbd9183bf693bddcce39944772db02674f1294eaafaafc5",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0054/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0054/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0054/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0054/y": [
+   "c4a9605daf8a277d757bc50433aea2297af8dfacbf535f760f02afa67f247c53",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0054/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0055/stats": [
+   "1699acc1d0dcd30ba5b6aed66be05ac155d9fb7de79f924b503f2a60912a2eba",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0055/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0055/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0055/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0055/y": [
+   "54cc1b1723a0b0d265e856e06de47a5c318e9201118d8d7a3fd7e3a27cb4f1a0",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0055/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0056/stats": [
+   "53be1715bb860b1ca0ba1e45bd87fb29ec314bc88a047f86abe3eb584abfabe5",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0056/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0056/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0056/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0056/y": [
+   "e96e3d58eb8f9eba1604c926b416d992a1dd04240f12df855ba6858d8c5a69b8",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0056/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0057/stats": [
+   "67cc3c8931cc096ed8dc395b4da2984f3a9b5481208e8344d3c0fd494d451ca4",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0057/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0057/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0057/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0057/y": [
+   "12f41d40ebcf24a10745f30a956d8d50f53082168e20d735453ad2d9830a50f2",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0057/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0058/stats": [
+   "5a7bdcae8875745855070b96454f2688d47ccab422bdc67118b3eab753494a1d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0058/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0058/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0058/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0058/y": [
+   "a410e510a3c574991a9aea63502ba66cf4a12c0fbf7d154505727115b7d80cb8",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0058/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0059/stats": [
+   "001d300c2937f3ac41cd1accf1400ef7496ec77824566521e21d18493e669b78",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0059/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0059/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0059/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0059/y": [
+   "8989ca677bde42ead333e4de9d20fbe24819bf8a3caec488e40738634a360627",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0059/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0060/stats": [
+   "88984d2b04921b3f94ee606bade10a23c6c67d66853c7c7f8b10c798f07daa51",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0060/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0060/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0060/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0060/y": [
+   "d9503c02b1660711808d4f284483f9d0eb7857e913b2465bf231126d38c98d84",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0060/y0": [
+   "241de46a17975c7e0e2719e0794924ba4d6a81d396c10d9a11ae82209e0e0504",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0061/stats": [
+   "ccfa62b18dacb637bc072900688a76550f54a72320bea51ef91860848865a051",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0061/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0061/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0061/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0061/y": [
+   "fc24561b728c2c755bc59038a8dfddc16bed0040744a7207e1421076d440547c",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0061/y0": [
+   "241de46a17975c7e0e2719e0794924ba4d6a81d396c10d9a11ae82209e0e0504",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0062/stats": [
+   "5f58e2a626cf9035712f3f0f3aebfc7c5a4584b946b97b091f26932931e739ec",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0062/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0062/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0062/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0062/y": [
+   "3a5eb9dd1b8ca9a576aca72beba6f7b143fd5786429dd3186b036812d3e30917",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0062/y0": [
+   "241de46a17975c7e0e2719e0794924ba4d6a81d396c10d9a11ae82209e0e0504",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0063/stats": [
+   "b45298d7cac8a9c21cb4bee4b29c38292242500d25358c360dc84841c5f0747d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0063/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0063/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0063/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0063/y": [
+   "24a1633e4892b43a1b013f5753448835a9be0d61f5dc5a5ba60d3f7a16bf257b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0063/y0": [
+   "0545fdb586309f41dbb6f9e154186f5386dbb7772f1b28baea0920d079fb66a5",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0064/stats": [
+   "42708139ec31ef58a420e2399b5cdc4657ff858d0d03a8488d004fa7a8565686",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0064/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0064/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0064/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0064/y": [
+   "bc1fc219b2d5441ed12f57e556f71cc799392b756d6a485e4a914b9796be3af3",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0064/y0": [
+   "0545fdb586309f41dbb6f9e154186f5386dbb7772f1b28baea0920d079fb66a5",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0065/stats": [
+   "7c6b725f82ce87357ac8ffe1d190f77f0389d3cff3d2e741a49481cf915f21c2",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0065/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0065/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0065/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0065/y": [
+   "47b90bf7e4868edfa65987fb7e350efc0b5447db4c39c28ed457b3429b0771e3",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0065/y0": [
+   "0545fdb586309f41dbb6f9e154186f5386dbb7772f1b28baea0920d079fb66a5",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0066/stats": [
+   "9eaf9cda105a59b4dcc432701268a6d61902ec44e62aed84537ae4e93c390617",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0066/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0066/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0066/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0066/y": [
+   "30a2c9190989712250f56fa8d59ff0671147c3c93ea394835fca3372555c3095",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0066/y0": [
+   "5173d40a9d7e06f5e3bce30663a9469268bb689cb11b591c32c729bd342c31e1",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0067/stats": [
+   "f4944784eeac0676fc1b0f3731d67b9d553dc30a28bdc64281a9cd8911ced24d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0067/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0067/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0067/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0067/y": [
+   "847c23d79ea4db3ee42b1195dd20b8fde03ac3320934a8885b890af98ea71963",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0067/y0": [
+   "5173d40a9d7e06f5e3bce30663a9469268bb689cb11b591c32c729bd342c31e1",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0068/stats": [
+   "05467f62e11807889f88de86914e0ae05a1bc6a9815ae19195b851da3b6e3c61",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0068/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0068/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0068/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0068/y": [
+   "7c947f2c5bfae1070b6c14194d1876c5c5d32b48e28ec5e7f578d168a31feddb",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0068/y0": [
+   "5173d40a9d7e06f5e3bce30663a9469268bb689cb11b591c32c729bd342c31e1",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0069/stats": [
+   "9974a1fd741b593b3abad955757604cc8b19630b91e6497044aba6d53ac728dd",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0069/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0069/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0069/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0069/y": [
+   "4cc021fb53140d5cad23852daa43360503c9bc1e369f0c0d1a61ae37e9d2c592",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0069/y0": [
+   "8f2065dd9f89f1a4770cd453e0b9d2dedc7f2d40c475933413d53eaca4f3116f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0070/stats": [
+   "fad2f88221adf62483df6264d0f436ee217d66ffde1bec9f323cbdfd2b14145c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0070/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0070/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0070/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0070/y": [
+   "b6083c2df9b26af58cc126cbff7628911534d1d9bff8915d68486bc304705b6a",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0070/y0": [
+   "8f2065dd9f89f1a4770cd453e0b9d2dedc7f2d40c475933413d53eaca4f3116f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0071/stats": [
+   "6da724715e0a32e2b3713d14a80757c523ac48e80543e38f996ba227b3712838",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0071/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0071/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0071/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0071/y": [
+   "2311cfd9b8cb462ee79197d15c34b9e82b6826c14aa21085c46476c081a4b1e9",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0071/y0": [
+   "8f2065dd9f89f1a4770cd453e0b9d2dedc7f2d40c475933413d53eaca4f3116f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0072/stats": [
+   "e2dc6d1a8a03c1d7bbdf5f055e5c702e11cad62c9540c8fd31bb987343787b91",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0072/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0072/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0072/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0072/y": [
+   "d57d27701284a8988ba902e831133c773f6057b69a78399a4d2e859ccdb2dba1",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0072/y0": [
+   "7485a439e9383f20a87857266fd5df0dfcf24b68e96c51000289c50b3a805943",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0073/stats": [
+   "4b8b207639c5b2b28a2b92447bb14ede4f935aa5cdea77508e0fc5ff12ebd467",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0073/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0073/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0073/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0073/y": [
+   "95990438838cd3aa36cf4953e59cb0f8d7ce391f91f331df9944ecb68b057cf0",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0073/y0": [
+   "7485a439e9383f20a87857266fd5df0dfcf24b68e96c51000289c50b3a805943",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0074/stats": [
+   "4a4b18b1e5442dac6b3b6a0a812e0de461a2e159ffa64dd5e93e6c4cc6ba254c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0074/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0074/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0074/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0074/y": [
+   "9941bc12318a8dbb1cabd93e4029358cbb06a941286e328e7884807f0368fe15",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0074/y0": [
+   "7485a439e9383f20a87857266fd5df0dfcf24b68e96c51000289c50b3a805943",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0075/stats": [
+   "bffd7593ecdda7293cffb6041e6872a97a080575617af1cbced4b7ba91928a2e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0075/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0075/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0075/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0075/y": [
+   "c38df88dfb71178a92307a94ad021dd6bb0b28b07e9e5916a8bd505cee31c215",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0075/y0": [
+   "f475bcca6102727f7d03abef8a553c570d6a3f7e29de2ab0a9d6afbb487aab1f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0076/stats": [
+   "63c0d43e1081b0293083042c75cc821a2dad02c481d6dbba06722b5fc3730274",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0076/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0076/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0076/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0076/y": [
+   "a0586b5e39fb63b44b210575455950b9ac058d13922256f5ec9150f8b21b2d78",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0076/y0": [
+   "f475bcca6102727f7d03abef8a553c570d6a3f7e29de2ab0a9d6afbb487aab1f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0077/stats": [
+   "5630ecfb996837f037a590fcd64da495827ada7d3ecb689f8728776a283c0f36",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0077/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0077/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0077/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0077/y": [
+   "d7c090459eda7438135cc98ed4d6de68155656e50f569919a5d70a120327e35b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0077/y0": [
+   "f475bcca6102727f7d03abef8a553c570d6a3f7e29de2ab0a9d6afbb487aab1f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0078/stats": [
+   "72ac89cb7d7eeb137f58d795fbe9bb8c05826de6464e6801b4502ac0ead7f23f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0078/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0078/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0078/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0078/y": [
+   "ccc96e5bff7f7213d944acc83fbd12a382ae881d2a55a4a557c3753b06435a37",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0078/y0": [
+   "9d4edbde6fa74222a0b1ffbaa6b654a055af321b946c331157d133ed2d328a45",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0079/stats": [
+   "fddc8f7f9e5b6ff809f7b466139f4ae3eed2969957ca1bc4eaed1135d2c0527d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0079/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0079/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0079/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0079/y": [
+   "aad15c19383a27ba857221a01d09476cfac71729ec306bc026f215a6c5815f2b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0079/y0": [
+   "9d4edbde6fa74222a0b1ffbaa6b654a055af321b946c331157d133ed2d328a45",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0080/stats": [
+   "1c5b7a4d5d98571cfb0127d9b8054f99af7914e8bd1029954e300b3b85cb729f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0080/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0080/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0080/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0080/y": [
+   "4c39afeb4af5092da66701687a814c14aa785a628620cfbe8cf386092e077809",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0080/y0": [
+   "9d4edbde6fa74222a0b1ffbaa6b654a055af321b946c331157d133ed2d328a45",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0081/stats": [
+   "b544709c56ea540962413c344ed71aa64b2317e38ec65da867e28e08c9f2809e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0081/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0081/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0081/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0081/y": [
+   "2da0aafc1ef0db970beb4d159d2178f361ea6e542cadce88e1cb2bafef78b549",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0081/y0": [
+   "93ed2de062a53db01d3d3578dc540a3b89ec63184a6bc5e938e7efced76eec81",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0082/stats": [
+   "c9520d772e0ded3129389d2b1014c1b2d2b12b3bf625090fc75f6c086479997b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0082/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0082/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0082/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0082/y": [
+   "ad30e7e4553ac349deef3ab87e13866335f23a7877979702e8d06cb9eff947b2",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0082/y0": [
+   "93ed2de062a53db01d3d3578dc540a3b89ec63184a6bc5e938e7efced76eec81",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0083/stats": [
+   "5c4c9cf32042db48d032d0f04af5c918b894f7f7a9ae9f7921d6233a3edb73a8",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0083/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0083/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0083/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0083/y": [
+   "7ac38bcbf8c131112b322ac836b1fc07ced8830f0bbd65bd960f9c1d640a4698",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0083/y0": [
+   "93ed2de062a53db01d3d3578dc540a3b89ec63184a6bc5e938e7efced76eec81",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0084/stats": [
+   "56257e370be66865929d9ed2bb7650ba9f844281e10948326d8c860838aa05f6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0084/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0084/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0084/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0084/y": [
+   "7e35e2920ec34cff5795f626763410fcd58d18c48161e8f64293667b16238ebc",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0084/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0085/stats": [
+   "391fbe71412c648bfd581449329a04fc1bd472e29aca7c1d0c4771533c581b19",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0085/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0085/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0085/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0085/y": [
+   "689d3e704a1b567d062be9aa358fd8acd18015ec574a9fb7a0835fd48ac75b57",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0085/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0086/stats": [
+   "c0940693649e68324265951b2dc20ca247be2d211ec0ad5015eb76806436d2b7",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0086/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0086/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0086/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0086/y": [
+   "8c1d17009fd65ad3447a6c09115326aaac8aacbcd74f56eb6e9995c0d95b9212",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0086/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0087/stats": [
+   "2c2e3e0081431f3227001ceeffa74c36a8012285eda7cfebed7d62a7cf9f32ac",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0087/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0087/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0087/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0087/y": [
+   "527531a393e8407f584343f0cc5f80bf3fcab20c2dc493f737b6ca2519c7c83b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0087/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0088/stats": [
+   "abfc76f18ac889795a3ae55ff514196f69707572c555e697777a5b87f6c4793b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0088/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0088/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0088/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0088/y": [
+   "4070d6ff10b366e3b6d38009fee86fae480201f4ddca9cc3462ada681b6800fe",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0088/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0089/stats": [
+   "655b0e711596b51053493cc859d822433b318fca79a52e706afa0f2f24af563a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0089/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0089/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0089/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0089/y": [
+   "acac8a0dfce8d62beb7a934e0f6e0a07ab1a364a20550d6c661f6e1c03357663",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0089/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0090/stats": [
+   "648563378253b148ad59f25d7e17023adf34794e75047057b22c07dc2095740a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0090/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0090/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0090/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0090/y": [
+   "7e25183749daa14a17a1975455468f490a66c690e2b2e90abb353eefb119a08a",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0090/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0091/stats": [
+   "39c3659ed77359f62219d33c4c92e1694db381be602f2a4df119b928ae81d9d9",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0091/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0091/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0091/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0091/y": [
+   "96d0b93393c9fdd634de5c265c07593eb999c688eecc72c882575a633a0c51db",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0091/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0092/stats": [
+   "6004c367dc951995ceda87b69b5739f8e6d42cbb37dd9d9fdf54ea37d37e9f68",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0092/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0092/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0092/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0092/y": [
+   "e67b35b66a40c20359aa9f9f696e5c41dcfa83d31181126f8df66d68e20e289f",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0092/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0093/stats": [
+   "fd14ca9991e60eff0390e17d4ea0076b1df71e4b67400312452eeca1f2a139e6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0093/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0093/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0093/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0093/y": [
+   "49cc8f52700a279b0a1e90f2adcfd9b35471c4ae02616adb38e92155ded6772e",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0093/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0094/stats": [
+   "afeb2c6d6e03433474bba085101f23e1d79c5804e3cff0e7cdd76bfafc7e48b1",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0094/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0094/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0094/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0094/y": [
+   "6566ef25463c9fcfdd2cffd0fa2ede37128cdddf2b360316b4f25816f11dd87e",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0094/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0095/stats": [
+   "901e5ea0ac632f9f6ad8fba1c4544a3a67531a872ef3cb1eeff4a6b65d5d2998",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0095/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0095/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0095/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0095/y": [
+   "841d9004b6ef9f3150e23f0365507b090dac169d6db723fd321142a0da6fd4bf",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0095/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0096/stats": [
+   "90916f8921ae49278886aeefae30ce82bedda08c6b72374fe9bfb0e7f032462c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0096/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0096/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0096/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0096/y": [
+   "67a320b1b433852b51da987b921074ffddf045cf784c2aeabd3cc6cd2704c91f",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0096/y0": [
+   "9428c22b56ac46be0fc8f4677cabdfefe8d51808dd6cf299c33e5842130c295f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0097/stats": [
+   "615c1363138c1b0f9e88d82d306aace01b1956367d58c82fa653f60e03054a28",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0097/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0097/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0097/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0097/y": [
+   "1002c5a9e3a4de4ca059084b44a1d979112ceb98de73c4084506d76c448d619b",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0097/y0": [
+   "9428c22b56ac46be0fc8f4677cabdfefe8d51808dd6cf299c33e5842130c295f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0098/stats": [
+   "c2928f493ed2599e5d6b61f5f982c6c3cc4f37c6cc11d7a518e0dff9d53f53d8",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0098/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0098/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0098/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0098/y": [
+   "877099ddfd469cba4d044410b6a97719384a38b1a39eaa98a778b2465fbf21e9",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0098/y0": [
+   "9428c22b56ac46be0fc8f4677cabdfefe8d51808dd6cf299c33e5842130c295f",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0099/stats": [
+   "a78787f074349eb1328055b7742bf0c88671509be0ea82d1a842a46f50c81439",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0099/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0099/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0099/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0099/y": [
+   "ff5f94f1aa02f1afe0c7c7ecde1c354263825a18ebbaabb309cc8698875e78e0",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0099/y0": [
+   "ce15fad7407c7e1ea36144ee11f59ccd53c57acfcdbf39047f1589127bf838ef",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0100/stats": [
+   "c595e259dc79c09fb87d2586697cf4ac294b2f77cd8fd322620860a869f01964",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0100/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0100/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0100/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0100/y": [
+   "d9387dfc030c401ae63cdc8d80b7739cb8ef9395a2894e5408b7fcfc632ff3c6",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0100/y0": [
+   "ce15fad7407c7e1ea36144ee11f59ccd53c57acfcdbf39047f1589127bf838ef",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0101/stats": [
+   "2a60e32be70445b513234c540fb3d58463a63671a16a3ee3db5c6907f2781b2d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0101/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0101/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0101/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0101/y": [
+   "2e3b501476368b8f70b74cf42f1255cc99ee8c3e1f78724ab731fa41521c0dbf",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0101/y0": [
+   "ce15fad7407c7e1ea36144ee11f59ccd53c57acfcdbf39047f1589127bf838ef",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0102/stats": [
+   "ceee588a1cd80b3799827c980de0cf3c52d22e89232bfb4619297b7edcc4612d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0102/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0102/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0102/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0102/y": [
+   "c6ea9acef2e1566c38376a034f610074dcaf712ac9076501b21f5207a77d5965",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0102/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0103/stats": [
+   "346267d4bd57e22c866c8d68c706abf236124a0b737b8a6c38c99f1d34594c50",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0103/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0103/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0103/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0103/y": [
+   "32be8c190b8daf01a8edf03cf581845e6cbf0ef6d8dc7a43d641fd8fc6c31f65",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0103/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0104/stats": [
+   "ada8e3279788bfea7a84f6cb4dbbbeadbcc0014fc423ff3760ab9d8303e94fd2",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0104/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0104/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0104/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0104/y": [
+   "9e66dd58688fa28963ff7e6bad5f1e59fff7f51dca3ede408d583474fed906a8",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0104/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0105/stats": [
+   "1497d394669be21c8d34076f5d45a2ddb5651ddea76b575c673c8d66cfd9ae09",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0105/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0105/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0105/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0105/y": [
+   "07a70b53312dcb4ded34184c784879da0ca130e56252b8d08b71da5046cea985",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0105/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0106/stats": [
+   "b8e56fc6722bb11a90150707c93f0268eb66dabd76c3c23e12c75942efe35f6d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0106/t": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0106/t_eval": [
+   "43521be6b05a669fc07980f89190e16d7c1e0cbbb6fba310de0be9fcfaee5c47",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0106/t_span": [
+   "2d0b5b5554722a6a7cf7ad9483985b80634d7022ae8a7487bf783bf62741258c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0106/y": [
+   "1e7f5880fa1bc2e453f8411bf9ff614cb29a53f4f101711b45b6713ff2806e57",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0106/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0107/stats": [
+   "621ba96d13048d73633cf8fe97b43ff51a60cc426618f81a348c97e7c634cfdd",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0107/t": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0107/t_eval": [
+   "f6fd0485f9aef390249fa244d55197b6c4468110b04e642593cbce044c69e1ba",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0107/t_span": [
+   "f03eda190eff58bd9085290317da0df4cf27d9f202a0c3fdeb39ab0402ebfb25",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0107/y": [
+   "97bcf528a884d46f491037cc8b914ccba263eaf12b9165b55f333785852ab630",
+   "<f8",
+   [
+    18,
+    2
+   ]
+  ],
+  "main:solve/0107/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ]
+ },
+ "files": {
+  "new_model_co2.png": "946543dd026b5243e3d0fda9f1703840948df2b2e8245fe8a05e42cf6f628b06",
+  "new_model_co2_5pct.png": "1bf34e23a2b4057c444a93fd63b8ba09bd3af362234d02ef4f82099d0d25abe5",
+  "new_model_ica.png": "e01f03a050f4a985994557337363426f377c04c26dc3267b304da0914c7afb5e",
+  "new_model_lit.png": "8ced33d6c22f2bddad1adacc967bccbc519dc331a4c04b8cadbc2cdc40f5a55e",
+  "new_model_stroke.png": "55009425cfe5b9841dbc73818006faf5e52bda9fde15a19cddf1b7ff4f261cec"
+ },
+ "id": "new.params",
+ "rc": 0,
+ "runtime_s": 259.2,
+ "texts": {
+  "main:fig/00:new_model_co2.png/ax0/axes": {
+   "legend": [
+    "total",
+    "mL",
+    "rL",
+    "mR",
+    "rR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Flow [mL/s]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "total",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax0/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/ax1/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR",
+    "rR",
+    "venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Stressed blood volume per compartment [mL]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax1/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/ax2/axes": {
+   "legend": [
+    "ICP = P2",
+    "P5 lumbar"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "CSF pressure [mmHg]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "ICP = P2",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P5 lumbar",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax2/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/ax3/axes": {
+   "legend": [
+    "blood (stressed CBV)",
+    "cranial CSF",
+    "spinal CSF"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Volume change [mL]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "blood (stressed CBV)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "cranial CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax3/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/ax4/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Control x = x_CO2 - x_aut (> 0: dilation)",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax4/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/ax5/axes": {
+   "legend": [
+    "P arterial mL",
+    "P arterial rL",
+    "P capillary",
+    "P venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Blood pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/00:new_model_co2.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P arterial mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P arterial rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "P capillary",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "P venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_co2.png/ax5/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_co2.png/figure": {
+   "size": [
+    15.0,
+    7.5
+   ],
+   "suptitle": "New model. CO2 challenge 40 -> 60 mmHg (shaded). Pa = 100 mmHg"
+  },
+  "main:fig/00:new_model_co2.png/png_sha256": "946543dd026b5243e3d0fda9f1703840948df2b2e8245fe8a05e42cf6f628b06",
+  "main:fig/01:new_model_co2_5pct.png/ax0/axes": {
+   "legend": [
+    "total",
+    "mL",
+    "rL",
+    "mR",
+    "rR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Flow [mL/s]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "total",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax0/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR",
+    "rR",
+    "venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Stressed blood volume per compartment [mL]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax1/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax2/axes": {
+   "legend": [
+    "ICP = P2",
+    "P5 lumbar"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "CSF pressure [mmHg]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "ICP = P2",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P5 lumbar",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax2/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax3/axes": {
+   "legend": [
+    "blood (stressed CBV)",
+    "cranial CSF",
+    "spinal CSF"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Volume change [mL]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "blood (stressed CBV)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "cranial CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax3/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax4/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Control x = x_CO2 - x_aut (> 0: dilation)",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax4/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/axes": {
+   "legend": [
+    "P arterial mL",
+    "P arterial rL",
+    "P capillary",
+    "P venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Blood pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P arterial mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P arterial rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "P capillary",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "P venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_co2_5pct.png/ax5/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:new_model_co2_5pct.png/figure": {
+   "size": [
+    15.0,
+    7.5
+   ],
+   "suptitle": "New model. 5 % CO2 (PaCO2 47.5 mmHg) (shaded). Pa = 100 mmHg"
+  },
+  "main:fig/01:new_model_co2_5pct.png/png_sha256": "1bf34e23a2b4057c444a93fd63b8ba09bd3af362234d02ef4f82099d0d25abe5",
+  "main:fig/02:new_model_lit.png/ax0/axes": {
+   "legend": [
+    "total",
+    "mL",
+    "rL",
+    "mR",
+    "rR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Flow [mL/s]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "total",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax0/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/ax1/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR",
+    "rR",
+    "venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Stressed blood volume per compartment [mL]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax1/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/ax2/axes": {
+   "legend": [
+    "ICP = P2",
+    "P5 lumbar"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "CSF pressure [mmHg]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "ICP = P2",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P5 lumbar",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax2/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/ax3/axes": {
+   "legend": [
+    "blood (stressed CBV)",
+    "cranial CSF",
+    "spinal CSF"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Volume change [mL]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "blood (stressed CBV)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "cranial CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax3/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/ax4/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Control x = x_CO2 - x_aut (> 0: dilation)",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax4/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/ax5/axes": {
+   "legend": [
+    "P arterial mL",
+    "P arterial rL",
+    "P capillary",
+    "P venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Blood pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/02:new_model_lit.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P arterial mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P arterial rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "P capillary",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "P venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/02:new_model_lit.png/ax5/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/02:new_model_lit.png/figure": {
+   "size": [
+    15.0,
+    7.5
+   ],
+   "suptitle": "New model. Lumbar infusion test, 1.5 mL/min for 10 min (shaded). Pa = 100 mmHg"
+  },
+  "main:fig/02:new_model_lit.png/png_sha256": "8ced33d6c22f2bddad1adacc967bccbc519dc331a4c04b8cadbc2cdc40f5a55e",
+  "main:fig/03:new_model_stroke.png/ax0/axes": {
+   "legend": [
+    "total",
+    "mL",
+    "rL",
+    "mR",
+    "rR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Flow [mL/s]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "total",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax0/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/ax1/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR",
+    "rR",
+    "venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Stressed blood volume per compartment [mL]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax1/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/ax2/axes": {
+   "legend": [
+    "ICP = P2",
+    "P5 lumbar"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "CSF pressure [mmHg]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "ICP = P2",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P5 lumbar",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax2/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/ax3/axes": {
+   "legend": [
+    "blood (stressed CBV)",
+    "cranial CSF",
+    "spinal CSF"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Volume change [mL]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "blood (stressed CBV)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "cranial CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax3/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/ax4/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Control x = x_CO2 - x_aut (> 0: dilation)",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax4/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/ax5/axes": {
+   "legend": [
+    "P arterial mL",
+    "P arterial rL",
+    "P capillary",
+    "P venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Blood pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/03:new_model_stroke.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P arterial mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P arterial rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "P capillary",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "P venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/03:new_model_stroke.png/ax5/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/03:new_model_stroke.png/figure": {
+   "size": [
+    15.0,
+    7.5
+   ],
+   "suptitle": "New model. Stroke: left MCA occluded 30 min, then reopened (shaded). Pa = 100 mmHg"
+  },
+  "main:fig/03:new_model_stroke.png/png_sha256": "55009425cfe5b9841dbc73818006faf5e52bda9fde15a19cddf1b7ff4f261cec",
+  "main:fig/04:new_model_ica.png/ax0/axes": {
+   "legend": [
+    "total",
+    "mL",
+    "rL",
+    "mR",
+    "rR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Flow [mL/s]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "total",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax0/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/ax1/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR",
+    "rR",
+    "venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Stressed blood volume per compartment [mL]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "rR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax1/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/ax2/axes": {
+   "legend": [
+    "ICP = P2",
+    "P5 lumbar"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "CSF pressure [mmHg]",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "ICP = P2",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P5 lumbar",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax2/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/ax3/axes": {
+   "legend": [
+    "blood (stressed CBV)",
+    "cranial CSF",
+    "spinal CSF"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Volume change [mL]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "blood (stressed CBV)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "cranial CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax3/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/ax4/axes": {
+   "legend": [
+    "mL",
+    "rL",
+    "mR"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Control x = x_CO2 - x_aut (> 0: dilation)",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax4/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "mR",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax4/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/ax5/axes": {
+   "legend": [
+    "P arterial mL",
+    "P arterial rL",
+    "P capillary",
+    "P venous"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Blood pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "time [min]",
+   "ylabel": ""
+  },
+  "main:fig/04:new_model_ica.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P arterial mL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "P arterial rL",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "P capillary",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "P venous",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/04:new_model_ica.png/ax5/patch0/style": {
+   "fc": "#ff7f0e1a",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/04:new_model_ica.png/figure": {
+   "size": [
+    15.0,
+    7.5
+   ],
+   "suptitle": "New model. Left ICA occluded 30 min, then reopened (shaded). Pa = 100 mmHg"
+  },
+  "main:fig/04:new_model_ica.png/png_sha256": "e01f03a050f4a985994557337363426f377c04c26dc3267b304da0914c7afb5e",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "inf",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "20.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0006/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0006/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0007/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0007/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0008/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0008/options": {
+   "atol": "1e-08",
+   "first_step": "None",
+   "max_step": "0.02",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0009/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0009/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0010/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0010/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0011/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0011/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0012/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0012/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "50.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0013/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0013/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0014/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0014/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0015/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0015/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0016/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0016/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0017/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0017/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "2.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0018/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0018/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0019/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0019/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "50.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0020/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0020/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0021/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0021/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0022/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0022/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0023/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0023/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0024/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0024/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0025/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0025/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0026/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0026/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0027/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0027/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0028/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0028/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0029/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0029/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0030/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0030/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0031/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0031/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0032/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0032/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0033/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0033/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0034/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0034/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0035/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0035/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0036/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0036/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0037/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0037/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0038/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0038/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0039/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0039/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0040/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0040/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0041/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0041/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0042/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0042/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0043/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0043/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0044/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0044/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0045/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0045/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0046/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0046/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0047/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0047/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0048/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0048/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0049/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0049/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0050/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0050/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0051/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0051/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0052/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0052/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0053/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0053/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0054/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0054/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0055/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0055/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0056/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0056/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0057/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0057/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0058/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0058/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0059/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0059/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0060/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0060/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0061/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0061/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0062/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0062/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0063/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0063/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0064/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0064/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0065/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0065/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0066/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0066/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0067/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0067/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0068/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0068/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0069/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0069/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0070/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0070/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0071/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0071/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0072/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0072/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0073/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0073/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0074/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0074/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0075/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0075/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0076/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0076/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0077/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0077/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0078/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0078/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0079/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0079/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0080/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0080/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0081/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0081/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0082/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0082/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0083/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0083/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0084/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0084/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0085/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0085/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0086/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0086/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0087/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0087/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0088/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0088/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0089/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0089/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0090/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0090/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0091/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0091/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0092/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0092/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0093/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0093/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0094/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0094/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0095/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0095/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0096/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0096/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0097/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0097/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0098/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0098/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0099/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0099/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0100/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0100/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0101/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0101/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0102/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0102/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0103/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0103/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0104/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0104/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0105/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0105/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0106/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0106/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0107/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0107/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

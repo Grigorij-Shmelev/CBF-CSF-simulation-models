@@ -1,0 +1,203 @@
+=== New model prototype: resting state (spec 4.2) ===
+ICP (P2) 9.472  P1 10.491  Pv 14.047  Pc 25.047  P_N 96.44  P_k 58.04 mmHg
+R_n (MCA, rest) 17.60, 26.40   R_rest 2.163   R_c 56.0   R_com 15.0
+V_n arterial [2.914 1.943 2.914 1.943] (total 9.71 mL)   V_vn 4.5 mL
+
+test                                                 value  bound                           result
+T1 rest: max |ICP - 9.47|                       9.9107e-09  [0, 0.05] mmHg      PASS
+T1 rest: max |q_k/q_n - 1|                       5.741e-10  [0, 0.005] rel       PASS
+T1 rest: max volume drift                       8.5445e-10  [0, 0.005] rel       PASS
+T1 rest: max |x|                                 1.605e-11  [0, 0.005]           PASS
+rest T2 rigid skull: max |dV_cranial|           1.3209e-08  [0, 0.001] mL        PASS
+rest T3 algebraic residual                      5.3646e-12  [0, 1e-08] mL/s      PASS
+rest T7 CSF bookkeeping error                   9.9069e-12  [0, 0.05] mL        PASS
+rest T4 left-right asymmetry                     1.928e-10  [0, 1e-06] rel       PASS
+T5a CBF rise at end of hypercapnia                 0.54811  [0.3, 1] rel       PASS
+T5b arterial stressed volume rise                  0.42256  [0.1, 0.45] rel       PASS
+T5c stressed blood volume rise                       6.062  [1e-09, 10] mL        PASS
+T5d ICP peak                                        14.603  [9.972, 30] mmHg      PASS
+T5e smallest volume                                 1.9187  [1e-09, inf] mL        PASS
+T5e smallest C_k                                  0.038731  [1e-09, inf] mL/mmHg   PASS
+T5f recovery: CBF                               6.5191e-05  [-0.02, 0.02] rel       PASS
+T5f recovery: blood volume                     -0.00029866  [-0.02, 0.02] rel       PASS
+T5f recovery: ICP                                -0.067343  [-0.5, 0.5] mmHg      PASS
+T5g MCA flow rise, new / Ursino code                 1.049  [0.5, 1.5] ratio     PASS
+CO2 T2 rigid skull: max |dV_cranial|            9.8525e-08  [0, 0.001] mL        PASS
+CO2 T3 algebraic residual                       5.3246e-12  [0, 1e-08] mL/s      PASS
+CO2 T7 CSF bookkeeping error                     0.0002079  [0, 0.05] mL        PASS
+CO2 T4 left-right asymmetry                      7.797e-10  [0, 1e-06] rel       PASS
+C1 CBF rise, 47.5 mmHg                             0.31737  [0.1, 0.55] rel       PASS
+C2 chatter: CBF spread over last 100 s          0.00028181  [0, 0.01] rel       PASS
+C3 recovery: CBF                                0.00032616  [-0.02, 0.02] rel       PASS
+C3 recovery: CBV                                -0.0014938  [-0.02, 0.02] rel       PASS
+CO2 5% T2 rigid skull: max |dV_cranial|         1.1612e-07  [0, 0.001] mL        PASS
+CO2 5% T3 algebraic residual                    5.0706e-12  [0, 1e-08] mL/s      PASS
+CO2 5% T7 CSF bookkeeping error                 3.0904e-05  [0, 0.05] mL        PASS
+CO2 5% T4 left-right asymmetry                  3.4576e-10  [0, 1e-06] rel       PASS
+L1 LIT plateau: |ICP - 23.11|                   2.3367e-07  [0, 0.1] mmHg      PASS
+L2 ICP at end of infusion                           22.324  [14.47, 23.2] mmHg      PASS
+L3 max |CBF/CBF_rest - 1|                         0.019133  [0, 0.1] rel       PASS
+L4 |stressed CBV change| at end of infusion        0.88009  [0, 3] mL        PASS
+L6 recovery: ICP                                   0.11956  [-0.5, 0.5] mmHg      PASS
+L6 recovery: CBV                                0.00053127  [-0.02, 0.02] rel       PASS
+LIT T2 rigid skull: max |dV_cranial|            3.6923e-08  [0, 0.001] mL        PASS
+LIT T3 algebraic residual                       4.8788e-12  [0, 1e-08] mL/s      PASS
+LIT T7 CSF bookkeeping error                    1.4224e-05  [0, 0.05] mL        PASS
+LIT T4 left-right asymmetry                     3.4576e-10  [0, 1e-06] rel       PASS
+S1 residual flow MCA_L                             0.12052  [0.02, 0.6] rel       PASS
+S2 stressed volume MCA_L                          -0.37581  [-0.7, -0.05] rel       PASS
+S3 right-side flows: max |change|               0.00056543  [0, 0.05] rel       PASS
+S3 rest_L flow: |change|                         0.0042029  [0, 0.1] rel       PASS
+S4 total CBF                                      -0.26493  [-0.3, -0.1] rel       PASS
+S5 ICP at end of occlusion                        -0.17735  [-0.5, 0.5] mmHg      PASS
+S6 after reopening: max |change|                 0.0019714  [0, 0.02] rel       PASS
+stroke T2 rigid skull: max |dV_cranial|         1.7786e-08  [0, 0.001] mL        PASS
+stroke T3 algebraic residual                    5.2442e-12  [0, 1e-08] mL/s      PASS
+stroke T7 CSF bookkeeping error                  0.0022974  [0, 0.05] mL        PASS
+T6 pulsatile: ICP pulse peak-to-peak                3.1481  [0.3, 5] mmHg      info (inside)
+T6 pulsatile: stressed CBV pulse p-p               0.82442  [0, inf] mL        info (inside)
+puls T2 rigid skull: max |dV_cranial|           5.7778e-08  [0, 0.001] mL        PASS
+puls T3 algebraic residual                      7.5269e-12  [0, 1e-08] mL/s      PASS
+puls T7 CSF bookkeeping error                   3.2527e-07  [0, 0.05] mL        PASS
+puls T4 left-right asymmetry                     1.796e-11  [0, 1e-06] rel       PASS
+X1a residual MCA_L flow, new / Ursino code         0.97861  [0.5, 2] ratio     PASS
+X1b MCA_L volume change, new - Ursino           -0.0011083  [-0.15, 0.15] rel       PASS
+X1c total CBF change, new - Ursino              -0.0015347  [-0.1, 0.1] rel       PASS
+X2a LIT plateau, Vanek code - new                  0.52778  [0.43, 0.63] mmHg      PASS
+X2b ICP rise after 10 min, new / Vanek code        0.98083  [0.5, 1.5] ratio     PASS
+I1 left-side flows, smallest fraction of rest      0.39575  [0.2, 1] rel       PASS
+I1 left-side flows, largest fraction of rest       0.39575  [0.2, 1] rel       PASS
+I1 right-side flows: max |change|                 0.002403  [0, 0.1] rel       PASS
+I1 stressed CBV change                             -2.3019  [-5, 0] mL        PASS
+I1 after reopening: max |change|                 0.0018227  [0, 0.02] rel       PASS
+ICA T2 rigid skull: max |dV_cranial|            1.1367e-08  [0, 0.001] mL        PASS
+ICA T3 algebraic residual                       5.1776e-12  [0, 1e-08] mL/s      PASS
+ICA T7 CSF bookkeeping error                     0.0031842  [0, 0.05] mL        PASS
+X3a 5 % CO2: total CBF rise, new - Ursino       -0.0014965  [-0.03, 0.03] rel       PASS
+X3b 5 % CO2: arterial volume change, new / Ursino     0.97268  [0.85, 1.15] ratio     PASS
+X4a Pa 100 -> 80: total CBF change, new - Ursino  -0.0047747  [-0.03, 0.03] rel       PASS
+X4b Pa 100 -> 80: arterial volume change, new / Ursino     0.98555  [0.85, 1.15] ratio     PASS
+X2c ICP rise after 5 min, new / Vanek code         0.90925  [0.75, 1.25] ratio     PASS
+X2c same, Vanek code with Pb = 12                   1.1637  [0.75, 1.25] ratio     info (inside)
+X5a ICA occlusion: total CBF change, new - Ursino    -0.11394  [-0.1, 0.1] rel       info (OUTSIDE)
+X5b ICA occlusion: rest_L flow change, new - Ursino    -0.49714  [-0.1, 0.1] rel       info (OUTSIDE)
+O1 rest: MCA velocity                               60.901  [60.4, 61.4] cm/s      PASS
+O1 rest: max |CBV_pct|                          9.9519e-09  [0, 1e-06] %         PASS
+O2 5 % CO2: CBV_pct vs 100*dV/56                5.1486e-10  [0, 1e-06] %         PASS
+O3 5 % CO2: MCA velocity rise                      0.32104  [0.3, 0.55] rel       PASS
+O4 occlusion: MCA_L velocity / rest               0.012211  [0, 0.15] rel       PASS
+
+77 pass/fail checks, 0 failed; 5 informational
+
+=== X1: left MCA occlusion, new model vs existing Ursino code ===
+residual flow in the MCA_L territory: new 12.1 %, Ursino code 12.3 % of rest
+stressed volume of that territory:    new -37.6 %, Ursino code -37.5 %
+total CBF:                            new -26.5 %, Ursino code -26.3 %
+arterial stressed volume, all:        new -1.25 mL, Ursino code -1.28 mL
+Ursino code ICP: 9.50 -> 8.46 mmHg
+
+=== X2: lumbar infusion, new model vs existing Vanek code (constant inputs) ===
+plateau ICP:              new 23.11, Vanek code 23.64 mmHg
+ICP rise after 10 min:    new 12.85, Vanek code 13.10 mmHg (Vanek rest 10.00)
+ICP rise after 5 min:     new 7.15, Vanek code 7.86 mmHg (Pb = 10), 6.14 mmHg (Pb = 12)
+
+=== X3, X4: graded CO2 range and autoregulation, new model vs existing Ursino code (spec 7.15) ===
+5 % CO2 (47.5 mmHg)  total CBF: new +31.7 %, Ursino code +31.9 %;   arterial stressed volume: new +2.27 mL, Ursino code +2.34 mL
+Pa 100 -> 80 mmHg    total CBF: new -11.2 %, Ursino code -10.7 %;   arterial stressed volume: new +0.96 mL, Ursino code +0.97 mL
+
+=== X5 (info): left ICA occlusion, new model vs existing Ursino code. NOT validated: no basilar inlet (spec 3.2.2) ===
+MCA_L flow:                new -60.4 %, Ursino code -55.6 %
+rest_L flow:               new -60.4 %, Ursino code -10.7 % (his ACA_L -26.5 %, PCA_L -0.2 %)
+total CBF:                 new -30.3 %, Ursino code -18.9 %
+arterial stressed volume:  new -0.89 mL, Ursino code -0.32 mL
+
+=== CO2 challenge 40 -> 60 mmHg ===   (rest -> end of intervention)
+CBF total       12.50 ->  19.35 mL/s  (+54.8 %)
+  mL: flow  3.75 ->  5.81 mL/s ( +54.8 %)   volume  2.91 ->  4.15 mL ( +42.3 %)
+  rL: flow  2.50 ->  3.87 mL/s ( +54.8 %)   volume  1.94 ->  2.76 mL ( +42.3 %)
+  mR: flow  3.75 ->  5.81 mL/s ( +54.8 %)   volume  2.91 ->  4.15 mL ( +42.3 %)
+  rR: flow  2.50 ->  3.87 mL/s ( +54.8 %)   volume  1.94 ->  2.76 mL ( +42.3 %)
+venous V         4.50 ->   6.46 mL
+stressed CBV    14.21 ->  20.28 mL  (+6.06 mL)
+ICP            rest 9.47, max 14.60, end of intervention 11.53, min 7.44, end of run 9.40 mmHg
+CSF volumes    cranial -6.06 mL, spinal +2.42 mL
+
+=== 5 % CO2 (PaCO2 47.5 mmHg) ===   (rest -> end of intervention)
+CBF total       12.50 ->  16.47 mL/s  (+31.7 %)
+  mL: flow  3.75 ->  4.93 mL/s ( +31.5 %)   volume  2.91 ->  3.59 mL ( +23.3 %)
+  rL: flow  2.50 ->  3.30 mL/s ( +32.1 %)   volume  1.94 ->  2.40 mL ( +23.6 %)
+  mR: flow  3.75 ->  4.93 mL/s ( +31.5 %)   volume  2.91 ->  3.59 mL ( +23.3 %)
+  rR: flow  2.50 ->  3.30 mL/s ( +32.1 %)   volume  1.94 ->  2.40 mL ( +23.6 %)
+venous V         4.50 ->   5.70 mL
+stressed CBV    14.21 ->  17.69 mL  (+3.48 mL)
+ICP            rest 9.47, max 12.19, end of intervention 10.58, min 8.25, end of run 9.13 mmHg
+CSF volumes    cranial -3.48 mL, spinal +1.40 mL
+
+=== Lumbar infusion test, 1.5 mL/min for 10 min ===   (rest -> end of intervention)
+CBF total       12.50 ->  12.26 mL/s  (-1.9 %)
+  mL: flow  3.75 ->  3.67 mL/s (  -2.2 %)   volume  2.91 ->  3.20 mL (  +9.7 %)
+  rL: flow  2.50 ->  2.46 mL/s (  -1.5 %)   volume  1.94 ->  2.14 mL ( +10.1 %)
+  mR: flow  3.75 ->  3.67 mL/s (  -2.2 %)   volume  2.91 ->  3.20 mL (  +9.7 %)
+  rR: flow  2.50 ->  2.46 mL/s (  -1.5 %)   volume  1.94 ->  2.14 mL ( +10.1 %)
+venous V         4.50 ->   4.42 mL
+stressed CBV    14.21 ->  15.09 mL  (+0.88 mL)
+ICP            rest 9.47, max 22.33, end of intervention 22.32, min 9.47, end of run 9.59 mmHg
+CSF volumes    cranial -0.88 mL, spinal +8.19 mL
+
+=== Stroke: left MCA occluded 30 min, then reopened ===   (rest -> end of intervention)
+CBF total       12.50 ->   9.19 mL/s  (-26.5 %)
+  mL: flow  3.75 ->  0.45 mL/s ( -87.9 %)   volume  2.91 ->  1.82 mL ( -37.6 %)
+  rL: flow  2.50 ->  2.49 mL/s (  -0.4 %)   volume  1.94 ->  1.94 mL (  -0.1 %)
+  mR: flow  3.75 ->  3.75 mL/s (  -0.1 %)   volume  2.91 ->  2.82 mL (  -3.2 %)
+  rR: flow  2.50 ->  2.50 mL/s (  -0.0 %)   volume  1.94 ->  1.88 mL (  -3.2 %)
+venous V         4.50 ->   3.29 mL
+stressed CBV    14.21 ->  11.75 mL  (-2.46 mL)
+ICP            rest 9.47, max 13.70, end of intervention 9.29, min 7.41, end of run 9.75 mmHg
+CSF volumes    cranial +2.46 mL, spinal -0.25 mL
+
+=== Left ICA occluded 30 min, then reopened ===   (rest -> end of intervention)
+CBF total       12.50 ->   8.71 mL/s  (-30.3 %)
+  mL: flow  3.75 ->  1.48 mL/s ( -60.4 %)   volume  2.91 ->  2.46 mL ( -15.7 %)
+  rL: flow  2.50 ->  0.99 mL/s ( -60.4 %)   volume  1.94 ->  1.64 mL ( -15.7 %)
+  mR: flow  3.75 ->  3.74 mL/s (  -0.2 %)   volume  2.91 ->  2.84 mL (  -2.7 %)
+  rR: flow  2.50 ->  2.50 mL/s (  -0.2 %)   volume  1.94 ->  1.89 mL (  -2.7 %)
+venous V         4.50 ->   3.09 mL
+stressed CBV    14.21 ->  11.91 mL  (-2.30 mL)
+ICP            rest 9.47, max 14.56, end of intervention 9.30, min 7.40, end of run 9.73 mmHg
+CSF volumes    cranial +2.30 mL, spinal -0.24 mL
+
+MCA flow rise at 60 mmHg: new model +54.8 %, existing Ursino code +52.3 %
+Figures saved in <OUT>
+
+=== SA: parameter sensitivity of the stressed CBV change (spec 7.8) ===
+  G_CO2      done
+  G_aut      done
+  sat2       done
+  sat1       done
+  C_n_total  done
+  k_ven      done
+  R_vs1      done
+  R_pv       done
+  alpha      done
+  S1         done
+  R_c        done
+  R_com      done
+  V_vn       done
+  k_E        done
+
+base: CO2 +3.477 mL, LIT +0.880 mL, stroke -2.476 mL
+parameter        value    S CO2    S LIT  S stroke    (S = relative change of output / relative change of parameter)
+G_CO2                4     0.98     0.00     -0.00
+G_aut              0.9    -0.97     0.27     -0.00
+sat2               0.4     0.01     0.18     -0.14
+sat1                 7     0.00    -0.00      0.00
+C_n_total          0.2     0.63     0.91      0.52
+k_ven            0.155    -0.37     0.10     -0.51
+R_vs1            0.366     0.21     0.11      0.22
+R_pv              0.88     0.23     0.35      0.06
+alpha         0.001833    -0.02    -0.97      0.00
+S1            0.006366    -0.01     0.12     -0.01
+R_c                 56     0.00     0.00      0.21
+R_com               15     0.00     0.00     -0.00
+V_vn               4.5     0.00    -0.00      0.00
+k_E              0.077    -0.00     0.47     -0.00

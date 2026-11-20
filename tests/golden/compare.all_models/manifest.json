@@ -1,0 +1,1267 @@
+{
+ "argv": [
+  "@mat_models/compare_all_models.py"
+ ],
+ "arrays": {
+  "main:fig/00:stepanik_base_plots.png/ax0/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line0/y": [
+   "d02250edd593fc0783324dd7e372950a9f0429135eec26b2c70cbbca0b121611",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line1/y": [
+   "b0ee72a81f817e161983e0ef06bcbe11ec13191a1af854af31c58ab28598bcdf",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line2/y": [
+   "55d111c31891a1f6722fc24eeeb01cea7efa0c3dd3c73d34cfde646b62e145d7",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line3/y": [
+   "ba25e36368d2f69159ae0ee0fd5c9a4ea8a4f434292e92af4e3a5908de4e6eb9",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line4/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax0/line4/y": [
+   "27f54eb0f365b41c9773fc32c64086b388bb950f4cd34fb67c05db7cdb224bf0",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line0/y": [
+   "de1df548bf17e1866a7f146d451803b4b54be0a2a90d3f78324a949d95166326",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line1/y": [
+   "8d2a7d714406059809e04dce954128deb7923d01568d2f40303e63d64f42e488",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line2/y": [
+   "a29d4e5399d63c2181dbb9cfaa6a482e26423436f2721dc40bbc6352892165a2",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax1/line3/y": [
+   "a3169aca43d1b03ab432e17a85ffad11ddf1021ec2b5c348ebb92c74ab1749c5",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line0/y": [
+   "08a571d9ef33dad0dd26787f87848a4cf221f4f41f790692c4b97e4bea65337d",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line1/y": [
+   "c0e31a39a922585fac6b96b3439c8b7268dba9b84245d0271c1a0065ab0aaa4a",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line2/y": [
+   "5a34c6dd93fda94cc45542c1a26c968008b3f8a6141188f8b9195c8a9762f28c",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line3/y": [
+   "80dc0231dd42b51d57b17cc47de30ccaacebe13955cac6a6ebacc52b1b2038e2",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line4/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax2/line4/y": [
+   "73ff2897918de34ca167b8b7f15753752b55486bce4bcbebbfe5c3b35ab7187a",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax3/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax3/line0/y": [
+   "8aa567ccf03a0991c6eedd3fa8ff54bfa3d1572bc40af5579ad3250a3222cc4f",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax3/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax3/line1/y": [
+   "c4aae42bbb00e4e01014229e46a60eacf83a1c9ce56dfb7f6ca5e2a1bed283fc",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax4/line0/x": [
+   "aff6ea109bd96f1a16447cad63f8c7453df4470f8c4ba348fabaf43569da3971",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax4/line0/y": [
+   "b0ee72a81f817e161983e0ef06bcbe11ec13191a1af854af31c58ab28598bcdf",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line0/y": [
+   "ce4ef764d9a4c910bd07dab3e02c2aa7e3b95fec578b341e7c351169ee57c0ac",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line1/y": [
+   "daa1728585e31dd1820c85e24637ecc3232b6c2c7113987b1bb0099ce1c7db86",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line2/y": [
+   "f7ccd09ccda854c42764effb5afb43f3115eec7ef8fb0e15f09f2794b6727b6e",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line3/y": [
+   "d86756c3b91708fca3ca82decb5b34849940e30d4fb84ba19cf9ba989a326e6c",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line4/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_base_plots.png/ax5/line4/y": [
+   "4623839a4826566b7e0604001b722c28afb342901370f1438587229ed8846351",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line0/x": [
+   "cb7de447c9aa98b43362b8eccb839eb7cd098bc567c534eefea325bdbf9bea13",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line0/y": [
+   "c329787618c39b169472ac1b21a4dd0cb76af9c8da416888fde449e54d9b75b0",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line1/x": [
+   "cb7de447c9aa98b43362b8eccb839eb7cd098bc567c534eefea325bdbf9bea13",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line1/y": [
+   "fab4391bda000149bcfcdd9337e5714e48389f3c76c8d2bede7ee3e7fa5f51ce",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line2/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line3/x": [
+   "b249cb02371bda675c33db12376393e4eef66d6734e372c658c4c0b658e3bf1e",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax0/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line0/x": [
+   "cb7de447c9aa98b43362b8eccb839eb7cd098bc567c534eefea325bdbf9bea13",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line0/y": [
+   "1d5c960f0d1cb046e091ffe574076305178ae97be37f3fa6ecf9311b5f499ca9",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line1/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line1/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line2/x": [
+   "b249cb02371bda675c33db12376393e4eef66d6734e372c658c4c0b658e3bf1e",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax1/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax2/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax2/line0/y": [
+   "b0ee72a81f817e161983e0ef06bcbe11ec13191a1af854af31c58ab28598bcdf",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax2/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax2/line1/y": [
+   "f3d1da4c6ef86396300c2c5cc059722b1734b9b4889b272d16b041f94cf1a05b",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax2/patch0/xy": [
+   "0f9ab72ef7b394d8fdf8ad15b382b72b60e66792a06e8b914ec266eb29f4b5ec",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax3/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax3/line0/y": [
+   "27f54eb0f365b41c9773fc32c64086b388bb950f4cd34fb67c05db7cdb224bf0",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax3/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax3/line1/y": [
+   "4dad4e63dc4000e46cd76f63f143b91987ee68476b25a5aa7361d87b4792466a",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/01:compare_all_models_plots.png/ax3/patch0/xy": [
+   "0f9ab72ef7b394d8fdf8ad15b382b72b60e66792a06e8b914ec266eb29f4b5ec",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "fd6198f9bb55df258ffab67486aa18af95e2950bbdb9868586f8bb9b512ce41c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "b5e42c28fefc17acb07488464c133e2e08b6ea6ea530f7d7194509911ea8083b",
+   "<f8",
+   [
+    31
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "91b7d032787f2c18f8e5d6982f75310bbc6fde3756bce2c8ce3ab43711c82517",
+   "<f8",
+   [
+    23,
+    31
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "ee39ee46d2f8305d73168aa9340a5997690e1af79b929f0cdbf0356347a50466",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "e2cf75c2442fcbdc7a41204b94c7ef17a444d0414a47164c86fed650c7a25304",
+   "<f8",
+   [
+    29
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "43704a89fb9fe63f67becccbf84a72719ccd4cc3e7ce4343b93dfcf53a48029f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "01344ad452a3942498e2bd78bd83f8e5f7fb1d3d6d9419a0e5dbf654efec2d70",
+   "<f8",
+   [
+    23,
+    29
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "db13eb9112a2ec8ed1334c48729895d2ca1db0d640c62ab56cc8ae8493b72a2c",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "9f2fb049baaaad562f92999831bb9b94177c3205284a1f5cf2ed613f321825bc",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "2187d2306191860312159701e1348dea3561dc56f3ade66c940c47cbadf102d4",
+   "<f8",
+   [
+    19
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "1b89af54471d4f65ce4d3ff3a8d2bd4734334cb2434c2cdbe40e859d8fab07e8",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "f4ad732808a4c801fac1aca5057d5327a4628be31ef07e3be5aaf12c74f4a4de",
+   "<f8",
+   [
+    23,
+    19
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "f85721614ddef7c73e3040170e77e86587f29659b7e114fd7adc8ebbf54d26cc",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "3c84b0f4985b82cc6d89159db3188ebb1a914f5b82a7f6a4322457e624005a72",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "2c0ff2a08bbdc9ab9a4070154d38827e86293beca438893545cea12095a86a9c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "7c07f1737fe6544b9a6ca12e7843adc0c53cf86b3f4ce8f894c262fd4f0f95d2",
+   "<f8",
+   [
+    5,
+    33096
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "c6db61868edb0bddb57a6178c1b24673bad9a600ecdd94447916d496bd7bc843",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "da52ba27cdce415486e8cf607f7458d1c5796dc7425773804ac9a2787c9cc7c0",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "2c0ff2a08bbdc9ab9a4070154d38827e86293beca438893545cea12095a86a9c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "13588d3808b8dfca4cec6cb2f249e9a51ff00f69edd2a57c98ac65dd9e0852b6",
+   "<f8",
+   [
+    5,
+    32334
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "compare_all_models_plots.png": "9d6a6cb902d0da4c305f117d850588fddf339c71a1a84235b354c2d3436e5053",
+  "stepanik_base_plots.png": "841ec47a811f25b7f0d53204e70454050db6bf1eaa417f40862d25ebd365ff9f"
+ },
+ "id": "compare.all_models",
+ "rc": 0,
+ "runtime_s": 96.0,
+ "texts": {
+  "main:fig/00:stepanik_base_plots.png/ax0/axes": {
+   "legend": [
+    "p1 (Ventricles)",
+    "p2 (Intracranial SAS / ICP)",
+    "p3 (Cervical SAS)",
+    "p4 (Thoracic SAS)",
+    "p5 (Lumbar SAS)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Craniospinal Pressures [mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Pressure [mmHg]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "p1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#dc143cff",
+   "label": "p2 (Intracranial SAS / ICP)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "p3 (Cervical SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "p4 (Thoracic SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "p5 (Lumbar SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax1/axes": {
+   "legend": [
+    "F12 (Ventr -> Cranial SAS)",
+    "F23 (Cranial -> Cervical SAS)",
+    "F34 (Cervical -> Thoracic SAS)",
+    "F45 (Thoracic -> Lumbar SAS)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Inter-compartmental CSF Flows [mL/s]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Flow [mL/s]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "F12 (Ventr -> Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "F23 (Cranial -> Cervical SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "F34 (Cervical -> Thoracic SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "F45 (Thoracic -> Lumbar SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/axes": {
+   "legend": [
+    "V1 (Ventricles)",
+    "V2 (Intracranial SAS)",
+    "V3 (Cervical)",
+    "V4 (Thoracic)",
+    "V5 (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Compartmental Volumes [mL]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Volume [mL]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "V1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "V2 (Intracranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "V3 (Cervical)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "V4 (Thoracic)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax2/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "V5 (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax3/axes": {
+   "legend": [
+    "Formation (S1)",
+    "Resorption (-Fout)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Formation & Resorption Mass Balance [mL/min]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Rate [mL/min]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Formation (S1)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Resorption (-Fout)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax4/axes": {
+   "legend": [
+    "Global P-V Curve"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Global Pressure-Volume Relationship",
+    ""
+   ],
+   "xlabel": "Total CSF Volume Change \u0394V [mL]",
+   "ylabel": "ICP p2 [mmHg]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#800080ff",
+   "label": "Global P-V Curve",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/axes": {
+   "legend": [
+    "C1A (Artery-Ventricle)",
+    "C2A (Artery-Cranial SAS)",
+    "C3C (Cervical)",
+    "C4T (Thoracic)",
+    "C5L (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Compartmental Compliances [mL/mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Compliance [mL/mmHg]"
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "C1A (Artery-Ventricle)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "C2A (Artery-Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "C3C (Cervical)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "C4T (Thoracic)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/ax5/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "C5L (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_base_plots.png/figure": {
+   "size": [
+    14.0,
+    10.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:stepanik_base_plots.png/png_sha256": "841ec47a811f25b7f0d53204e70454050db6bf1eaa417f40862d25ebd365ff9f",
+  "main:fig/01:compare_all_models_plots.png/ax0/axes": {
+   "legend": [
+    "Left MCA Flow (Ischemic)",
+    "Right MCA Flow (Healthy)",
+    "100% Left ICA Occlusion",
+    "Hypercapnia (PaCO2=60 mmHg)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Ursino (2010): Microvascular Steal Phenomenon",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Blood Flow [mL/s]"
+  },
+  "main:fig/01:compare_all_models_plots.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Left MCA Flow (Ischemic)",
+   "ls": "-",
+   "lw": 1.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#0000ffff",
+   "label": "Right MCA Flow (Healthy)",
+   "ls": "--",
+   "lw": 1.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "100% Left ICA Occlusion",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Hypercapnia (PaCO2=60 mmHg)",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax1/axes": {
+   "legend": [
+    "Intracranial Pressure (Pic)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Ursino (2010): Intracranial Pressure (Pic)",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Pressure [mmHg]"
+  },
+  "main:fig/01:compare_all_models_plots.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#800080ff",
+   "label": "Intracranial Pressure (Pic)",
+   "ls": "-",
+   "lw": 1.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child1",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax2/axes": {
+   "legend": [
+    "\u0160t\u011bp\u00e1n\u00edk (2009) P2 (ICP)",
+    "Van\u011bk (2015) P2 (ICP)",
+    "Infusion Phase (1.5 mL/min)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "\u0160t\u011bp\u00e1n\u00edk vs. Van\u011bk: Native ICP Elevation During Infusion",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "ICP P2 [mmHg]"
+  },
+  "main:fig/01:compare_all_models_plots.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "\u0160t\u011bp\u00e1n\u00edk (2009) P2 (ICP)",
+   "ls": "-",
+   "lw": 2.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Van\u011bk (2015) P2 (ICP)",
+   "ls": "--",
+   "lw": 2.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax2/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "Infusion Phase (1.5 mL/min)",
+   "type": "Rectangle"
+  },
+  "main:fig/01:compare_all_models_plots.png/ax3/axes": {
+   "legend": [
+    "\u0160t\u011bp\u00e1n\u00edk (2009) P5 (Lumbar)",
+    "Van\u011bk (2015) P5 (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "\u0160t\u011bp\u00e1n\u00edk vs. Van\u011bk: Lumbar SAS Pressure (P5)",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Lumbar Pressure P5 [mmHg]"
+  },
+  "main:fig/01:compare_all_models_plots.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#bf00bfff",
+   "label": "\u0160t\u011bp\u00e1n\u00edk (2009) P5 (Lumbar)",
+   "ls": "-",
+   "lw": 1.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#00bfbfff",
+   "label": "Van\u011bk (2015) P5 (Lumbar)",
+   "ls": "--",
+   "lw": 1.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:compare_all_models_plots.png/ax3/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/01:compare_all_models_plots.png/figure": {
+   "size": [
+    14.0,
+    9.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/01:compare_all_models_plots.png/png_sha256": "9d6a6cb902d0da4c305f117d850588fddf339c71a1a84235b354c2d3436e5053",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "0.001",
+   "first_step": "0.001",
+   "max_step": "0.1",
+   "method": "'RK45'",
+   "rtol": "0.001"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

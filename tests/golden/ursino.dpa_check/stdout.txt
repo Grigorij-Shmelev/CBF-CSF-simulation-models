@@ -1,0 +1,26 @@
+
+--- check_aux: S, 20 s, hypercapnia at 10 s (4000 samples), max |residual| in mL/s ---
+    A  PPCA1_l       5.28e-14  OK
+    A  PPCA1_r       5.26e-14  OK
+    A  PACA1_l       1.78e-14  OK
+    A  PACA1_r       1.87e-14  OK
+    A  Pc            3.12e-14  OK
+    B  ICA_l node    1.73e-18  OK
+    B  ICA_r node    1.73e-18  OK
+    B  BA node       8.67e-19  OK
+    B  venous node   4.44e-16  OK
+    last sample: PPCA1_l=96.40, PPCA1_r=96.40, PACA1_l=90.70, PACA1_r=90.70, Pc=35.96, PMCA_end_l=88.56, PMCA_end_r=88.56
+
+--- check_aux: D100, 20 s, hypercapnia at 10 s (4000 samples), max |residual| in mL/s ---
+    A  PPCA1_l       5.55e-14  OK
+    A  PPCA1_r       5.53e-14  OK
+    A  PACA1_l       1.69e-14  OK
+    A  PACA1_r       2.00e-14  OK
+    A  Pc            2.67e-14  OK
+    B  ICA_l node    5.55e-17  OK
+    B  ICA_r node    5.55e-17  OK
+    B  BA node       2.78e-17  OK
+    B  venous node   8.88e-16  OK
+    last sample: PPCA1_l=95.96, PPCA1_r=95.96, PACA1_l=90.20, PACA1_r=90.20, Pc=33.61, PMCA_end_l=88.08, PMCA_end_r=88.08
+
+ALL CHECKS PASSED

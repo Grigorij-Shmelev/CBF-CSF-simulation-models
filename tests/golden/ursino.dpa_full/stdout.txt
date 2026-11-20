@@ -1,0 +1,92 @@
+
+=== S: <T> s wall time, 80000 samples
+  window 'pre' [45.0, 50.0) s   mean / peak-to-peak
+    Pa         100.00 /  0.000
+    PICA_l      97.30 /  0.000
+    PBA         98.65 /  0.000
+    Pd_ml       58.50 /  0.000
+    Pd_al       58.49 /  0.000
+    Pd_pl       58.58 /  0.000
+    Pic          9.53 /  0.001
+    Pv          14.10 /  0.001
+    q_ica_l     4.746 /  0.000  mL/s
+    q_mca_l     3.748 /  0.000  mL/s
+  window 'hyper' [395.0, 400.0) s   mean / peak-to-peak
+    Pa         100.00 /  0.000
+    PICA_l      95.95 /  0.001
+    PBA         97.96 /  0.001
+    Pd_ml       62.13 /  0.005
+    Pd_al       62.13 /  0.005
+    Pd_pl       62.23 /  0.005
+    Pic         13.03 /  0.013
+    Pv          19.90 /  0.011
+    q_ica_l     7.118 /  0.003  mL/s
+    q_mca_l     5.622 /  0.002  mL/s
+    ml: min x = +0.0003   (Cd = 0 at x = -0.0604)
+    al: min x = +0.0001   (Cd = 0 at x = -0.0161)
+    pl: min x = +0.0001   (Cd = 0 at x = -0.0242)
+    mr: min x = +0.0003   (Cd = 0 at x = -0.0604)
+    ar: min x = +0.0001   (Cd = 0 at x = -0.0161)
+    pr: min x = +0.0001   (Cd = 0 at x = -0.0242)
+
+=== D80: <T> s wall time, 80000 samples
+  window 'pre' [45.0, 50.0) s   mean / peak-to-peak
+    Pa          80.00 / 20.000
+    PICA_l      77.60 / 18.491
+    PBA         78.79 / 19.237
+    Pd_ml       48.12 /  3.848
+    Pd_al       48.12 /  3.846
+    Pd_pl       48.18 /  3.865
+    Pic          9.60 /  0.753
+    Pv          13.66 /  0.953
+    q_ica_l     4.213 /  2.694  mL/s
+    q_mca_l     3.327 /  2.112  mL/s
+  window 'hyper' [395.0, 400.0) s   mean / peak-to-peak
+    Pa          80.00 / 20.000
+    PICA_l      77.59 / 18.484
+    PBA         78.79 / 19.234
+    Pd_ml       48.06 /  3.850
+    Pd_al       48.05 /  3.848
+    Pd_pl       48.12 /  3.867
+    Pic          9.43 /  0.742
+    Pv          13.52 /  0.945
+    q_ica_l     4.240 /  2.705  mL/s
+    q_mca_l     3.349 /  2.121  mL/s
+    ml: min x = +0.1011   (Cd = 0 at x = -0.0604)
+    al: min x = +0.1012   (Cd = 0 at x = -0.0161)
+    pl: min x = +0.0965   (Cd = 0 at x = -0.0242)
+    mr: min x = +0.1011   (Cd = 0 at x = -0.0604)
+    ar: min x = +0.1012   (Cd = 0 at x = -0.0161)
+    pr: min x = +0.0965   (Cd = 0 at x = -0.0242)
+
+=== D100: <T> s wall time, 80000 samples
+  window 'pre' [45.0, 50.0) s   mean / peak-to-peak
+    Pa         100.00 / 20.000
+    PICA_l      97.30 / 18.550
+    PBA         98.65 / 19.231
+    Pd_ml       58.49 /  4.682
+    Pd_al       58.49 /  7.191
+    Pd_pl       58.58 /  5.842
+    Pic          9.52 /  0.753
+    Pv          14.10 /  1.005
+    q_ica_l     4.746 /  2.585  mL/s
+    q_mca_l     3.748 /  1.921  mL/s
+  window 'hyper' [395.0, 400.0) s   mean / peak-to-peak
+    Pa         100.00 / 20.000
+    PICA_l      95.95 / 17.900
+    PBA         97.96 / 18.936
+    Pd_ml       62.14 /  5.637
+    Pd_al       62.13 /  5.635
+    Pd_pl       62.23 /  5.663
+    Pic         13.04 /  1.473
+    Pv          19.91 /  1.973
+    q_ica_l     7.124 /  3.761  mL/s
+    q_mca_l     5.627 /  2.952  mL/s
+    ml: min x = -0.0017   (Cd = 0 at x = -0.0604)
+    al: min x = -0.0020   (Cd = 0 at x = -0.0161)
+    pl: min x = -0.0021   (Cd = 0 at x = -0.0242)
+    mr: min x = -0.0017   (Cd = 0 at x = -0.0604)
+    ar: min x = -0.0020   (Cd = 0 at x = -0.0161)
+    pr: min x = -0.0021   (Cd = 0 at x = -0.0242)
+
+Plot saved as urs_dynamic_pa_full.png

@@ -1,0 +1,311 @@
+{
+ "argv": [
+  "@mat_models/urs_dynamic_pa_test.py",
+  "check"
+ ],
+ "arrays": {
+  "main:solve/0000/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "38026d0d39690ee80943010c2f5e18185d69e55a463f00acc46bf2dd506fac1a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "309c88e7c38489c96da333cb14f70f916149823b7b45814f68a407e5af81a356",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "b5486613076afe849d08db60e4828f805620dda022c43a932351539e949cfe8c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "66e31fd6e5960ab9a51f577515645797fded2b38fa51c9c5d17b2a5bf1da15f5",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0002/t_eval": [
+   "66e31fd6e5960ab9a51f577515645797fded2b38fa51c9c5d17b2a5bf1da15f5",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "75647a90816d754576d7e407f116b76d797e425c8d55fe435017c48fdfdab2b5",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "23e08e67c24bbec1ed5100a18ac92b8af798f172217d6e70bb7fcf6621841936",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "68aa1daaee38b06a50ed4e2fd02ecbd4166f78c6caf081dd58b5ececedc9550a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "e5f199de2840be1da9d9b0cb37bb051e4b77725dce3f33b86f81c0a1e352e91f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0004/t_eval": [
+   "703cdf311fb21e2c553f0acad5104b40ebb347770b5c15d500d4e737798d81b4",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "f341ae21c5cce01017047636b9006f0fa37a4e43dd9eb05e89bd2febed83d75d",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "b5486613076afe849d08db60e4828f805620dda022c43a932351539e949cfe8c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "66e31fd6e5960ab9a51f577515645797fded2b38fa51c9c5d17b2a5bf1da15f5",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "66e31fd6e5960ab9a51f577515645797fded2b38fa51c9c5d17b2a5bf1da15f5",
+   "<f8",
+   [
+    2001
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "75647a90816d754576d7e407f116b76d797e425c8d55fe435017c48fdfdab2b5",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "8578ee18e725b3d595cdb301666866f71b9f6da11bb320b44bb06040b08096ea",
+   "<f8",
+   [
+    23,
+    2001
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "fb30bc2333c3f418acd68fb363d043a33757b83b51b0224372ecb9d2b5012add",
+   "<f8",
+   [
+    23
+   ]
+  ]
+ },
+ "files": {},
+ "id": "ursino.dpa_check",
+ "rc": 0,
+ "runtime_s": 11.7,
+ "texts": {
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

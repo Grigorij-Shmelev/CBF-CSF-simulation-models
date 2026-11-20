@@ -1,0 +1,62 @@
+{
+ "argv": [
+  "@mat_models/vanek_2015_model.py"
+ ],
+ "arrays": {
+  "main:solve/0000/stats": [
+   "667fbcaab833d91aac9a09d807ee3a127380a8af2bfe7431c6c90857e3c38ea6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "0bcb98f6988d3f09dd030479825ee05ade71f1b5a6e6eb259f8e223ff4450474",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "f8091240d8b0e3e71ce96bc4e81c020d36e1b88166123165f84722c4d86fe055",
+   "<f8",
+   [
+    5,
+    326
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {},
+ "id": "vanek.baseline",
+ "rc": 0,
+ "runtime_s": 1.5,
+ "texts": {
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

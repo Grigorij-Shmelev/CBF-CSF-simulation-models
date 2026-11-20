@@ -1,0 +1,2 @@
+D100: 80000 rows (5 ms step), <T> s -> ursino_to_vanek_D100.csv
+D80: 80000 rows (5 ms step), <T> s -> ursino_to_vanek_D80.csv

@@ -1,0 +1,16 @@
+=== M: fit with the default model, data from a model with venous squeeze (spec 7.13) ===
+truth: R_out 13.0, spinal scale 2.5, P0 11.0
+kappa_v 0.1: R_out 12.85 (SE 0.4 %), scale 3.07 (SE 0.4 %), P0 11.23 (SE 0.02), rms 0.39, nfev 19
+kappa_v 0.2: R_out 12.82 (SE 0.7 %), scale 3.59 (SE 0.6 %), P0 11.32 (SE 0.02), rms 0.44, nfev 17
+
+test                                                 value  bound                           result
+M1 kappa_v = 0.1: P0 error                         0.23126  [-0.3, 0.3] mmHg      PASS
+M2 kappa_v = 0.1: R_out error                     -0.01168  [-0.25, 0.25] rel       PASS
+M3 kappa_v = 0.1: spinal scale error               0.22968  [0, inf] rel       info (inside)
+M4 kappa_v = 0.1: rms residual                     0.38591  [0, 0.35] mmHg      info (OUTSIDE)
+M1 kappa_v = 0.2: P0 error                          0.3222  [-0.3, 0.3] mmHg      FAIL
+M2 kappa_v = 0.2: R_out error                     -0.01406  [-0.25, 0.25] rel       PASS
+M3 kappa_v = 0.2: spinal scale error               0.43648  [0, inf] rel       info (inside)
+M4 kappa_v = 0.2: rms residual                     0.44387  [0, 0.35] mmHg      info (OUTSIDE)
+
+4 pass/fail checks, 1 failed; 4 informational

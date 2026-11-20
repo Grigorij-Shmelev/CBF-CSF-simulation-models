@@ -1,0 +1,349 @@
+{
+ "argv": [
+  "@mat_models/urs_dynamic_pa_test.py",
+  "profile"
+ ],
+ "arrays": {
+  "main:fig/00:urs_pressure_profile.png/ax0/line0/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line0/y": [
+   "06e15ebac068388752f0a802fef0eb84573e0e7a14a74d208513d47e3a72d84f",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line1/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line1/y": [
+   "1df6412af0eeb760a5f74d46937803f7f0c0ad6e16dcd80e8409a51139f01a3c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line2/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line2/y": [
+   "512b9a7bc940657eb60f10ec6ad3bb6e069773c4fff48ba0f72221a86344ff55",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line3/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line3/y": [
+   "c0c2ecc7032728c4b4fae721406f390cf957abde41177b6334e0f33d801df6af",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line4/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line4/y": [
+   "91a0097d3f5dc871f477e72bcfb832770937ad9aaf11843589b7f6b988e8058d",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line5/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax0/line5/y": [
+   "0ddd74dfb3a4e6bc3d88b2107d50060df60cd6bbe3b2941715fffdb8b73f90a6",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line0/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line0/y": [
+   "06e15ebac068388752f0a802fef0eb84573e0e7a14a74d208513d47e3a72d84f",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line1/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line1/y": [
+   "31a0f9fa9795f154c1e9a0eb35ba7a873f442163afb56c06e01c43f5da99c841",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line2/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax1/line2/y": [
+   "2d4b6bccaf68fb30247c9761e3ca286d4d6fee7d603b8b390a8ada8cf746e3ff",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax2/line0/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax2/line0/y": [
+   "5c89be1020caea1d057dacb6ecd554ed388f1ab23b611e84c07a9f54d1d88f2d",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax2/line1/x": [
+   "6ac0487f0e64742e9b7b49d1f49b4968dd012ca833ca9014999d0e69bfc07474",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "main:fig/00:urs_pressure_profile.png/ax2/line1/y": [
+   "42a2db74862ff9e95152408bf1cb4fc83d3a597b433b467137a345c631be53af",
+   "<f8",
+   [
+    7
+   ]
+  ]
+ },
+ "files": {
+  "urs_pressure_profile.png": "39546a76315bad66d449694c5b8f72e8378a1062998ed8c5da8fc88eb35bce0c"
+ },
+ "id": "ursino.dpa_profile",
+ "rc": 0,
+ "runtime_s": 2.8,
+ "texts": {
+  "main:fig/00:urs_pressure_profile.png/ax0/axes": {
+   "legend": [
+    "S pre",
+    "S early",
+    "S late"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "(a) S: mean pressure profile\n(dotted lines = ICP in the same window)",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "mean pressure [mmHg]"
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "S pre",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child1",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "S early",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "s",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "_child3",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "S late",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "^",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax0/line5/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "_child5",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax1/axes": {
+   "legend": [
+    "S pre",
+    "D80 pre",
+    "D80 late"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "(b) mean profile: Pa mean 80 vs 100 mmHg",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": ""
+  },
+  "main:fig/00:urs_pressure_profile.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "S pre",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "D80 pre",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#17becfff",
+   "label": "D80 late",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "^",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax2/axes": {
+   "legend": [
+    "D100 pre",
+    "D100 late"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "(c) D100: pulse amplitude (peak-to-peak)",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "peak-to-peak [mmHg]"
+  },
+  "main:fig/00:urs_pressure_profile.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "D100 pre",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "D100 late",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "^",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_pressure_profile.png/figure": {
+   "size": [
+    16.0,
+    5.0
+   ],
+   "suptitle": "Ursino (2010): pressure along Pa -> left MCA territory -> venous outflow (pre = before, early = 350 s, late = 1500 s after PaCO2 40->60)"
+  },
+  "main:fig/00:urs_pressure_profile.png/png_sha256": "39546a76315bad66d449694c5b8f72e8378a1062998ed8c5da8fc88eb35bce0c"
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

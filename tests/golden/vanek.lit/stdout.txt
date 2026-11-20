@@ -1,0 +1,10 @@
+Running Lumbar Infusion Test simulation on Vaněk (2015) model (500s)...
+
+--- Infusion Test Metrics ---
+Baseline ICP (P2): 9.96 mmHg (135.5 mmH2O)
+Plateau ICP (P2):  16.76 mmHg (227.9 mmH2O)
+ICP Elevation (ΔP): 6.80 mmHg (92.5 mmH2O)
+Baseline Lumbar Pressure (P5): 10.00 mmHg (136.0 mmH2O)
+Plateau Lumbar Pressure (P5):  16.78 mmHg (228.2 mmH2O)
+Calculated Outflow Resistance Rout: 271.98 mmHg*s/mL (4.53 mmHg/(mL/min))
+Plot successfully saved to vanek_lumbar_infusion_test.png

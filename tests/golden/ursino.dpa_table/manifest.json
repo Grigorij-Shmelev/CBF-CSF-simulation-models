@@ -1,0 +1,604 @@
+{
+ "argv": [
+  "@mat_models/urs_dynamic_pa_test.py",
+  "table"
+ ],
+ "arrays": {
+  "csv:urs_pressure_table.csv/d_early": [
+   "55c016e22cd230c38581072250be563755f35c55e455c292be1249930aa08df7",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/d_late": [
+   "5d3c7f57c961764b64297508daf9bfc2477aecc65993fe51eccfa9da47370335",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/early_mean": [
+   "8d58cca012e80ae539ef2cbb0dac23b16c5bb5f44fa860847fa6d8d831354559",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/early_ptp": [
+   "a83f68455636c20f91204d986e9089ba9661982845f7e91c29e71265dedc91b6",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/late_mean": [
+   "44bbc0918f9590418295e4c231e319aa420d9f51341201be2aa86df6bed021a6",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/late_ptp": [
+   "53cf7e34fbf6526d437df320c1a70c761cc50f3e6a5caa135402e5a5457b08e2",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/pre_mean": [
+   "c0dc10a9400020769c26abe9250dc18b8d65ff9f520c498f92d1fd8e771a9524",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/pre_ptp": [
+   "d6efc404071670a87b97bba6595eac586ecdcf286724a97ae7ecb67a57b40420",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "csv:urs_pressure_table.csv/ptp_rel_pre": [
+   "964fd4aa48659435cda2c9488ea1d0b0304d0d411c7a874655f16bdba48deb11",
+   "<f8",
+   [
+    39
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "ebabce20822766fb0f61a325dc86efa3d94e7ad8880e0821cf80dbe2f3ca1687",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "5fce4b8d3307d410f6604bba48c20465e2936720caa13c1695f4ba4aba581895",
+   "<f8",
+   [
+    23,
+    10001
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "58513f2099018a94654913aa8145e5a51800d9106b1dedd1477f568388420589",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0002/t_eval": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "323a3b2994899ef1b074b744468c6aef9e7c47c944ff384cf89b28809cc29123",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "75ded949b4501ad8b1517064601f542d9b3e5ccbc41be99fffab2ff0509ac46c",
+   "<f8",
+   [
+    23,
+    300001
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "beccdfbdde3dc79a7246310ebc113d108135aa9d61355b025e1f16ad5c8f9d90",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "70e7f8fe23754d235508c9471859dbb3c4575898683cdae5e04d14b5e62c1612",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "1ba700b3e9484147460124b6754332c1038eda45a15caec22226e84cf5e33848",
+   "<f8",
+   [
+    93
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "3eea0478e07078feed8854bbca54a97b854ff96c859c7d92a38de076c843a5e1",
+   "<f8",
+   [
+    23,
+    93
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "fc541d35f6d3ea3c42cd52b15235bfacc4c581e3f91b05710dc146b5069678dd",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0004/t_eval": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "9c71f651d2d36583758599db7c592167306e3387fa881957f8a402a66020cb56",
+   "<f8",
+   [
+    23,
+    10001
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "c1480db2cea9571fc04d6057d72ef480540264e09d66a88551ac08f2ef30b1c6",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "d90e1b0b3efd96620bfbdfa59245b4929b80060b9a913b021c3545a1681eab40",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "323a3b2994899ef1b074b744468c6aef9e7c47c944ff384cf89b28809cc29123",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "e9df0834ea364ae4406749c08526b20816e6179a1af84d36a2fc3fe090b31698",
+   "<f8",
+   [
+    23,
+    300001
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "8359168e4344053b3d9de5fcca0d01ab32a7de24083cadf8be54c1d3b0b73959",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0006/stats": [
+   "5f4e3c98fe0713da5b0905cee00c2a94c898c6e8c00262f93bfbece8022e899d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0006/t": [
+   "9160f73783375b0d536eee575d78e3caeaedf209b07ef60e930a7e899ed098df",
+   "<f8",
+   [
+    127
+   ]
+  ],
+  "main:solve/0006/t_span": [
+   "fe01239d433a021369fede3910809bd0b967da7a1a33af5cc680a549777086d1",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0006/y": [
+   "983d57f14b926b1c5a56f052bb59950af24cde761247aaa4bea6e444f5e6f263",
+   "<f8",
+   [
+    23,
+    127
+   ]
+  ],
+  "main:solve/0006/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0007/stats": [
+   "fc541d35f6d3ea3c42cd52b15235bfacc4c581e3f91b05710dc146b5069678dd",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0007/t": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0007/t_eval": [
+   "41fda6132976cf3ec2d97fa975dc5315749be17495c125974708ad2ea7ecf042",
+   "<f8",
+   [
+    10001
+   ]
+  ],
+  "main:solve/0007/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0007/y": [
+   "a5d03e0b1128123401a2dc26361c6fa5355b70759a3b91b2ec534214ec54352f",
+   "<f8",
+   [
+    23,
+    10001
+   ]
+  ],
+  "main:solve/0007/y0": [
+   "6f3035636ecc4594d74ea75d26d623772dadcd3fca450323b67e4ef75291255a",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0008/stats": [
+   "56b6e2b303a6bc3fb6e3d95740125ad54e7fa4b53ef34c7b7cca7ced447a5b18",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0008/t": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0008/t_eval": [
+   "47c883aecc0333a4faa4944b0294852806537a8d771268bb3dedcc90a677c09a",
+   "<f8",
+   [
+    300001
+   ]
+  ],
+  "main:solve/0008/t_span": [
+   "323a3b2994899ef1b074b744468c6aef9e7c47c944ff384cf89b28809cc29123",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0008/y": [
+   "ae1b02504cb7e40e24d339e4fde485b7464e6b8a7b71806c4c5177b79caa5058",
+   "<f8",
+   [
+    23,
+    300001
+   ]
+  ],
+  "main:solve/0008/y0": [
+   "463a2d386b919e6cb17510b34005cf4ae183377d1c643721d6d7a34dd66180d3",
+   "<f8",
+   [
+    23
+   ]
+  ]
+ },
+ "files": {
+  "urs_pressure_table.csv": "c3ac6a2a20a63976232d6cda4b43e64a3fade1c8393864e7666be063abc4484e"
+ },
+ "id": "ursino.dpa_table",
+ "rc": 0,
+ "runtime_s": 692.4,
+ "texts": {
+  "csv:urs_pressure_table.csv/node": [
+   "Pa",
+   "PICA_l",
+   "PBA",
+   "PPCA1_l",
+   "PACA1_l",
+   "PMCA_end_l",
+   "Pd_ml",
+   "Pd_al",
+   "Pd_pl",
+   "Pc",
+   "Pv",
+   "Pic",
+   "q_mca_l",
+   "Pa",
+   "PICA_l",
+   "PBA",
+   "PPCA1_l",
+   "PACA1_l",
+   "PMCA_end_l",
+   "Pd_ml",
+   "Pd_al",
+   "Pd_pl",
+   "Pc",
+   "Pv",
+   "Pic",
+   "q_mca_l",
+   "Pa",
+   "PICA_l",
+   "PBA",
+   "PPCA1_l",
+   "PACA1_l",
+   "PMCA_end_l",
+   "Pd_ml",
+   "Pd_al",
+   "Pd_pl",
+   "Pc",
+   "Pv",
+   "Pic",
+   "q_mca_l"
+  ],
+  "csv:urs_pressure_table.csv/scenario": [
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "S",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D80",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100",
+   "D100"
+  ],
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0006/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0006/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0007/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0007/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  },
+  "main:solve/0008/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0008/options": {
+   "atol": "1e-06",
+   "first_step": "None",
+   "max_step": "0.01",
+   "method": "'Radau'",
+   "rtol": "1e-06"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

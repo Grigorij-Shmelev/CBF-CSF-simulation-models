@@ -1,0 +1,24 @@
+===========================================================================
+                      MULTI-MODEL COMPARISON SCRIPT
+===========================================================================
+
+1. Running Ursino (2010) 3-Phase Simulation (Baseline -> Stenosis -> Hypercapnia)...
+   - Left MCA Baseline Flow:					3.75 mL/s
+   - Left MCA Occluded Flow:					1.53 mL/s
+   - Left MCA Post-Hypercapnia Flow:			1.43 mL/s (Steal phenomenon)
+   - Contralateral MCA Post-Hypercapnia Flow:   5.77 mL/s (Contralateral surge)
+
+2. Running Lumbar Infusion Test (1.5 mL/min for 300s) on Štěpáník vs. Vaněk...
+
+================================================================================
+Metric / Parameter                     | Štěpáník (2009)   | Vaněk (2015)     
+================================================================================
+Native Dural Sinus Pressure (pV/Pb)    | 2.0 mmHg          | 10.0 mmHg        
+Baseline ICP (P2_0)                    | 10.05             | 9.96              mmHg
+5-Min Peak Infusion ICP (P2_inf)       | 24.32             | 16.76             mmHg
+5-Min Peak ICP in mmH2O                | 330.8             | 227.9             mmH2O
+ICP Elevation (ΔP)                     | 14.27             | 6.80              mmHg
+Calculated Outflow Resistance Rout     | 9.51              | 4.53              mmHg/(mL/min)
+================================================================================
+
+Plot saved successfully to ./compare_all_models_plots.png!

@@ -1,0 +1,919 @@
+{
+ "argv": [
+  "@tests/direct.py",
+  "stepanik"
+ ],
+ "arrays": {
+  "direct:attrs/AbsTol": [
+   "e9b2e8a869c223a7c9e3c2d09581df32cc089983503cffaf97d7cab6c0468ba5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C1A0": [
+   "3ac4f8ce3b9c0ea7abc0039dbd1c7892099841594db0e01806c54fa7101b4c27",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C1V0": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C2A0": [
+   "f3dc7847f78a0a29c225c1dc1916867658d13027a87787029406aaebeaeb12fe",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C2V0": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C3C0": [
+   "52b5265efad618bfdc4cd000338da1459856a7b404461f78d6424b620fce2874",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C4T0": [
+   "c0d3d2bb97c82e37ac09556cf0b88d3673d58ea14b78e6f347f242fb8bd1aad4",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C5L0": [
+   "59d87b00630bb7cb687b27749469d1f0a53b2ddbd0506461c90a26e68845f767",
+   "<f8",
+   []
+  ],
+  "direct:attrs/InitialStep": [
+   "e9b2e8a869c223a7c9e3c2d09581df32cc089983503cffaf97d7cab6c0468ba5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/MaxStep": [
+   "b157d1180d45ace10970698a92dd73cd88909b688f10920abcba9b0135ee990a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Pmin": [
+   "be9842509ec398e968044e4df951354bf7c63c7a65eb2674c45d6eafea979277",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R12": [
+   "3b8af4a64ca97bfeabe04fbfb51f30f03f75fa3df023c5b6023bd1a5356d85fc",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R23": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R34": [
+   "5747d38705981593ec0f242650bad785bf2ae8742cba37d66c6cc9e5bb90411a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R45": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/RelTol": [
+   "e9b2e8a869c223a7c9e3c2d09581df32cc089983503cffaf97d7cab6c0468ba5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S1": [
+   "1597546b7872bc102fcac6d2416a6d0cad6e6ae19aaf3ac694b2d8bf6430adbd",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S2": [
+   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S3": [
+   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S4": [
+   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S5": [
+   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Tmax": [
+   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V10": [
+   "f1b690a22090c22148ba0611f37738e2a2176687b0d470043d1eef95816f70f3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V20": [
+   "ce68a0958de42ecdf0d5560c19be89ccd18443e9de0b27521e83d32fa541ddb0",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V30": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V40": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V50": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z12": [
+   "cb5180565ae4f381b2d47b3933c86e15761f05077a096aede904bb346bed92f3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z23": [
+   "a4c4886f381ca4c570321d91b526621567f74be48e870168b462ad9b39e2b3f9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z34": [
+   "837c368752f19fd5cb9d84fb18ee96811edaaddc75cb9178f7e7f1789a98f4c9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z45": [
+   "a4c4886f381ca4c570321d91b526621567f74be48e870168b462ad9b39e2b3f9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a1A": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a1V": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a2A": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a2V": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a3C": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a4T": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a5L": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/alpha": [
+   "90b36cd972d773620ae40bf3ba6d82f8f2579491277761b9268d5b10eebd75c5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/infusion_duration": [
+   "2c2b58e8c18904787934d7bdb211f6add30f7d6afc037ff12f5d14779036b9b9",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:attrs/infusion_rate": [
+   "2c2b58e8c18904787934d7bdb211f6add30f7d6afc037ff12f5d14779036b9b9",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:attrs/infusion_start": [
+   "2c2b58e8c18904787934d7bdb211f6add30f7d6afc037ff12f5d14779036b9b9",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:attrs/interpolate_results": [
+   "9ec7e6b2ea4de1828717ab053b723d6fd8cc850cdb9e264d53a8a3ada120926b",
+   "|b1",
+   []
+  ],
+  "direct:attrs/interpolation_period": [
+   "e9b2e8a869c223a7c9e3c2d09581df32cc089983503cffaf97d7cab6c0468ba5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p1A0": [
+   "db71dbf797c1b63670563914b2b61524dbf1ebe5aebf11b357c73fe0870fcd75",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p1V0": [
+   "312eb1c53aa209c15b89c084154e58ab1e934c78d47c1485fac4ec98eeb98af3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p2A0": [
+   "9bcd45ec2b8a7c361d0a091f549e88272bb34995f5de1065e21bc5906176752f",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p2V0": [
+   "312eb1c53aa209c15b89c084154e58ab1e934c78d47c1485fac4ec98eeb98af3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p3C0": [
+   "312eb1c53aa209c15b89c084154e58ab1e934c78d47c1485fac4ec98eeb98af3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p4T0": [
+   "312eb1c53aa209c15b89c084154e58ab1e934c78d47c1485fac4ec98eeb98af3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/p5L0": [
+   "312eb1c53aa209c15b89c084154e58ab1e934c78d47c1485fac4ec98eeb98af3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/peq": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r1A": [
+   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r1V": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r2A": [
+   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r2V": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r3C": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r4T": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r5L": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/strict_matlab_mode": [
+   "9ec7e6b2ea4de1828717ab053b723d6fd8cc850cdb9e264d53a8a3ada120926b",
+   "|b1",
+   []
+  ],
+  "direct:infusion": [
+   "376240e9fda49ec4ae4123a32308706b4090a658a7adc85559c07384decc0ff9",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:resorption": [
+   "09460b728892ca39264d9d43fa161e5da1cff0bc511fb8d87eea9be5d94cf85c",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:run_stepanik_simulation/C1A": [
+   "d365bab74e796bfbab3ce3771e5c43fe1d61260f14668c17ede1dfe45da92fda",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C1V": [
+   "fbc85ea5dcb07b365e8a1eff56c735516d2ee9809c857e11719008da3fea4217",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C2A": [
+   "c141c9ccfd2a4dc4fefce430d9e0d48ccce38a09bd7dfc168774999b03bb2bf2",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C2V": [
+   "a0677978b4f910e78df8db8b8be4e687016b00c9beb7e5235e4d92812042b4d0",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C3C": [
+   "93633b556d781687e7225f0de15a1539a19b63295ec71796f57f613b2fd3ebc2",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C4T": [
+   "3c8490ec6bc8360c610364552dcde5f04970c90026077e96cc1b9eb68a2f46c7",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/C5L": [
+   "237c034adc705e4286e937ff73df1dd586859cd0accbbaafcb611630a1b711db",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/F12": [
+   "adf12692687585c94c001134d835ec1fd591d7dbcf5c553f9733faa50be1d89e",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/F23": [
+   "2297fb9881d2079dd88356392f0d21d9fd5a459125359d72645354b483cf9e80",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/F34": [
+   "194ba5ac73fffee848dde4a924357a7f5f3b9526b85ce4a22f1f8bb673ab37d6",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/F45": [
+   "8b91953a1c25a354c3eb7dcc218cd2a612b6aed482b3818946078707e535f662",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/V1": [
+   "7191cf5b11a5a93c0a757a8ebd1aaa5528957120013b433d3725202492b2fa27",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/V2": [
+   "e00c0b683cab96c8f221038c45f5f7580286bb12bbd0534db7dc770bd8986651",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/V3": [
+   "795345be93acfe8b5ed7df0bac1a20c9eb648fc22bcb5568295528c70ab13f31",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/V4": [
+   "a303d19b5254b830606fb93c0a8462aab0043c9d13cb8194ba5b7248aefd8bbd",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/V5": [
+   "9a9abc162fb83ddea841aeb4e9c9123d6db0803ea9781c42071df2a41e1aa6bb",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/formation": [
+   "a2e3038fe7884bddff40e6cf4620dba504c564ec60d79d04f2bf5703c647dff7",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/infusion1": [
+   "fd17294303dcd70a10efd9d8019958df3fba9e41b02e23c5e55f1d88016d9d89",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/infusion2": [
+   "fd17294303dcd70a10efd9d8019958df3fba9e41b02e23c5e55f1d88016d9d89",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/infusion3": [
+   "fd17294303dcd70a10efd9d8019958df3fba9e41b02e23c5e55f1d88016d9d89",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/infusion4": [
+   "fd17294303dcd70a10efd9d8019958df3fba9e41b02e23c5e55f1d88016d9d89",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/infusion5": [
+   "fd17294303dcd70a10efd9d8019958df3fba9e41b02e23c5e55f1d88016d9d89",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/p": [
+   "775e729b5e64eea7d5dd847fc16b33408c8f904a0de81f95df85006c4e1534d0",
+   "<f8",
+   [
+    235,
+    5
+   ]
+  ],
+  "direct:run_stepanik_simulation/p1": [
+   "96f3d71bd43c0c17d62cce17639550ed7b70184fc5c6ec7f16b821f009690bca",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/p2": [
+   "45d4c79c0ff69fccdb8b17f50d8dcc35f64fa0dc4580c25400fa34336e10e6a4",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/p3": [
+   "bd6c44da9b4db0f163d60a0059474350dbd53184ba58a5847cb6d3055c12a182",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/p4": [
+   "f14ef51bbb64b111b07843b75c5df1c00173e8f05ebde48d10d333e6b7363e8e",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/p5": [
+   "ef3488b181701ff6e5f4656aea7de8d0e3d300384dc39a74971854d9e5b45fe8",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/pA": [
+   "50395053c2ab4a9bdc4b0a61e0248480e89a2103f08899dbd1763e12793a3042",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/pC": [
+   "3fe2b1ddf868bcd15f924dcaa0da21dc2ed25eecbed29b5400bc98946f77f4c6",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/pL": [
+   "a5b1f543f14491e6b8f8aa1c0af42454beb4500c3f2d7ad82607e03ead7503a9",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/pT": [
+   "851ae6b0fab941d4924e6a2df7d6ffc16e3a703e183dcbb7060351952932d659",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/pV": [
+   "4ea6e246f3c6fead3d1836594b17429b49b86713fad254482c813b9348515dca",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/resorption": [
+   "14fd73814090128d11474973d1055c6daa4ecdbc54f42e2d489ef6b203f0a63d",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation/t": [
+   "f3c4e80032a5c913c21ec27ae2774fbc55161b84f7ec2cfe50215486682f78d2",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C1A": [
+   "6eee3bf2ffbebc139f444858b1f1734bf64e70710b55ad3c3b93268f19e3bd05",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C1V": [
+   "5cb4cfa42787bd431e12c13296b54a098b9c087e444deae7dececb01543df2f9",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C2A": [
+   "ac83df0baf27155020263011ddde69dedef4045e96b0d043fe83f884a78be041",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C2V": [
+   "d9e7cf07abec837b94141927df72a47325fcd1d154101c9b324691d5dc8e09e4",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C3C": [
+   "3133c0f78500f256d1a4607f2db6ef89bee3b9e9206222a7d788e38aab469f13",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C4T": [
+   "0ff89d835872f07a2de8ec5d38682f24b36ee613325e6daca0ca2689ba66da68",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/C5L": [
+   "06847254799bd106eaf20868007b25d8f6f60a1f06f07d1e11c7fdf7bebcb675",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/F12": [
+   "0e12e5f3c89d9ea44911d79bf5ee21c68e030c24baaf124c58ac9067174d0661",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/F23": [
+   "d2121d8d7bef9e462cf3536b9678bf27e28c7ba6b55a42ff4487b511da9d8f56",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/F34": [
+   "6d45cc682413b80a74377c865e6abc7a1c8e96eb98bdfbe3d9fb1b789543a300",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/F45": [
+   "04bbfd339e382d36ac57355bec31c4ca36fb5188ebea85a8391018b9035507c0",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/V1": [
+   "9cfdbc5afc9210cfa35ee17f0ea9e369ad3e8c1938bcc586c4eebf3c49c5db2f",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/V2": [
+   "06ec98c789545eed7f7c38cb8700bf614fc6bf74f5b7d5ba839563cfb24b4040",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/V3": [
+   "ab6f046ab02aac9ef29867e9568ce996ed216c959385d29cd79d20591c69f658",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/V4": [
+   "89a33b7328955bf088fe9a83b955440286904b61633cecc01b3373b31116d346",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/V5": [
+   "3c753b576e39356f9fb3822aeb7abd9c65fbdb1c2f662d0e2634e751b01ca704",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/formation": [
+   "a3fb46510f6956d19d807b99e4efa4a599e033a06b5c53963acc56aa89e4f64b",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/infusion1": [
+   "af7f46795d0f998094479d70aa7d2e51013a158bffd376a455200dcccca586ea",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/infusion2": [
+   "af7f46795d0f998094479d70aa7d2e51013a158bffd376a455200dcccca586ea",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/infusion3": [
+   "af7f46795d0f998094479d70aa7d2e51013a158bffd376a455200dcccca586ea",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/infusion4": [
+   "af7f46795d0f998094479d70aa7d2e51013a158bffd376a455200dcccca586ea",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/infusion5": [
+   "66deb4bda40bc0da15a472992fdbc49ae4a45e11d02834a1a858605cb4a4130e",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p": [
+   "7649360ab7632652d477f5122cb416725fedd9ec554ceec4ff1b2441a949bd87",
+   "<f8",
+   [
+    144,
+    5
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p1": [
+   "6fd488ca88c12d6770552f8f2a6929f21dcd9ce2bb789f9a9ba75358b41a2e37",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p2": [
+   "4b35f6be6da13a73141691a2b0e28769fc6786ff53ce7d30f3ea47f4757b81f0",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p3": [
+   "63a1783c0caeb89d0eba09c1881196bbd39ee47302c60c935c71dff24045ba6a",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p4": [
+   "16b2a03c7f42aa9f26f25a4d71675be8a8192db5fe93562888f6f59227438ea5",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/p5": [
+   "04511dc97005572b6941666f75e821e67f844f789207ff0d7d97bca725cc664d",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/pA": [
+   "30d54d14c1668a44b67025f9d4c30a61c3798e4b42af11cd578dbbc05100be11",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/pC": [
+   "0a71fcb43f462d7038eb5d1ec63d151b3a15cb3b576dd46f908f8724c383a79a",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/pL": [
+   "c06f354e81ae6fb1808c2d055137f532d8219d63993ac54044cdb9ae2876514b",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/pT": [
+   "b962380a18fa66d55604dbe0919ce8e69a1815a08459d5fbbfcce3ca7991e085",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/pV": [
+   "4ba14fc7bf0fbe337667da603393d3d78dcaee1a2c935595ed6bd0ba50ba59e6",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/resorption": [
+   "42d7a12891216b12a934b1875259fd04148fb1fac3452c35d8d7cd8c7483d78b",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "direct:run_stepanik_simulation_inf/t": [
+   "2d16aa3bfb0522445be0c086b1e4c6ee56cf523f76ecf4600c40f83562163e80",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "c8d7d9b86c6f271e1796bab92be086359e2ec29f2d49558eade1bbec84d757a5",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "f3c4e80032a5c913c21ec27ae2774fbc55161b84f7ec2cfe50215486682f78d2",
+   "<f8",
+   [
+    235
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "7455aff4e0a5987cb9295819ddcc2ed691dbfc23a696f06f79b8e5a41b75be47",
+   "<f8",
+   [
+    5,
+    235
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c6db61868edb0bddb57a6178c1b24673bad9a600ecdd94447916d496bd7bc843",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "6be698749dd45041c43eac4277ed53ce4861085ab5b6d06023a9cb51221c8f6b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "2d16aa3bfb0522445be0c086b1e4c6ee56cf523f76ecf4600c40f83562163e80",
+   "<f8",
+   [
+    144
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "da996307509d920c7ffc510a3743c438e026efd4480eda853dc4e296876e6791",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "0b4578fc6fc96f684a186e2f684f7bc5d85383fea3f7b49c60ef8e7198b428e8",
+   "<f8",
+   [
+    5,
+    144
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "c6db61868edb0bddb57a6178c1b24673bad9a600ecdd94447916d496bd7bc843",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {},
+ "id": "direct.stepanik",
+ "rc": 0,
+ "runtime_s": 2.1,
+ "texts": {
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "0.001",
+   "first_step": "0.001",
+   "max_step": "0.1",
+   "method": "'RK45'",
+   "rtol": "0.001"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "0.001",
+   "first_step": "0.001",
+   "max_step": "0.1",
+   "method": "'RK45'",
+   "rtol": "0.001"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

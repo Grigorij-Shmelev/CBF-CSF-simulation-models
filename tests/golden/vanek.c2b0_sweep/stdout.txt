@@ -1,0 +1,7 @@
+C2b0    infusion rise   P2 pulse (Pa only)   P2 pulse (Pb only)
+0.6         6.07 mmHg        0.016 mmHg             2.373 mmHg
+0.1         8.02 mmHg        0.042 mmHg             0.879 mmHg
+0.02        8.42 mmHg        0.052 mmHg             0.199 mmHg
+0.005       8.50 mmHg        0.054 mmHg             0.049 mmHg
+0.001       8.52 mmHg        0.054 mmHg             0.015 mmHg
+Saved vanek_c2b0_sweep.png

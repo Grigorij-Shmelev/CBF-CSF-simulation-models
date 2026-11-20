@@ -1,0 +1,5 @@
+mean P2 [mmHg] over 20 s windows starting at t = (40, 100, 200, 400, 800, 1500, 2500, 3900)
+Pb = 14 (control)                           9.998   9.996   9.999  10.001   9.992  10.001  10.001  10.005
+Pb 14 -> 20 (ramp 50-70 s, then held)      10.148  11.580  11.203  10.690  10.237  10.039  10.011  10.003
+equilibrium from the constants: P2 = Pmin + S1/alpha = 10.000
+Saved vanek_pb_step_test.png

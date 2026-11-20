@@ -20,3 +20,6 @@ docs/model_explained.md
 docs/model_inventory.md
 docs/summary_for_supervisor_*
 docs/questions_for_supervisor*
+
+# Golden-output arrays of the regression test: large, kept locally (the committed manifests hold their SHA-256)
+tests/golden/*/arrays.npz

@@ -1,0 +1,707 @@
+{
+ "argv": [
+  "@mat_models/stepanik_run_lumbar_infusion.py"
+ ],
+ "arrays": {
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line0/y": [
+   "d02250edd593fc0783324dd7e372950a9f0429135eec26b2c70cbbca0b121611",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line1/y": [
+   "b0ee72a81f817e161983e0ef06bcbe11ec13191a1af854af31c58ab28598bcdf",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line2/y": [
+   "27f54eb0f365b41c9773fc32c64086b388bb950f4cd34fb67c05db7cdb224bf0",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/patch0/xy": [
+   "0f9ab72ef7b394d8fdf8ad15b382b72b60e66792a06e8b914ec266eb29f4b5ec",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line0/y": [
+   "8aa567ccf03a0991c6eedd3fa8ff54bfa3d1572bc40af5579ad3250a3222cc4f",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line1/y": [
+   "c4aae42bbb00e4e01014229e46a60eacf83a1c9ce56dfb7f6ca5e2a1bed283fc",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line2/y": [
+   "6eac8bb83a586f16abb569a867350181551036487d0b0e55ae5d40e889c2cad4",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line0/y": [
+   "01c6e5f4b42b5b812b7829cd8439b5c8616fa40ee394027fbadfdb43c499362f",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line1/y": [
+   "545c58bcb052eda599c9e3f2b9efe2006bee38d6a0d578f4e7d58923075fd731",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line2/y": [
+   "d05bf973f955dd88d9fe58ac1da2e6015e5979049c393454059df1b46e020d14",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line3/y": [
+   "0b17ca4bd7cd941c0376498138f715d1a39af536966a525aadbcd71f1132e867",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line0/y": [
+   "08a571d9ef33dad0dd26787f87848a4cf221f4f41f790692c4b97e4bea65337d",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line1/y": [
+   "c0e31a39a922585fac6b96b3439c8b7268dba9b84245d0271c1a0065ab0aaa4a",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line2/y": [
+   "5a34c6dd93fda94cc45542c1a26c968008b3f8a6141188f8b9195c8a9762f28c",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line3/y": [
+   "80dc0231dd42b51d57b17cc47de30ccaacebe13955cac6a6ebacc52b1b2038e2",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line4/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line4/y": [
+   "73ff2897918de34ca167b8b7f15753752b55486bce4bcbebbfe5c3b35ab7187a",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line0/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line0/y": [
+   "ce4ef764d9a4c910bd07dab3e02c2aa7e3b95fec578b341e7c351169ee57c0ac",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line1/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line1/y": [
+   "b9999245aa3c710bf60dbae04c301a64486017614616fcae08a99ec088e1345a",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line2/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line2/y": [
+   "daa1728585e31dd1820c85e24637ecc3232b6c2c7113987b1bb0099ce1c7db86",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line3/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line3/y": [
+   "3b559831258c09ec699aed72ee44f5d751d649e0c462b63598ca59c364e1f1c9",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line4/x": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line4/y": [
+   "4623839a4826566b7e0604001b722c28afb342901370f1438587229ed8846351",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax5/line0/x": [
+   "aff6ea109bd96f1a16447cad63f8c7453df4470f8c4ba348fabaf43569da3971",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax5/line0/y": [
+   "b0ee72a81f817e161983e0ef06bcbe11ec13191a1af854af31c58ab28598bcdf",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "3c84b0f4985b82cc6d89159db3188ebb1a914f5b82a7f6a4322457e624005a72",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "f5ba8e1aa72b8edc322e1b317738da13a59c1833632594a96439e0bf69486344",
+   "<f8",
+   [
+    33096
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "2c0ff2a08bbdc9ab9a4070154d38827e86293beca438893545cea12095a86a9c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "7c07f1737fe6544b9a6ca12e7843adc0c53cf86b3f4ce8f894c262fd4f0f95d2",
+   "<f8",
+   [
+    5,
+    33096
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c6db61868edb0bddb57a6178c1b24673bad9a600ecdd94447916d496bd7bc843",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "stepanik_lumbar_infusion_test.png": "d2de424f529a1c27f8c63c1302a697432dbaacb8b6d63cf300c131848ed665c9"
+ },
+ "id": "stepanik.lit",
+ "rc": 0,
+ "runtime_s": 32.8,
+ "texts": {
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/axes": {
+   "legend": [
+    "P1 (Ventricles)",
+    "P2 (Intracranial SAS / ICP)",
+    "P5 (Lumbar SAS)",
+    "Infusion Phase (1.5 mL/min)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Craniospinal Pressures During Infusion [mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Pressure [mmHg]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line0/style": {
+   "alpha": 0.8,
+   "color": "#1f77b4ff",
+   "label": "P1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#dc143cff",
+   "label": "P2 (Intracranial SAS / ICP)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#00008bff",
+   "label": "P5 (Lumbar SAS)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax0/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "Infusion Phase (1.5 mL/min)",
+   "type": "Rectangle"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/axes": {
+   "legend": [
+    "Formation (S1)",
+    "Resorption (F_res)",
+    "Lumbar Infusion (I5)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Fluid Mass Balance [mL/min]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Rate [mL/min]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Formation (S1)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Resorption (F_res)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#ffa500ff",
+   "label": "Lumbar Infusion (I5)",
+   "ls": "-",
+   "lw": 2.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/axes": {
+   "legend": [
+    "F12 (Ventr -> Cranial SAS)",
+    "F23 (Cranial -> Cervical SAS)",
+    "F34 (Cervical -> Thoracic SAS)",
+    "F45 (Thoracic -> Lumbar SAS)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Inter-compartmental CSF Flows [mL/min]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Flow [mL/min]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line0/style": {
+   "alpha": 0.7,
+   "color": "#1f77b4ff",
+   "label": "F12 (Ventr -> Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line1/style": {
+   "alpha": 0.7,
+   "color": "#ff7f0eff",
+   "label": "F23 (Cranial -> Cervical SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line2/style": {
+   "alpha": 0.7,
+   "color": "#2ca02cff",
+   "label": "F34 (Cervical -> Thoracic SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax2/line3/style": {
+   "alpha": 0.7,
+   "color": "#d62728ff",
+   "label": "F45 (Thoracic -> Lumbar SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/axes": {
+   "legend": [
+    "V1 (Ventricles)",
+    "V2 (Intracranial SAS)",
+    "V3 (Cervical)",
+    "V4 (Thoracic)",
+    "V5 (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Compartmental Volumes [mL]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Volume [mL]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "V1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "V2 (Intracranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "V3 (Cervical)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "V4 (Thoracic)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax3/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "V5 (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/axes": {
+   "legend": [
+    "C1A (Arterial-Ventricle)",
+    "C1V (Venous-Ventricle)",
+    "C2A (Arterial-Cranial SAS)",
+    "C2V (Venous-Cranial SAS)",
+    "C5L (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Non-linear Compliances [mL/mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Compliance [mL/mmHg]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line0/style": {
+   "alpha": 0.7,
+   "color": "#1f77b4ff",
+   "label": "C1A (Arterial-Ventricle)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line1/style": {
+   "alpha": 0.7,
+   "color": "#ff7f0eff",
+   "label": "C1V (Venous-Ventricle)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line2/style": {
+   "alpha": 0.7,
+   "color": "#2ca02cff",
+   "label": "C2A (Arterial-Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line3/style": {
+   "alpha": 0.7,
+   "color": "#d62728ff",
+   "label": "C2V (Venous-Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax4/line4/style": {
+   "alpha": 0.7,
+   "color": "#9467bdff",
+   "label": "C5L (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax5/axes": {
+   "legend": [
+    "Global P-V Curve"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Dynamic Pressure-Volume (P-V) Curve",
+    ""
+   ],
+   "xlabel": "Total CSF Volume Change \u0394V [mL]",
+   "ylabel": "ICP P2 [mmHg]"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#800080ff",
+   "label": "Global P-V Curve",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/figure": {
+   "size": [
+    14.0,
+    11.0
+   ],
+   "suptitle": "Lumbar Infusion Test (LIT) Simulation \u2014 \u0160t\u011bp\u00e1n\u00edk (2009) 2nd Gen Model"
+  },
+  "main:fig/00:stepanik_lumbar_infusion_test.png/png_sha256": "d2de424f529a1c27f8c63c1302a697432dbaacb8b6d63cf300c131848ed665c9",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "0.001",
+   "first_step": "0.001",
+   "max_step": "0.1",
+   "method": "'RK45'",
+   "rtol": "0.001"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

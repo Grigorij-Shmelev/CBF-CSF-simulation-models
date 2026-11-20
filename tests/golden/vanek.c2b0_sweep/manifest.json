@@ -1,0 +1,946 @@
+{
+ "argv": [
+  "@mat_models/vanek_c2b0_sweep.py"
+ ],
+ "arrays": {
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line0/x": [
+   "c1ae8cd7ee9d0c2fb67d1e738a148d63e2df820f734efeb3e7d4ad2af51b4c0c",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line0/y": [
+   "2bd438eeae6ae46534c85201039bbe6d1d38b0192afe765fb46191397ba61b7f",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line1/x": [
+   "681055dc5fb590178ed3b954d92219e17dfe801aeb20c35b45eb350e69765fee",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line1/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line0/x": [
+   "c1ae8cd7ee9d0c2fb67d1e738a148d63e2df820f734efeb3e7d4ad2af51b4c0c",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line0/y": [
+   "db54a386ab284b6c1c02eff6b27dbaf1220b4ba6606f1ca6002e4e7e70f42f00",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line1/x": [
+   "c1ae8cd7ee9d0c2fb67d1e738a148d63e2df820f734efeb3e7d4ad2af51b4c0c",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line1/y": [
+   "18479ef63f5dc61c04f0239078ce041068c70c70779b9928b6c0b48e6df580af",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line2/x": [
+   "681055dc5fb590178ed3b954d92219e17dfe801aeb20c35b45eb350e69765fee",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "9ece8226c31c36a3551543f1fc359fa39e2c531bba67e5a836b7436fa0971253",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0000/t_eval": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "323975ee03cb2493502bc6757ab8c740267e515d6fae64bcafab4660a3f807d9",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "a6f4354f6b3b9b05549d1b2daca15ad4f5d1806927ed6ac63454af1d1c1ac54d",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "af825c289571da36aa67cc48c3f270cfa61f748a2ab47e817f0bb70f1658cac3",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "5ed864e295122cdc02b6747e35aa0a74b90c852eaa5f49d803ac28af31794295",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0002/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "bec759e733507aff75d0edd3a73393a60d39685723b801962758abc8149989ee",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "6908f55b0c7e4554aeddaa473425c75018a2a621a7a872dd3d502dbf1b4708f4",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0003/t_eval": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "8ce9ab03004f320d885665eaf841e14373ba0dcc1e635ac0b3a32103b3edca16",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "a5f3b4882cd20743459bc962af37d3af4b1c50be62820856e57218ab6c8d91de",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0004/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "faaefb9a326f2a461bb3e2c6e6bf791ae68513dfb3ccfc7d00c80a75e3ba48a8",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "7c590830559afe80d55804a4aad6c7a2788a8e4d89139f7e3d6cf676685f90fa",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "2607c72253ee10c7df62a3f9abb0c1f5c951d1ab6a9b0c59ce2e11b3dbfb7b12",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0006/stats": [
+   "1ca77d7a9de4892be508f670ff0cf3bb25832cb437b171cbe6b3283a333bce98",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0006/t": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0006/t_eval": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0006/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0006/y": [
+   "f147fcb2990b4d07ce74a966a41b867018f688d89db301ab5c0fdd0be813778e",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0006/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0007/stats": [
+   "f539f799944e76a2d62d8599154a5fffd409584ff6f70a85229197b8bf08aa48",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0007/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0007/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0007/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0007/y": [
+   "f37945d9b624fe750019aa99643d229cbbfd7e222d092c632b1d36bb3edfd6ac",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0007/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0008/stats": [
+   "fb5443e84b82dc706d54669b71829fa4d9564a130774c6dd3cad212210871974",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0008/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0008/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0008/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0008/y": [
+   "1cc951d1ed96211d46bb9a17e075b8decfd551757241ae8f978d67112e0b6ca9",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0008/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0009/stats": [
+   "4d51e5636a97f7bab1f58ca0843967711afcdbca96858b4f09c6bbe60218ac2b",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0009/t": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0009/t_eval": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0009/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0009/y": [
+   "b758c839328784806745f552a2b87d2820a69600ad3c560155253d5c5db8eadd",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0009/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0010/stats": [
+   "fa5704b68242caa67ae5aaf8e1350a05624ccf830bfae14433b5bdc3c958eacf",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0010/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0010/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0010/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0010/y": [
+   "7feeb93eb8235091437b8fc54e9218310cd10ad61bb5a91de2d7cc1f743ebb5e",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0010/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0011/stats": [
+   "44eb21bf2746d4a92a943aa4e29a1c6ccca6d327e1a04fdac2dd6a14368af073",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0011/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0011/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0011/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0011/y": [
+   "d5dc51895ae11aceaadc482fe89e331e1f6f8d1003e6e9c9d8b3a23576de557a",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0011/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0012/stats": [
+   "570ecb7a8fbcf9edb60bec150c7667acaa73fffd2a5d551624193979f9140f31",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0012/t": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0012/t_eval": [
+   "a4526b464c149ba5967d52e7cb50814d9e40ffad2995caea6c9de8500a6a1cd8",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0012/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0012/y": [
+   "d272ee5c248c3686d3ac4831fe791dfd3a44422d58479f037977aa49a3d13991",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0012/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0013/stats": [
+   "c8d16960023cdef314a38a03698071531806e8549e7d064912a932606c1f034f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0013/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0013/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0013/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0013/y": [
+   "464c622c37f3cc6d5870b4423aee05b832967529ac0b5ef9ee64b5a929172922",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0013/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0014/stats": [
+   "fd21b5c8d429c68a3f0efa96b63d35030ddaea88d525d16d07cd393f4477173e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0014/t": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0014/t_eval": [
+   "9123bc568219e485344ef25e4c3e72ab1378ade3a3fe7f30078a126693001a29",
+   "<f8",
+   [
+    1200
+   ]
+  ],
+  "main:solve/0014/t_span": [
+   "e99716a16b01c9505248c55eb319a690d0d5e9a0caf30231e120009e393062ce",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0014/y": [
+   "7ffc490d56eaac504aec6977ac7e54cfc2d46cd2eb0d434f7f58a9c9921f71cc",
+   "<f8",
+   [
+    5,
+    1200
+   ]
+  ],
+  "main:solve/0014/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "vanek_c2b0_sweep.png": "96cd7b249b9b527bd6c1aced80ea52fbb4b660f52e36304012e70e5999555a0e"
+ },
+ "id": "vanek.c2b0_sweep",
+ "rc": 0,
+ "runtime_s": 211.1,
+ "texts": {
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/axes": {
+   "legend": null,
+   "scale": [
+    "log",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Lumbar infusion: rise of mean P2 [mmHg]",
+    ""
+   ],
+   "xlabel": "C2b0 [mL/mmHg]",
+   "ylabel": ""
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "_child0",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child1",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/axes": {
+   "legend": [
+    "pulse from Pa only (\u00b110 mmHg)",
+    "pulse from Pb only (\u00b11.5 mmHg)"
+   ],
+   "scale": [
+    "log",
+    "log"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Cardiac pulse in P2, peak-to-peak [mmHg]",
+    ""
+   ],
+   "xlabel": "C2b0 [mL/mmHg]",
+   "ylabel": ""
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "pulse from Pa only (\u00b110 mmHg)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "o",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "pulse from Pb only (\u00b11.5 mmHg)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "s",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/figure": {
+   "size": [
+    11.0,
+    4.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:vanek_c2b0_sweep.png/png_sha256": "96cd7b249b9b527bd6c1aced80ea52fbb4b660f52e36304012e70e5999555a0e",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0006/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0006/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0007/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0007/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0008/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0008/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0009/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0009/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0010/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0010/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0011/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0011/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0012/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0012/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0013/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0013/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0014/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0014/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

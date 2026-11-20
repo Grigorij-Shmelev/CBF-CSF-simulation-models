@@ -1,0 +1,320 @@
+{
+ "argv": [
+  "@mat_models/urs_cd_sigmoid.py"
+ ],
+ "arrays": {
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line0/x": [
+   "5f5f81811e7899bd955ce1204a1a4fb7406cec86d7a61cbe9b93d1a9c133b7b7",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line0/y": [
+   "633fb04c414c6632c9c2a0b7b033cd228c3d1dc870bbd35b13be2f3da2fbe57c",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line1/x": [
+   "5f5f81811e7899bd955ce1204a1a4fb7406cec86d7a61cbe9b93d1a9c133b7b7",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line1/y": [
+   "146ac792023928b1db3ac7a9618f35c9afd78f2373bfbe8f826f5c306f44a0ba",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line2/x": [
+   "5f5f81811e7899bd955ce1204a1a4fb7406cec86d7a61cbe9b93d1a9c133b7b7",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line2/y": [
+   "c44e4d341bef5195a68bea0d706aa9d22e9ef0992600d96af5f2b9440de0889a",
+   "<f8",
+   [
+    2201
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line3/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line3/y": [
+   "cdead7b1f5591afe2bec9b0007e0c305402e0573f0807909c7b0dfc902b926c9",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line4/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line4/y": [
+   "59108e43cda490ea2c2ea957240252eb2694a45c2756da9927b1ebbe5d1ea467",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line0/x": [
+   "e6d3086d2c66baef6c60e1f0d9c8162955872dc75471c3f8477ac3e7f997e0aa",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line0/y": [
+   "6c9d59fa2be7e4da996fe4d671ce215b1bddaee83402f6093411a41cfbb50dfe",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line1/x": [
+   "e6d3086d2c66baef6c60e1f0d9c8162955872dc75471c3f8477ac3e7f997e0aa",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line1/y": [
+   "2f1e681dd49a1e733c77a4b365df069127d86575e65746f79532659fd0781380",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line2/x": [
+   "e6d3086d2c66baef6c60e1f0d9c8162955872dc75471c3f8477ac3e7f997e0aa",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line2/y": [
+   "4fcec6dcd1d138d9d9620ae0db5659a28ec42387c811db1277f5e3c5e35cf83d",
+   "<f8",
+   [
+    1001
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line3/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line3/y": [
+   "cdead7b1f5591afe2bec9b0007e0c305402e0573f0807909c7b0dfc902b926c9",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line4/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line4/y": [
+   "59108e43cda490ea2c2ea957240252eb2694a45c2756da9927b1ebbe5d1ea467",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_cd_sigmoid.png/ax1/patch0/xy": [
+   "19f84cc88efc24936ef00bf609d1eb949ef92b07bad7ba7e1e671f95047901d4",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ]
+ },
+ "files": {
+  "urs_cd_sigmoid.png": "711e6634797f3730d68d27192fb6c9e0f232964d454295306fa83feb1a8591cf"
+ },
+ "id": "ursino.sigmoid",
+ "rc": 0,
+ "runtime_s": 2.2,
+ "texts": {
+  "main:fig/00:urs_cd_sigmoid.png/ax0/axes": {
+   "legend": [
+    "MCA district ($C_{dn}$ = 0.060 mL/mmHg)",
+    "PCA district ($C_{dn}$ = 0.024 mL/mmHg)",
+    "ACA district ($C_{dn}$ = 0.016 mL/mmHg)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Full range: ceiling 1 + sat2 = 1.4, floor 1 \u2212 sat1 = \u22126",
+    ""
+   ],
+   "xlabel": "x = x_CO2 \u2212 x_aut",
+   "ylabel": "C_d / C_dn"
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "MCA district ($C_{dn}$ = 0.060 mL/mmHg)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "PCA district ($C_{dn}$ = 0.024 mL/mmHg)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "ACA district ($C_{dn}$ = 0.016 mL/mmHg)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child3",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax0/line4/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child4",
+   "ls": "--",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/axes": {
+   "legend": [
+    "MCA district",
+    "PCA district",
+    "ACA district",
+    "range of x in our runs"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Zoom around x = 0 (below the dotted line: C_d < 0)",
+    ""
+   ],
+   "xlabel": "x = x_CO2 \u2212 x_aut",
+   "ylabel": "C_d / C_dn"
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "MCA district",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "PCA district",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "ACA district",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "_child3",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/line4/style": {
+   "alpha": null,
+   "color": "#808080ff",
+   "label": "_child4",
+   "ls": "--",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_cd_sigmoid.png/ax1/patch0/style": {
+   "fc": "#2ca02c14",
+   "label": "range of x in our runs",
+   "type": "Rectangle"
+  },
+  "main:fig/00:urs_cd_sigmoid.png/figure": {
+   "size": [
+    12.0,
+    4.2
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:urs_cd_sigmoid.png/png_sha256": "711e6634797f3730d68d27192fb6c9e0f232964d454295306fa83feb1a8591cf"
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

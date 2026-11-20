@@ -1,0 +1,276 @@
+{
+ "argv": [
+  "@mat_models/urs_steal_test.py"
+ ],
+ "arrays": {
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line0/x": [
+   "cb7de447c9aa98b43362b8eccb839eb7cd098bc567c534eefea325bdbf9bea13",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line0/y": [
+   "c329787618c39b169472ac1b21a4dd0cb76af9c8da416888fde449e54d9b75b0",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line1/x": [
+   "cb7de447c9aa98b43362b8eccb839eb7cd098bc567c534eefea325bdbf9bea13",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line1/y": [
+   "fab4391bda000149bcfcdd9337e5714e48389f3c76c8d2bede7ee3e7fa5f51ce",
+   "<f8",
+   [
+    79
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line2/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line3/x": [
+   "b249cb02371bda675c33db12376393e4eef66d6734e372c658c4c0b658e3bf1e",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "fd6198f9bb55df258ffab67486aa18af95e2950bbdb9868586f8bb9b512ce41c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "b5e42c28fefc17acb07488464c133e2e08b6ea6ea530f7d7194509911ea8083b",
+   "<f8",
+   [
+    31
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "91b7d032787f2c18f8e5d6982f75310bbc6fde3756bce2c8ce3ab43711c82517",
+   "<f8",
+   [
+    23,
+    31
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "ee39ee46d2f8305d73168aa9340a5997690e1af79b929f0cdbf0356347a50466",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "e2cf75c2442fcbdc7a41204b94c7ef17a444d0414a47164c86fed650c7a25304",
+   "<f8",
+   [
+    29
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "43704a89fb9fe63f67becccbf84a72719ccd4cc3e7ce4343b93dfcf53a48029f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "01344ad452a3942498e2bd78bd83f8e5f7fb1d3d6d9419a0e5dbf654efec2d70",
+   "<f8",
+   [
+    23,
+    29
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "db13eb9112a2ec8ed1334c48729895d2ca1db0d640c62ab56cc8ae8493b72a2c",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "9f2fb049baaaad562f92999831bb9b94177c3205284a1f5cf2ed613f321825bc",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "2187d2306191860312159701e1348dea3561dc56f3ade66c940c47cbadf102d4",
+   "<f8",
+   [
+    19
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "1b89af54471d4f65ce4d3ff3a8d2bd4734334cb2434c2cdbe40e859d8fab07e8",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "f4ad732808a4c801fac1aca5057d5327a4628be31ef07e3be5aaf12c74f4a4de",
+   "<f8",
+   [
+    23,
+    19
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "f85721614ddef7c73e3040170e77e86587f29659b7e114fd7adc8ebbf54d26cc",
+   "<f8",
+   [
+    23
+   ]
+  ]
+ },
+ "files": {
+  "urs_steal_phenomenon.png": "6faee0ff04d42ad73cb14c6ea3123e619b805f7231b54a777ef2b06521135d43"
+ },
+ "id": "ursino.steal",
+ "rc": 0,
+ "runtime_s": 1.8,
+ "texts": {
+  "main:fig/00:urs_steal_phenomenon.png/ax0/axes": {
+   "legend": [
+    "Left MCA Flow (Ischemic side)",
+    "Right MCA Flow (Healthy side)",
+    "Left ICA Occlusion (100% Stenosis)",
+    "Hypercapnia (PaCO2 = 60 mmHg)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Hemodynamic Response: ICA Occlusion & Steal Phenomenon",
+    ""
+   ],
+   "xlabel": "Time (seconds)",
+   "ylabel": "Blood Flow (mL/s)"
+  },
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Left MCA Flow (Ischemic side)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#0000ffff",
+   "label": "Right MCA Flow (Healthy side)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "Left ICA Occlusion (100% Stenosis)",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_steal_phenomenon.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Hypercapnia (PaCO2 = 60 mmHg)",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:urs_steal_phenomenon.png/figure": {
+   "size": [
+    10.0,
+    5.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:urs_steal_phenomenon.png/png_sha256": "6faee0ff04d42ad73cb14c6ea3123e619b805f7231b54a777ef2b06521135d43",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "None",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "None"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

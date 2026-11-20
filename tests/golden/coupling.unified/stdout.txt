@@ -1,0 +1,6 @@
+=== UNIFIED BIOPHYSICAL BRAIN MODEL PIPELINE ===
+1. Running Ursino Hemodynamics Engine (Duration: 200.0s, Hypercapnia PaCO2: 60.0 mmHg)...
+2. Passing Hemodynamic Volume Shifts into Vaněk (2015) CSF Solver...
+Successfully exported MRI validation dataset to: mri_validation_dataset.csv
+Summary visualization saved to: unified_brain_simulation.png
+Unified pipeline execution completed successfully!

@@ -1,0 +1,12 @@
+=== Ursino & Giannessi (2010) Model Simulation ===
+
+1. Running Baseline Steady State Simulation...
+   - Intracranial Pressure (Pic): 9.57 mmHg (Target: 9.5)
+   - Cerebral Venous Pressure (Pv): 14.15 mmHg (Target: 14.0)
+   - Left ICA Blood Flow: 4.75 mL/s (Target: 4.75)
+   - Left MCA Blood Flow: 3.75 mL/s (Target: 3.75)
+
+2. Simulating Steal Phenomenon during ICA Occlusion & Hypercapnia...
+   - Pre-Hypercapnia Ipsilateral MCA Flow:  1.53 mL/s
+   - Post-Hypercapnia Ipsilateral MCA Flow: 1.43 mL/s (Steal phenomenon confirmed)
+   - Post-Hypercapnia Contralateral MCA Flow: 5.77 mL/s

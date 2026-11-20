@@ -1,0 +1,9 @@
+=== Petr Vaněk (2015) 3rd Generation Craniospinal CSF Model ===
+
+Baseline Simulation Results (Mean Values over 10s):
+  - Ventricular Pressure (P1):      10.96 mmHg
+  - Intracranial SAS Pressure (P2): 10.00 mmHg (ICP Target: ~10.0)
+  - Cervical SAS Pressure (P3):     10.03 mmHg
+  - Thoracic SAS Pressure (P4):     10.06 mmHg
+  - Lumbar SAS Pressure (P5):       10.07 mmHg
+  - Peak Cervical CSF Flow (F23):   2.16 mL/s

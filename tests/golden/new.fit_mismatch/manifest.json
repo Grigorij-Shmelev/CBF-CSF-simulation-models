@@ -1,0 +1,114 @@
+{
+ "argv": [
+  "@mat_models/new_model.py",
+  "--fit-mismatch"
+ ],
+ "arrays": {
+  "main:pool/00:_mismatch_task/0/kappa": [
+   "b157d1180d45ace10970698a92dd73cd88909b688f10920abcba9b0135ee990a",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/0/nfev": [
+   "d1696b5d360d83b382cd02680fe84c39bc531a4d689271d3d562bfee11870506",
+   "<i8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/0/rms": [
+   "12b719f36843aa5c7aa36048045c20e5858210b1c15a9469fbf08a56b074ce59",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/0/se": [
+   "a02696ef63a3e1e748029b7b63621dcb49e28e36f0eb3dadf1363ca0e82c65aa",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:pool/00:_mismatch_task/0/se_P0": [
+   "6ce73ac558f9227392b2e686e8fb55302229bb6ecbe6a7f9bb3810631beac6fc",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/0/se_rel": [
+   "f66a0fc5789a3fc918dcf8546bc05f08e06bb3a76b090c46937fe7f815aaab50",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:pool/00:_mismatch_task/0/theta": [
+   "9d2ece20b11e6c280761f9d3482483bf05041bf37ac6c28815d69f6878555a49",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:pool/00:_mismatch_task/0/x": [
+   "427d45c1cab7ccf8479ea4648f35bc9aa3d71878dee21189879b6bf99adb7631",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:pool/00:_mismatch_task/1/kappa": [
+   "f3dc7847f78a0a29c225c1dc1916867658d13027a87787029406aaebeaeb12fe",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/1/nfev": [
+   "c4eaebd2a07fc59739a60a7128c33558b860a20ff9dd8cc5b044be1d6de47dea",
+   "<i8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/1/rms": [
+   "daa0e4c4a0f8089094811e46a923149c171c9625d6b93e208c0ed0626a9c410d",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/1/se": [
+   "50a2a0b934f2edfca3006a798a4674dcea50abd5eddf59f275c79261b5a4de5a",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:pool/00:_mismatch_task/1/se_P0": [
+   "eb438ee993020b648514417c9ebedb938109c2aff3e26042f5600f75f3cec44d",
+   "<f8",
+   []
+  ],
+  "main:pool/00:_mismatch_task/1/se_rel": [
+   "9b43f3ff15c799b8c5a95e22b9ff3e5da7757bb39daf86ba55c4debd93bb8b1c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:pool/00:_mismatch_task/1/theta": [
+   "e25deb7862a963529adfcaa0844d18b9d01bb2ec7dd9540516664d69fb71c847",
+   "<f8",
+   [
+    3
+   ]
+  ],
+  "main:pool/00:_mismatch_task/1/x": [
+   "ba4d135f302ee4c6e171a3c26b17556435bd4d1e8d06a0b866594511da49c66d",
+   "<f8",
+   [
+    3
+   ]
+  ]
+ },
+ "files": {},
+ "id": "new.fit_mismatch",
+ "rc": 1,
+ "runtime_s": 334.1,
+ "texts": {},
+ "variant": "old",
+ "workers": {
+  "count": 77,
+  "sha256": "d130d659b6cc9b46c4a22b004e551b81e5821694ed14b3559371f15cad5dd6be"
+ }
+}

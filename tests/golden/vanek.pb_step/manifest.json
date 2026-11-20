@@ -1,0 +1,196 @@
+{
+ "argv": [
+  "@mat_models/vanek_pb_step_test.py"
+ ],
+ "arrays": {
+  "main:fig/00:vanek_pb_step_test.png/ax0/line0/x": [
+   "1acba533c99b021008f1d2ea4679efc8baab9cdef84b08057ee9fd9afbb5f11d",
+   "<f8",
+   [
+    7961
+   ]
+  ],
+  "main:fig/00:vanek_pb_step_test.png/ax0/line0/y": [
+   "327097be4f558e59e116fbeed8f508e50dbb2b3bc42cdcabddd264bda1d4f924",
+   "<f8",
+   [
+    7961
+   ]
+  ],
+  "main:fig/00:vanek_pb_step_test.png/ax0/line1/x": [
+   "1acba533c99b021008f1d2ea4679efc8baab9cdef84b08057ee9fd9afbb5f11d",
+   "<f8",
+   [
+    7961
+   ]
+  ],
+  "main:fig/00:vanek_pb_step_test.png/ax0/line1/y": [
+   "7b7e33a4b75683142badb9e41c18ac4bad4694eaec22a8fe2e01aa1820a86d6b",
+   "<f8",
+   [
+    7961
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "52b332cd47e085bcd0d2336ad1dbdc0f6a3065c3e4a5cebf638ace9a81e2df9f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "e9987a4b29999031ce154c7d722ed7e470e7bb34035b486ae2cdcabbe2a6ff05",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0000/t_eval": [
+   "e9987a4b29999031ce154c7d722ed7e470e7bb34035b486ae2cdcabbe2a6ff05",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "932923597fa77c9b30ed8033ad2628b8bbc24cdd283f3296d625a3785bdc1e2c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "1eca4eecc066f5aeb129e20b68b2d5756e40b4cee24cd2466ec8c880f9b3676c",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "780d2feb8fa5a3297fbded8422e63a8647ac178669c022c12bd10bfde7e3e8b9",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "e9987a4b29999031ce154c7d722ed7e470e7bb34035b486ae2cdcabbe2a6ff05",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "e9987a4b29999031ce154c7d722ed7e470e7bb34035b486ae2cdcabbe2a6ff05",
+   "<f8",
+   [
+    8000
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "932923597fa77c9b30ed8033ad2628b8bbc24cdd283f3296d625a3785bdc1e2c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "09d3c0ed5636da269cd6342778219a9f9ad00de9867914f47f07558995ad848d",
+   "<f8",
+   [
+    5,
+    8000
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "vanek_pb_step_test.png": "5ae1bb5ff68715b33335051ba056a809938e5b8f1efec7990007dc92c71475bd"
+ },
+ "id": "vanek.pb_step",
+ "rc": 0,
+ "runtime_s": 171.2,
+ "texts": {
+  "main:fig/00:vanek_pb_step_test.png/ax0/axes": {
+   "legend": [
+    "Pb = 14 (control)",
+    "Pb 14 -> 20 (ramp 50-70 s, then held)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Vanek: effect of a lasting step in Pb on the mean ICP (P2)",
+    ""
+   ],
+   "xlabel": "t [s]",
+   "ylabel": "P2, 20 s moving mean [mmHg]"
+  },
+  "main:fig/00:vanek_pb_step_test.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "Pb = 14 (control)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_pb_step_test.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "Pb 14 -> 20 (ramp 50-70 s, then held)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_pb_step_test.png/figure": {
+   "size": [
+    9.0,
+    4.5
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:vanek_pb_step_test.png/png_sha256": "5ae1bb5ff68715b33335051ba056a809938e5b8f1efec7990007dc92c71475bd",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

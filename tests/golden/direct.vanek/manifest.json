@@ -1,0 +1,500 @@
+{
+ "argv": [
+  "@tests/direct.py",
+  "vanek"
+ ],
+ "arrays": {
+  "direct:attrs/C1a0": [
+   "81f807141cc34403fcaa9e7934f60a83a8522853d1bb2557dac2bc8cefc136d5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C1b0": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C2a0": [
+   "d084c98c1e2d8ceddfeb05818d9cf3265580ad6de8c643729629039327caf8fe",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C2b0": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C3C0": [
+   "52b5265efad618bfdc4cd000338da1459856a7b404461f78d6424b620fce2874",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C4T0": [
+   "c0d3d2bb97c82e37ac09556cf0b88d3673d58ea14b78e6f347f242fb8bd1aad4",
+   "<f8",
+   []
+  ],
+  "direct:attrs/C5L0": [
+   "59d87b00630bb7cb687b27749469d1f0a53b2ddbd0506461c90a26e68845f767",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Pmin": [
+   "be9842509ec398e968044e4df951354bf7c63c7a65eb2674c45d6eafea979277",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R12": [
+   "3b8af4a64ca97bfeabe04fbfb51f30f03f75fa3df023c5b6023bd1a5356d85fc",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R23": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R34": [
+   "5747d38705981593ec0f242650bad785bf2ae8742cba37d66c6cc9e5bb90411a",
+   "<f8",
+   []
+  ],
+  "direct:attrs/R45": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/S1": [
+   "1597546b7872bc102fcac6d2416a6d0cad6e6ae19aaf3ac694b2d8bf6430adbd",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V10": [
+   "f1b690a22090c22148ba0611f37738e2a2176687b0d470043d1eef95816f70f3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V20": [
+   "ce68a0958de42ecdf0d5560c19be89ccd18443e9de0b27521e83d32fa541ddb0",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V30": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V40": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/V50": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z12": [
+   "cb5180565ae4f381b2d47b3933c86e15761f05077a096aede904bb346bed92f3",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z23": [
+   "a4c4886f381ca4c570321d91b526621567f74be48e870168b462ad9b39e2b3f9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z34": [
+   "837c368752f19fd5cb9d84fb18ee96811edaaddc75cb9178f7e7f1789a98f4c9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/Z45": [
+   "a4c4886f381ca4c570321d91b526621567f74be48e870168b462ad9b39e2b3f9",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a1a": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a1b": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a2a": [
+   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a2b": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a3C": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a4T": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/a5L": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/alpha": [
+   "90b36cd972d773620ae40bf3ba6d82f8f2579491277761b9268d5b10eebd75c5",
+   "<f8",
+   []
+  ],
+  "direct:attrs/peq": [
+   "00924c2f0ce4065bba6e2f62a54be0a4e5cbfb05d3e62bcc8c396165d7c1e24c",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r1a": [
+   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r1b": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r2a": [
+   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r2b": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r3C": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r4T": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:attrs/r5L": [
+   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
+   "<f8",
+   []
+  ],
+  "direct:compliances/0": [
+   "7eed50bf1789ad58dfc121eae2b662eb277352e37932f6ff61b2c95a098a9170",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "direct:compliances/1": [
+   "266c99c91640f4173ab4ed0dcee9543e7a0011c6fac09367ee694e9da3d6dc4e",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "direct:compliances/2": [
+   "638b758f3b075df5e4437ab7683217d30300b04ecaca6712147c7d9e5abf34d6",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "direct:compliances/3": [
+   "fab16e75c4570b62fc0db49ef01e44312a4eea0531455cdc8fafb7416e2a094a",
+   "<f8",
+   [
+    7
+   ]
+  ],
+  "direct:derivatives": [
+   "fa4b7b1cccd68eb1de8ec5373363e4700e8ba5100dd6fceb6d2d0a886b4bf6b0",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:derivatives_inf": [
+   "964c2c7f73f7e027608fc7713a58dcf72b647f4806b951ef5b8d8f0aea0b6b57",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:resorption": [
+   "942c0b34c6f440086a73bdb9bb85edb7a86389e07e4444cbf325853d885494a6",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "direct:run_vanek_simulation/F12": [
+   "4d2986955a1a26cdb20dc85946b83c7760c79ef6283330394c80b6554d8b4753",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/F23": [
+   "29117e5887c3d2a033b9cc094454289c68936f78b59db17e79ddca6c1c495dd7",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/F34": [
+   "2fdeef0c5ab3a3bbd8f30ed178af5ef4fbd881cd5a90a83097e64200f6603d6d",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/F45": [
+   "7f9dbbd06d2a57305d1e70d320b4bcd0e940e261546ca530d2f405f71ef8c246",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/P1": [
+   "c6d003a0f9df9db15540564512797a6c8a9194f0b01ef8eb4917f95f0363b7ef",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/P2": [
+   "f398a6cb524f911ca9a3b4fe6ffe6d63cd18e411f838ce9270a05322e28cad4a",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/P3": [
+   "1b286dcd85f829a35b13cebbd2ff4ec95254cd0ddbf52a6c8c4336806f1b27c6",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/P4": [
+   "20f7b1ababcd9b51de0901b023aec66138ee7523cb25b2ad479b179067771767",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/P5": [
+   "0ffa8fc59292c6804b9db553b1928f5729c806369559d34db3f6ab5068d9b1b3",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/resorption": [
+   "d91e19433d44a01cdab68ebe09e2ee4904e4519423ff5b73ade28b757e7fe7bb",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation/t": [
+   "0bcb98f6988d3f09dd030479825ee05ade71f1b5a6e6eb259f8e223ff4450474",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/F12": [
+   "916e8b6a56b6b6085c2c71df24bd9147940932335fd4fe1ac4d77ba45900d7e7",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/F23": [
+   "de56092ed01fde3ef9f8c9b77cbcc2028d4d4f5b5bbdd44ef663fa09ac8b8b94",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/F34": [
+   "7bfc0ac10f6d4664a8b23edaac9f5b7c3f2ab3557b3dc01804b02171bac3257c",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/F45": [
+   "dc86c72089a0a36f4cba23a2e0ef918023395d7268a35ccf13415a2286493c06",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/P1": [
+   "4c92e61382a8061ce9853dc71ac3090aca3dcf6aac7bf173e2b0583f1f6f81b6",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/P2": [
+   "a0f53d37b27eec4102b7c8539959e8734723d5cdec95ae8d8ebafb5c146152af",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/P3": [
+   "4538710ee53fc23104c6b5ee1e3950fe1a7f8df1a3c7bbc352b163967573d3ab",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/P4": [
+   "fc0dd62a5b562102b9037cc216c4a65318c63bf93fdb4f8d23efd5d7fb6fcf1d",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/P5": [
+   "c48bc1cfffc46c4989d2b02a1ed08361bc1f1a291fbd346c0c34d90161291bd3",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/resorption": [
+   "7646477eb19d9bf42159a3c57370d3708ed8f0db5be6936e65e6ac96aada2689",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "direct:run_vanek_simulation_inf/t": [
+   "2890e2e35c82ec86172200925f2f6706936212a738ba8f7a3e67b06626ba2099",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "667fbcaab833d91aac9a09d807ee3a127380a8af2bfe7431c6c90857e3c38ea6",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "0bcb98f6988d3f09dd030479825ee05ade71f1b5a6e6eb259f8e223ff4450474",
+   "<f8",
+   [
+    326
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "a3c082012ffb84a4fc3d1f41971ca17e5c011dd87bf9440d1aba3979735f7609",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "f8091240d8b0e3e71ce96bc4e81c020d36e1b88166123165f84722c4d86fe055",
+   "<f8",
+   [
+    5,
+    326
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "cace403ce5d2094a123b4b7298512dcfc24211fe72fc942e1296ee92cd74107a",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "2890e2e35c82ec86172200925f2f6706936212a738ba8f7a3e67b06626ba2099",
+   "<f8",
+   [
+    156
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "39075ca3a50abb7e72398145bcdf9dd7ab9de9f9f35e58a3ace8eef1f00242f4",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "bea71424d419e98f189b7b7f1195808bb3faec4a136d5854f490d8daea640f68",
+   "<f8",
+   [
+    5,
+    156
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {},
+ "id": "direct.vanek",
+ "rc": 0,
+ "runtime_s": 2.9,
+ "texts": {
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

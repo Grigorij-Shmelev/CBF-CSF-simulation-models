@@ -1,0 +1,707 @@
+{
+ "argv": [
+  "@mat_models/run_vanek_lumbar_infusion.py"
+ ],
+ "arrays": {
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line0/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line0/y": [
+   "58d8642f867f4e9b430ce486d2d887560366c9a6ed4e7ee7769f4789aa84ed2a",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line1/y": [
+   "f3d1da4c6ef86396300c2c5cc059722b1734b9b4889b272d16b041f94cf1a05b",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line2/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line2/y": [
+   "4dad4e63dc4000e46cd76f63f143b91987ee68476b25a5aa7361d87b4792466a",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/patch0/xy": [
+   "0f9ab72ef7b394d8fdf8ad15b382b72b60e66792a06e8b914ec266eb29f4b5ec",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line0/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line0/y": [
+   "bc942b5fa935b4f6bd0803f118451c773b03eceb477ee1629f9db4834ade6d9c",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line1/y": [
+   "127e2c055f4aa1d85a5cb0be399cffc510cd6c5990b69e91b9f390f402e1ced5",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line2/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line2/y": [
+   "c5416b0f5916845d089fa3a9ab48bb80e4e04dcdcbe5308dd3e246cca0dc7ece",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line0/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line0/y": [
+   "7303bc7fc15c02365f2b697f53645102cecb246b334608201b1c28db1131e3a5",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line1/y": [
+   "27a18b613f999d560ae0057885f6dca30c7870f57adce3ccedca3a1882e81ff7",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line2/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line2/y": [
+   "e3a64f9a891ba16dfc6afaba842681c85c3288d266c1805de4b991abce6c4fc0",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line3/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line3/y": [
+   "7279b1e2e5b3f33e3b07437b5cb9eb275ea5cb86bb417bb198521a724a3626b9",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line0/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line0/y": [
+   "df3ca689a75627a4b2e492edeadf77e0f437c8a00388bcc247783263c3894370",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line1/y": [
+   "76c0e0d115ecd83145100a7d8a1485757bc4b3b68864d2cb5bcda9c8e95a28b0",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line2/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line2/y": [
+   "7bd59457b41d332de8e7e8d5874cf27099da76172d6e0f4059a76719a8d4de2b",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line3/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line3/y": [
+   "a2eea313f756f4af4c0f26fe85413658b98653148560f7b288de1abc0b6815fc",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line4/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line4/y": [
+   "cda75623053b7e05f2fe208ced44f8d8133830ad11b045a79e2aa09492260d88",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line0/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line0/y": [
+   "8b5a38d30d0a94e3d96f61c3874c625f583814f6ebeb48a2979d8a8d0216cf76",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line1/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line1/y": [
+   "58c261881add18ce272ad2be334ed0800f08c76b91d51069cb282951f2d6b831",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line2/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line2/y": [
+   "9bb036b2266e470c03d5308159d3c49c91ac496b686bc1d569d3c62b80a04766",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line3/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line3/y": [
+   "1a075a68959f441333b6ce795a82f4cdb2de8d76a3da62c7ec8209297fde8689",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line4/x": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line4/y": [
+   "3b4ff2ef89c78cda15bb337dc72cbb6ae518f810f912b1b98e19ad8391fc9823",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax5/line0/x": [
+   "11cbbcc967152400071b4c480091acbdbd5a6f009ebbc5cd579a87d12cd0a122",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax5/line0/y": [
+   "f3d1da4c6ef86396300c2c5cc059722b1734b9b4889b272d16b041f94cf1a05b",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "da52ba27cdce415486e8cf607f7458d1c5796dc7425773804ac9a2787c9cc7c0",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "5c4081b838efe5a075bc8a3b6369caf3374e301b305f365f8d22d2dee7a1d816",
+   "<f8",
+   [
+    32334
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "2c0ff2a08bbdc9ab9a4070154d38827e86293beca438893545cea12095a86a9c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "13588d3808b8dfca4cec6cb2f249e9a51ff00f69edd2a57c98ac65dd9e0852b6",
+   "<f8",
+   [
+    5,
+    32334
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "vanek_lumbar_infusion_test.png": "b7c66bc2c317d6737f7fd06064447aac11b08f4505bb9d2e25a175de0e0dce8f"
+ },
+ "id": "vanek.lit",
+ "rc": 0,
+ "runtime_s": 87.4,
+ "texts": {
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/axes": {
+   "legend": [
+    "P1 (Ventricles)",
+    "P2 (Intracranial SAS / ICP)",
+    "P5 (Lumbar SAS)",
+    "Infusion Phase (1.5 mL/min)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Craniospinal Pressures During Infusion [mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Pressure [mmHg]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line0/style": {
+   "alpha": 0.8,
+   "color": "#1f77b4ff",
+   "label": "P1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#dc143cff",
+   "label": "P2 (Intracranial SAS / ICP)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#00008bff",
+   "label": "P5 (Lumbar SAS)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax0/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "Infusion Phase (1.5 mL/min)",
+   "type": "Rectangle"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/axes": {
+   "legend": [
+    "Formation (S1)",
+    "Resorption (F_res)",
+    "Lumbar Infusion (I5)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Fluid Mass Balance [mL/min]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Rate [mL/min]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Formation (S1)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Resorption (F_res)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#ffa500ff",
+   "label": "Lumbar Infusion (I5)",
+   "ls": "-",
+   "lw": 2.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/axes": {
+   "legend": [
+    "F12 (Ventr -> Cranial SAS)",
+    "F23 (Cranial -> Cervical SAS)",
+    "F34 (Cervical -> Thoracic SAS)",
+    "F45 (Thoracic -> Lumbar SAS)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Inter-compartmental CSF Flows [mL/min]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Flow [mL/min]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line0/style": {
+   "alpha": 0.7,
+   "color": "#1f77b4ff",
+   "label": "F12 (Ventr -> Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line1/style": {
+   "alpha": 0.7,
+   "color": "#ff7f0eff",
+   "label": "F23 (Cranial -> Cervical SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line2/style": {
+   "alpha": 0.7,
+   "color": "#2ca02cff",
+   "label": "F34 (Cervical -> Thoracic SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax2/line3/style": {
+   "alpha": 0.7,
+   "color": "#d62728ff",
+   "label": "F45 (Thoracic -> Lumbar SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/axes": {
+   "legend": [
+    "V1 (Ventricles)",
+    "V2 (Intracranial SAS)",
+    "V3 (Cervical)",
+    "V4 (Thoracic)",
+    "V5 (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Compartmental Volumes [mL]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Volume [mL]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "V1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#ff7f0eff",
+   "label": "V2 (Intracranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#2ca02cff",
+   "label": "V3 (Cervical)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line3/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "V4 (Thoracic)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax3/line4/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "V5 (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/axes": {
+   "legend": [
+    "C1a (Arterial-Ventricle)",
+    "C1b (Venous-Ventricle)",
+    "C2a (Arterial-Cranial SAS)",
+    "C2b (Venous-Cranial SAS)",
+    "C5L (Lumbar)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Non-linear Compliances [mL/mmHg]",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Compliance [mL/mmHg]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line0/style": {
+   "alpha": 0.7,
+   "color": "#1f77b4ff",
+   "label": "C1a (Arterial-Ventricle)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line1/style": {
+   "alpha": 0.7,
+   "color": "#ff7f0eff",
+   "label": "C1b (Venous-Ventricle)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line2/style": {
+   "alpha": 0.7,
+   "color": "#2ca02cff",
+   "label": "C2a (Arterial-Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line3/style": {
+   "alpha": 0.7,
+   "color": "#d62728ff",
+   "label": "C2b (Venous-Cranial SAS)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax4/line4/style": {
+   "alpha": 0.7,
+   "color": "#9467bdff",
+   "label": "C5L (Lumbar)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax5/axes": {
+   "legend": [
+    "Global P-V Curve"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "Dynamic Pressure-Volume (P-V) Curve",
+    ""
+   ],
+   "xlabel": "Total CSF Volume Change \u0394V [mL]",
+   "ylabel": "ICP P2 [mmHg]"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#800080ff",
+   "label": "Global P-V Curve",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/figure": {
+   "size": [
+    14.0,
+    11.0
+   ],
+   "suptitle": "Lumbar Infusion Test (LIT) Simulation \u2014 Van\u011bk (2015) 3rd Gen Model"
+  },
+  "main:fig/00:vanek_lumbar_infusion_test.png/png_sha256": "b7c66bc2c317d6737f7fd06064447aac11b08f4505bb9d2e25a175de0e0dce8f",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

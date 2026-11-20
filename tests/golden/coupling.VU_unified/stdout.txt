@@ -1,0 +1,8 @@
+=== UNIFIED BIOPHYSICAL BRAIN MODEL PIPELINE (v2) ===
+
+--- Running Combined Hypercapnia Steal + Lumbar Infusion Test ---
+1. Running Ursino Hemodynamics Engine (Duration: 400.0s, PaCO2 Target: 60.0 mmHg, ICA Stenosis L: 500.0x)...
+2. Passing Volume Shifts & Lumbar Infusion (1.5 mL/min from t=60.0s to 360.0s) into Vaněk CSF Solver...
+Successfully exported MRI validation dataset to: VU_mri_validation_dataset.csv
+Summary visualization saved to: VU_unified_brain_simulation.png
+Unified pipeline execution completed successfully!

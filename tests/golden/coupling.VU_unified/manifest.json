@@ -1,0 +1,536 @@
+{
+ "argv": [
+  "@mat_models/VU_unified_brain_model.py"
+ ],
+ "arrays": {
+  "csv:VU_mri_validation_dataset.csv/Cervical_CSF_Flow_F23_mL_s": [
+   "f394180b492246f54b8e737e306537d6420d5be366ca4fed2c2bc55049c9dd77",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/ICP_P2_mmHg": [
+   "73ff02e8a393e37b62903348242a41dc42ed8fbfd4be1ce4bcdc0ccde0d40aff",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/Spinal_Cervical_P3_mmHg": [
+   "eeeee8b6b193f52da297e37849de10f690de143f8320c9811b21b9d8e821fba2",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/Spinal_Lumbar_P5_mmHg": [
+   "71be9c55552e85b98221238e4d141b5da5821a78d4bf81c200660496c8b69388",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/Spinal_Thoracic_P4_mmHg": [
+   "140cf8cad87690ea204cd2ffa8bd932d439024756f839cd6958ba40ab5201f2d",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/Ventricle_P1_mmHg": [
+   "368784e89564a406f63b337624d6d56ebe9bd0227ff4d93a059fed148dfbf71b",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "csv:VU_mri_validation_dataset.csv/time_s": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line0/x": [
+   "6ad839b11adc5c2b414145916a275baabbb28c34eebf0f665dae1e7120ece8cf",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line0/y": [
+   "704ed571d494f7bbdba02bc6b8cb6b7e277d34193c9f1245e6a9280cd4f7d9ed",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line1/x": [
+   "6ad839b11adc5c2b414145916a275baabbb28c34eebf0f665dae1e7120ece8cf",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line1/y": [
+   "1af7cda136ccba71d7e3a6b4b8a809cc02609a7505fb96bcd974d134470ce946",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line2/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line0/x": [
+   "6ad839b11adc5c2b414145916a275baabbb28c34eebf0f665dae1e7120ece8cf",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line0/y": [
+   "263eb75e594de318c2ddbd46547fe85b3fc45a1fb66fedea28ba396d44fcd0bc",
+   "<f8",
+   [
+    97
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line1/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line1/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line0/x": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line0/y": [
+   "368784e89564a406f63b337624d6d56ebe9bd0227ff4d93a059fed148dfbf71b",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line1/x": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line1/y": [
+   "73ff02e8a393e37b62903348242a41dc42ed8fbfd4be1ce4bcdc0ccde0d40aff",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line2/x": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line2/y": [
+   "71be9c55552e85b98221238e4d141b5da5821a78d4bf81c200660496c8b69388",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/patch0/xy": [
+   "0f9ab72ef7b394d8fdf8ad15b382b72b60e66792a06e8b914ec266eb29f4b5ec",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line0/x": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line0/y": [
+   "f394180b492246f54b8e737e306537d6420d5be366ca4fed2c2bc55049c9dd77",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line1/x": [
+   "f280aa3108279966be0fff977c5ee1d8bb3db17cafe836d12fc59d7fd23fdc5f",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line1/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "d453cb194095470d9a4f24d79fe41520ef0fd1f9b6bc45c72441f62eb5aa655f",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "e4fcf6a14a8bcc5043d76dbd6fa1a8e0cace6a2ba61dc39a15720e90d9b27e51",
+   "<f8",
+   [
+    57
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "4eb5dbac180e2daeef254629c252eb85044bb4bf2187c488405ea5968783d714",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "623f1a85b02f8b6f81dce220ef81e4aa9ac933ecf487c7e3a86f595ca56d38af",
+   "<f8",
+   [
+    23,
+    57
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "3dd327f4645dd056cdf9c717c21a395707e37392328d9f5bd20d6c0b5cab0817",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "f2fe088a585138fd681b167f68eaabd4b2d9d01a03900e491c6d431ba65d46a3",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "37d9b92eade7bf58ecffec0c9991ff4d24bc4b3c4f993995dcd8fa74e6a76b5a",
+   "<f8",
+   [
+    41
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "292bfa6b9cc2f317ec0ba957832ad2ba8fcdb4377405c8fb43a96fe8a0093cd8",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "220db7c3adac8ec9245a724c2446673b6c43b17b40f32b7ece66dcb58f4311d0",
+   "<f8",
+   [
+    23,
+    41
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "15335be90e04399f2dc5e42ce59dda945e01a2985853af494d3263d6b79d87c8",
+   "<f8",
+   [
+    23
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "d4328a5fa89d1d58d0c206e8a6489c3ff0dea5e04c55fe910472ec4778c53ba9",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "75751c5a94af0f0b8ec613b131fefb80849a5c52a0650bc4f3559045821676ef",
+   "<f8",
+   [
+    492
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "023b432315149aee347e5fd19fd36bd443882e26af396019345c0c7ea8cc80de",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "bbc340ce6571d011a5c1e522a50daf56fefb90e18c4ff7796e298ecdaec28f7f",
+   "<f8",
+   [
+    5,
+    492
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "c4621307030dabf74687b5db2f300f69a14e30df887609246c8214681f3ff309",
+   "<f8",
+   [
+    5
+   ]
+  ]
+ },
+ "files": {
+  "VU_mri_validation_dataset.csv": "cc00fa927dc7343aa4b3f524dafff068ebc3adf46d0f1ede579d64728bef69a6",
+  "VU_unified_brain_simulation.png": "c576f3d260ae6c3a10627ab1a400d4c32eda84d52160270a200084398c079ccd"
+ },
+ "id": "coupling.VU_unified",
+ "rc": 0,
+ "runtime_s": 3.4,
+ "texts": {
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/axes": {
+   "legend": [
+    "Left MCA Flow (mL/s)",
+    "Right MCA Flow (mL/s)",
+    "Event Onset (t=50s)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "1. Ursino (2010): Regional Cerebral Blood Flow",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Blood Flow [mL/s]"
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#ff0000ff",
+   "label": "Left MCA Flow (mL/s)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#0000ffff",
+   "label": "Right MCA Flow (mL/s)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "Event Onset (t=50s)",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/axes": {
+   "legend": [
+    "Delta V_blood (mL)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "2. Microvascular Blood Volume Expansion (Delta V)",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Volume Shift [mL]"
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#bf00bfff",
+   "label": "Delta V_blood (mL)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "_child1",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/axes": {
+   "legend": [
+    "P1 (Ventricles)",
+    "P2 (Intracranial SAS / ICP)",
+    "P5 (Lumbar SAS)",
+    "Infusion (1.5 mL/min)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "3. Van\u011bk (2015): Craniospinal Pressure Response",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Pressure [mmHg]"
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "P1 (Ventricles)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#dc143cff",
+   "label": "P2 (Intracranial SAS / ICP)",
+   "ls": "-",
+   "lw": 2.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#00008bff",
+   "label": "P5 (Lumbar SAS)",
+   "ls": "--",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax2/patch0/style": {
+   "fc": "#ffa50026",
+   "label": "Infusion (1.5 mL/min)",
+   "type": "Rectangle"
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/axes": {
+   "legend": [
+    "F23 (Cranial -> Cervical Flow)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "4. Craniospinal CSF Displacement (Foramen Magnum)",
+    ""
+   ],
+   "xlabel": "Time [s]",
+   "ylabel": "Flow [mL/s]"
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#008080ff",
+   "label": "F23 (Cranial -> Cervical Flow)",
+   "ls": "-",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#008000ff",
+   "label": "_child1",
+   "ls": ":",
+   "lw": 1.5,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/figure": {
+   "size": [
+    14.0,
+    9.0
+   ],
+   "suptitle": null
+  },
+  "main:fig/00:VU_unified_brain_simulation.png/png_sha256": "c576f3d260ae6c3a10627ab1a400d4c32eda84d52160270a200084398c079ccd",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-05",
+   "first_step": "None",
+   "max_step": "None",
+   "method": "'Radau'",
+   "rtol": "1e-05"
+  }
+ },
+ "variant": "old",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

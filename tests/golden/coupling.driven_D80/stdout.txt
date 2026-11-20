@@ -1,0 +1,17 @@
+ref: synthetic Pa (80): <T> s
+Pa = PICA_l: <T> s
+Pa = PMCA_end_l: <T> s
+Pa = Pd_ml: <T> s
+diag: Pa = PICA_l, Pb const: <T> s
+Pa = PICA_l, Pb = Pv (Ursino): <T> s
+
+Input CSV: ursino_to_vanek_D80.csv   (P in mmHg, F23 in mL/s; ptp = peak-to-peak)
+                          run  pre_Pa_in_mean  late_Pa_in_mean  pre_P2_mean  late_P2_mean  pre_P2_ptp  late_P2_ptp  pre_F23_ptp  late_F23_ptp
+       ref: synthetic Pa (80)          80.000           80.000       10.056         9.972       2.990        2.946        4.144         4.260
+                  Pa = PICA_l          77.604           77.588       10.060         9.971       2.989        2.946        4.143         4.259
+              Pa = PMCA_end_l          72.806           72.759       10.059         9.969       2.987        2.945        4.142         4.256
+                   Pa = Pd_ml          48.121           48.056       10.059         9.970       2.975        2.932        4.125         4.233
+  diag: Pa = PICA_l, Pb const          77.604           77.588       10.051         9.970       0.673        0.649        0.537         0.555
+Pa = PICA_l, Pb = Pv (Ursino)          77.604           77.588       10.063         9.905       1.330        1.426        0.987         0.993
+
+Saved vanek_driven_by_ursino_D80.csv and .png

@@ -1,0 +1,4 @@
+MCA: C_d = 0 at x = -0.0604
+PCA: C_d = 0 at x = -0.0242
+ACA: C_d = 0 at x = -0.0161
+Saved urs_cd_sigmoid.png

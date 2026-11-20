@@ -1,0 +1,59 @@
+
+=== S: <T> s wall time, 2000 samples
+  window 'pre' [5.0, 10.0) s   mean / peak-to-peak
+    Pa         100.00 /  0.000
+    PICA_l      97.30 /  0.000
+    PBA         98.65 /  0.000
+    Pd_ml       58.50 /  0.000
+    Pd_al       58.49 /  0.000
+    Pd_pl       58.58 /  0.000
+    Pic          9.53 /  0.001
+    Pv          14.10 /  0.001
+    q_ica_l     4.746 /  0.000  mL/s
+    q_mca_l     3.748 /  0.000  mL/s
+    ml: min x = +0.0003   (Cd = 0 at x = -0.0604)
+    al: min x = +0.0001   (Cd = 0 at x = -0.0161)
+    pl: min x = +0.0001   (Cd = 0 at x = -0.0242)
+    mr: min x = +0.0003   (Cd = 0 at x = -0.0604)
+    ar: min x = +0.0001   (Cd = 0 at x = -0.0161)
+    pr: min x = +0.0001   (Cd = 0 at x = -0.0242)
+
+=== D80: <T> s wall time, 2000 samples
+  window 'pre' [5.0, 10.0) s   mean / peak-to-peak
+    Pa          80.00 / 20.000
+    PICA_l      77.61 / 18.492
+    PBA         78.79 / 19.238
+    Pd_ml       48.13 /  3.847
+    Pd_al       48.13 /  3.846
+    Pd_pl       48.19 /  3.865
+    Pic          9.62 /  0.755
+    Pv          13.68 /  0.954
+    q_ica_l     4.209 /  2.692  mL/s
+    q_mca_l     3.324 /  2.110  mL/s
+    ml: min x = +0.1014   (Cd = 0 at x = -0.0604)
+    al: min x = +0.1015   (Cd = 0 at x = -0.0161)
+    pl: min x = +0.0968   (Cd = 0 at x = -0.0242)
+    mr: min x = +0.1014   (Cd = 0 at x = -0.0604)
+    ar: min x = +0.1015   (Cd = 0 at x = -0.0161)
+    pr: min x = +0.0968   (Cd = 0 at x = -0.0242)
+
+=== D100: <T> s wall time, 2000 samples
+  window 'pre' [5.0, 10.0) s   mean / peak-to-peak
+    Pa         100.00 / 20.000
+    PICA_l      97.30 / 18.565
+    PBA         98.65 / 19.234
+    Pd_ml       58.49 /  4.723
+    Pd_al       58.45 /  8.238
+    Pd_pl       58.59 /  5.912
+    Pic          9.53 /  0.772
+    Pv          14.10 /  1.032
+    q_ica_l     4.747 /  2.610  mL/s
+    q_mca_l     3.748 /  1.929  mL/s
+    ml: min x = -0.0017   (Cd = 0 at x = -0.0604)
+    al: min x = -0.0020   (Cd = 0 at x = -0.0161)
+    pl: min x = -0.0021   (Cd = 0 at x = -0.0242)
+    mr: min x = -0.0017   (Cd = 0 at x = -0.0604)
+    ar: min x = -0.0020   (Cd = 0 at x = -0.0161)
+    pr: min x = -0.0021   (Cd = 0 at x = -0.0242)
+
+Plot saved as urs_dynamic_pa_smoke.png
