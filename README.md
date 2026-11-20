@@ -101,7 +101,7 @@ $$R_d = k_R \cdot \frac{C_{dn}^2}{V_d^2}$$
 ##### Architectural Characteristics & Native Boundaries ($P_V = 2.0\text{ mmHg}$)
 *   **Single Boundary Interface:** Driven primarily by an arterial boundary ($a$) with baseline compliance $C_{2A0} = 0.20\text{ mL/mmHg}$.
 *   **Compressed Venous Bed:** At native $P_V = 2.0\text{ mmHg}$, the transmural pressure $p_{2V} = P_2 - P_V = 8.0\text{ mmHg}$ compresses venous compliance down to $0.074\text{ mL/mmHg}$.
-*   **Pressure Elevation:** Reaches a high 5-minute peak ICP of **$21.05\text{ mmHg}$ ($286.2\text{ mmH}_2\mathrm{O}$)** (and up to $24.43\text{ mmHg} / 332.3\text{ mmH}_2\mathrm{O}$ at full steady state), yielding a calculated outflow resistance $R_{\mathrm{out}} \approx 7.38\text{ mmHg/(mL/min)}$.
+*   **Pressure Elevation:** Reaches a high 5-minute peak ICP of **$24.32\text{ mmHg}$ ($330.8\text{ mmH}_2\mathrm{O}$)**, yielding a calculated outflow resistance $R_{\mathrm{out}} \approx 9.51\text{ mmHg/(mL/min)}$. These values depend on the solver tolerance (see the caveat in Part 4); the analytic steady state is $23.64\text{ mmHg}$.
 
 --------------------------------------------------------------------------------
 
@@ -123,25 +123,29 @@ $$\frac{dP_2}{dt} = \frac{dV_2/dt + C_{2a}\frac{dP_a}{dt} + C_{2b}\frac{dP_b}{dt
 The compressible venous cushion increases the overall system time constant ($\tau = R \cdot C$), preventing artificial pressure spikes during fluid infusion.
 
 ##### Lumbar Infusion Test Results ($P_b = 10.0\text{ mmHg}$)
-*   **5-Minute Peak ICP ($P_2$):** Reaches **$17.49\text{ mmHg}$ ($237.9\text{ mmH}_2\mathrm{O}$)**.
-*   **Damping Effect:** Shows a ~$48.3\text{ mmH}_2\mathrm{O}$ lower pressure elevation after 5 minutes (and up to ~$104\text{ mmH}_2\text{O}$ lower vs. Štěpáník's steady-state peak) due to venous cushioning.
+*   **5-Minute Peak ICP ($P_2$):** Reaches **$16.76\text{ mmHg}$ ($227.9\text{ mmH}_2\mathrm{O}$)**; the analytic steady state $23.64\text{ mmHg}$ is reached after about 15 min of infusion.
+*   **Damping Effect:** Shows a ~$102.9\text{ mmH}_2\mathrm{O}$ lower pressure than Štěpáník after 5 minutes due to venous cushioning (part of this gap is Štěpáník's solver error, see Part 4).
 
 --------------------------------------------------------------------------------
 
 #### Part 4: Quantitative Side-by-Side Comparison
 ##### Lumbar Infusion Test Metrics ($1.5\text{ mL/min}$ for 300 seconds, Native Boundaries)
+Numbers from `python run.py exp compare_all_models` (re-run 20 Nov 2026); "5-min" values are the mean over 300–350 s, i.e. 4–4.8 min after the infusion starts at 60 s.
+
+**Caveat (Štěpáník):** its values depend on the solver tolerance of `run_stepanik_simulation()` (RK45, `RelTol` = 1e-3). With `RelTol` = 1e-6 the 5-min ICP is $20.38\text{ mmHg}$ instead of $24.32$, and during a longer infusion the default run overshoots the analytic plateau ($36\text{ mmHg}$ after 15 min instead of $23.64$). Vaněk's model (Radau, `rtol` = 1e-5) reaches the plateau.
+
 | Metric / Parameter | Štěpáník (2009) | Vaněk (2015) | Difference / Biophysical Impact |
 | ------ | ------ | ------ | ------ |
 | **Intracranial Boundary** | Single Arterial ($a$) | Dual Arterial ($a$) + Venous ($b$) | Venous bed added for vascular cushioning |
 | **Native Boundary Pressure** | $P_V = 2.0\text{ mmHg}$ | $P_b = 10.0\text{ mmHg}$ | Native baseline venous drainage pressure |
 | **Max Arterial Compliance ($C_{2a0}$)** | $0.20\text{ mL/mmHg}$ | $0.02\text{ mL/mmHg}$ | 10x reduction reflecting arterial stiffness |
 | **Max Venous Compliance ($C_{2b0}$)** | Unformalized ($0.60$) | $0.60\text{ mL/mmHg}$ | Handles 85–90% of intracranial volume buffering |
-| **Baseline ICP ($P_{2,0}$)** | $9.98\text{ mmHg}$ | $9.96\text{ mmHg}$ | Normal baseline resting pressure |
-| **5-Min Peak Infusion ICP ($P_{2,\text{inf}}$)** | **$21.05\text{ mmHg}$** | **$17.49\text{ mmHg}$** | **$3.56\text{ mmHg}$ lower in Vaněk** |
-| **5-Min Peak ICP in $\text{mmH}_2\mathrm{O}$** | **$286.2\text{ mmH}_2\mathrm{O}$** | **$237.9\text{ mmH}_2\mathrm{O}$** | **$48.3\text{ mmH}_2\mathrm{O}$ lower in Vaněk** |
-| **Full Steady-State Peak ICP** | **$24.43\text{ mmHg}$ ($332.3\text{ mmH}_2\mathrm{O}$)** | **$23.40\text{ mmHg}$ ($318.2\text{ mmH}_2\text{O}$)** | Štěpáník climbs much faster to peak |
-| **ICP Elevation ($\Delta P$)** | $11.07\text{ mmHg}$ | $7.53\text{ mmHg}$ | Vaněk dampens transient pressure rise |
-| **Apparent $R_{\text{out}}$ at $t=5\text{ min}$** | $7.38\text{ mmHg/(mL/min)}$ | $5.02\text{ mmHg/(mL/min)}$ | Longer time constant delays plateau in Vaněk |
+| **Baseline ICP ($P_{2,0}$)** | $10.05\text{ mmHg}$ | $9.96\text{ mmHg}$ | Normal baseline resting pressure |
+| **5-Min Peak Infusion ICP ($P_{2,\text{inf}}$)** | **$24.32\text{ mmHg}$** | **$16.76\text{ mmHg}$** | **$7.56\text{ mmHg}$ lower in Vaněk** |
+| **5-Min Peak ICP in $\text{mmH}_2\mathrm{O}$** | **$330.8\text{ mmH}_2\mathrm{O}$** | **$227.9\text{ mmH}_2\mathrm{O}$** | **$102.9\text{ mmH}_2\mathrm{O}$ lower in Vaněk** |
+| **Full Steady-State ICP (analytic)** | **$23.64\text{ mmHg}$ ($321.5\text{ mmH}_2\mathrm{O}$)**, not reached by the simulation (see caveat) | **$23.64\text{ mmHg}$ ($321.5\text{ mmH}_2\mathrm{O}$)**, reached after about 15 min | Same linear resorption in both: $P_{eq} + I_{inf}/\alpha = 10 + 1.5/0.11$ |
+| **ICP Elevation ($\Delta P$)** | $14.27\text{ mmHg}$ | $6.80\text{ mmHg}$ | Vaněk dampens transient pressure rise |
+| **Apparent $R_{\text{out}}$ at $t=5\text{ min}$** | $9.51\text{ mmHg/(mL/min)}$ | $4.53\text{ mmHg/(mL/min)}$ | Longer time constant delays plateau in Vaněk |
 
 --------------------------------------------------------------------------------
 
