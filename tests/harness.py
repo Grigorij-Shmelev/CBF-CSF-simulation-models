@@ -2,7 +2,8 @@
 
 Each command (tests/commands.py) runs in its own temporary copy of the code, so committed outputs are never
 overwritten, with the matplotlib Agg backend and the capture hook (tests/hook/) on PYTHONPATH. One run gives:
-  stdout.txt, stderr.txt   normalized: run root -> <ROOT>, output folder -> <OUT>, wall-clock times masked
+  stdout.txt, stderr.txt   normalized: run root -> <ROOT>, output folder -> <OUT>, wall-clock times masked;
+                           in stderr also the folder of the installed packages -> <SITE>
   manifest.json            exit code, SHA-256 of every captured array, texts (figure labels, solver messages),
                            SHA-256 of every file the command wrote
   arrays.npz               the arrays themselves (kept locally only: used to report differences)
@@ -78,6 +79,7 @@ def normalize(text, root, masks=()):
 
 def normalize_err(text, root):
     text = normalize(text, root)
+    text = re.sub(r"[^\s\"']*/(?:site|dist)-packages/", "<SITE>/", text)  # installed packages: any venv location
     return re.sub(r"<ROOT>/[^\s:\"]+\.py(\", line |:)\d+", r"<SRC>\1<L>", text)   # moved code: other path/line
 
 

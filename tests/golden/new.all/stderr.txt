@@ -1,80 +1,80 @@
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:357: RuntimeWarning: overflow encountered in multiply
   h_new = (y[ind] + new_factor * y_scale[ind]) - y[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:326: RuntimeWarning: overflow encountered in multiply
   h = (y + factor * y_scale) - y
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
   new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
-/home/grg/Documents/baka/mat_model/thesis_env/lib/python3.14/site-packages/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
+<SITE>/scipy/integrate/_ivp/common.py:378: RuntimeWarning: overflow encountered in multiply
   factor[max_diff < NUM_JAC_DIFF_SMALL * scale] *= NUM_JAC_FACTOR_INCREASE
