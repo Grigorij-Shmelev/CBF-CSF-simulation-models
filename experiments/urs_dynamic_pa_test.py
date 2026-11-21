@@ -5,13 +5,13 @@ Feeds a time-varying arterial pressure Pa(t) into Ursino & Giannessi (2010).
 ursino_2010_model.py is NOT modified: Pa(t) is passed through the existing
 `Pa` keyword of derivatives() and get_flow_dict() at every time point.
 
-Place in mat_models/ and run from there (like the other urs_* scripts):
-    python urs_dynamic_pa_test.py            -> 10 s smoke test (normocapnia)
-    python urs_dynamic_pa_test.py full       -> 400 s run, hypercapnia at t = 50 s
-    python urs_dynamic_pa_test.py check      -> verify aux_pressures() (D2.3 Step 3)
-    python urs_dynamic_pa_test.py table      -> node-pressure table, 1550 s runs (D2.3 Step 4)
-    python urs_dynamic_pa_test.py profile    -> pressure-profile plot from the table (Step 5)
-    python urs_dynamic_pa_test.py export     -> CSV time series for Vanek, 400 s runs (Step 6)
+Run from the repository root:
+    python run.py exp urs_dynamic_pa_test            -> 10 s smoke test (normocapnia)
+    python run.py exp urs_dynamic_pa_test full       -> 400 s run, hypercapnia at t = 50 s
+    python run.py exp urs_dynamic_pa_test check      -> verify aux_pressures() (D2.3 Step 3); also python run.py ursino --aux-check
+    python run.py exp urs_dynamic_pa_test table      -> node-pressure table, 1550 s runs (D2.3 Step 4)
+    python run.py exp urs_dynamic_pa_test profile    -> pressure-profile plot from the table (Step 5)
+    python run.py exp urs_dynamic_pa_test export     -> CSV time series for Vanek, 400 s runs (Step 6)
 
 Scenarios
     S     static Pa = 100 mmHg                    (current behaviour)
@@ -332,7 +332,7 @@ def plot_profile(table_csv="urs_pressure_table.csv"):
     try:
         df = pd.read_csv(out_path("ursino", table_csv))
     except FileNotFoundError:
-        sys.exit(f"{table_csv} not found -> run 'python urs_dynamic_pa_test.py table' first")
+        sys.exit(f"{table_csv} not found -> run 'python run.py exp urs_dynamic_pa_test table' first")
     pvs = Ursino2010Model().Pvs                      # constant input, not in the table
 
     def profile(scen, col):

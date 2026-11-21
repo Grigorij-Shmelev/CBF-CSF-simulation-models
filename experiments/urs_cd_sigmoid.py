@@ -4,7 +4,7 @@ urs_cd_sigmoid.py -- Ursino's pial compliance sigmoid C_d(x)/C_dn for the three 
 Uses the same formula as Ursino2010Model.derivatives():
     C_d = C_dn * ((1 - sat) + (1 + sat) * u) / (1 + u),  u = exp(x / k_C),  k_C = C_dn * sat / 2,
     sat = sat2 (x > 0) or sat1 (x < 0).
-Prints the x at which C_d = 0 and saves urs_cd_sigmoid.png. Run from mat_models/.
+Prints the x at which C_d = 0 and saves urs_cd_sigmoid.png. Run from the repository root: python run.py exp urs_cd_sigmoid.
 """
 import numpy as np
 import matplotlib

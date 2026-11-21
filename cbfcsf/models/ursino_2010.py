@@ -11,8 +11,8 @@ model of human cerebral hemodynamics, intracranial pressure (ICP) dynamics,
 cerebrovascular autoregulation, CO2 reactivity, the Circle of Willis, and 
 distal cortical anastomoses.
 
-Usage:
-    python ursino_2010_model.py
+Usage (from the repository root):
+    python run.py ursino --baseline
 """
 
 import numpy as np

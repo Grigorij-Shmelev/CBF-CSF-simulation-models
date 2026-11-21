@@ -13,8 +13,8 @@ sub-compartment (b - mozkové žíly) alongside arterial pulsations (a),
 non-linear exponential compliances, pressure-dependent variable resorption,
 and multi-compartmental spinal pathways (Cervical, Thoracic, Lumbar).
 
-Usage:
-    python vanek_2015_model.py
+Usage (from the repository root):
+    python run.py vanek --baseline
 """
 
 import numpy as np

@@ -5,7 +5,7 @@ Test: Pb is held at 14 mmHg (control), or ramped from 14 to 20 mmHg between t = 
 Pa is constant (97.3 mmHg), all other inputs as in run_vanek_simulation. vanek_2015_model.py is NOT modified.
 Prints the mean of P2 over 20 s windows (whole 0.25 Hz respiratory cycles) and saves vanek_pb_step_test.png.
 
-Run from mat_models/:   python vanek_pb_step_test.py        (about 1-2 min)
+Run from the repository root:   python run.py exp vanek_pb_step_test   (about 1-2 min)
 """
 import numpy as np
 import matplotlib

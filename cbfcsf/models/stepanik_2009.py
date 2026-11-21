@@ -19,8 +19,8 @@ The model incorporates non-linear exponential compliances, pressure-dependent
 linear resorption into dural veins, and coupling to cardiac (arterial/venous) 
 and respiratory (epidural) driving pressure pulsations.
 
-Usage:
-    python stepanik_csf_simulation.py
+Usage (from the repository root):
+    python run.py stepanik --baseline
 """
 
 import numpy as np

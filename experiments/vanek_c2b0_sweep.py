@@ -7,7 +7,7 @@ For each C2b0 value:
   (2) cardiac pulse path: P2 peak-to-peak (40-60 s) when only Pa pulses (80 +- 10, Pb = 10) and when only
       Pb pulses (10 +- 1.5, Pa = 80); respiratory inputs constant.
 vanek_2015_model.py is NOT modified (C2b0 is set on the instance). Saves vanek_c2b0_sweep.png.
-Run from mat_models/  (about 1-2 min).
+Run from the repository root: python run.py exp vanek_c2b0_sweep  (about 1-2 min).
 """
 import numpy as np
 import matplotlib

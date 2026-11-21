@@ -2,14 +2,14 @@
 vanek_driven_by_ursino.py  --  Task D3.3 (A5): first file-based, one-way coupling
 
 Ursino -> CSV -> Vanek. The CSV comes from:
-    python urs_dynamic_pa_test.py export     (-> ursino_to_vanek_D100.csv / _D80.csv)
+    python run.py exp urs_dynamic_pa_test export     (-> ursino_to_vanek_D100.csv / _D80.csv)
 
 vanek_2015_model.py is NOT modified: only the 'Pa' (and optionally 'Pb')
 interpolators passed to Vanek2015Model.derivatives() are replaced.
 
-Usage (from mat_models/):
-    python vanek_driven_by_ursino.py            -> uses ursino_to_vanek_D100.csv
-    python vanek_driven_by_ursino.py D80        -> uses ursino_to_vanek_D80.csv
+Usage (from the repository root):
+    python run.py exp vanek_driven_by_ursino            -> uses ursino_to_vanek_D100.csv
+    python run.py exp vanek_driven_by_ursino D80        -> uses ursino_to_vanek_D80.csv
 """
 import sys
 import time as clock
@@ -77,7 +77,7 @@ def main():
     try:
         df = pd.read_csv(out_path("coupling", CSV))
     except FileNotFoundError:
-        sys.exit(f"{CSV} not found -> run 'python urs_dynamic_pa_test.py export' first")
+        sys.exit(f"{CSV} not found -> run 'python run.py exp urs_dynamic_pa_test export' first")
     model = Vanek2015Model()
     results, rows = {}, []
     for name, run in RUNS.items():

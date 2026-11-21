@@ -1,16 +1,17 @@
 """Checks of the new model (spec 7.1-7.16) and its command line.
 
-Usage (from mat_models/):
-    python new_model.py                 # tests of spec 7.1, 7.3, cross-checks of 7.8 and 7.15, figures to docs/figures/ (2 min)
-    python new_model.py --calibrate     # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
-    python new_model.py --sensitivity   # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
-    python new_model.py --params        # + parameter sensitivity SA of spec 7.8                         (about 2 min)
-    python new_model.py --options       # + venous squeeze and sigmoid width of spec 7.10               (about 2 min)
-    python new_model.py --fit           # + LIT fitting tool on synthetic data of spec 7.10             (a few min, 8 processes)
-    python new_model.py --fit-mismatch  # only: fit when the data come from a modified model, spec 7.13 (a few min)
-    python new_model.py --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900
+Usage (from the repository root; the old form `python new_model.py [flags]` from mat_models/ takes the same flags):
+    python run.py new                   # tests of spec 7.1, 7.3, cross-checks of 7.8 and 7.15, figures to outputs/new/ (2 min)
+    python run.py new --calibrate       # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
+    python run.py new --sensitivity     # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
+    python run.py new --params          # + parameter sensitivity SA of spec 7.8                         (about 2 min)
+    python run.py new --options         # + venous squeeze and sigmoid width of spec 7.10               (about 2 min)
+    python run.py new --fit             # + LIT fitting tool on synthetic data of spec 7.10             (a few min, 8 processes)
+    python run.py new --fit-mismatch    # only: fit when the data come from a modified model, spec 7.13 (a few min)
+    python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900
                                         # fit a measured LIT (CSV header, columns: time_s, pressure_mmHg)
-    python new_model.py --all
+    python run.py new --rest --co2 --lit  # only these parts of the default run (python run.py new --help)
+    python run.py new --all
 """
 import os
 

@@ -10,8 +10,8 @@ Protocol matching run_vanek_lumbar_infusion.py:
   - Infusion Phase: t = 60 to 360s (1.5 mL/min = 0.025 mL/s into Lumbar SAS / compartment 5)
   - Recovery Phase: t = 360 to 500s
 
-Usage:
-    python stepanik_run_lumbar_infusion.py
+Usage (from the repository root):
+    python run.py stepanik --lit
 """
 
 import numpy as np
