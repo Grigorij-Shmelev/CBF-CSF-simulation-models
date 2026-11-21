@@ -3,6 +3,10 @@
 
 *Prepared for Bachelor Thesis*
 
+**The new model** (one model built from the physics of Ursino and Vaněk; this README covers the three source models) is described
+in full in **[NEW_MODEL.md](NEW_MODEL.md)**: structure and diagram, variables, equations, parameters, results of the CO2, LIT and
+stroke scenarios, comparison with the source codes, limits, and how to run it.
+
 --------------------------------------------------------------------------------
 
 #### How to run (layout since 20 Nov 2026)

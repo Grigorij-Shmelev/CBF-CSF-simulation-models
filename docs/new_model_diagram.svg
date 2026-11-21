@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="752" viewBox="0 0 800 752" font-family="DejaVu Sans, Verdana, Helvetica, Arial, sans-serif">
+<defs><marker id="arrC" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1f5fa8"/></marker><marker id="arrB" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#222222"/></marker></defs>
+<rect width="800" height="752" fill="white"/>
+<rect x="86" y="18" width="574" height="470" rx="26" fill="#f4f7fb" stroke="#555" stroke-width="3.5"/>
+<text x="648" y="476" font-size="11" text-anchor="end" fill="#666666" font-weight="normal" font-style="italic"><tspan>rigid skull: V</tspan><tspan dy="4" font-size="7.9">blood</tspan><tspan dy="-4"> + V</tspan><tspan dy="4" font-size="7.9">1</tspan><tspan dy="-4"> + V</tspan><tspan dy="4" font-size="7.9">2</tspan><tspan dy="-4"> + V</tspan><tspan dy="4" font-size="7.9">brain</tspan><tspan dy="-4"> = const</tspan></text>
+<text x="14" y="115" font-size="14" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="10.1">a</tspan></text>
+<line x1="44" y1="110" x2="160" y2="110" stroke="#222222" stroke-width="2.2"/>
+<polygon points="57,103 66,110 75,103 75,117 66,110 57,117" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="66" y="97" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">ICA,L</tspan></text>
+<circle cx="160" cy="110" r="3.6" fill="#222222"/>
+<text x="170" y="102" font-size="12" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="8.6">N,L</tspan></text>
+<polyline points="160,110 160,66 515,66" fill="none" stroke="#222222" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="160,110 160,154 515,154" fill="none" stroke="#222222" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="206,59 215,66 224,59 224,73 215,66 206,73" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="215" y="53" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">MCA,L</tspan></text>
+<polygon points="281,59 290,66 299,59 299,73 290,66 281,73" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="290" y="53" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">mL</tspan><tspan dy="-4">/2</tspan></text>
+<ellipse cx="360" cy="66" rx="24" ry="11" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="360" y="70" font-size="11" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>mL</tspan></text>
+<text x="360" y="49" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">mL</tspan></text>
+<text x="360" y="94" font-size="12" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">mL</tspan><tspan dy="-4">(x)</tspan></text>
+<polygon points="443,59 452,66 461,59 461,73 452,66 443,73" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="452" y="53" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">mL</tspan><tspan dy="-4">/2</tspan></text>
+<polygon points="206,147 215,154 224,147 224,161 215,154 206,161" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="215" y="178" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rest</tspan></text>
+<polygon points="281,147 290,154 299,147 299,161 290,154 281,161" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="290" y="178" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rL</tspan><tspan dy="-4">/2</tspan></text>
+<ellipse cx="360" cy="154" rx="24" ry="11" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="360" y="158" font-size="11" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>rL</tspan></text>
+<text x="360" y="182" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">rL</tspan></text>
+<text x="360" y="137" font-size="12" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">rL</tspan><tspan dy="-4">(x)</tspan></text>
+<polygon points="443,147 452,154 461,147 461,161 452,154 443,161" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="452" y="178" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rL</tspan><tspan dy="-4">/2</tspan></text>
+<line x1="405" y1="66" x2="405" y2="154" stroke="#222222" stroke-width="2.2"/>
+<circle cx="405" cy="66" r="2.6" fill="#222222"/>
+<circle cx="405" cy="154" r="2.6" fill="#222222"/>
+<polygon points="398,101.0 405,110.0 398,119.0 412,119.0 405,110.0 412,101.0" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="417" y="115.0" font-size="13" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">c</tspan></text>
+<text x="14" y="305" font-size="14" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="10.1">a</tspan></text>
+<line x1="44" y1="300" x2="160" y2="300" stroke="#222222" stroke-width="2.2"/>
+<polygon points="57,293 66,300 75,293 75,307 66,300 57,307" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="66" y="287" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">ICA,R</tspan></text>
+<circle cx="160" cy="300" r="3.6" fill="#222222"/>
+<text x="170" y="317" font-size="12" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="8.6">N,R</tspan></text>
+<polyline points="160,300 160,344 515,344" fill="none" stroke="#222222" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="160,300 160,256 515,256" fill="none" stroke="#222222" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="206,337 215,344 224,337 224,351 215,344 206,351" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="215" y="368" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">MCA,R</tspan></text>
+<polygon points="281,337 290,344 299,337 299,351 290,344 281,351" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="290" y="368" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">mR</tspan><tspan dy="-4">/2</tspan></text>
+<ellipse cx="360" cy="344" rx="24" ry="11" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="360" y="348" font-size="11" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>mR</tspan></text>
+<text x="360" y="372" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">mR</tspan></text>
+<text x="360" y="327" font-size="12" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">mR</tspan><tspan dy="-4">(x)</tspan></text>
+<polygon points="443,337 452,344 461,337 461,351 452,344 443,351" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="452" y="368" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">mR</tspan><tspan dy="-4">/2</tspan></text>
+<polygon points="206,249 215,256 224,249 224,263 215,256 206,263" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="215" y="243" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rest</tspan></text>
+<polygon points="281,249 290,256 299,249 299,263 290,256 281,263" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="290" y="243" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rR</tspan><tspan dy="-4">/2</tspan></text>
+<ellipse cx="360" cy="256" rx="24" ry="11" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="360" y="260" font-size="11" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>rR</tspan></text>
+<text x="360" y="239" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">rR</tspan></text>
+<text x="360" y="284" font-size="12" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">rR</tspan><tspan dy="-4">(x)</tspan></text>
+<polygon points="443,249 452,256 461,249 461,263 452,256 443,263" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="452" y="243" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">rR</tspan><tspan dy="-4">/2</tspan></text>
+<line x1="405" y1="344" x2="405" y2="256" stroke="#222222" stroke-width="2.2"/>
+<circle cx="405" cy="344" r="2.6" fill="#222222"/>
+<circle cx="405" cy="256" r="2.6" fill="#222222"/>
+<polygon points="398,291.0 405,300.0 398,309.0 412,309.0 405,300.0 412,291.0" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="417" y="305.0" font-size="13" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">c</tspan></text>
+<line x1="160" y1="110" x2="160" y2="300" stroke="#222222" stroke-width="2.2"/>
+<polygon points="153,196 160,205 153,214 167,214 160,205 167,196" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="148" y="210" font-size="13" text-anchor="end" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">com</tspan></text>
+<line x1="515" y1="66" x2="515" y2="344" stroke="#222222" stroke-width="2.2"/>
+<circle cx="515" cy="205" r="3.6" fill="#222222"/>
+<text x="507" y="196" font-size="13" text-anchor="end" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">c</tspan></text>
+<line x1="515" y1="205" x2="735" y2="205" stroke="#222222" stroke-width="2.2"/>
+<polygon points="539,198 548,205 557,198 557,212 548,205 539,212" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="548" y="192" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">pv</tspan></text>
+<ellipse cx="600" cy="205" rx="24" ry="11" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="600" y="209" font-size="11" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>v</tspan></text>
+<text x="600" y="188" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="9.4">v</tspan></text>
+<text x="600" y="233" font-size="12" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">v</tspan></text>
+<polygon points="633,198 642,205 651,198 651,212 642,205 633,212" fill="#c8c8c8" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="642" y="192" font-size="13" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="9.4">vs</tspan></text>
+<line x1="735" y1="150" x2="735" y2="440" stroke="#555" stroke-width="6"/>
+<text x="735" y="140" font-size="14" text-anchor="middle" fill="#222222" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="10.1">vs</tspan></text>
+<text x="742" y="460" font-size="11" text-anchor="middle" fill="#666666" font-weight="normal" font-style="normal"><tspan>dural</tspan></text>
+<text x="742" y="474" font-size="11" text-anchor="middle" fill="#666666" font-weight="normal" font-style="normal"><tspan>sinus</tspan></text>
+<text x="530" y="52" font-size="13" text-anchor="start" fill="#1f5fa8" font-weight="bold" font-style="normal"><tspan>2  cranial SAS</tspan></text>
+<text x="530" y="70" font-size="13" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>V</tspan><tspan dy="4" font-size="9.4">2</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="9.4">2</tspan><tspan dy="-4"> = ICP</tspan></text>
+<text x="530" y="96" font-size="12" text-anchor="start" fill="#666666" font-weight="normal" font-style="italic"><tspan>brain: constant</tspan></text>
+<text x="530" y="112" font-size="12" text-anchor="start" fill="#666666" font-weight="normal" font-style="italic"><tspan>volume</tspan></text>
+<rect x="112" y="392" width="110" height="52" rx="10" fill="#dce8f6" stroke="#1f5fa8" stroke-width="2"/>
+<text x="167" y="413" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="bold" font-style="normal"><tspan>1  ventricles</tspan></text>
+<text x="167" y="433" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>V</tspan><tspan dy="4" font-size="8.6">1</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="8.6">1</tspan></text>
+<line x1="140" y1="478" x2="140" y2="447" stroke="#1f5fa8" stroke-width="2" marker-end="url(#arrC)"/>
+<text x="148" y="474" font-size="12" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>S</tspan><tspan dy="4" font-size="8.6">1</tspan></text>
+<line x1="222" y1="418" x2="282" y2="418" stroke="#1f5fa8" stroke-width="2.2"/>
+<polygon points="243,411 252,418 261,411 261,425 252,418 243,425" fill="white" stroke="#1f5fa8" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="252" y="406" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="8.6">12</tspan></text>
+<circle cx="286" cy="418" r="4" fill="white" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="294" y="422" font-size="12" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="8.6">2</tspan></text>
+<circle cx="560" cy="418" r="4" fill="white" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="560" y="405" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="8.6">2</tspan></text>
+<line x1="564" y1="418" x2="729" y2="418" stroke="#1f5fa8" stroke-width="2" marker-end="url(#arrC)"/>
+<text x="600" y="440" font-size="11" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>F</tspan><tspan dy="4" font-size="7.9">out</tspan><tspan dy="-4"> = α(P</tspan><tspan dy="4" font-size="7.9">2</tspan><tspan dy="-4"> − P</tspan><tspan dy="4" font-size="7.9">vs</tspan><tspan dy="-4">)</tspan></text>
+<text x="600" y="455" font-size="11" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>only if P</tspan><tspan dy="4" font-size="7.9">2</tspan><tspan dy="-4"> &gt; P</tspan><tspan dy="4" font-size="7.9">vs</tspan></text>
+<circle cx="370" cy="400" r="4" fill="white" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="378" y="395" font-size="12" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>P</tspan><tspan dy="4" font-size="8.6">2</tspan></text>
+<polyline points="370,404 370,560 402,560" fill="none" stroke="#1f5fa8" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="363,443 370,452 363,461 377,461 370,452 377,443" fill="white" stroke="#1f5fa8" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="382" y="457" font-size="12" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="8.6">23</tspan></text>
+<text x="380" y="506" font-size="10" text-anchor="start" fill="#666666" font-weight="normal" font-style="italic"><tspan>foramen magnum</tspan></text>
+<line x1="402" y1="560" x2="690" y2="560" stroke="#1f5fa8" stroke-width="2.2"/>
+<ellipse cx="430" cy="560" rx="24" ry="11" fill="white" stroke="#1f5fa8" stroke-width="2"/>
+<text x="430" y="564" font-size="11" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>3</tspan></text>
+<text x="430" y="538" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>cervical, P</tspan><tspan dy="4" font-size="8.6">3</tspan></text>
+<text x="430" y="590" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">3C</tspan><tspan dy="-4"> | P</tspan><tspan dy="4" font-size="8.6">C</tspan></text>
+<polygon points="476,553 485,560 494,553 494,567 485,560 476,567" fill="white" stroke="#1f5fa8" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="485" y="578" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="8.6">34</tspan></text>
+<ellipse cx="540" cy="560" rx="24" ry="11" fill="white" stroke="#1f5fa8" stroke-width="2"/>
+<text x="540" y="564" font-size="11" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>4</tspan></text>
+<text x="540" y="538" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>thoracic, P</tspan><tspan dy="4" font-size="8.6">4</tspan></text>
+<text x="540" y="590" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">4T</tspan><tspan dy="-4"> | P</tspan><tspan dy="4" font-size="8.6">T</tspan></text>
+<polygon points="586,553 595,560 604,553 604,567 595,560 586,567" fill="white" stroke="#1f5fa8" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="595" y="578" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>R</tspan><tspan dy="4" font-size="8.6">45</tspan></text>
+<ellipse cx="650" cy="560" rx="24" ry="11" fill="white" stroke="#1f5fa8" stroke-width="2"/>
+<text x="650" y="564" font-size="11" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>5</tspan></text>
+<text x="650" y="538" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>lumbar, P</tspan><tspan dy="4" font-size="8.6">5</tspan></text>
+<text x="650" y="590" font-size="12" text-anchor="middle" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>C</tspan><tspan dy="4" font-size="8.6">5L</tspan><tspan dy="-4"> | P</tspan><tspan dy="4" font-size="8.6">L</tspan></text>
+<line x1="760" y1="560" x2="678" y2="560" stroke="#1f5fa8" stroke-width="2" marker-end="url(#arrC)"/>
+<text x="752" y="552" font-size="12" text-anchor="end" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>I</tspan><tspan dy="4" font-size="8.6">5</tspan></text>
+<text x="762" y="590" font-size="11" text-anchor="end" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>LIT</tspan></text>
+<text x="540" y="616" font-size="11" text-anchor="middle" fill="#666666" font-weight="normal" font-style="italic"><tspan>spinal canal: walls to the epidural pressures P</tspan><tspan dy="4" font-size="7.9">C</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.9">T</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.9">L</tspan></text>
+<line x1="10" y1="632" x2="790" y2="632" stroke="#bbb" stroke-width="1"/>
+<polygon points="17,641 26,648 35,641 35,655 26,648 17,655" fill="white" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="44" y="653" font-size="11" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>hydraulic resistance R</tspan></text>
+<ellipse cx="26" cy="672" rx="15" ry="7" fill="white" stroke="#222222" stroke-width="2"/>
+<text x="44" y="677" font-size="11" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>compliance (bulge): one volume state (blood) or pressure state (spine)</tspan></text>
+<circle cx="26" cy="696" r="3.6" fill="#222222"/>
+<text x="44" y="701" font-size="11" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>junction without bulge: algebraic node (P</tspan><tspan dy="4" font-size="7.9">N,L</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.9">N,R</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.9">c</tspan><tspan dy="-4">)</tspan></text>
+<polygon points="461,641 470,648 479,641 479,655 470,648 461,655" fill="#c8c8c8" stroke="#222222" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="488" y="653" font-size="11" text-anchor="start" fill="#222222" font-weight="normal" font-style="normal"><tspan>collapsible outlet (Starling resistor)</tspan></text>
+<line x1="458" y1="672" x2="482" y2="672" stroke="#1f5fa8" stroke-width="2" marker-end="url(#arrC)"/>
+<text x="488" y="677" font-size="11" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>one-way CSF flow: production, resorption, infusion</tspan></text>
+<circle cx="470" cy="696" r="4" fill="white" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="488" y="701" font-size="11" text-anchor="start" fill="#1f5fa8" font-weight="normal" font-style="normal"><tspan>connection to the cranial SAS (pressure P</tspan><tspan dy="4" font-size="7.9">2</tspan><tspan dy="-4">)</tspan></text>
+<text x="10" y="724" font-size="10.5" text-anchor="start" fill="#666666" font-weight="normal" font-style="normal"><tspan>k = mL, rL, mR, rR (m = MCA territory, r = rest of brain; L, R = side). All blood walls face the cranial SAS: their outside pressure is P</tspan><tspan dy="4" font-size="7.6">2</tspan><tspan dy="-4">.</tspan></text>
+<text x="10" y="740" font-size="10.5" text-anchor="start" fill="#666666" font-weight="normal" font-style="normal"><tspan>Variable elements: C</tspan><tspan dy="4" font-size="7.6">k</tspan><tspan dy="-4">, R</tspan><tspan dy="4" font-size="7.6">k</tspan><tspan dy="-4"> (control x = x</tspan><tspan dy="4" font-size="7.6">CO2</tspan><tspan dy="-4"> − x</tspan><tspan dy="4" font-size="7.6">aut</tspan><tspan dy="-4">). Inputs: P</tspan><tspan dy="4" font-size="7.6">a</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.6">aCO2</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.6">vs</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.6">C</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.6">T</tspan><tspan dy="-4">, P</tspan><tspan dy="4" font-size="7.6">L</tspan><tspan dy="-4">, I. Occlusion multiplies R</tspan><tspan dy="4" font-size="7.6">MCA</tspan><tspan dy="-4"> or R</tspan><tspan dy="4" font-size="7.6">ICA</tspan><tspan dy="-4">.</tspan></text>
+</svg>
