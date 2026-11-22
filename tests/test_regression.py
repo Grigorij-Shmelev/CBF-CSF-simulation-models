@@ -25,7 +25,8 @@ from commands import COMMANDS  # noqa: E402
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--variant", choices=("new", "old", "both"), default="new",
-                    help="new = command of the new layout (old if a command has no new form yet)")
+                    help="new = command of the new layout (old if a command has no new form yet); old = the old "
+                    "command (new if a command was added after the refactor and has no old form)")
     ap.add_argument("--only", help="comma-separated command ids")
     ap.add_argument("--affected", metavar="REV", help="only commands whose dependencies changed since REV")
     ap.add_argument("--skip", help="comma-separated command ids to leave out")
@@ -55,7 +56,7 @@ def main():
     variants = {}
     for c in cmds:
         vs = ["old", "new"] if a.variant == "both" else [a.variant]
-        variants[c.id] = [v for v in vs if v in c.argv] or ["old"]
+        variants[c.id] = [v for v in vs if v in c.argv] or [v for v in ("old", "new") if v in c.argv][:1]
     base = Path(tempfile.mkdtemp(prefix="regr_", dir=a.tmp))
     src = harness.snapshot_source(base)
     print(f"{len(cmds)} commands: {', '.join(c.id for c in cmds)}")
