@@ -1,0 +1,136 @@
+=== End-tidal-shaped 5 % CO2 input (spec 7.17). Opt-in: not part of the default run, not part of --all ===
+PLACEHOLDER input shape (from no source): first-order lag of the inhaled-gas schedule, tau_on 20 s, tau_off 20 s,
+plateau 47.5 mmHg (P0 40 + dP 7.5; the student's assumption for 5 % CO2). End-tidal -> arterial gap 0 mmHg (assumption).
+Protocol: rest 120 s; 3 x 180 s of 5 % CO2 (MRI protocol); 90 s of air between them (the student's
+upper bound, exact value unknown); 1200 s of air after the last. Onsets 120, 390, 660 s; end 2040 s.
+Comparison ('step'): the current switch-like input, 10-s linear ramps on the same schedule.
+
+test                                                 value  bound                           result
+E0 input before 1st onset: max |P - P0|                  0  [0, 0] mmHg      PASS
+E0 plateau from t_k + 5 tau_on: max dev / dP     0.0067379  [0, 0.01] rel       PASS
+E0 onsets 2, 3: |P - closed-form carry-over|    7.1054e-15  [0, 1e-09] mmHg      PASS
+E0 back to P0 by 5 tau_off: max dev / dP         0.0067371  [0, 0.01] rel       PASS
+E0 largest step between samples 0.01 s apart     0.0037491  [0, 0.01] mmHg      PASS
+E0f continuity at switches, tau 5/20/40 s          1.5e-09  [0, 1e-06] mmHg      PASS
+etCO2 shaped T2 rigid skull: max |dV_cranial|   9.0591e-07  [0, 0.001] mL        PASS
+etCO2 shaped T3 algebraic residual              5.2776e-12  [0, 1e-08] mL/s      PASS
+etCO2 shaped T7 CSF bookkeeping error           3.7281e-06  [0, 0.05] mL        PASS
+etCO2 shaped T4 left-right asymmetry            9.6374e-10  [0, 1e-06] rel       PASS
+E5 shaped: cases not t50 < t90 <= 180 s                  0  [0, 0]           PASS
+etCO2 step T2 rigid skull: max |dV_cranial|     5.7706e-07  [0, 0.001] mL        PASS
+etCO2 step T3 algebraic residual                5.1608e-12  [0, 1e-08] mL/s      PASS
+etCO2 step T7 CSF bookkeeping error             8.2241e-06  [0, 0.05] mL        PASS
+etCO2 step T4 left-right asymmetry              6.3187e-10  [0, 1e-06] rel       PASS
+E5 step: cases not t50 < t90 <= 180 s                    0  [0, 0]           PASS
+etCO2 tau 5 s T2 rigid skull: max |dV_cranial|  2.7074e-07  [0, 0.001] mL        PASS
+etCO2 tau 5 s T3 algebraic residual             5.2953e-12  [0, 1e-08] mL/s      PASS
+etCO2 tau 5 s T7 CSF bookkeeping error          1.2871e-05  [0, 0.05] mL        PASS
+etCO2 tau 5 s T4 left-right asymmetry           5.8519e-10  [0, 1e-06] rel       PASS
+E5 tau 5 s: cases not t50 < t90 <= 180 s                 0  [0, 0]           PASS
+etCO2 tau 40 s T2 rigid skull: max |dV_cranial|  7.9271e-07  [0, 0.001] mL        PASS
+etCO2 tau 40 s T3 algebraic residual            5.3997e-12  [0, 1e-08] mL/s      PASS
+etCO2 tau 40 s T7 CSF bookkeeping error           1.95e-06  [0, 0.05] mL        PASS
+etCO2 tau 40 s T4 left-right asymmetry          1.5881e-09  [0, 1e-06] rel       PASS
+E5 tau 40 s: cases not t50 < t90 <= 180 s                0  [0, 0]           PASS
+etCO2 air 30 s T2 rigid skull: max |dV_cranial|  4.4844e-07  [0, 0.001] mL        PASS
+etCO2 air 30 s T3 algebraic residual            5.3313e-12  [0, 1e-08] mL/s      PASS
+etCO2 air 30 s T7 CSF bookkeeping error         3.7281e-06  [0, 0.05] mL        PASS
+etCO2 air 30 s T4 left-right asymmetry          1.3669e-09  [0, 1e-06] rel       PASS
+E5 air 30 s: cases not t50 < t90 <= 180 s                0  [0, 0]           PASS
+etCO2 air 60 s T2 rigid skull: max |dV_cranial|   2.973e-07  [0, 0.001] mL        PASS
+etCO2 air 60 s T3 algebraic residual            5.1488e-12  [0, 1e-08] mL/s      PASS
+etCO2 air 60 s T7 CSF bookkeeping error         3.7281e-06  [0, 0.05] mL        PASS
+etCO2 air 60 s T4 left-right asymmetry          8.3481e-10  [0, 1e-06] rel       PASS
+E5 air 60 s: cases not t50 < t90 <= 180 s                0  [0, 0]           PASS
+E1a fixture read back: max |P - placeholder|    4.9738e-13  [0, 1e-09] mmHg      PASS
+E1a baseline (first 60 s): |baseline - P0|               0  [0, 1e-09] mmHg      PASS
+E1 CSV round trip: max relative CBF difference  0.00065376  [0, 0.001] rel       PASS
+etCO2 CSV T2 rigid skull: max |dV_cranial|      1.7817e-07  [0, 0.001] mL        PASS
+etCO2 CSV T3 algebraic residual                 5.3544e-12  [0, 1e-08] mL/s      PASS
+etCO2 CSV T7 CSF bookkeeping error              4.0485e-06  [0, 0.05] mL        PASS
+etCO2 CSV T4 left-right asymmetry               5.4266e-10  [0, 1e-06] rel       PASS
+E5 CSV round trip: cases not t50 < t90 <= 180 s           0  [0, 0]           PASS
+E3 CBF rise at end of inhalation 1                 0.31118  [0.1, 0.55] rel       PASS
+E3 CBF rise at end of inhalation 2                 0.31285  [0.1, 0.55] rel       PASS
+E3 CBF rise at end of inhalation 3                 0.31356  [0.1, 0.55] rel       PASS
+E4 peak CBF rise, cycle 2 / cycle 1 - 1          0.0053242  [-0.05, 0.05] rel       PASS
+E4 peak CBF rise, cycle 3 / cycle 1 - 1          0.0075982  [-0.05, 0.05] rel       PASS
+E6 recovery: CBF                                0.00027738  [-0.02, 0.02] rel       PASS
+E6 recovery: CBV                                -0.0012705  [-0.02, 0.02] rel       PASS
+E7 shaped: CBF t90 in cycle 1 (vs ~60 s)            88.813  [0, 60] s         info (OUTSIDE)
+E7 shaped: v_MCA t90 in cycle 1 (vs ~60 s)          87.566  [0, 60] s         info (OUTSIDE)
+E7 shaped: CBV t90 in cycle 1 (vs ~60 s)            85.217  [0, 60] s         info (OUTSIDE)
+E8 step: CBF t90 in cycle 1 (vs ~60 s)              69.006  [0, 60] s         info (OUTSIDE)
+
+51 pass/fail checks, 0 failed; 4 informational
+
+The reference time, a vascular response at its maximum within about 60 s, comes from the BOLD MRI signal. The model has no BOLD
+output; CBF and v_MCA (~ TCD) are its nearest outputs, so the comparison is one of timing only.
+
+=== Shaped input (PLACEHOLDER shape, tau 20 s), 90 s of air ===
+Times in s after each onset. Reference 'rest' (primary) = 1 s before the FIRST onset; 'own' = 1 s before this onset.
+resid = value 1 s before the onset minus rest, in % of the cycle-1 rise. lag = t90 - t90 of the input (same reference).
+t peak with * = peak at the end of the window (still rising, no maximum reached). at60 = share of the rise
+reached 60 s after the onset; last30 = rise during the last 30 s of the window (both in % of the rise, rest reference).
+cycle      signal    resid%    t50    t90    lag  t50own  t90own lag own  t peak   at60% last30%  rise (rest reference)
+1 @120.0    PaCO2        0.0   13.9   46.0      -    13.9    46.0       -   180.0*   95.0     0.0  +7.50 mmHg
+1 @120.0    CBF          0.0   27.1   88.8   42.8    27.1    88.8    42.8   180.0*   78.5     1.3  +31.1 %
+1 @120.0    v_MCA,L      0.0   26.7   87.6   41.5    26.7    87.6    41.5   180.0*   79.0     1.2  +31.8 %
+1 @120.0    CBV          0.0   26.8   85.2   39.2    26.8    85.2    39.2   180.0*   79.4     0.9  +3.56 mL
+1 @120.0    ICP          0.0   24.2   65.3   19.3    24.2    65.3    19.3   113.5    87.1    -4.4  +2.67 mmHg
+2 @390.0    PaCO2        1.2   13.6   45.8      -    13.9    46.0       -   180.0*   95.1     0.0  +7.50 mmHg
+2 @390.0    CBF         11.7   22.5   84.1   38.3    27.3    88.7    42.6   180.0*   81.0     1.2  +31.3 %
+2 @390.0    v_MCA,L     11.1   22.2   83.3   37.5    26.8    87.6    41.6   180.0*   81.3     1.1  +31.8 %
+2 @390.0    CBV         10.3   22.8   82.3   36.5    27.0    86.1    40.0   180.0*   81.4     0.9  +3.51 mL
+2 @390.0    ICP        -12.0   29.6   71.1   25.3    24.6    67.9    21.8   121.5    83.4    -3.6  +1.93 mmHg
+3 @660.0    PaCO2        1.2   13.6   45.8      -    13.9    46.0       -   180.0*   95.1     0.0  +7.50 mmHg
+3 @660.0    CBF         11.8   22.4   83.9   38.1    27.2    88.5    42.4   180.0*   81.1     1.1  +31.4 %
+3 @660.0    v_MCA,L     11.0   22.2   83.4   37.6    26.8    87.6    41.6   180.0*   81.3     1.1  +31.8 %
+3 @660.0    CBV          9.7   23.1   83.1   37.3    27.1    86.7    40.7   180.0*   81.1     1.0  +3.47 mL
+3 @660.0    ICP        -25.6   37.8   79.6   33.8    25.4    71.4    25.4   131.5    76.8    -2.9  +1.50 mmHg
+CBV rise in cycle 1: +3.56 mL = +6.4 % of the PLACEHOLDER total CBV of 56 mL (CBV_pct, spec 7.10)
+
+=== Step input (current: 10-s linear ramps), same protocol ===
+Times in s after each onset. Reference 'rest' (primary) = 1 s before the FIRST onset; 'own' = 1 s before this onset.
+resid = value 1 s before the onset minus rest, in % of the cycle-1 rise. lag = t90 - t90 of the input (same reference).
+t peak with * = peak at the end of the window (still rising, no maximum reached). at60 = share of the rise
+reached 60 s after the onset; last30 = rise during the last 30 s of the window (both in % of the rise, rest reference).
+cycle      signal    resid%    t50    t90    lag  t50own  t90own lag own  t peak   at60% last30%  rise (rest reference)
+1 @120.0    PaCO2        0.0    5.0    9.0      -     5.0     9.0       -    10.0   100.0     0.0  +7.50 mmHg
+1 @120.0    CBF          0.0    9.9   69.0   60.0     9.9    69.0    60.0   180.0*   87.4     0.8  +31.3 %
+1 @120.0    v_MCA,L      0.0    9.4   67.4   58.4     9.4    67.4    58.4   180.0*   87.8     0.7  +32.0 %
+1 @120.0    CBV          0.0    9.7   64.1   55.1     9.7    64.1    55.1   180.0*   88.7     0.4  +3.57 mL
+1 @120.0    ICP          0.0    8.6   43.2   34.2     8.6    43.2    34.2    91.5    96.4    -4.9  +2.71 mmHg
+2 @390.0    PaCO2        0.0    5.0    9.0      -     5.0     9.0       -    10.0   100.0     0.0  +7.50 mmHg
+2 @390.0    CBF          6.5    9.0   64.2   55.2     9.6    66.8    57.8   180.0*   88.8     0.7  +31.4 %
+2 @390.0    v_MCA,L      6.1    8.6   63.2   54.2     9.1    65.6    56.6   180.0*   89.1     0.6  +32.0 %
+2 @390.0    CBV          5.2    9.0   61.6   52.6     9.4    63.5    54.5   180.0*   89.5     0.4  +3.52 mL
+2 @390.0    ICP        -16.2    9.8   49.3   40.3     8.4    45.0    36.0    99.5    94.4    -4.3  +1.96 mmHg
+3 @660.0    PaCO2        0.0    5.0    9.0      -     5.0     9.0       -    10.0   100.0     0.0  +7.50 mmHg
+3 @660.0    CBF          6.6    8.9   64.0   55.0     9.6    66.6    57.6   180.0*   88.9     0.7  +31.5 %
+3 @660.0    v_MCA,L      6.0    8.5   63.3   54.3     9.1    65.6    56.6   180.0*   89.1     0.6  +31.9 %
+3 @660.0    CBV          4.6    9.0   62.5   53.5     9.4    64.3    55.3   180.0*   89.3     0.5  +3.48 mL
+3 @660.0    ICP        -29.1   16.0   57.8   48.8     8.5    48.6    39.6   109.5    91.0    -3.8  +1.52 mmHg
+CBV rise in cycle 1: +3.57 mL = +6.4 % of the PLACEHOLDER total CBV of 56 mL (CBV_pct, spec 7.10)
+
+=== E8 (info): input shape, air 90 s (PLACEHOLDER shapes) ===
+CBF, rest reference, times in s after onset 1. resid k = CBF 1 s before onset k minus rest, in % of the cycle-1 rise.
+x_CO2 res 2 = x_CO2 (MCA_L) 1 s before onset 2, in % of its value at the end of inhalation 1. peak 2/1 = peak CBF rise of
+cycle 2 / cycle 1.
+input           t50    t90  at60%  in t90    lag  resid 2%  resid 3%  xCO2 res 2%  peak 2/1
+step 10 s       9.9   69.0   87.4     9.0   60.0       6.5       6.6         12.3    1.0046
+tau 5 s        10.6   69.2   87.3    11.5   57.6       6.6       6.7         12.4    1.0046
+tau 20 s       27.1   88.8   78.5    46.0   42.8      11.7      11.8         21.2    1.0053
+tau 40 s       42.8  116.0   64.1    88.3   27.7      25.1      25.3         37.4    1.0095
+
+=== E8 (info): air interval, tau 20 s (PLACEHOLDER shape) ===
+CBF, rest reference, times in s after onset 1. resid k = CBF 1 s before onset k minus rest, in % of the cycle-1 rise.
+x_CO2 res 2 = x_CO2 (MCA_L) 1 s before onset 2, in % of its value at the end of inhalation 1. peak 2/1 = peak CBF rise of
+cycle 2 / cycle 1.
+interval        t50    t90  at60%  in t90    lag  resid 2%  resid 3%  xCO2 res 2%  peak 2/1
+air 30 s       27.1   88.8   78.5    46.0   42.8      51.6      52.0         74.9    1.0098
+air 60 s       27.1   88.8   78.5    46.0   42.8      24.5      24.7         41.8    1.0068
+air 90 s       27.1   88.8   78.5    46.0   42.8      11.7      11.8         21.2    1.0053
+
+E1: largest relative CBF difference CSV round trip vs analytic input -6.54e-04, at t = 121.5 s (the PCHIP interpolation of the 1-s samples next to a switch, spec 7.17)
+Figure saved: new_model_etco2.png

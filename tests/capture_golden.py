@@ -62,7 +62,8 @@ def main():
 
     def one(job):
         g, run = job
-        res = harness.run_chain(g, "old", base, base / run, sys.executable, src)
+        variant = "old" if all("old" in c.argv for c in g) else "new"    # commands added later have only the new form
+        res = harness.run_chain(g, variant, base, base / run, sys.executable, src)
         for c in g:
             print(f"  run {run} {c.id:<26} done after {time.time() - t0:7.0f} s", flush=True)
         return res

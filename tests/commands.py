@@ -42,6 +42,11 @@ def new(new_argv, *old_argv):
     return {"old": list(old_argv), "new": new_argv}
 
 
+def new_only(*argv):
+    """A command added after the refactor: it exists only in the new layout (runs from the repository root)."""
+    return {"new": list(argv)}
+
+
 COMMANDS = [
     # ---- new model ------------------------------------------------------------------------------------------------
     Cmd("new.default", new(["@run.py", "new"], NEW)),
@@ -54,6 +59,7 @@ COMMANDS = [
     Cmd("new.fit_csv", new(["@run.py", "new", "--fit-csv", "@tests/fixtures/lit_synthetic.csv", "--rate", "1.5", "--t-on", "300", "--t-off", "900"], NEW, "--fit-csv", "@tests/fixtures/lit_synthetic.csv", "--rate", "1.5", "--t-on", "300",
                            "--t-off", "900")),
     Cmd("new.all", new(["@run.py", "new", "--all"], NEW, "--all"), masks=(T_FIT,), stderr_unordered=True),
+    Cmd("new.etco2", new_only("@run.py", "new", "--etco2")),      # spec 7.17, opt-in (not in --all)
     # ---- Ursino ---------------------------------------------------------------------------------------------------
     Cmd("ursino.baseline", new(["@run.py", "ursino", "--baseline"], M + "ursino_2010_model.py")),
     Cmd("ursino.steal", new(["@run.py", "ursino", "--steal"], M + "urs_steal_test.py")),

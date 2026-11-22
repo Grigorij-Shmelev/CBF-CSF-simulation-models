@@ -1,0 +1,1104 @@
+{
+ "argv": [
+  "@run.py",
+  "new",
+  "--etco2"
+ ],
+ "arrays": {
+  "main:fig/00:new_model_etco2.png/ax0/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line0/y": [
+   "9e09273f478862e6ab0ba27368a69e2ce794c08495d8d05cdaf9bfd6d8fecc04",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line1/y": [
+   "1e6ee95f058c3b5aa3628fe01b3b0115e9f33e7de183cc6222c47d6d4893735f",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line2/x": [
+   "9473c5090ea8cd33946747879dec5703d5694dd1c2a77a438f46fd8ac0e9283e",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line3/x": [
+   "9e1d6f96c3b71086b208e845da47ee9a9213fb6dc89844fcda4ec3911c7c72b0",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax0/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line0/y": [
+   "fafa3e46c326f32354deccf2221d03e3180de45ce6aa65d9e426022253fa4fd7",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line1/y": [
+   "4affafa7773079e5318506ccc56bd2a1c9a659c23fa5e619dbe8710088afbe6a",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line2/x": [
+   "a27b99845b3afa84d6c0b4abeb916a649c16e5919ca1a03c80775e14d8a3b28b",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line3/x": [
+   "22f25f3686490a01ceab8c1ea90fd2618c153034304c21f36d2ba8017e9bcd41",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax1/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line0/y": [
+   "a6cdf2e5a00e286c0915cc03e6c46a680aa2779f75765f23169efbc787308603",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line1/y": [
+   "cf0b13b48a79d8dc90abf55265de0f8cf8c865be6597f79c681f861c0f6be82d",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line2/x": [
+   "d7f7ce8aafeae2dc776a4c2bdc4d58cd31b3e38a61b43e6b3429ff98462465d9",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line3/x": [
+   "dc9fa4df34659dd2c091cf8b4f07fed8a073c6f5b9a591e2beb2c532051ede3b",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax2/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line0/y": [
+   "f8438df66da861ebd87dac669caed1ee92a987ca87c012dad2a2c934258c736e",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line1/y": [
+   "0cf1d77e09bd723293da4dafde0d630040e535583128887983368cb6df8bb465",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line2/x": [
+   "0fec7804f60c75c5c2ee2f4e6137a129cb74b1c81774f6845b7eb737e72a89f4",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line2/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line3/x": [
+   "8cfbcbadfaeec568389534b5674d765197fb4ae6a89e2962dc8a9334ff75343c",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/line3/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax3/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/line0/y": [
+   "49093eb9fce1dd91a86b13bec9f0a890b48b1d5b5b72d528ad850893bbd52711",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/line1/y": [
+   "05b2732104fbc96c93daada5dbf59d44d03e1e33a7efd6b971ab77e37a4aa7f7",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax4/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:solve/0000/stats": [
+   "0608273e303e9dc7d87d6b2785fb8104852fa3bf629f3a3f68087fc01783356c",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0000/t": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0000/t_eval": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0000/t_span": [
+   "44ee3254e1da996fb176d15e0115189ee847113e60898278b2a31def197e8f37",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0000/y": [
+   "f6106a47b5fdd62ce96bb28805d0f6a903fe5617458e7f3763c7d59426e3c7ad",
+   "<f8",
+   [
+    18,
+    4081
+   ]
+  ],
+  "main:solve/0000/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0001/stats": [
+   "c4a2a4eabe1ca0309e6ea002491f9c48a0dd69e10461bdffddaf720400d2298e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0001/t": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0001/t_eval": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0001/t_span": [
+   "44ee3254e1da996fb176d15e0115189ee847113e60898278b2a31def197e8f37",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0001/y": [
+   "aeac5c531c102f212f1746d59f877294d142fafd83c969ae74b2f59fbf9c595b",
+   "<f8",
+   [
+    18,
+    4081
+   ]
+  ],
+  "main:solve/0001/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0002/stats": [
+   "c1c6949cb7fe65618d81198fff5323e57ff87ebf0effb53396c2372ca047b46e",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0002/t": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0002/t_eval": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0002/t_span": [
+   "44ee3254e1da996fb176d15e0115189ee847113e60898278b2a31def197e8f37",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0002/y": [
+   "9697bb07669e1382d157901f0c87df37e5f2ad54f976390bf9976af9109ac279",
+   "<f8",
+   [
+    18,
+    4081
+   ]
+  ],
+  "main:solve/0002/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0003/stats": [
+   "39295a9901d8867e2cc766b6ed726ef55baac4f47eed317fae7a8e6d55f070af",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0003/t": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0003/t_eval": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:solve/0003/t_span": [
+   "44ee3254e1da996fb176d15e0115189ee847113e60898278b2a31def197e8f37",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0003/y": [
+   "1265cd47ecc446d414cfea5eb32e3c89a2c9adb162d5d4b84192cbcfe7e67d3a",
+   "<f8",
+   [
+    18,
+    4081
+   ]
+  ],
+  "main:solve/0003/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0004/stats": [
+   "89ad6f029281ccbe2fc22f1fb616ebcf71c973ab03217e2e21972c4786360373",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0004/t": [
+   "20329911b2e4f10b855bb460e1ad56587a17e5e90cd3fe6e1c22480e5b8c3701",
+   "<f8",
+   [
+    3841
+   ]
+  ],
+  "main:solve/0004/t_eval": [
+   "20329911b2e4f10b855bb460e1ad56587a17e5e90cd3fe6e1c22480e5b8c3701",
+   "<f8",
+   [
+    3841
+   ]
+  ],
+  "main:solve/0004/t_span": [
+   "35507bbb09539b78cbfaf5c148697f782708b63352c3e5c76cdec7a8c1adc398",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0004/y": [
+   "8e24567dc64234989d1fc07bb339e204b0b1d1cc4d4dca27771511d96dc9d736",
+   "<f8",
+   [
+    18,
+    3841
+   ]
+  ],
+  "main:solve/0004/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0005/stats": [
+   "cebd52b446f58daee7c57e0c7a3e865635d9f15b4cc3dda3205fb3988cdf1736",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0005/t": [
+   "293911c1528a51b53deeb57c9e9a636d06863b826d04ec4509302dbf3264e72b",
+   "<f8",
+   [
+    3961
+   ]
+  ],
+  "main:solve/0005/t_eval": [
+   "293911c1528a51b53deeb57c9e9a636d06863b826d04ec4509302dbf3264e72b",
+   "<f8",
+   [
+    3961
+   ]
+  ],
+  "main:solve/0005/t_span": [
+   "490ab69baa4ab117bfe347896ca1f23b1132e3e3ad92f47c0739941f3e104935",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0005/y": [
+   "e61fbab199c755a27a4eb77e1f0d124277e8c34e73024e74cedc6c96a39c55c1",
+   "<f8",
+   [
+    18,
+    3961
+   ]
+  ],
+  "main:solve/0005/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ],
+  "main:solve/0006/stats": [
+   "201a7df543d95a0b606d61950570161150138383a091e594522a1111f53e3e03",
+   "<i8",
+   [
+    4
+   ]
+  ],
+  "main:solve/0006/t": [
+   "fa6e6ec584385551a0bde2f1566f4bf0a98133194165de7d8c43e56ec3e305f6",
+   "<f8",
+   [
+    4321
+   ]
+  ],
+  "main:solve/0006/t_eval": [
+   "fa6e6ec584385551a0bde2f1566f4bf0a98133194165de7d8c43e56ec3e305f6",
+   "<f8",
+   [
+    4321
+   ]
+  ],
+  "main:solve/0006/t_span": [
+   "9d9d0b68e5e1ac55e8f08753e2d0839679ec91d1b2141ecc26c604568e4ae8fa",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:solve/0006/y": [
+   "6ff2b6aa3113cc784c0f2de4d688d18165f415dd815c6cb9590a84959bd9a372",
+   "<f8",
+   [
+    18,
+    4321
+   ]
+  ],
+  "main:solve/0006/y0": [
+   "e7d248470ffdb123f061bb50fd58861991c9da391a8156bc0f76c43347c16bc2",
+   "<f8",
+   [
+    18
+   ]
+  ]
+ },
+ "files": {
+  "new_model_etco2.png": "3c9ec36b1f2ee29c008c7d0716f2c820af5596457a351b5cfb44b6c1404e1e0c"
+ },
+ "id": "new.etco2",
+ "rc": 0,
+ "runtime_s": 32.1,
+ "texts": {
+  "main:fig/00:new_model_etco2.png/ax0/axes": {
+   "legend": [
+    "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+    "current input (10-s ramps)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [
+    "t50",
+    "t90"
+   ],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "PaCO2 input [mmHg]"
+  },
+  "main:fig/00:new_model_etco2.png/ax0/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+   "ls": "-",
+   "lw": 1.3,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax0/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "current input (10-s ramps)",
+   "ls": "--",
+   "lw": 1.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax0/line2/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax0/line3/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child4",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax0/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax0/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax0/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax1/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [
+    "t50",
+    "t90"
+   ],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "CBF change [%]"
+  },
+  "main:fig/00:new_model_etco2.png/ax1/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+   "ls": "-",
+   "lw": 1.3,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax1/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "current input (10-s ramps)",
+   "ls": "--",
+   "lw": 1.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax1/line2/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax1/line3/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child4",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax1/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax1/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax1/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax2/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [
+    "t50",
+    "t90"
+   ],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "v_MCA (left) change [%]"
+  },
+  "main:fig/00:new_model_etco2.png/ax2/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+   "ls": "-",
+   "lw": 1.3,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax2/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "current input (10-s ramps)",
+   "ls": "--",
+   "lw": 1.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax2/line2/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax2/line3/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child4",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax2/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax2/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax2/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax3/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [
+    "t50",
+    "t90"
+   ],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "",
+   "ylabel": "stressed CBV change [mL]"
+  },
+  "main:fig/00:new_model_etco2.png/ax3/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+   "ls": "-",
+   "lw": 1.3,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax3/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "current input (10-s ramps)",
+   "ls": "--",
+   "lw": 1.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax3/line2/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child2",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax3/line3/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child4",
+   "ls": ":",
+   "lw": 0.8,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax3/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax3/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax3/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax4/axes": {
+   "legend": null,
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "time [s]",
+   "ylabel": "ICP [mmHg]"
+  },
+  "main:fig/00:new_model_etco2.png/ax4/line0/style": {
+   "alpha": null,
+   "color": "#1f77b4ff",
+   "label": "end-tidal-shaped (PLACEHOLDER, tau 20 s)",
+   "ls": "-",
+   "lw": 1.3,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax4/line1/style": {
+   "alpha": null,
+   "color": "#d62728ff",
+   "label": "current input (10-s ramps)",
+   "ls": "--",
+   "lw": 1.0,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax4/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax4/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax4/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/figure": {
+   "size": [
+    11.0,
+    13.0
+   ],
+   "suptitle": "New model: 5 % CO2, 3 x 180 s with 90 s of air. PLACEHOLDER input shape (first-order lag, tau 20 s, plateau 47.5 mmHg)\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. Pa = 100 mmHg"
+  },
+  "main:fig/00:new_model_etco2.png/png_sha256": "3c9ec36b1f2ee29c008c7d0716f2c820af5596457a351b5cfb44b6c1404e1e0c",
+  "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0000/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0001/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0001/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0002/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0002/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0003/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0003/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0004/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0004/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0005/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0005/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  },
+  "main:solve/0006/message": "The solver successfully reached the end of the integration interval.",
+  "main:solve/0006/options": {
+   "atol": "1e-09",
+   "first_step": "None",
+   "max_step": "5.0",
+   "method": "'Radau'",
+   "rtol": "1e-07"
+  }
+ },
+ "variant": "new",
+ "workers": {
+  "count": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}
