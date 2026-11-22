@@ -18,6 +18,8 @@ python run.py --list                    models, flags and experiments
 python run.py new                       new 0D model: default run (all scenarios, cross-checks, figures; ~2 min)
 python run.py new --rest --co2 --lit    only these parts of the default run
 python run.py new --all                 + calibration, sensitivity, options, LIT fit, parameter sensitivity (~20 min)
+python run.py new --etco2               only: 5 % CO2 3 x 3 min, end-tidal-shaped input (placeholder shape; not in --all; ~30 s)
+python run.py new --etco2-csv FILE ...  only: the model driven by a measured end-tidal curve (--etco2-unit, --cycles; see --help)
 python run.py ursino --all              Ursino 2010: baseline, steal figure, node-pressure check
 python run.py vanek --all               Vanek 2015: baseline, lumbar infusion test
 python run.py stepanik --all            Stepanik: baseline, lumbar infusion test

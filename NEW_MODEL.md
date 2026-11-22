@@ -303,6 +303,7 @@ form used here follows the text ($A \approx 1$ at rest). The literal reading cha
 | MCA occlusion (stroke) | $R_{MCA,L}$ × 1000 (5 s ramp) at 120 s for 30 min, then reopened; run to 3120 s |
 | ICA occlusion | $R_{ICA,L}$ × 1000, same timing |
 | Pulsatile | $P_a = 100 + 10\sin(2\pi\cdot 1.2 t)$ for 30 s |
+| Repeated 5 % CO2, end-tidal-shaped (opt-in, `--etco2`) | 3 × 180 s of 5 % CO2 from 120 s with 90 s of air between them (an upper bound; the exact value is not known yet), 1200 s of air after; run to 2040 s. Input: the inhaled-gas schedule through a first-order lag, $\tau$ = 20 s, plateau 47.5 mmHg (**placeholder shape**, Section 4.2.1); compared with the same schedule with 10 s ramps; sweeps $\tau$ = 5, 20, 40 s and air 30, 60, 90 s |
 
 Solver: `scipy.integrate.solve_ivp`, Radau, rtol $10^{-7}$, atol $10^{-9}$, maximum step 5 s (pulsatile run: rtol $10^{-6}$,
 atol $10^{-8}$, maximum step 0.02 s).
@@ -314,7 +315,8 @@ X4 and X2c after exploratory runs, so they are regression bounds around a known 
 - the CSF bookkeeping (volume change = production + infusion − resorption, within 0.05 mL);
 - left–right symmetry where the inputs are symmetric.
 
-The default run has **77 pass/fail checks, all pass, plus 5 informational rows** (Appendix A).
+The default run has **77 pass/fail checks, all pass, plus 5 informational rows** (Appendix A). The opt-in run
+`python run.py new --etco2` has its own **51 pass/fail checks, all pass, plus 4 informational rows** (Section 4.2.1).
 
 ## 4. Results
 
@@ -348,6 +350,46 @@ What happens, step by step:
 
 Above about 55 mmHg the arterioles are fully dilated ($\text{sat}_2$ = 0.4) and the response saturates: at 60 mmHg CBF rises by
 +54.8 %, set by the dilation limit rather than by CO2.
+
+#### 4.2.1 Repeated 5 % CO2 with an end-tidal-shaped input (opt-in: `python run.py new --etco2`)
+
+In a hypercapnia test in the MRI scanner, 5 % CO2 is inhaled three times for 3 min, and only the **end-tidal** CO2 is recorded,
+not the arterial value. The input of this scenario therefore follows an end-tidal-shaped curve instead of a switch: the inhaled-gas
+schedule $u(t)$ (a square wave, 40 or 47.5 mmHg) through a first-order lag, in closed form on each segment between switch times $t_s$,
+
+$$P_{aCO_2}(t) = u + \big(P_{aCO_2}(t_s) - u\big)\,e^{-(t - t_s)/\tau},\qquad \tau = 20\ \text{s on the rise and on the decay}.$$
+
+**The shape, $\tau$ and the plateau are placeholders** (from no source). A measured end-tidal curve replaces them through
+`--etco2-csv` without code changes. End-tidal CO2 is taken as arterial CO2 (an assumption). Air between inhalations: 90 s, an upper
+bound; the exact value is not known yet.
+
+![end-tidal CO2](outputs/new/new_model_etco2.png)
+
+**Fig. 3b.** Three 3-min inhalations of 5 % CO2 (shaded). Solid: end-tidal-shaped input (placeholder); dashed: the same schedule
+with 10 s ramps, as in Fig. 3. $t_{50}$ and $t_{90}$ of cycle 1 are marked.
+
+CBF in cycle 1 (times after the start of the inhalation; "rest" = 1 s before the first inhalation):
+
+| Input | $t_{50}$ | $t_{90}$ | Share of the rise at 60 s | CBF 1 s before inhalation 2 (% of the cycle-1 rise) |
+| ------ | ------ | ------ | ------ | ------ |
+| 10 s ramps | 9.9 s | 69.0 s | 87 % | 6.5 % |
+| end-tidal, $\tau$ = 5 s | 10.6 s | 69.2 s | 87 % | 6.6 % |
+| end-tidal, $\tau$ = 20 s (default) | 27.1 s | 88.8 s | 79 % | 11.7 % |
+| end-tidal, $\tau$ = 40 s | 42.8 s | 116.0 s | 64 % | 25.1 % |
+
+What this shows:
+1. **Why the onset was switch-like.** The control loop has a high gain, so $x_{aut}$ tracks $x_{CO_2}$ and Eq. 13 gives
+   $\Delta q/q_n \approx (x_{CO_2} + \tau_{aut}\dot x_{CO_2})/G_{aut}$. For a step input the autoregulation term makes half of the
+   response ($\tau_{aut}/\tau_{CO_2}$) appear at once; the rest follows with $\tau_{CO_2}$ = 40 s. With an end-tidal curve of
+   $\tau = \tau_{aut}$ = 20 s the two cancel, and CBF becomes a plain 40 s lag of the inhaled-gas schedule, with no jump.
+2. **The smooth input makes the model slower, not faster.** 90 % of the CBF rise takes 69 s with ramps and 89 s with the placeholder
+   curve; no input shape gets below $\tau_{CO_2}\ln 5$ ≈ 64 s. If the measured vascular response peaks within about a minute, the
+   model is too slow, and the cause is $\tau_{CO_2}$ (Ursino's value), not the input (Section 5).
+3. **The cycles overlap.** After 90 s of air, CBF is still 12 % of the cycle-1 rise above rest (CBV 10 %); with 30 s of air it is
+   52 %. Measured from their own start, cycles 2 and 3 have the same time course as cycle 1.
+4. **No maximum within 3 min.** CBF, CBV and `v_MCA` are still rising when the inhalation ends. ICP peaks inside each cycle
+   (12.15 mmHg in cycle 1), dips below rest after the last one (8.45 mmHg) and is still 0.28 mmHg below rest 20 min later.
+5. CBV rises by 3.56 mL per cycle (6.4 % of the placeholder 56 mL); `v_MCA` and CBV follow CBF within 1–4 s.
 
 ### 4.3 Lumbar infusion test
 
@@ -530,6 +572,8 @@ model error. Only real recordings can show the real uncertainty.
    pulsate (Section 4.7). Likely remedies: a pulsatile venous outflow path, or large-artery compliance upstream.
 6. **The CO2 response is switch-like and saturates.** It has a fast onset (72 % of the response after 10 s) and saturation above
    about 55 mmHg, both inherited from Ursino's steep sigmoid. $s_C$ trades the onset against autoregulation (Section 4.9).
+   An end-tidal-shaped input removes the jump but makes the response slower: 90 % of the CBF rise takes at least about 64 s for any
+   input, set by $\tau_{CO_2}$ (Section 4.2.1). Whether that is too slow needs measured response times.
 7. **The storage equals Ursino's only at rest.** Vaněk's wall law falls faster with pressure: at 22 mmHg (end of the LIT) the
    model has 0.26 mL/mmHg against Ursino's 0.58.
 8. **Brain volume is constant:** no edema and no tissue damage, so the stroke is fully reversible.
@@ -556,6 +600,8 @@ from `mat_models/` takes the same flags).
 | `python run.py new --fit-mismatch` | only: fit when the data come from a modified model. Ends with 1 failed check by design: $P_0$ for $\kappa_v$ = 0.2 is off by 0.32 mmHg against a pre-set bound of 0.3 | 5 min |
 | `python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900` | fit a measured LIT (CSV with the header `time_s, pressure_mmHg`) | |
 | `python run.py new --all` | default + calibrate + sensitivity + options + fit + params | 20 min |
+| `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; figure `new_model_etco2.png` (Section 4.2.1) | 30 s |
+| `python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180` | only: the model driven by a measured end-tidal curve (CSV with the header `time_s, etco2`; unit `mmHg`, `kPa` or `percent`, never guessed; onsets in the file's own time); figure `new_model_etco2_csv.png` | |
 | `python tests/test_regression.py` | re-runs every command and compares with the golden outputs exactly | 25–40 min |
 
 Where to find each part in the code:
@@ -571,6 +617,7 @@ Where to find each part in the code:
 | `NewModel.rhs()` | the differential equations, Eq. 10–14 |
 | `NewModel.simulate()`, `observe()` | integration; outputs (ICP, CBF, CBV, `CBV_pct`, `v_MCA`, CSF volumes) |
 | `cbfcsf/checks/new.py` | the scenarios, the checks and their bounds, `main()` |
+| `cbfcsf/common/signals.py` | input signals; `EtCO2Protocol`, `etco2_curve()`, `read_etco2_csv()` (Section 4.2.1) |
 | `cbfcsf/crosscheck.py` | the runs of Ursino's and Vaněk's code used in Section 4.6 |
 | `cbfcsf/fit_lit.py` | LIT fitting tool |
 | `cbfcsf/plots.py` | figures |
@@ -599,4 +646,5 @@ References:
 
 The bounds and the expected behaviour were written down before each scenario was coded (X3, X4 and X2c: after exploratory
 runs, as regression bounds). Further stages add their own checks: calibration (K1, K2), the $\varphi_v$ test, options (V0–V4,
-S0–S2), fit (F1–F4) and mismatch (M1–M4).
+S0–S2), fit (F1–F4) and mismatch (M1–M4). The opt-in end-tidal run has E0–E6 (input function, CSV reader, conservation
+in every run, graded and repeatable response, recovery) and E7–E8 (informational: response times).
