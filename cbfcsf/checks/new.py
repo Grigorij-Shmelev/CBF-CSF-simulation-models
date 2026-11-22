@@ -14,16 +14,18 @@ Usage (from the repository root; the old form `python new_model.py [flags]` from
     python run.py new --all
 """
 import os
+from dataclasses import replace
 
 import numpy as np
 from scipy.integrate import solve_ivp
 
 from cbfcsf.common.report import Report
-from cbfcsf.common.signals import pulse, ramp
+from cbfcsf.common.signals import (EtCO2Protocol, etco2_curve, pulse, ramp, read_etco2_csv,
+                                    write_etco2_csv)
 from cbfcsf.crosscheck import test_cross_lit, test_cross_more, test_cross_stroke
 from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit, test_fit_mismatch
 from cbfcsf.models.new_model import NAMES, Inputs, NewModel
-from cbfcsf.paths import ZBYSEK_DATA, out_dir
+from cbfcsf.paths import ROOT, ZBYSEK_DATA, out_dir
 from cbfcsf.plots import plot_fit, plot_recording, plot_run
 
 
@@ -573,6 +575,73 @@ def step_sensitivity(base_runs):
         print(f"{name:<10}{d[0][0]:>14.3f}{d[1][0]:>11.3f}{d[0][1]:>11.2f}{d[1][1]:>8.2f}{d[0][2]:>11.2f}{d[1][2]:>8.2f}")
     print(f"pre-set scenario bounds failed with phi_v = 0.5: {res[0.5]['fails']}")
     return rep2.show()
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Seventh step (spec 7.17): end-tidal-shaped CO2 input. Opt-in: not in the default run, not in --all.
+# ----------------------------------------------------------------------------------------------------------------------
+ETCO2_FIXTURE = os.path.join(ROOT, "tests", "fixtures", "etco2_placeholder.csv")
+ETCO2_PAD = 120.0        # rest before the first sample of a measured curve [s] (model time 0 = first sample - pad)
+ETCO2_DT = 0.5           # output sampling of the end-tidal runs [s]
+
+
+def run_etco2(m, pco2, t_end, t_eval=None):
+    """One run with a PaCO2(t) input, solver settings of test C (max_step 5 s, default tolerances)."""
+    if t_eval is None:
+        t_eval = np.linspace(0.0, t_end, int(round(t_end / ETCO2_DT)) + 1)
+    return m.simulate(Inputs(PaCO2=pco2), t_end, t_eval=t_eval, max_step=5.0)
+
+
+def write_etco2_fixture(path=ETCO2_FIXTURE, proto=EtCO2Protocol()):
+    """Write the placeholder curve at 1-s spacing (the fixture of test E1). Regenerate it when the placeholder changes:
+    python -c "from cbfcsf.checks.new import write_etco2_fixture; write_etco2_fixture()" """
+    t = np.arange(0.0, proto.t_end + 0.5, 1.0)
+    write_etco2_csv(path, t, etco2_curve(proto)(t))
+
+
+def test_etco2_input(rep, proto=EtCO2Protocol(), taus=(5.0, 20.0, 40.0)):
+    """E0, E0f (spec 7.17): the end-tidal input function against its analytic properties."""
+    f = etco2_curve(proto)
+    on, off, P0, dP = proto.onsets, proto.offsets, proto.P0, proto.dP
+    rep.check("E0 input before 1st onset: max |P - P0|", float(np.max(np.abs(f(np.arange(0.0, on[0], 0.01)) - P0))),
+              0, 0, "mmHg")
+    plat = max(np.max(np.abs(f(np.arange(a + 5 * proto.tau_on, b, 0.01)) - P0 - dP)) for a, b in zip(on, off))
+    rep.check("E0 plateau from t_k + 5 tau_on: max dev / dP", float(plat / dP), 0, 0.01, "rel")
+    # carry-over at onsets 2, 3: closed form per cycle, written independently of the segment recursion of etco2_curve()
+    a_on, a_air = np.exp(-proto.t_inhale / proto.tau_on), np.exp(-proto.t_air / proto.tau_off)
+    x, carry = 0.0, 0.0                    # x = P - P0 at an onset
+    for k in range(1, proto.n_cycles):
+        x = (dP + (x - dP) * a_on) * a_air
+        carry = max(carry, abs(f(on[k] + proto.delay) - (P0 + x + proto.gap)))
+    rep.check("E0 onsets 2, 3: |P - closed-form carry-over|", carry, 0, 1e-9, "mmHg")
+    back = np.max(np.abs(f(np.arange(off[-1] + 5 * proto.tau_off, proto.t_end, 0.01)) - P0)) / dP
+    rep.check("E0 back to P0 by 5 tau_off: max dev / dP", float(back), 0, 0.01, "rel")
+    rep.check("E0 largest step between samples 0.01 s apart", float(np.max(np.abs(np.diff(
+        f(np.arange(0.0, proto.t_end, 0.01)))))), 0, 0.01, "mmHg")
+    jumps = []
+    for tau in taus:
+        g = etco2_curve(replace(proto, tau_on=tau, tau_off=tau))
+        jumps += [abs(g(ts + proto.delay + 1e-9) - g(ts + proto.delay - 1e-9)) for ts in on + off]
+    rep.check("E0f continuity at switches, tau 5/20/40 s", max(jumps), 0, 1e-6, "mmHg")
+
+
+def test_etco2_csv(rep, r_an, proto=EtCO2Protocol(), path=ETCO2_FIXTURE):
+    """E1a, E1 (spec 7.17): the committed placeholder fixture read back, and simulated against the analytic-input run
+    r_an (same protocol). Compared at equal times after the first sample (CSV run: model time - ETCO2_PAD)."""
+    d = read_etco2_csv(path, "mmHg")
+    f = d.function(pad=ETCO2_PAD, gap=proto.gap)
+    err = np.max(np.abs(f(d.to_model_time(d.t, pad=ETCO2_PAD)) - etco2_curve(proto)(d.t)))
+    rep.check("E1a fixture read back: max |P - placeholder|", float(err), 0, 1e-9, "mmHg")
+    rep.check("E1a baseline (first 60 s): |baseline - P0|", abs(d.baseline - proto.P0), 0, 1e-9, "mmHg")
+    m = NewModel(PaCO2_n=d.baseline + proto.gap)
+    n_pad = int(round(ETCO2_PAD / ETCO2_DT))
+    t_eval = np.concatenate([np.arange(n_pad) * ETCO2_DT, r_an["t"] + ETCO2_PAD])
+    r = run_etco2(m, f, t_eval[-1], t_eval=t_eval)
+    diff = np.max(np.abs(r["CBF"][n_pad:] / r_an["CBF"] - 1))
+    rep.check("E1 CSV round trip: max relative CBF difference", float(diff), 0, 1e-3, "rel")
+    common_checks(rep, "etCO2 CSV", r)
+    r["E1_diff"] = r["CBF"][n_pad:] / r_an["CBF"] - 1
+    return r, d
 
 
 if __name__ == "__main__":
