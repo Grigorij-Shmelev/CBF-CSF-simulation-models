@@ -12,6 +12,9 @@ Usage (from the repository root; the old form `python new_model.py [flags]` from
                                         # fit a measured LIT (CSV header, columns: time_s, pressure_mmHg)
     python run.py new --rest --co2 --lit  # only these parts of the default run (python run.py new --help)
     python run.py new --all
+    python run.py new --etco2           # only: end-tidal-shaped CO2 input, PLACEHOLDER shape, spec 7.17 (not in --all)
+    python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180
+                                        # only: a measured end-tidal curve (CSV header, columns: time_s, etco2)
 """
 import os
 from dataclasses import replace
@@ -20,13 +23,13 @@ import numpy as np
 from scipy.integrate import solve_ivp
 
 from cbfcsf.common.report import Report
-from cbfcsf.common.signals import (EtCO2Protocol, etco2_curve, pulse, ramp, read_etco2_csv,
+from cbfcsf.common.signals import (EtCO2Protocol, etco2_curve, etco2_step, pulse, ramp, read_etco2_csv,
                                     write_etco2_csv)
 from cbfcsf.crosscheck import test_cross_lit, test_cross_more, test_cross_stroke
 from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit, test_fit_mismatch
 from cbfcsf.models.new_model import NAMES, Inputs, NewModel
 from cbfcsf.paths import ROOT, ZBYSEK_DATA, out_dir
-from cbfcsf.plots import plot_fit, plot_recording, plot_run
+from cbfcsf.plots import plot_etco2, plot_fit, plot_recording, plot_run
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -369,6 +372,8 @@ PARTS = ("rest", "co2", "co2_5pct", "lit", "stroke", "pulsatile", "ica", "cross"
 def main(argv=(), parts=None):
     """argv: the old flags (--calibrate, --fit, ...). parts: subset of PARTS to run of the default run (run.py new
     --rest --lit ...); None = all of it. Stages need the whole default run, so they ignore parts."""
+    if any(a in ETCO2_FLAGS for a in argv):   # opt-in scenario of spec 7.17: runs on its own, not with other flags
+        return main_etco2(argv, parts)
     if "--fit-mismatch" in argv:        # stand-alone stage (spec 7.13), does not need the base runs
         repm = Report()
         out = test_fit_mismatch(repm)
@@ -642,6 +647,297 @@ def test_etco2_csv(rep, r_an, proto=EtCO2Protocol(), path=ETCO2_FIXTURE):
     common_checks(rep, "etCO2 CSV", r)
     r["E1_diff"] = r["CBF"][n_pad:] / r_an["CBF"] - 1
     return r, d
+
+
+# ---- metric, scenario and command line of spec 7.17 -----------------------------------------------------------------
+ETCO2_FLAGS = ("--etco2", "--etco2-csv", "--etco2-unit", "--cycles", "--cycle-length", "--barometric")
+ETCO2_RISING = ("PaCO2", "CBF", "v_MCA,L", "CBV")      # the signals E5 applies to; ICP is info only
+BOLD_NOTE = ("The reference time, a vascular response at its maximum within about 60 s, comes from the BOLD MRI signal. The "
+             "model has no BOLD\noutput; CBF and v_MCA (~ TCD) are its nearest outputs, so the comparison is one of timing only.")
+
+
+def etco2_signals(r, pco2):
+    """The signals of the metric on the output grid: input PaCO2, total CBF, left MCA velocity, stressed CBV, ICP."""
+    return {"PaCO2": np.asarray(pco2(r["t"]), float), "CBF": r["CBF"], "v_MCA,L": r["v_MCA"][:, 0],
+            "CBV": r["Vblood"], "ICP": r["ICP"]}
+
+
+def _first_crossing(t, z, thr):
+    """First time at which z reaches thr, linear interpolation between samples; t[0] if z[0] already does."""
+    above = z >= thr
+    if not above.any():
+        return np.nan
+    i = int(np.argmax(above))
+    if i == 0:
+        return float(t[0])
+    return float(t[i - 1] + (thr - z[i - 1]) / (z[i] - z[i - 1]) * (t[i] - t[i - 1]))
+
+
+def etco2_metrics(t, y, onsets, length):
+    """Metric of spec 7.17 for one signal, per cycle k (window [t_k, t_k + length]). Two references: 'rest' = the value
+    1 s before the FIRST onset (primary, all cycles), 'own' = the value 1 s before this onset. peak = maximum in the
+    window; t50, t90 = first time after t_k at which y - ref reaches 50 / 90 % of peak - ref (s after t_k); flag = the
+    peak is the last sample of the window (still rising). Also the share of the rise reached at t_k + 60 s and the rise
+    during the last 30 s of the window (both in % of the cycle's rise). residual = y(t_k - 1 s) - rest, as a fraction
+    of the cycle-1 rise."""
+    y_rest = float(np.interp(onsets[0] - 1.0, t, y))
+    out = []
+    for tk in onsets:
+        w = (t >= tk - 1e-9) & (t <= tk + length + 1e-9)
+        tw, yw = t[w], y[w]
+        ipk = int(np.argmax(yw))
+        c = dict(onset=tk, peak=float(yw[ipk]), t_peak=float(tw[ipk] - tk), flag=ipk == len(yw) - 1, y_rest=y_rest,
+                 y_on=float(np.interp(tk - 1.0, t, y)), y_end=float(np.interp(tk + length - 1.0, t, y)))
+        for key, ref in (("rest", y_rest), ("own", c["y_on"])):
+            rise = c["peak"] - ref
+            d = dict(rise=rise, t50=np.nan, t90=np.nan, share60=np.nan, last30=np.nan)
+            if rise > 0:
+                d["t50"] = _first_crossing(tw, yw - ref, 0.5 * rise) - tk
+                d["t90"] = _first_crossing(tw, yw - ref, 0.9 * rise) - tk
+                d["share60"] = (np.interp(tk + 60.0, t, y) - ref) / rise
+                d["last30"] = (np.interp(tk + length, t, y) - np.interp(tk + length - 30.0, t, y)) / rise
+            c[key] = d
+        out.append(c)
+    rise1 = out[0]["rest"]["rise"]
+    for c in out:
+        c["residual"] = (c["y_on"] - y_rest) / rise1 if rise1 > 0 else np.nan
+    return out
+
+
+def etco2_sanity(met, length):
+    """E5: number of (signal, cycle, reference) with a rise where t50 < t90 <= length does not hold."""
+    bad = 0
+    for k in ETCO2_RISING:
+        for c in met[k]:
+            for ref in ("rest", "own"):
+                d = c[ref]
+                if d["rise"] > 0 and not (d["t50"] < d["t90"] <= length + 1e-9):
+                    bad += 1
+    return bad
+
+
+def etco2_case(rep, m, label, proto, pco2, t_eval=None, onsets=None, t_end=None):
+    """One run of the scenario with its E2 (conservation) and E5 (sanity) checks and the metric of every signal."""
+    t_end = proto.t_end if t_end is None else t_end
+    onsets = proto.onsets if onsets is None else onsets
+    r = run_etco2(m, pco2, t_end, t_eval=t_eval)
+    common_checks(rep, f"etCO2 {label}", r)
+    sig = etco2_signals(r, pco2)
+    met = {k: etco2_metrics(r["t"], v, onsets, proto.t_inhale) for k, v in sig.items()}
+    rep.check(f"E5 {label}: cases not t50 < t90 <= {proto.t_inhale:g} s", float(etco2_sanity(met, proto.t_inhale)),
+              0, 0, "")
+    return dict(r=r, sig=sig, met=met, proto=proto, onsets=onsets, label=label)
+
+
+def test_co2_etco2(rep, m, proto=EtCO2Protocol(), taus=(5.0, 40.0), airs=(30.0, 60.0)):
+    """Spec 7.17: 5 % CO2 inhaled 3 x 180 s with the end-tidal-shaped input (PLACEHOLDER shape), the same protocol with
+    the current switch-like input (10-s ramps), and information-only sweeps of tau and of the air interval.
+    Checks E0, E0f, E1a, E1, E2 (every run), E3, E4, E6 (main run), E5 (every run); E7, E8 informational."""
+    test_etco2_input(rep, proto)                                              # E0, E0f
+    main_ = etco2_case(rep, m, "shaped", proto, etco2_curve(proto))
+    step = etco2_case(rep, m, "step", proto, etco2_step(proto))
+    tau_runs = {proto.tau_on: main_}
+    for tau in taus:
+        pr = replace(proto, tau_on=tau, tau_off=tau)
+        tau_runs[tau] = etco2_case(rep, m, f"tau {tau:g} s", pr, etco2_curve(pr))
+    air_runs = {proto.t_air: main_}
+    for air in airs:
+        pr = replace(proto, t_air=air)
+        air_runs[air] = etco2_case(rep, m, f"air {air:g} s", pr, etco2_curve(pr))
+    r_csv, d = test_etco2_csv(rep, main_["r"], proto)                         # E1a, E1 (+ E2 on that run)
+    csv_on = list(d.to_model_time(proto.onsets, pad=ETCO2_PAD))
+    csv_met = {k: etco2_metrics(r_csv["t"], v, csv_on, proto.t_inhale)
+               for k, v in etco2_signals(r_csv, d.function(pad=ETCO2_PAD, gap=proto.gap)).items()}
+    rep.check(f"E5 CSV round trip: cases not t50 < t90 <= {proto.t_inhale:g} s",
+              float(etco2_sanity(csv_met, proto.t_inhale)), 0, 0, "")
+
+    r, t, cbf = main_["r"], main_["r"]["t"], main_["met"]["CBF"]
+    rest = cbf[0]["y_rest"]
+    for k, t_off in enumerate(proto.offsets):
+        rep.check(f"E3 CBF rise at end of inhalation {k + 1}", float(np.interp(t_off - 1.0, t, r["CBF"]) / rest - 1),
+                  0.10, 0.55, "rel")
+    for k in range(1, proto.n_cycles):
+        rep.check(f"E4 peak CBF rise, cycle {k + 1} / cycle 1 - 1",
+                  cbf[k]["rest"]["rise"] / cbf[0]["rest"]["rise"] - 1, -0.05, 0.05, "rel")
+    cbv_rest = main_["met"]["CBV"][0]["y_rest"]
+    rep.check("E6 recovery: CBF", float(r["CBF"][-1] / rest - 1), -0.02, 0.02, "rel")
+    rep.check("E6 recovery: CBV", float(r["Vblood"][-1] / cbv_rest - 1), -0.02, 0.02, "rel")
+    for key, name in (("CBF", "CBF"), ("v_MCA,L", "v_MCA"), ("CBV", "CBV")):
+        rep.info(f"E7 shaped: {name} t90 in cycle 1 (vs ~60 s)", main_["met"][key][0]["rest"]["t90"], 0, 60, "s")
+    rep.info("E8 step: CBF t90 in cycle 1 (vs ~60 s)", step["met"]["CBF"][0]["rest"]["t90"], 0, 60, "s")
+    return dict(main=main_, step=step, taus=tau_runs, airs=air_runs, csv=r_csv)
+
+
+def _f(v, w=7, d=1):
+    return f"{v:{w}.{d}f}" if np.isfinite(v) else f"{'-':>{w}}"
+
+
+def print_etco2_table(title, case, m, clock_shift=0.0):
+    """One row per cycle x signal (spec 7.17). clock_shift = model time - printed time of the onsets."""
+    met = case["met"]
+    print(f"\n=== {title} ===")
+    print("Times in s after each onset. Reference 'rest' (primary) = 1 s before the FIRST onset; 'own' = 1 s before this "
+          "onset.\nresid = value 1 s before the onset minus rest, in % of the cycle-1 rise. lag = t90 - t90 of the input "
+          "(same reference).\nt peak with * = peak at the end of the window (still rising, no maximum reached). "
+          "at60 = share of the rise\nreached 60 s after the onset; last30 = rise during the last 30 s of the window "
+          "(both in % of the rise, rest reference).")
+    print(f"{'cycle':<11}{'signal':<9}{'resid%':>7}{'t50':>7}{'t90':>7}{'lag':>7}{'t50own':>8}{'t90own':>8}{'lag own':>8}"
+          f"{'t peak':>8} {'at60%':>7}{'last30%':>8}  rise (rest reference)")
+    for k, tk in enumerate(case["onsets"]):
+        inp = met["PaCO2"][k]
+        for name in ("PaCO2", "CBF", "v_MCA,L", "CBV", "ICP"):
+            c = met[name][k]
+            a, o = c["rest"], c["own"]
+            lag = a["t90"] - inp["rest"]["t90"] if name != "PaCO2" else np.nan
+            lag_o = o["t90"] - inp["own"]["t90"] if name != "PaCO2" else np.nan
+            if name in ("CBF", "v_MCA,L"):
+                rise = f"{100 * a['rise'] / c['y_rest']:+.1f} %"
+            elif name == "CBV":
+                rise = f"{a['rise']:+.2f} mL"
+            else:
+                rise = f"{a['rise']:+.2f} mmHg"
+            print(f"{k + 1} @{tk - clock_shift:<7.1f}  {name:<9}{_f(100 * c['residual'])}{_f(a['t50'])}{_f(a['t90'])}"
+                  f"{_f(lag)}{_f(o['t50'], 8)}{_f(o['t90'], 8)}{_f(lag_o, 8)}{_f(c['t_peak'], 8)}{'*' if c['flag'] else ' '}"
+                  f"{_f(100 * a['share60'])}{_f(100 * a['last30'], 8)}  {rise}")
+    dv = met["CBV"][0]["rest"]["rise"]
+    print(f"CBV rise in cycle 1: {dv:+.2f} mL = {100 * dv / m.CBV_total_n:+.1f} % of the PLACEHOLDER total CBV of "
+          f"{m.CBV_total_n:g} mL (CBV_pct, spec 7.10)")
+
+
+def print_etco2_sweep(title, cases, col):
+    """E8 (info): CBF of cycle 1, residuals at onsets 2 and 3, x_CO2 residual, peak ratio; one row per case."""
+    print(f"\n=== {title} ===")
+    print("CBF, rest reference, times in s after onset 1. resid k = CBF 1 s before onset k minus rest, in % of the "
+          "cycle-1 rise.\nx_CO2 res 2 = x_CO2 (MCA_L) 1 s before onset 2, in % of its value at the end of inhalation 1. "
+          "peak 2/1 = peak CBF rise of\ncycle 2 / cycle 1.")
+    print(f"{col:<12}{'t50':>7}{'t90':>7}{'at60%':>7}{'in t90':>8}{'lag':>7}{'resid 2%':>10}{'resid 3%':>10}"
+          f"{'xCO2 res 2%':>13}{'peak 2/1':>10}")
+    for key, case in cases.items():
+        cb, inp, pr, t = case["met"]["CBF"], case["met"]["PaCO2"], case["proto"], case["r"]["t"]
+        x = case["r"]["x_CO2"][:, 0]
+        xres = np.interp(pr.onsets[1] - 1.0, t, x) / np.interp(pr.offsets[0], t, x)
+        a = cb[0]["rest"]
+        print(f"{key:<12}{_f(a['t50'])}{_f(a['t90'])}{_f(100 * a['share60'])}{_f(inp[0]['rest']['t90'], 8)}"
+              f"{_f(a['t90'] - inp[0]['rest']['t90'])}{_f(100 * cb[1]['residual'], 10)}{_f(100 * cb[2]['residual'], 10)}"
+              f"{_f(100 * xres, 13)}{_f(cb[1]['rest']['rise'] / a['rise'], 10, 4)}")
+
+
+def _etco2_panels(case):
+    sig, met = case["sig"], case["met"]
+
+    def rel(k):
+        return 100.0 * (sig[k] / met[k][0]["y_rest"] - 1.0)
+    return (sig["PaCO2"], rel("CBF"), rel("v_MCA,L"), sig["CBV"] - met["CBV"][0]["y_rest"], sig["ICP"])
+
+
+def _etco2_marks(case, shift=0.0):
+    """t50, t90 of cycle 1 (rest reference) on the plotted clock, for the panels input, CBF, v_MCA, CBV."""
+    tk = case["onsets"][0] - shift
+    return {i: (tk + case["met"][k][0]["rest"]["t50"], tk + case["met"][k][0]["rest"]["t90"])
+            for i, k in enumerate(ETCO2_RISING)}
+
+
+def step_etco2():
+    """python run.py new --etco2 (spec 7.17): placeholder shape, step comparison, sweeps; checks E0-E8."""
+    proto = EtCO2Protocol()
+    m = NewModel()
+    print("=== End-tidal-shaped 5 % CO2 input (spec 7.17). Opt-in: not part of the default run, not part of --all ===")
+    print(f"PLACEHOLDER input shape (from no source): first-order lag of the inhaled-gas schedule, tau_on "
+          f"{proto.tau_on:g} s, tau_off {proto.tau_off:g} s,\nplateau {proto.P0 + proto.dP:g} mmHg (P0 {proto.P0:g} + "
+          f"dP {proto.dP:g}; the student's assumption for 5 % CO2). End-tidal -> arterial gap {proto.gap:g} mmHg "
+          f"(assumption).")
+    print(f"Protocol: rest {proto.t_rest:g} s; {proto.n_cycles} x {proto.t_inhale:g} s of 5 % CO2 (MRI protocol); "
+          f"{proto.t_air:g} s of air between them (the student's\nupper bound, exact value unknown); "
+          f"{proto.t_after:g} s of air after the last. Onsets {', '.join(f'{t:g}' for t in proto.onsets)} s; end "
+          f"{proto.t_end:g} s.\nComparison ('step'): the current switch-like input, 10-s linear ramps on the same schedule.")
+    rep = Report()
+    res = test_co2_etco2(rep, m, proto)
+    n_fail = rep.show()
+    print("\n" + BOLD_NOTE)
+    print_etco2_table(f"Shaped input (PLACEHOLDER shape, tau {proto.tau_on:g} s), {proto.t_air:g} s of air", res["main"], m)
+    print_etco2_table("Step input (current: 10-s linear ramps), same protocol", res["step"], m)
+    taus = {"step 10 s": res["step"], **{f"tau {k:g} s": v for k, v in sorted(res["taus"].items())}}
+    print_etco2_sweep("E8 (info): input shape, air 90 s (PLACEHOLDER shapes)", taus, "input")
+    airs = {f"air {k:g} s": v for k, v in sorted(res["airs"].items())}
+    print_etco2_sweep(f"E8 (info): air interval, tau {proto.tau_on:g} s (PLACEHOLDER shape)", airs, "interval")
+    e = res["csv"]["E1_diff"]
+    i = int(np.argmax(np.abs(e)))
+    print(f"\nE1: largest relative CBF difference CSV round trip vs analytic input {e[i]:+.2e}, at t = "
+          f"{res['main']['r']['t'][i]:.1f} s (the PCHIP interpolation of the 1-s samples next to a switch, spec 7.17)")
+
+    path = os.path.join(out_dir("new"), "new_model_etco2.png")
+    series = [(f"end-tidal-shaped (PLACEHOLDER, tau {proto.tau_on:g} s)", res["main"]["r"]["t"],
+               _etco2_panels(res["main"]), dict(color="tab:blue", lw=1.3)),
+              ("current input (10-s ramps)", res["step"]["r"]["t"], _etco2_panels(res["step"]),
+               dict(color="tab:red", lw=1.0, ls="--"))]
+    plot_etco2(series, list(zip(proto.onsets, proto.offsets)), _etco2_marks(res["main"]), path,
+               f"New model: 5 % CO2, {proto.n_cycles} x {proto.t_inhale:g} s with {proto.t_air:g} s of air. "
+               f"PLACEHOLDER input shape (first-order lag, tau {proto.tau_on:g} s, plateau {proto.P0 + proto.dP:g} mmHg)"
+               f"\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. "
+               f"Pa = 100 mmHg")
+    print(f"Figure saved: {path}")
+    return n_fail
+
+
+def run_etco2_measured(d, path, unit, cycles, length, barometric):
+    """python run.py new --etco2-csv FILE ... (spec 7.17): the model driven by a measured end-tidal curve; E2, E5."""
+    proto = replace(EtCO2Protocol(), t_inhale=length)
+    print("=== Measured end-tidal CO2 curve (spec 7.17). Opt-in: not part of the default run, not part of --all ===")
+    pb = (f" (P_B {barometric:g} mmHg; F/100 x (P_B - 47) is standard physiology, not from the project sources)"
+          if unit == "percent" else "")
+    print(f"{path}: {len(d.t)} samples, {d.t[0]:g} to {d.t[-1]:g} s; {d.dropped} non-finite or unreadable samples "
+          f"dropped; unit {unit}{pb}")
+    print(f"baseline (mean of the first 60 s of data) {d.baseline:.3f} mmHg -> model built with PaCO2_n = "
+          f"{d.baseline + proto.gap:.3f} mmHg (end-tidal -> arterial gap {proto.gap:g} mmHg, assumption)")
+    shift = ETCO2_PAD - d.t[0]                     # model time - CSV time
+    print(f"cycles at {', '.join(f'{c:g}' for c in cycles)} s (CSV clock), length {length:g} s. Model time = CSV time "
+          f"{'+' if shift >= 0 else '-'} {abs(shift):g} s ({ETCO2_PAD:g} s of rest holding the first value).")
+    m = NewModel(PaCO2_n=d.baseline + proto.gap)
+    f = d.function(pad=ETCO2_PAD, gap=proto.gap)
+    rep = Report()
+    case = etco2_case(rep, m, "measured", proto, f, onsets=list(d.to_model_time(cycles, pad=ETCO2_PAD)),
+                      t_end=float(d.to_model_time(d.t[-1], pad=ETCO2_PAD)))
+    n_fail = rep.show()
+    print("\n" + BOLD_NOTE)
+    print_etco2_table(f"Measured input {os.path.basename(path)} (onsets in the CSV clock)", case, m, clock_shift=shift)
+    out = os.path.join(out_dir("new"), "new_model_etco2_csv.png")
+    plot_etco2([(f"measured: {os.path.basename(path)}", case["r"]["t"] - shift, _etco2_panels(case),
+                 dict(color="tab:blue", lw=1.3))], [(c, c + length) for c in cycles], _etco2_marks(case, shift), out,
+               f"New model driven by the measured end-tidal curve {os.path.basename(path)} (unit {unit}).\n"
+               f"Cycles shaded; t50, t90 of cycle 1 marked. Pa = 100 mmHg", xlabel="time [s, CSV clock]")
+    print(f"Figure saved: {out}")
+    return n_fail
+
+
+def main_etco2(argv, parts=None):
+    """--etco2 / --etco2-csv: stand-alone (spec 7.17). Combined with any other flag of `new` it stops with an error."""
+    argv = list(argv)
+    flags = [a for a in argv if a.startswith("--")]
+    other = [a for a in flags if a not in ETCO2_FLAGS] + [f"--{q.replace('_', '-')}" for q in (parts or [])]
+    if other:
+        raise SystemExit(f"run.py new: --etco2 and --etco2-csv run on their own (spec 7.17); run the other parts "
+                         f"separately. Also given: {' '.join(other)}")
+    if ("--etco2" in argv) == ("--etco2-csv" in argv):
+        raise SystemExit("run.py new: give either --etco2 (placeholder shape) or --etco2-csv FILE (measured curve)")
+    if "--etco2" in argv:
+        extra = [a for a in flags if a != "--etco2"]
+        if extra:
+            raise SystemExit(f"run.py new: {' '.join(extra)} only go with --etco2-csv")
+        return step_etco2()
+    if "--etco2-unit" not in argv or "--cycles" not in argv:
+        raise SystemExit("run.py new: --etco2-csv needs --etco2-unit (mmHg, kPa or percent; never guessed) and "
+                         "--cycles T1,T2,... (inhalation onsets in the CSV's own time [s])")
+    path = argv[argv.index("--etco2-csv") + 1]
+    unit = argv[argv.index("--etco2-unit") + 1]
+    try:
+        cycles = [float(c) for c in argv[argv.index("--cycles") + 1].split(",") if c.strip()]
+        length = _argval(argv, "--cycle-length", 180.0)
+        barometric = _argval(argv, "--barometric", 760.0)
+        d = read_etco2_csv(path, unit, barometric)
+        d.check_cycles(cycles, length)
+    except (OSError, ValueError, IndexError) as e:
+        raise SystemExit(f"run.py new --etco2-csv: {e}")
+    return run_etco2_measured(d, path, unit, cycles, length, barometric)
 
 
 if __name__ == "__main__":

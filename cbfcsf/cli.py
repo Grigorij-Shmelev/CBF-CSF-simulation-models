@@ -71,6 +71,19 @@ def parser():
     g.add_argument("--rate", metavar="ML_MIN", help="infusion rate of --fit-csv [mL/min] (default 1.5)")
     g.add_argument("--t-on", metavar="S", help="infusion start of --fit-csv [s] (default 300)")
     g.add_argument("--t-off", metavar="S", help="infusion end of --fit-csv [s] (default 900)")
+    g = p.add_argument_group("opt-in scenario (spec 7.17): runs on its own, not with other flags; not part of the "
+                             "default run or of --all")
+    g.add_argument("--etco2", action="store_true", help="E0-E8: 5 %% CO2 inhaled 3 x 180 s with an end-tidal-shaped "
+                   "input (PLACEHOLDER shape), against the current 10-s ramps; tau and air-interval sweeps; about 2 min")
+    g.add_argument("--etco2-csv", metavar="FILE", help="the model driven by a measured end-tidal curve (CSV with "
+                   "header: time_s, etco2); needs --etco2-unit and --cycles")
+    g.add_argument("--etco2-unit", choices=("mmHg", "kPa", "percent"), help="unit of the etco2 column, required with "
+                   "--etco2-csv (never guessed). kPa: x 7.50062. percent: F/100 x (P_B - 47) mmHg, standard physiology, "
+                   "not from the project sources")
+    g.add_argument("--cycles", metavar="T1,T2,...", help="inhalation onsets of --etco2-csv in the CSV's own time [s]")
+    g.add_argument("--cycle-length", metavar="S", help="inhalation length of --etco2-csv [s] (default 180)")
+    g.add_argument("--barometric", metavar="MMHG", help="barometric pressure P_B for --etco2-unit percent [mmHg] "
+                   "(default 760)")
     for model, flags in SMALL.items():
         p = sub.add_parser(model, help=f"checks of the {model} model", description=f"Checks of the {model} model.")
         for flag, text in flags:
@@ -88,6 +101,9 @@ def show_list():
     for flag, text in NEW_PARTS + NEW_STAGES:
         print(f"    --{flag:<14}{text.replace('%%', '%')}")
     print(f"    --{'fit-csv FILE':<14}+ fit a measured LIT (--rate, --t-on, --t-off)")
+    print(f"    --{'etco2':<14}only: end-tidal-shaped 5 % CO2 input, PLACEHOLDER shape (spec 7.17; not in --all), about 2 min")
+    print(f"    --{'etco2-csv FILE':<14} only: a measured end-tidal curve (--etco2-unit, --cycles, --cycle-length, "
+          f"--barometric)")
     for model, flags in SMALL.items():
         print(f"python run.py {model} [flags]")
         for flag, text in flags:
@@ -103,6 +119,11 @@ def run_new(a):
     from cbfcsf.checks.new import main
     argv = [f"--{flag}" for flag, _ in NEW_STAGES if getattr(a, flag.replace("-", "_"))]
     for opt in ("fit_csv", "rate", "t_on", "t_off"):
+        if getattr(a, opt) is not None:
+            argv += [f"--{opt.replace('_', '-')}", getattr(a, opt)]
+    if a.etco2:
+        argv.append("--etco2")
+    for opt in ("etco2_csv", "etco2_unit", "cycles", "cycle_length", "barometric"):
         if getattr(a, opt) is not None:
             argv += [f"--{opt.replace('_', '-')}", getattr(a, opt)]
     parts = [flag.replace("-", "_") for flag, _ in NEW_PARTS if getattr(a, flag.replace("-", "_"))]

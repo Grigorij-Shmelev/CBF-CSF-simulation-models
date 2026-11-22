@@ -154,3 +154,32 @@ def plot_recording(vc, vb, path):
     ax.set_xlabel("time [s]"); ax.set_ylabel("ICP - mean [mmHg]"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
     ax.set_title("ICP pulse: model driven by the arterial pressure of the data file vs its ICP")
     fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def plot_etco2(series, spans, marks, path, title, xlabel="time [s]"):
+    """Spec 7.17 figure (a new function; plot_run() is not used).
+    series: list of (label, x, panels, style), panels = the five arrays (input PaCO2 [mmHg], CBF change [%],
+    v_MCA (left) change [%], stressed CBV change [mL], ICP [mmHg]) on the x grid; style: keyword arguments of plot().
+    spans: inhalations (start, end) on the x axis, shaded. marks: {panel index: (t50, t90)} on the x axis (cycle 1)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    ylabels = ("PaCO2 input [mmHg]", "CBF change [%]", "v_MCA (left) change [%]", "stressed CBV change [mL]",
+               "ICP [mmHg]")
+    fig, ax = plt.subplots(5, 1, figsize=(11, 13), sharex=True)
+    for label, x, panels, style in series:
+        for a, y in zip(ax, panels):
+            a.plot(x, y, label=label, **style)
+    for i, (t50, t90) in marks.items():
+        for tm, name in ((t50, "t50"), (t90, "t90")):
+            ax[i].axvline(tm, color="0.3", lw=0.8, ls=":")
+            ax[i].annotate(name, (tm, 0.04), xycoords=("data", "axes fraction"), fontsize=7, color="0.3",
+                           rotation=90, ha="right", va="bottom")
+    for a, yl in zip(ax, ylabels):
+        for a0, a1 in spans:
+            a.axvspan(a0, a1, color="0.5", alpha=0.12, lw=0)
+        a.set_ylabel(yl); a.grid(alpha=0.3)
+    ax[0].legend(fontsize=8, loc="upper right")
+    ax[-1].set_xlabel(xlabel)
+    fig.suptitle(title, fontsize=10)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
