@@ -368,6 +368,12 @@ bound; the exact value is not known yet.
 **Fig. 3b.** Three 3-min inhalations of 5 % CO2 (shaded). Solid: end-tidal-shaped input (placeholder); dashed: the same schedule
 with 10 s ramps, as in Fig. 3. $t_{50}$ and $t_{90}$ of cycle 1 are marked.
 
+![cycle 1 close-up](outputs/new/new_model_etco2_cycle1.png)
+
+**Fig. 3c.** Close-up of cycle 1, time from the start of the inhalation: the 10 s ramps and end-tidal curves with
+$\tau$ = 5, 20 and 40 s (all placeholders). Dots: $t_{90}$ of each curve; dotted line: 60 s after the start. The 10 s ramps and
+$\tau$ = 5 s give almost the same CBF and CBV; a slower input shifts the rise to the right, and no curve reaches 90 % before 60 s.
+
 CBF in cycle 1 (times after the start of the inhalation; "rest" = 1 s before the first inhalation):
 
 | Input | $t_{50}$ | $t_{90}$ | Share of the rise at 60 s | CBF 1 s before inhalation 2 (% of the cycle-1 rise) |
@@ -600,7 +606,7 @@ from `mat_models/` takes the same flags).
 | `python run.py new --fit-mismatch` | only: fit when the data come from a modified model. Ends with 1 failed check by design: $P_0$ for $\kappa_v$ = 0.2 is off by 0.32 mmHg against a pre-set bound of 0.3 | 5 min |
 | `python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900` | fit a measured LIT (CSV with the header `time_s, pressure_mmHg`) | |
 | `python run.py new --all` | default + calibrate + sensitivity + options + fit + params | 20 min |
-| `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; figure `new_model_etco2.png` (Section 4.2.1) | 30 s |
+| `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; figures `new_model_etco2.png` and `new_model_etco2_cycle1.png` (Section 4.2.1) | 30 s |
 | `python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180` | only: the model driven by a measured end-tidal curve (CSV with the header `time_s, etco2`; unit `mmHg`, `kPa` or `percent`, never guessed; onsets in the file's own time); figure `new_model_etco2_csv.png` | |
 | `python tests/test_regression.py` | re-runs every command and compares with the golden outputs exactly | 25–40 min |
 

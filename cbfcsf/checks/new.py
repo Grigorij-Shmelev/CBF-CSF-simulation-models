@@ -29,7 +29,7 @@ from cbfcsf.crosscheck import test_cross_lit, test_cross_more, test_cross_stroke
 from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit, test_fit_mismatch
 from cbfcsf.models.new_model import NAMES, Inputs, NewModel
 from cbfcsf.paths import ROOT, ZBYSEK_DATA, out_dir
-from cbfcsf.plots import plot_etco2, plot_fit, plot_recording, plot_run
+from cbfcsf.plots import plot_etco2, plot_etco2_onset, plot_fit, plot_recording, plot_run
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -875,6 +875,20 @@ def step_etco2():
                f"PLACEHOLDER input shape (first-order lag, tau {proto.tau_on:g} s, plateau {proto.P0 + proto.dP:g} mmHg)"
                f"\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. "
                f"Pa = 100 mmHg")
+    print(f"Figure saved: {path}")
+
+    # close-up of cycle 1: the onset shapes side by side (the runs above; nothing new is simulated)
+    path = os.path.join(out_dir("new"), "new_model_etco2_cycle1.png")
+    cases = [("current input: 10-s ramps", res["step"], dict(color="tab:red", lw=1.2, ls="--"))]
+    cases += [(f"end-tidal, tau {k:g} s" + (" (default)" if k == proto.tau_on else ""), res["taus"][k], dict(color=c, lw=1.3))
+              for k, c in zip(sorted(res["taus"]), ("tab:orange", "tab:blue", "tab:green"))]
+    series = [(f"{label}: CBF t90 {case['met']['CBF'][0]['rest']['t90']:.0f} s", case["r"]["t"], _etco2_panels(case),
+               style, {i: case["met"][k][0]["rest"]["t90"] for i, k in enumerate(ETCO2_RISING)})
+              for label, case, style in cases]
+    plot_etco2_onset(series, proto.onsets[0], proto.offsets[0], proto.onsets[1], path,
+                     f"New model: cycle 1 of 5 % CO2, close-up. PLACEHOLDER end-tidal shapes (first-order lag, tau 5 / 20 / "
+                     f"40 s, plateau {proto.P0 + proto.dP:g} mmHg)\nvs the current 10-s ramps. Dots: t90 of each curve; "
+                     f"dotted line: 60 s after the onset; inhalation shaded. Pa = 100 mmHg")
     print(f"Figure saved: {path}")
     return n_fail
 

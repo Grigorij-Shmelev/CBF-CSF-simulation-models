@@ -134,3 +134,4 @@ air 90 s       27.1   88.8   78.5    46.0   42.8      11.7      11.8         21.
 
 E1: largest relative CBF difference CSV round trip vs analytic input -6.54e-04, at t = 121.5 s (the PCHIP interpolation of the 1-s samples next to a switch, spec 7.17)
 Figure saved: new_model_etco2.png
+Figure saved: new_model_etco2_cycle1.png

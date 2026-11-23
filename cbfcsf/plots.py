@@ -183,3 +183,36 @@ def plot_etco2(series, spans, marks, path, title, xlabel="time [s]"):
     ax[-1].set_xlabel(xlabel)
     fig.suptitle(title, fontsize=10)
     fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def plot_etco2_onset(series, t_on, t_off, t_next, path, title):
+    """Spec 7.17: close-up of cycle 1 on a time axis that starts at its onset (a new function).
+    series: list of (label, x, panels, style, t90) with x, panels and style as in plot_etco2() and t90 = {panel index:
+    t90 in s after the onset}, drawn as a dot on the curve. Shown: 20 s before the onset to the next onset (t_next);
+    the inhalation is shaded and a dotted line marks 60 s after the onset."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import numpy as np
+    ylabels = ("PaCO2 input [mmHg]", "CBF change [%]", "v_MCA (left) change [%]", "stressed CBV change [mL]",
+               "ICP [mmHg]")
+    lo, hi = -20.0, t_next - t_on
+    fig, ax = plt.subplots(5, 1, figsize=(9, 13), sharex=True)
+    for label, x, panels, style, t90 in series:
+        xs = np.asarray(x) - t_on
+        w = (xs >= lo) & (xs <= hi)
+        for i, (a, y) in enumerate(zip(ax, panels)):
+            line, = a.plot(xs[w], np.asarray(y)[w], label=label, **style)
+            if i in t90:
+                a.plot(t90[i], np.interp(t90[i], xs, y), "o", color=line.get_color(), ms=5)
+    for a, yl in zip(ax, ylabels):
+        a.axvspan(0.0, t_off - t_on, color="0.5", alpha=0.12, lw=0)
+        a.axvline(60.0, color="0.3", lw=0.9, ls=":")
+        a.set_ylabel(yl); a.grid(alpha=0.3)
+    ax[1].annotate("60 s", (60.0, 0.04), xycoords=("data", "axes fraction"), fontsize=8, color="0.3", ha="left",
+                   va="bottom", xytext=(3, 0), textcoords="offset points")
+    ax[0].legend(fontsize=8, loc="lower center", bbox_to_anchor=(0.45, 0.02))
+    ax[-1].set_xlabel("time after the onset of inhalation 1 [s]")
+    ax[-1].set_xlim(lo, hi)
+    fig.suptitle(title, fontsize=10)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
