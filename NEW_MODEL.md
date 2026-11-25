@@ -249,7 +249,8 @@ basal flow, no flow through the anastomoses ($P_m = P_r$), CSF production = reso
 | MCA velocity | 60.9 cm/s | $q_{n,m}/(\pi r_{MCA,n}^2)$ |
 
 **Key fact:** in any steady state ICP $= P_{vs} + (S_1 + I)/\alpha$, **whatever the blood volume is**. Blood volume changes
-move ICP only temporarily, until resorption has removed or replaced the displaced CSF.
+move ICP only temporarily, until resorption has removed or replaced the displaced CSF. (This holds for constant production, the
+default. With the option of Section 4.10 production follows CBF, and a lasting change of CBF moves ICP too.)
 
 Why the spinal storage is scaled: Vaněk's own model stores volume also in its venous walls ($C_{1b}$, $C_{2b}$), which do not
 exist here. Scaling his three spinal compliances by one factor gives the storage of Ursino's model at rest. It changes ICP, not
@@ -288,6 +289,8 @@ keyword, e.g. `NewModel(kC_scale=3.0)`; the resting state is then recomputed.
 | $C_{min}$ | `C_min_frac` | 0.05 $C_n$ | unknown | bound against a negative compliance |
 | Total CBV at rest | `CBV_total_n` | 56 mL | placeholder | 4 mL/100 g × 1400 g, not from the project sources; sets the % output only |
 | $s_C$ | `kC_scale` | 1 | option | off by default (Section 4.9) |
+| CSF production law | `csf_production` | `"constant"` | option | `"ursino"`: $q_f = \max(0, (P_c - P_1)/R_f)$ (Section 4.10) |
+| $R_f$ | `R_f` (only with `"ursino"`) | 2286.7 mmHg·s/mL | derived | $(P_{c,n} - P_{1,n})/S_1$: production $S_1$ at rest (Ursino's Table 1 value 2380 would give 528 mL/day) |
 
 Note on $b_{CO_2}$: the printed Eq. 23 of Ursino & Giannessi reads differently from their text and from their own code. The
 form used here follows the text ($A \approx 1$ at rest). The literal reading changes no scenario result.
@@ -560,6 +563,52 @@ the infusion starts and stops, and fits three numbers with their standard errors
 The data come from the model itself, so this is the best case: the standard errors measure noise, not model error. Only real
 recordings can show the real uncertainty.
 
+### 4.10 CSF production by Ursino's law (option, `python run.py new --csf-production`)
+
+By default CSF production is constant ($S_1$ = 550 mL/day, as in Vaněk). The option `NewModel(csf_production="ursino")` replaces it
+by Ursino's law (Ursino & Giannessi 2010, Eq. 2), production by filtration from the capillaries:
+
+$$q_f = \max\!\Big(0,\ \frac{P_c - P_1}{R_f}\Big),\qquad \dot V_1 = q_f - F_{12} + I_1,\qquad R_f = \frac{P_{c,n} - P_{1,n}}{S_1} = 2286.7\ \text{mmHg·s/mL}.$$
+
+Differences from the paper: the ventricular pressure $P_1$ instead of the intracranial pressure (production enters the ventricles),
+$R_f$ calibrated so that production at rest stays 550 mL/day (Ursino: 2380), and the produced CSF is not taken from the capillary
+blood (0.05 % of CBF), so that the resting state is exactly the same for both laws.
+
+**What the law does in this model.** Whenever ICP is above the sinus pressure the venous outlet is collapsed, so the venous and the
+capillary pressure ride on ICP: in a steady state $P_c - P_2 = (R_{vs1} + R_{pv})\,\text{CBF}$. ICP cancels from $P_c - P_1$, and
+
+$$q_f = S_1\,\frac{\text{CBF}}{\text{CBF}_n}\qquad\text{(steady state).}$$
+
+Production follows the blood flow, not ICP. It rises in hypercapnia and falls in an occlusion, but hardly changes in an infusion test.
+
+![CSF production, scenarios](outputs/new/new_model_csf_production_scenarios.png)
+
+**Fig. 7.** ICP (top) and CSF production (bottom) with constant production (solid) and Ursino's law (dashed): 5 % CO2 held for
+50 min, the infusion test, and a 30-min MCA occlusion (shaded).
+
+| | constant | Ursino's law |
+| ------ | ------ | ------ |
+| 5 % CO2 held 50 min: production at the end | 550 mL/day | 724.5 mL/day (+31.7 %) |
+| ICP at the end (rest 9.47 mmHg) | 9.50 mmHg | 10.58 mmHg |
+| LIT plateau, 1.5 mL/min | 23.11 mmHg | 23.04 mmHg |
+| LIT, ICP at the end of the 10-min infusion | 22.32 mmHg | 22.26 mmHg |
+| 3 × 5 % CO2 (Section 4.2.1): ICP minimum after the last inhalation | 8.45 mmHg | 8.80 mmHg |
+| MCA occlusion: ICP change at the end of the occlusion | −0.18 mmHg | −1.01 mmHg (production −26 %) |
+| CBV changes (5 % CO2, LIT, MCA occlusion) | +3.38, +0.88, −2.46 mL | +3.48, +0.88, −2.49 mL |
+
+1. **Sustained hypercapnia keeps ICP raised** (+1.1 mmHg), because the extra blood flow produces more CSF and resorption must
+   carry it at a higher pressure. With constant production ICP returns to rest.
+2. **The infusion test is almost unchanged**: production falls only with CBF (−1.9 %), so the plateau is 0.07 mmHg lower and the
+   test still measures the resorption conductance $\alpha$.
+3. **Repeated hypercapnia:** the extra production during the inhalations fills part of the CSF deficit, so the undershoot after
+   the last inhalation is 0.67 instead of 1.03 mmHg below rest.
+4. **Blood volume barely depends on the law** (at most 0.1 mL).
+
+![CSF production, 3 cycles](outputs/new/new_model_csf_production.png)
+
+**Fig. 8.** Three 3-min inhalations of 5 % CO2 (end-tidal-shaped placeholder input), constant production (solid) vs Ursino's law
+(dashed). Bottom panel: volume changes of both runs.
+
 ## 5. Limitations and open questions
 
 1. **No patient data.** All parameters are from Ursino, Vaněk and Štěpáník. The results show direction and size, not
@@ -600,6 +649,7 @@ from `mat_models/` takes the same flags).
 | `python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900` | fit a measured LIT (CSV with the header `time_s, pressure_mmHg`) | |
 | `python run.py new --all` | default + calibrate + sensitivity + options + fit + params | 20 min |
 | `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; volume balance table; figures (with a volume panel) `new_model_etco2.png` and `new_model_etco2_cycle1.png` (Section 4.2.1) | 30 s |
+| `python run.py new --csf-production` | only (not in `--all`): constant CSF production vs Ursino's law in sustained 5 % CO2, the LIT, 3 × 5 % CO2 and an MCA occlusion; 63 checks (Q0–Q8); figures `new_model_csf_production.png` and `new_model_csf_production_scenarios.png` (Section 4.10) | 80 s |
 | `python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180` | only: the model driven by a measured end-tidal curve (CSV with the header `time_s, etco2`; unit `mmHg`, `kPa` or `percent`, never guessed; onsets in the file's own time); figure `new_model_etco2_csv.png` | |
 | `python tests/test_regression.py` | re-runs every command and compares with the golden outputs exactly | 25–40 min |
 
@@ -646,4 +696,6 @@ References:
 The bounds and the expected behaviour were written down before each scenario was coded (X3, X4 and X2c: after exploratory
 runs, as regression bounds). Further stages add their own checks: calibration (K1, K2), the $\varphi_v$ test, options
 (S0–S2) and fit (F1–F4). The opt-in end-tidal run has E0–E6 (input function, CSV reader, conservation
-in every run, graded and repeatable response, recovery) and E7–E8 (informational: response times).
+in every run, graded and repeatable response, recovery) and E7–E8 (informational: response times). The opt-in production
+comparison has Q0–Q8 (resting state, sustained CO2, LIT plateau and 3 cycles against formulas and predictions, conservation in every
+run, the default path unchanged).

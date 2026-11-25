@@ -249,3 +249,28 @@ def plot_etco2_onset(series, t_on, t_off, t_next, path, title, volumes=None):
     ax[-1].set_xlim(lo, hi)
     fig.suptitle(title, fontsize=10)
     fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
+
+
+def plot_csf_production(cols, path, title):
+    """Spec 7.19: ICP and CSF production over time, one column per scenario, both production laws.
+    cols: list of (scenario title, (start, end) of the intervention [s] or None, lines), lines = list of
+    (label, t [s], ICP [mmHg], production [mL/day], style)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(2, len(cols), figsize=(5.0 * len(cols), 7.0), sharex="col")
+    for j, (name, span, lines) in enumerate(cols):
+        for label, t, icp, q, style in lines:
+            ax[0, j].plot(t / 60.0, icp, label=label, **style)
+            ax[1, j].plot(t / 60.0, q, label=label, **style)
+        ax[0, j].set_title(name, fontsize=10)
+        for a in ax[:, j]:
+            if span is not None:
+                a.axvspan(span[0] / 60.0, span[1] / 60.0, color="0.5", alpha=0.12, lw=0)
+            a.grid(alpha=0.3)
+        ax[1, j].set_xlabel("time [min]")
+    ax[0, 0].set_ylabel("ICP [mmHg]")
+    ax[1, 0].set_ylabel("CSF production [mL/day]")
+    ax[0, 0].legend(fontsize=8)
+    fig.suptitle(title, fontsize=10)
+    fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)

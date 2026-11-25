@@ -83,6 +83,11 @@ def parser():
     g.add_argument("--cycle-length", metavar="S", help="inhalation length of --etco2-csv [s] (default 180)")
     g.add_argument("--barometric", metavar="MMHG", help="barometric pressure P_B for --etco2-unit percent [mmHg] "
                    "(default 760)")
+    g = p.add_argument_group("opt-in comparison (spec 7.19): runs on its own, not with other flags; not part of the "
+                             "default run or of --all")
+    g.add_argument("--csf-production", action="store_true", help="Q0-Q8: constant CSF production vs Ursino's "
+                   "pressure-dependent law (option csf_production='ursino'): sustained 5 %% CO2, LIT, 3 x 5 %% CO2, MCA "
+                   "occlusion; about 2 min")
     for model, flags in SMALL.items():
         p = sub.add_parser(model, help=f"checks of the {model} model", description=f"Checks of the {model} model.")
         for flag, text in flags:
@@ -103,6 +108,7 @@ def show_list():
     print(f"    --{'etco2':<14}only: end-tidal-shaped 5 % CO2 input, PLACEHOLDER shape (spec 7.17; not in --all), about 30 s")
     print(f"    --{'etco2-csv FILE':<14} only: a measured end-tidal curve (--etco2-unit, --cycles, --cycle-length, "
           f"--barometric)")
+    print(f"    --{'csf-production':<14} only: constant CSF production vs Ursino's law (spec 7.19; not in --all), about 2 min")
     for model, flags in SMALL.items():
         print(f"python run.py {model} [flags]")
         for flag, text in flags:
@@ -122,6 +128,8 @@ def run_new(a):
             argv += [f"--{opt.replace('_', '-')}", getattr(a, opt)]
     if a.etco2:
         argv.append("--etco2")
+    if a.csf_production:
+        argv.append("--csf-production")
     for opt in ("etco2_csv", "etco2_unit", "cycles", "cycle_length", "barometric"):
         if getattr(a, opt) is not None:
             argv += [f"--{opt.replace('_', '-')}", getattr(a, opt)]

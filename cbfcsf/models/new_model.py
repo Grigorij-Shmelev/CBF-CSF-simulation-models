@@ -22,6 +22,9 @@ States (18)
 Algebraic unknowns, solved at every call (spec 3.5.6)
     z = [P_1, P_2, P_c, P_N,L, P_N,R]
 
+CSF production (spec 7.19): constant S_1 by default; csf_production="ursino" gives Ursino's law
+q_f = max(0, (P_c - P_1) / R_f) with R_f calibrated so that q_f = S_1 at rest.
+
 Units: mmHg, mL, s.
 """
 
@@ -33,6 +36,8 @@ from cbfcsf.common.physics import hagen_poiseuille, wall_compliance
 
 
 NAMES = ("mL", "rL", "mR", "rR")
+CSF_PRODUCTION = ("constant", "ursino")     # laws of the option csf_production (spec 7.19)
+URSINO_R_F = 2.38e3                          # Ursino & Giannessi 2010, Table 1: CSF formation resistance [mmHg s/mL]
 SIDE = np.array([0, 0, 1, 1])        # node index of each arterial compartment (0 = left, 1 = right)
 IS_MCA = np.array([True, False, True, False])
 
@@ -110,6 +115,7 @@ class NewModel:
 
         # Switchable options (spec 7.10). Defaults reproduce the model without them exactly.
         self.kC_scale = 1.0        # width of the C(x) sigmoid relative to Ursino's. 1 = Ursino
+        self.csf_production = "constant"   # CSF production law (spec 7.19): "constant" = S1, "ursino" = Ursino's Eq. 2
         # Outputs (spec 7.10)
         self.CBV_total_n = 56.0    # total CBV at rest [mL]. PLACEHOLDER: 4 mL/100 g x 1400 g, not from the project sources
         self.r_MCA_n, self.k_MCA = 0.14, 12.0   # MCA radius at rest [cm] and rigidity (Ursino Table 1, Eq. 20)
@@ -119,6 +125,8 @@ class NewModel:
             if not hasattr(self, name):
                 raise AttributeError(f"unknown parameter {name}")
             setattr(self, name, value)
+        if self.csf_production not in CSF_PRODUCTION:
+            raise ValueError(f"csf_production must be one of {CSF_PRODUCTION}, not {self.csf_production!r}")
 
         self._calibrate()
 
@@ -153,6 +161,10 @@ class NewModel:
 
         self.V_n = self.C_n * (self.Pk_n - self.Pout_a_n)                # arterial stressed volumes at rest
         self.u_n = self.Pv_n - self.Pout_v_n - self.P_v1                 # venous law reference
+        if self.csf_production == "ursino":
+            # Ursino's law with the ventricular pressure P_1 (Ursino: P_ic); q_f = S1 at rest, resting state unchanged.
+            # The produced CSF is not taken from the capillary node (spec 7.19, choice b), as for constant production.
+            self.R_f = (self.Pc_n - self.P1_n) / self.S1
 
     def storage_at_rest(self):
         """Total spinal wall compliance at rest [mL/mmHg]: the only volume storage outside the skull."""
@@ -185,7 +197,7 @@ class NewModel:
         wv = self.P_v1 + self.u_n * np.exp(self.k_ven * (y[4] - self.V_vn))   # P_v - P_out,v
         return C, e, R, wv
 
-    def _flows(self, z, y, e, R, wv, inp_t, collapse, resorb):
+    def _flows(self, z, y, e, R, wv, inp_t, collapse, resorb, produce=True):
         """All flows for given algebraic unknowns z. Affine in z for fixed switches."""
         P1, P2, Pc, PNL, PNR = z
         Pa, Pvs, I, occ = inp_t["Pa"], inp_t["Pvs"], inp_t["I"], inp_t["occ"]
@@ -205,11 +217,15 @@ class NewModel:
         F12 = (P1 - P2) / self.R12
         F23 = (P2 - y[7]) / self.R23
         F_out = self.alpha * (P2 - Pvs) if resorb else 0.0
+        if self.csf_production == "ursino":                              # spec 7.19
+            q_f = (Pc - P1) / self.R_f if produce else 0.0
+        else:
+            q_f = self.S1
         q_ICA = np.array([(Pa - PNL) / (self.R_ICA * occ[2]), (Pa - PNR) / (self.R_ICA * occ[3])])
 
         dVa = q_in - q_k + q_c
         dVv = q_pv - q_vs
-        dV1 = -F12 + self.S1 + I[0]
+        dV1 = -F12 + q_f + I[0]
         dV2 = F12 - F23 - F_out + I[1]
         res = np.array([
             q_ICA[0] + (PNR - PNL) / self.R_com - q_in[0] - q_in[1],     # node L
@@ -219,7 +235,7 @@ class NewModel:
             dV2 + self.phi_a * dVa.sum() + self.phi_v * dVv,             # rigid skull, SAS walls
         ])
         out = dict(P1=P1, P2=P2, Pc=Pc, PNL=PNL, PNR=PNR, Pk=Pk, Pv=Pv, Pout_v=Pout_v, q_in=q_in, q_k=q_k, q_c=q_c,
-                   q_pv=q_pv, q_vs=q_vs, q_ICA=q_ICA, F12=F12, F23=F23, F_out=F_out,
+                   q_pv=q_pv, q_vs=q_vs, q_ICA=q_ICA, F12=F12, F23=F23, F_out=F_out, q_f=q_f,
                    dVa=dVa, dVv=dVv, dV1=dV1, dV2=dV2)
         return res, out
 
@@ -228,21 +244,23 @@ class NewModel:
         C, e, R, wv = self._wall(y)
         inp_t = dict(Pa=inp.Pa(t), Pvs=inp.Pvs(t), I=np.asarray(inp.infusion(t), float),
                      occ=np.asarray(inp.occlusion(t), float))
-        collapse, resorb = True, True
+        collapse, resorb, produce = True, True, True
+        ursino = self.csf_production == "ursino"
         zero = np.zeros(5)
         for _ in range(4):
-            r0, _o = self._flows(zero, y, e, R, wv, inp_t, collapse, resorb)
+            r0, _o = self._flows(zero, y, e, R, wv, inp_t, collapse, resorb, produce)
             J = np.empty((5, 5))
             for j in range(5):
                 ej = zero.copy(); ej[j] = 1.0
-                J[:, j] = self._flows(ej, y, e, R, wv, inp_t, collapse, resorb)[0] - r0
+                J[:, j] = self._flows(ej, y, e, R, wv, inp_t, collapse, resorb, produce)[0] - r0
             z = np.linalg.solve(J, -r0)
-            res, out = self._flows(z, y, e, R, wv, inp_t, collapse, resorb)
+            res, out = self._flows(z, y, e, R, wv, inp_t, collapse, resorb, produce)
             c_new = out["Pout_v"] >= inp_t["Pvs"]
             r_new = out["P2"] > inp_t["Pvs"]
-            if c_new == collapse and r_new == resorb:
+            p_new = out["Pc"] > out["P1"] if ursino else True                # production switch (spec 7.19)
+            if c_new == collapse and r_new == resorb and p_new == produce:
                 break
-            collapse, resorb = c_new, r_new
+            collapse, resorb, produce = c_new, r_new, p_new
         out["C"] = C
         out["R"] = R
         out["res"] = float(np.max(np.abs(res)))
@@ -285,7 +303,8 @@ class NewModel:
 
     def observe(self, t, Y, inp):
         """Rebuild pressures, flows and volumes on the solution grid (spec 3.5.7)."""
-        keys = ("P1", "P2", "Pc", "Pv", "q_vs", "F_out", "F23", "res")
+        ursino = self.csf_production == "ursino"
+        keys = ("P1", "P2", "Pc", "Pv", "q_vs", "F_out", "F23", "res") + (("q_f",) if ursino else ())
         r = {k: np.empty(len(t)) for k in keys}
         r.update(Pk=np.empty((len(t), 4)), q_k=np.empty((len(t), 4)), C=np.empty((len(t), 4)),
                  q_ICA=np.empty((len(t), 2)), q_c=np.empty((len(t), 4)), q_in=np.empty((len(t), 4)),
@@ -324,5 +343,6 @@ class NewModel:
         I = np.array([np.asarray(inp.infusion(ti), float) for ti in t])
         r["I_total"] = I.sum(axis=1)
         r["dVcsf"] = (r["V1"] + r["V2"]) - (r["V1"][0] + r["V2"][0]) + r["dVspinal"]
-        r["csf_net_in"] = cumulative_trapezoid(self.S1 + r["I_total"] - r["F_out"], t, initial=0.0)
+        production = r["q_f"] if ursino else self.S1                     # spec 7.19
+        r["csf_net_in"] = cumulative_trapezoid(production + r["I_total"] - r["F_out"], t, initial=0.0)
         return r

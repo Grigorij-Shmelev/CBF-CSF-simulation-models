@@ -14,6 +14,7 @@ Usage (from the repository root; the old form `python new_model.py [flags]` from
     python run.py new --etco2           # only: end-tidal-shaped CO2 input, PLACEHOLDER shape, spec 7.17 (not in --all)
     python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180
                                         # only: a measured end-tidal curve (CSV header, columns: time_s, etco2)
+    python run.py new --csf-production  # only: constant CSF production vs Ursino's law, spec 7.19 (not in --all)
 """
 import os
 from dataclasses import replace
@@ -26,9 +27,9 @@ from cbfcsf.common.signals import (EtCO2Protocol, etco2_curve, etco2_step, pulse
                                     write_etco2_csv)
 from cbfcsf.crosscheck import test_cross_lit, test_cross_more, test_cross_stroke
 from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit
-from cbfcsf.models.new_model import NAMES, Inputs, NewModel
+from cbfcsf.models.new_model import CSF_PRODUCTION, NAMES, URSINO_R_F, Inputs, NewModel
 from cbfcsf.paths import ROOT, ZBYSEK_DATA, out_dir
-from cbfcsf.plots import plot_etco2, plot_etco2_onset, plot_fit, plot_recording, plot_run
+from cbfcsf.plots import plot_csf_production, plot_etco2, plot_etco2_onset, plot_fit, plot_recording, plot_run
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -344,6 +345,8 @@ PARTS = ("rest", "co2", "co2_5pct", "lit", "stroke", "pulsatile", "ica", "cross"
 def main(argv=(), parts=None):
     """argv: the old flags (--calibrate, --fit, ...). parts: subset of PARTS to run of the default run (run.py new
     --rest --lit ...); None = all of it. Stages need the whole default run, so they ignore parts."""
+    if CSF_FLAG in argv:                      # opt-in comparison of spec 7.19: runs on its own, not with other flags
+        return main_csf_production(argv, parts)
     if any(a in ETCO2_FLAGS for a in argv):   # opt-in scenario of spec 7.17: runs on its own, not with other flags
         return main_etco2(argv, parts)
     do_cal = "--calibrate" in argv or "--all" in argv
@@ -941,6 +944,206 @@ def main_etco2(argv, parts=None):
     except (OSError, ValueError, IndexError) as e:
         raise SystemExit(f"run.py new --etco2-csv: {e}")
     return run_etco2_measured(d, path, unit, cycles, length, barometric)
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Eighth step (spec 7.19): CSF production by Ursino's law. Opt-in: not in the default run, not in --all.
+# ----------------------------------------------------------------------------------------------------------------------
+CSF_FLAG = "--csf-production"
+CSF_LABEL = {"constant": "constant production", "ursino": "Ursino's law"}
+CSF_REST_KEYS = ("P1_n", "P2_n", "Pc_n", "Pv_n", "PN_n", "Pk_n", "R_n", "R_rest", "V_n", "u_n", "c_sp_scale")
+LIT_RATE = 1.5 / 60.0           # [mL/s]
+DAY = 86400.0
+
+
+def production(r, m):
+    """CSF production q_f(t) [mL/s] of a run: the output q_f with Ursino's law, S1 with constant production."""
+    return r["q_f"] if "q_f" in r else np.full(len(r["t"]), m.S1)
+
+
+def run_sustained_co2(m, t_on=120.0, t_end=3120.0):
+    """Q1: 5 % CO2 (PaCO2 47.5 mmHg) from t_on (10-s ramp), held to the end of the run."""
+    pco2 = lambda t: ramp(t, [(0, 40.0), (t_on, 40.0), (t_on + 10.0, 47.5), (t_end, 47.5)])
+    r = m.simulate(Inputs(PaCO2=pco2), t_end, t_eval=np.linspace(0.0, t_end, int(t_end) + 1), max_step=5.0)
+    r["span"] = (t_on, t_end)
+    return r
+
+
+def run_lit_long(m, t_end=5000.0):
+    """Q2: constant infusion of 1.5 mL/min into compartment 5 from t = 0 (the long run of L1, with more output samples)."""
+    return m.simulate(Inputs(infusion=lambda t: np.array([0, 0, 0, 0, LIT_RATE])), t_end,
+                      t_eval=np.linspace(0.0, t_end, 501), max_step=20.0)
+
+
+def csf_case(rep5, law):
+    """Every run of spec 7.19 for one law; T2, T3, T7 (and T4 where symmetric) on each run go to rep5 (Q5)."""
+    m = NewModel(csf_production=law)
+    proto = EtCO2Protocol()
+    c = dict(m=m, law=law, rest=m.simulate(Inputs(), 600.0, t_eval=np.linspace(0, 600, 601)), co2=run_sustained_co2(m),
+             lit_long=run_lit_long(m), lit=test_lit(Report(), m),
+             etco2=etco2_case(Report(), m, law, proto, etco2_curve(proto)), stroke=test_stroke(Report(), m))
+    for key, name, sym in (("rest", "rest", True), ("co2", "CO2", True), ("lit_long", "LIT long", True),
+                           ("lit", "LIT", True), ("etco2", "3 cycles", True), ("stroke", "stroke", False)):
+        common_checks(rep5, f"Q5 {law} {name}", c[key]["r"] if key == "etco2" else c[key], symmetric=sym)
+    return c
+
+
+def icp_min_after_last(case):
+    """ICP minimum after the end of the last inhalation of a 3-cycle run, and its time."""
+    r, t_last = case["r"], case["proto"].offsets[-1]
+    after = np.flatnonzero(r["t"] >= t_last)
+    i = after[np.argmin(r["ICP"][after])]
+    return float(r["ICP"][i]), float(r["t"][i])
+
+
+def test_csf_production(rep):
+    """Q0-Q8 (spec 7.19): constant production vs Ursino's law."""
+    rep5 = Report()
+    cases = {law: csf_case(rep5, law) for law in CSF_PRODUCTION}
+    mc, mu = cases["constant"]["m"], cases["ursino"]["m"]
+    # Q0: resting state
+    diff = max(float(np.max(np.abs(np.asarray(getattr(mu, k), float) - np.asarray(getattr(mc, k), float))))
+               for k in CSF_REST_KEYS)
+    rep.check("Q0a ursino: resting state vs constant, max |diff|", diff, 0, 0, "")
+    y0 = mu.initial_state()
+    rep.check("Q0b ursino: |q_f / S1 - 1| at rest", abs(mu.solve_algebraic(0.0, y0, Inputs())["q_f"] / mu.S1 - 1),
+              0, 1e-12, "rel")
+    rep.check("Q0c ursino: max |dy/dt| at rest", float(np.max(np.abs(mu.rhs(0.0, y0, Inputs())))), 0, 1e-9, "")
+    r = cases["ursino"]["rest"]
+    rep.check("Q0d ursino rest: max |ICP - 9.47|", np.max(np.abs(r["ICP"] - mu.P2_n)), 0, 0.05, "mmHg")
+    rep.check("Q0d ursino rest: max |q_k/q_n - 1|", np.max(np.abs(r["q_k"] / mu.q_n - 1)), 0, 0.005, "rel")
+    vols = np.column_stack([r["Va"], r["Vv"], r["V1"], r["V2"]])
+    rep.check("Q0d ursino rest: max volume drift", np.max(np.abs(vols / vols[0] - 1)), 0, 0.005, "rel")
+    rep.check("Q0d ursino rest: max |x|", max(np.max(np.abs(r["x_aut"])), np.max(np.abs(r["x_CO2"]))), 0, 0.005, "")
+    # Q1: sustained 5 % CO2
+    rc, ru = cases["constant"]["co2"], cases["ursino"]["co2"]
+    rep.check("Q1a constant: ICP at 3120 s - rest", float(rc["ICP"][-1] - rc["ICP"][0]), -0.1, 0.1, "mmHg")
+    c_u = float(ru["CBF"][-1] / ru["CBF"][0])
+    rep.check("Q1b ursino: ICP at 3120 s - (Pvs + S1 c / alpha)",
+              float(ru["ICP"][-1]) - (mu.Pvs_n + mu.S1 * c_u / mu.alpha), -0.05, 0.05, "mmHg")
+    rep.check("Q1c ursino: ICP rise at 3120 s", float(ru["ICP"][-1] - ru["ICP"][0]), 0.9, 1.3, "mmHg")
+    rep.check("Q1d ursino: q_f / S1 - CBF / CBF_rest at 3120 s", float(ru["q_f"][-1] / mu.S1) - c_u, -0.005, 0.005, "")
+    # Q2: LIT plateau
+    lc, lu = cases["constant"]["lit_long"], cases["ursino"]["lit_long"]
+    rep.check("Q2a constant: plateau - (Pvs + (S1 + I) / alpha)",
+              float(lc["ICP"][-1]) - (mc.Pvs_n + (mc.S1 + LIT_RATE) / mc.alpha), -0.1, 0.1, "mmHg")
+    c_inf = float(lu["CBF"][-1] / lu["CBF"][0])
+    rep.check("Q2b ursino: plateau - (Pvs + (S1 c + I) / alpha)",
+              float(lu["ICP"][-1]) - (mu.Pvs_n + (mu.S1 * c_inf + LIT_RATE) / mu.alpha), -0.05, 0.05, "mmHg")
+    rep.check("Q2c ursino plateau - constant plateau", float(lu["ICP"][-1] - lc["ICP"][-1]), -0.2, 0.0, "mmHg")
+    # Q3: 3-cycle end-tidal protocol
+    rep.check("Q3a constant: ICP min after the last inhalation", icp_min_after_last(cases["constant"]["etco2"])[0],
+              8.44, 8.46, "mmHg")
+    rep.check("Q3b ursino: ICP min after the last inhalation", icp_min_after_last(cases["ursino"]["etco2"])[0],
+              8.7, 9.1, "mmHg")
+    # Q4 (info): MCA occlusion
+    for law, lo_hi in (("constant", (-0.5, 0.5)), ("ursino", (-1.0, -0.75))):
+        r = cases[law]["stroke"]
+        i0, i1, _ = r["marks"]
+        rep.info(f"Q4 {law}: ICP change, end of MCA occlusion", float(r["ICP"][i1] - r["ICP"][i0]), *lo_hi, "mmHg")
+    r = cases["ursino"]["stroke"]
+    i0, i1, _ = r["marks"]
+    rep.info("Q4 ursino: production change, end of occlusion", float(r["q_f"][i1] / r["q_f"][i0] - 1), -0.30, -0.23, "rel")
+    # Q6: the option's default path is the default model
+    rd = run_sustained_co2(NewModel())
+    d6 = max(float(np.max(np.abs(v - rc[k]))) for k, v in rd.items() if isinstance(v, np.ndarray))
+    rep.check("Q6 csf_production='constant' vs default, max |diff|", d6, 0, 0, "")
+    # Q8 (info): input check
+    try:
+        NewModel(csf_production="x")
+        raised = 0.0
+    except ValueError:
+        raised = 1.0
+    rep.info("Q8 csf_production='x' raises ValueError", raised, 1, 1, "")
+    rep.rows.extend(rep5.rows)                                               # Q5 last
+    return cases
+
+
+def print_csf_table(cases):
+    """One comparison table of the two laws (spec 7.19)."""
+    mu = cases["ursino"]["m"]
+    print("\n=== Constant CSF production vs Ursino's law (spec 7.19) ===")
+    print(f"Ursino's law: q_f = max(0, (P_c - P_1) / R_f) into the ventricles (Ursino: P_ic instead of P_1); the produced CSF "
+          f"is not\ntaken from the blood. R_f calibrated so that q_f = S1 = {mu.S1 * DAY:.0f} mL/day at rest: R_f = "
+          f"{mu.R_f:.1f} mmHg s/mL (Ursino's {URSINO_R_F:.0f} would give\n{(mu.Pc_n - mu.P1_n) / URSINO_R_F * DAY:.1f} mL/day "
+          f"at rest).")
+
+    def at(r, i, key):
+        return float(r[key][i])
+
+    def dv(r, i):
+        return float(r["Vblood"][i] - r["Vblood"][0])
+    rows = [
+        ("production at rest [mL/day]", lambda c: production(c["rest"], c["m"])[0] * DAY, 1),
+        ("sustained 5 % CO2, 3000 s: production at the end [mL/day]", lambda c: production(c["co2"], c["m"])[-1] * DAY, 1),
+        ("  ICP max [mmHg]", lambda c: float(np.max(c["co2"]["ICP"])), 2),
+        ("  ICP at the end [mmHg]", lambda c: at(c["co2"], -1, "ICP"), 2),
+        ("  CBF change at the end [%]", lambda c: 100 * (at(c["co2"], -1, "CBF") / at(c["co2"], 0, "CBF") - 1), 1),
+        ("  stressed CBV change at the end [mL]", lambda c: dv(c["co2"], -1), 2),
+        ("LIT 1.5 mL/min, plateau (5000 s) [mmHg]", lambda c: at(c["lit_long"], -1, "ICP"), 2),
+        ("LIT 10 min: ICP at the end of the infusion [mmHg]", lambda c: at(c["lit"], c["lit"]["marks"][1], "ICP"), 2),
+        ("  production at the end of the infusion [mL/day]",
+         lambda c: production(c["lit"], c["m"])[c["lit"]["marks"][1]] * DAY, 1),
+        ("  stressed CBV change at the end of the infusion [mL]", lambda c: dcbv(c["lit"]), 2),
+        ("3 x 5 % CO2 (shaped input): ICP max [mmHg]", lambda c: float(np.max(c["etco2"]["r"]["ICP"])), 2),
+        ("  ICP min after the last inhalation [mmHg]", lambda c: icp_min_after_last(c["etco2"])[0], 2),
+        ("  time of that minimum [s]", lambda c: icp_min_after_last(c["etco2"])[1], 1),
+        ("  ICP at the end of the run, 2040 s [mmHg]", lambda c: at(c["etco2"]["r"], -1, "ICP"), 2),
+        ("  net CSF in at the end of the last inhalation [mL]",
+         lambda c: float(np.interp(c["etco2"]["proto"].offsets[-1], c["etco2"]["r"]["t"], c["etco2"]["r"]["csf_net_in"])), 2),
+        ("MCA occlusion 30 min: ICP change at its end [mmHg]",
+         lambda c: at(c["stroke"], c["stroke"]["marks"][1], "ICP") - at(c["stroke"], c["stroke"]["marks"][0], "ICP"), 2),
+        ("  production change at its end [%]", lambda c: 100 * (production(c["stroke"], c["m"])[c["stroke"]["marks"][1]]
+                                                            / production(c["stroke"], c["m"])[c["stroke"]["marks"][0]] - 1), 1),
+        ("  stressed CBV change at its end [mL]", lambda c: dcbv(c["stroke"]), 2),
+    ]
+    print(f"{'':<58}{'constant':>10}{'Ursino':>10}{'difference':>12}")
+    for name, fn, d in rows:
+        a, b = fn(cases["constant"]), fn(cases["ursino"])
+        print(f"{name:<58}{a:>10.{d}f}{b:>10.{d}f}{b - a:>+12.{d}f}")
+
+
+def step_csf_production():
+    """python run.py new --csf-production (spec 7.19): checks Q0-Q8, comparison table, volume tables, two figures."""
+    print("=== CSF production: constant vs Ursino's law (spec 7.19). Opt-in: not part of the default run, not part of --all ===")
+    rep = Report()
+    cases = test_csf_production(rep)
+    n_fail = rep.show()
+    print_csf_table(cases)
+    for law in CSF_PRODUCTION:
+        print_volume_table(f"Volume balance, 3 x 5 % CO2 (shaped input), {CSF_LABEL[law]} (spec 7.22)", cases[law]["etco2"])
+    proto = cases["constant"]["etco2"]["proto"]
+    styles = {"constant": dict(color="tab:blue", lw=1.3), "ursino": dict(color="tab:orange", lw=1.3, ls="--")}
+    path = os.path.join(out_dir("new"), "new_model_csf_production.png")
+    series = [(CSF_LABEL[law], cases[law]["etco2"]["r"]["t"], _etco2_panels(cases[law]["etco2"]), styles[law])
+              for law in CSF_PRODUCTION]
+    volumes = [(CSF_LABEL[law], cases[law]["etco2"]["r"]["t"], _etco2_volumes(cases[law]["etco2"]), styles[law].get("ls", "-"))
+               for law in CSF_PRODUCTION]
+    plot_etco2(series, list(zip(proto.onsets, proto.offsets)), {}, path,
+               f"New model: 5 % CO2, {proto.n_cycles} x {proto.t_inhale:g} s with {proto.t_air:g} s of air, end-tidal-shaped "
+               f"input (PLACEHOLDER, tau {proto.tau_on:g} s). Constant CSF production (solid)\nvs Ursino's law (dashed). "
+               f"Inhalations shaded. Pa = 100 mmHg. Bottom panel: volume changes from rest, both laws.", volumes=volumes)
+    print(f"\nFigure saved: {path}")
+    path = os.path.join(out_dir("new"), "new_model_csf_production_scenarios.png")
+    cols = []
+    for name, key in (("Sustained 5 % CO2 (from 2 min)", "co2"), ("LIT, 1.5 mL/min for 10 min", "lit"),
+                      ("Left MCA occluded 30 min", "stroke")):
+        lines = [(CSF_LABEL[law], cases[law][key]["t"], cases[law][key]["ICP"],
+                  production(cases[law][key], cases[law]["m"]) * DAY, styles[law]) for law in CSF_PRODUCTION]
+        cols.append((name, cases["constant"][key]["span"], lines))
+    plot_csf_production(cols, path, "New model: ICP and CSF production, constant production (solid) vs Ursino's law "
+                                    "(dashed). Intervention shaded")
+    print(f"Figure saved: {path}")
+    return n_fail
+
+
+def main_csf_production(argv, parts=None):
+    """--csf-production: stand-alone (spec 7.19). Combined with any other flag of `new` it stops with an error."""
+    other = [a for a in argv if a.startswith("--") and a != CSF_FLAG] + [f"--{q.replace('_', '-')}" for q in (parts or [])]
+    if other:
+        raise SystemExit(f"run.py new: --csf-production runs on its own (spec 7.19); run the other parts separately. "
+                         f"Also given: {' '.join(other)}")
+    return step_csf_production()
 
 
 if __name__ == "__main__":
