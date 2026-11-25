@@ -156,20 +156,50 @@ def plot_recording(vc, vb, path):
     fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
 
 
-def plot_etco2(series, spans, marks, path, title, xlabel="time [s]"):
+# Volume panel of the end-tidal figures (spec 7.22): key of the curves, legend label, colour
+# (colours not used by the runs of the other panels: blue, red, orange, green)
+# net CSF in = cumulative production - resorption + infusion
+VOLUME_CURVES = (("arterial", "arterial (sum of V_a)", "tab:brown"), ("venous", "venous (V_v)", "tab:purple"),
+                 ("cranial", "cranial CSF (V1 + V2)", "tab:cyan"), ("spinal", "spinal CSF", "tab:olive"),
+                 ("net_in", "net CSF in (cumulative)", "k"))
+
+
+def _volume_panel(a, volumes, shift=0.0, window=None):
+    """Spec 7.22: volume changes from rest. volumes: list of (label, x, curves, linestyle), curves = {key of
+    VOLUME_CURVES: array on x}. One colour per quantity; with more than one entry, each entry gets its line style and
+    a grey legend line. shift: subtracted from x; window: (lo, hi) on the shifted axis, or None."""
+    import numpy as np
+    for i, (label, x, curves, ls) in enumerate(volumes):
+        xs = np.asarray(x) - shift
+        w = np.ones(len(xs), bool) if window is None else (xs >= window[0]) & (xs <= window[1])
+        for key, name, color in VOLUME_CURVES:
+            a.plot(xs[w], np.asarray(curves[key])[w], color=color, ls=ls, lw=1.2, label=name if i == 0 else None)
+    if len(volumes) > 1:
+        for label, _, _, ls in volumes:
+            a.plot([], [], color="0.4", ls=ls, label=label)
+    a.axhline(0.0, color="0.3", lw=0.6)
+    lo, hi = a.get_ylim()
+    a.set_ylim(lo, hi + 0.4 * (hi - lo))          # headroom: the legend sits above the curves
+    a.legend(fontsize=7, ncol=3, loc="upper right")
+
+
+def plot_etco2(series, spans, marks, path, title, xlabel="time [s]", volumes=None):
     """Spec 7.17 figure (a new function; plot_run() is not used).
     series: list of (label, x, panels, style), panels = the five arrays (input PaCO2 [mmHg], CBF change [%],
     v_MCA (left) change [%], stressed CBV change [mL], ICP [mmHg]) on the x grid; style: keyword arguments of plot().
-    spans: inhalations (start, end) on the x axis, shaded. marks: {panel index: (t50, t90)} on the x axis (cycle 1)."""
+    spans: inhalations (start, end) on the x axis, shaded. marks: {panel index: (t50, t90)} on the x axis (cycle 1).
+    volumes (spec 7.22): a 6th panel of volume changes, see _volume_panel(); None = five panels."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     ylabels = ("PaCO2 input [mmHg]", "CBF change [%]", "v_MCA (left) change [%]", "stressed CBV change [mL]",
-               "ICP [mmHg]")
-    fig, ax = plt.subplots(5, 1, figsize=(11, 13), sharex=True)
+               "ICP [mmHg]") + (("volume change [mL]",) if volumes else ())
+    fig, ax = plt.subplots(len(ylabels), 1, figsize=(11, 15.5 if volumes else 13), sharex=True)
     for label, x, panels, style in series:
         for a, y in zip(ax, panels):
             a.plot(x, y, label=label, **style)
+    if volumes:
+        _volume_panel(ax[5], volumes)
     for i, (t50, t90) in marks.items():
         for tm, name in ((t50, "t50"), (t90, "t90")):
             ax[i].axvline(tm, color="0.3", lw=0.8, ls=":")
@@ -185,19 +215,20 @@ def plot_etco2(series, spans, marks, path, title, xlabel="time [s]"):
     fig.tight_layout(); fig.savefig(path, dpi=140); plt.close(fig)
 
 
-def plot_etco2_onset(series, t_on, t_off, t_next, path, title):
+def plot_etco2_onset(series, t_on, t_off, t_next, path, title, volumes=None):
     """Spec 7.17: close-up of cycle 1 on a time axis that starts at its onset (a new function).
     series: list of (label, x, panels, style, t90) with x, panels and style as in plot_etco2() and t90 = {panel index:
     t90 in s after the onset}, drawn as a dot on the curve. Shown: 20 s before the onset to the next onset (t_next);
-    the inhalation is shaded and a dotted line marks 60 s after the onset."""
+    the inhalation is shaded and a dotted line marks 60 s after the onset.
+    volumes (spec 7.22): a 6th panel of volume changes, as in plot_etco2(); None = five panels."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import numpy as np
     ylabels = ("PaCO2 input [mmHg]", "CBF change [%]", "v_MCA (left) change [%]", "stressed CBV change [mL]",
-               "ICP [mmHg]")
+               "ICP [mmHg]") + (("volume change [mL]",) if volumes else ())
     lo, hi = -20.0, t_next - t_on
-    fig, ax = plt.subplots(5, 1, figsize=(9, 13), sharex=True)
+    fig, ax = plt.subplots(len(ylabels), 1, figsize=(9, 15.5 if volumes else 13), sharex=True)
     for label, x, panels, style, t90 in series:
         xs = np.asarray(x) - t_on
         w = (xs >= lo) & (xs <= hi)
@@ -205,6 +236,8 @@ def plot_etco2_onset(series, t_on, t_off, t_next, path, title):
             line, = a.plot(xs[w], np.asarray(y)[w], label=label, **style)
             if i in t90:
                 a.plot(t90[i], np.interp(t90[i], xs, y), "o", color=line.get_color(), ms=5)
+    if volumes:
+        _volume_panel(ax[5], volumes, shift=t_on, window=(lo, hi))
     for a, yl in zip(ax, ylabels):
         a.axvspan(0.0, t_off - t_on, color="0.5", alpha=0.12, lw=0)
         a.axvline(60.0, color="0.3", lw=0.9, ls=":")

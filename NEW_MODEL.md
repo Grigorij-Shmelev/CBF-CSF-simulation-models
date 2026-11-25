@@ -366,13 +366,15 @@ bound; the exact value is not known yet.
 ![end-tidal CO2](outputs/new/new_model_etco2.png)
 
 **Fig. 3b.** Three 3-min inhalations of 5 % CO2 (shaded). Solid: end-tidal-shaped input (placeholder); dashed: the same schedule
-with 10 s ramps, as in Fig. 3. $t_{50}$ and $t_{90}$ of cycle 1 are marked.
+with 10 s ramps, as in Fig. 3. $t_{50}$ and $t_{90}$ of cycle 1 are marked. Bottom panel: volume changes from rest in the shaped
+run (arterial, venous, cranial CSF, spinal CSF, and the net CSF that entered the system: production − resorption, cumulative).
 
 ![cycle 1 close-up](outputs/new/new_model_etco2_cycle1.png)
 
 **Fig. 3c.** Close-up of cycle 1, time from the start of the inhalation: the 10 s ramps and end-tidal curves with
 $\tau$ = 5, 20 and 40 s (all placeholders). Dots: $t_{90}$ of each curve; dotted line: 60 s after the start. The 10 s ramps and
 $\tau$ = 5 s give almost the same CBF and CBV; a slower input shifts the rise to the right, and no curve reaches 90 % before 60 s.
+Bottom panel: volume changes of the $\tau$ = 20 s run, as in Fig. 3b.
 
 CBF in cycle 1 (times after the start of the inhalation; "rest" = 1 s before the first inhalation):
 
@@ -395,7 +397,14 @@ What this shows:
    52 %. Measured from their own start, cycles 2 and 3 have the same time course as cycle 1.
 4. **No maximum within 3 min.** CBF, CBV and `v_MCA` are still rising when the inhalation ends. ICP peaks inside each cycle
    (12.15 mmHg in cycle 1), dips below rest after the last one (8.45 mmHg) and is still 0.28 mmHg below rest 20 min later.
-5. CBV rises by 3.56 mL per cycle (6.4 % of the placeholder 56 mL); `v_MCA` and CBV follow CBF within 1–4 s.
+5. **Where the volume goes** (bottom panel of Fig. 3b; printed by `--etco2`). The skull is rigid and the brain volume constant, so
+   every mL of extra blood pushes one mL of CSF out of the skull: at the end of the last inhalation blood is +3.47 mL (arterial
+   +2.28, venous +1.19) and cranial CSF −3.47 mL. The CSF goes to the spinal canal (+1.78 mL) and, through the raised ICP, out by
+   resorption (net CSF in −1.69 mL). When the vessels shrink back, the cranial CSF returns to rest, but the resorbed CSF is missing:
+   at the ICP minimum (993.5 s) the whole deficit of 1.54 mL sits in the spinal canal, so the spinal pressure and ICP are below
+   rest. Constant production refills it with the time constant storage / $\alpha$ ≈ 1.37 / 0.0018 ≈ 750 s (12.5 min): 0.39 mL are
+   still missing at the end of the run.
+6. CBV rises by 3.56 mL per cycle (6.4 % of the placeholder 56 mL); `v_MCA` and CBV follow CBF within 1–4 s.
 
 ### 4.3 Lumbar infusion test
 
@@ -590,7 +599,7 @@ from `mat_models/` takes the same flags).
 | `python run.py new --fit` | + LIT fitting tool on synthetic data, figure `new_model_fit.png` (8 processes) | 7 min |
 | `python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900` | fit a measured LIT (CSV with the header `time_s, pressure_mmHg`) | |
 | `python run.py new --all` | default + calibrate + sensitivity + options + fit + params | 20 min |
-| `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; figures `new_model_etco2.png` and `new_model_etco2_cycle1.png` (Section 4.2.1) | 30 s |
+| `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; volume balance table; figures (with a volume panel) `new_model_etco2.png` and `new_model_etco2_cycle1.png` (Section 4.2.1) | 30 s |
 | `python run.py new --etco2-csv FILE --etco2-unit mmHg --cycles 120,390,660 --cycle-length 180` | only: the model driven by a measured end-tidal curve (CSV with the header `time_s, etco2`; unit `mmHg`, `kPa` or `percent`, never guessed; onsets in the file's own time); figure `new_model_etco2_csv.png` | |
 | `python tests/test_regression.py` | re-runs every command and compares with the golden outputs exactly | 25–40 min |
 

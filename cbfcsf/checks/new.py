@@ -782,6 +782,35 @@ def _etco2_panels(case):
     return (sig["PaCO2"], rel("CBF"), rel("v_MCA,L"), sig["CBV"] - met["CBV"][0]["y_rest"], sig["ICP"])
 
 
+def _etco2_volumes(case):
+    """Spec 7.22: volume changes from the first sample (rest) for the volume panel and the volume table [mL]."""
+    r = case["r"]
+    return {"arterial": r["Va_total"] - r["Va_total"][0], "venous": r["Vv"] - r["Vv"][0],
+            "cranial": (r["V1"] + r["V2"]) - (r["V1"][0] + r["V2"][0]), "spinal": r["dVspinal"],
+            "net_in": r["csf_net_in"]}
+
+
+def print_volume_table(title, case):
+    """Spec 7.22: volume balance at the end of the last inhalation, at the ICP minimum after it, and at the end of the
+    run (mL change from rest)."""
+    r, t, v = case["r"], case["r"]["t"], _etco2_volumes(case)
+    t_last = case["proto"].offsets[-1]
+    after = np.flatnonzero(t >= t_last)
+    i_min = after[np.argmin(r["ICP"][after])]
+    print(f"\n=== {title} ===")
+    print("Change from rest [mL]. blood = arterial + venous. Rigid skull: blood + cranial CSF = 0 (check T2); "
+          "cranial CSF + spinal CSF =\nnet CSF in (production - resorption + infusion, cumulative; check T7).")
+    print(f"{'':<34}{'t [s]':>7}{'ICP':>8}{'arterial':>10}{'venous':>9}{'blood':>8}{'cranial CSF':>13}"
+          f"{'spinal CSF':>12}{'net CSF in':>12}")
+    rows = (("end of the last inhalation", int(np.argmin(np.abs(t - t_last)))),
+            ("ICP minimum after it", int(i_min)), ("end of the run", len(t) - 1))
+    for name, i in rows:
+        print(f"{name:<34}{t[i]:>7.1f}{r['ICP'][i]:>8.2f}{v['arterial'][i]:>+10.2f}{v['venous'][i]:>+9.2f}"
+              f"{v['arterial'][i] + v['venous'][i]:>+8.2f}{v['cranial'][i]:>+13.2f}{v['spinal'][i]:>+12.2f}"
+              f"{v['net_in'][i]:>+12.2f}")
+    print(f"ICP at rest {r['ICP'][0]:.2f} mmHg.")
+
+
 def _etco2_marks(case, shift=0.0):
     """t50, t90 of cycle 1 (rest reference) on the plotted clock, for the panels input, CBF, v_MCA, CBV."""
     tk = case["onsets"][0] - shift
@@ -812,6 +841,8 @@ def step_etco2():
     print_etco2_sweep("E8 (info): input shape, air 90 s (PLACEHOLDER shapes)", taus, "input")
     airs = {f"air {k:g} s": v for k, v in sorted(res["airs"].items())}
     print_etco2_sweep(f"E8 (info): air interval, tau {proto.tau_on:g} s (PLACEHOLDER shape)", airs, "interval")
+    print_volume_table(f"Volume balance, shaped input (PLACEHOLDER shape, tau {proto.tau_on:g} s), {proto.t_air:g} s of air "
+                       f"(spec 7.22)", res["main"])
     e = res["csv"]["E1_diff"]
     i = int(np.argmax(np.abs(e)))
     print(f"\nE1: largest relative CBF difference CSV round trip vs analytic input {e[i]:+.2e}, at t = "
@@ -822,11 +853,12 @@ def step_etco2():
                _etco2_panels(res["main"]), dict(color="tab:blue", lw=1.3)),
               ("current input (10-s ramps)", res["step"]["r"]["t"], _etco2_panels(res["step"]),
                dict(color="tab:red", lw=1.0, ls="--"))]
+    volumes = [("shaped input", res["main"]["r"]["t"], _etco2_volumes(res["main"]), "-")]
     plot_etco2(series, list(zip(proto.onsets, proto.offsets)), _etco2_marks(res["main"]), path,
                f"New model: 5 % CO2, {proto.n_cycles} x {proto.t_inhale:g} s with {proto.t_air:g} s of air. "
                f"PLACEHOLDER input shape (first-order lag, tau {proto.tau_on:g} s, plateau {proto.P0 + proto.dP:g} mmHg)"
                f"\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. "
-               f"Pa = 100 mmHg")
+               f"Pa = 100 mmHg.\nBottom panel: volume changes from rest, shaped run.", volumes=volumes)
     print(f"Figure saved: {path}")
 
     # close-up of cycle 1: the onset shapes side by side (the runs above; nothing new is simulated)
@@ -837,10 +869,13 @@ def step_etco2():
     series = [(f"{label}: CBF t90 {case['met']['CBF'][0]['rest']['t90']:.0f} s", case["r"]["t"], _etco2_panels(case),
                style, {i: case["met"][k][0]["rest"]["t90"] for i, k in enumerate(ETCO2_RISING)})
               for label, case, style in cases]
+    dflt = res["taus"][proto.tau_on]
+    volumes = [(f"end-tidal, tau {proto.tau_on:g} s", dflt["r"]["t"], _etco2_volumes(dflt), "-")]
     plot_etco2_onset(series, proto.onsets[0], proto.offsets[0], proto.onsets[1], path,
                      f"New model: cycle 1 of 5 % CO2, close-up. PLACEHOLDER end-tidal shapes (first-order lag, tau 5 / 20 / "
                      f"40 s, plateau {proto.P0 + proto.dP:g} mmHg)\nvs the current 10-s ramps. Dots: t90 of each curve; "
-                     f"dotted line: 60 s after the onset; inhalation shaded. Pa = 100 mmHg")
+                     f"dotted line: 60 s after the onset; inhalation shaded. Pa = 100 mmHg.\nBottom panel: volume changes "
+                     f"from rest, tau {proto.tau_on:g} s run.", volumes=volumes)
     print(f"Figure saved: {path}")
     return n_fail
 
@@ -870,7 +905,9 @@ def run_etco2_measured(d, path, unit, cycles, length, barometric):
     plot_etco2([(f"measured: {os.path.basename(path)}", case["r"]["t"] - shift, _etco2_panels(case),
                  dict(color="tab:blue", lw=1.3))], [(c, c + length) for c in cycles], _etco2_marks(case, shift), out,
                f"New model driven by the measured end-tidal curve {os.path.basename(path)} (unit {unit}).\n"
-               f"Cycles shaded; t50, t90 of cycle 1 marked. Pa = 100 mmHg", xlabel="time [s, CSV clock]")
+               f"Cycles shaded; t50, t90 of cycle 1 marked. Pa = 100 mmHg. Bottom panel: volume changes from rest.",
+               xlabel="time [s, CSV clock]",
+               volumes=[(os.path.basename(path), case["r"]["t"] - shift, _etco2_volumes(case), "-")])
     print(f"Figure saved: {out}")
     return n_fail
 

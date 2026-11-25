@@ -377,6 +377,114 @@
     2
    ]
   ],
+  "main:fig/00:new_model_etco2.png/ax5/line0/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line0/y": [
+   "ba9385d7f11174b0ddc097084d982072df3fa0b642c2823484c2dfc749f16a5a",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line1/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line1/y": [
+   "3896308c051a8797e299ff132b8ef45538506c8180d6f4acf291d5ae07f5b509",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line2/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line2/y": [
+   "6d2dca298de63710ef553a577419bc9c384867fd8aa092bce18fba022463b0e6",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line3/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line3/y": [
+   "363aa81ca3d090725a93e366a73b7a19bdc1f5a3e008e954371535824e7d8556",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line4/x": [
+   "db9dcdccc4f8f612fbeda4db25d36cccec897c0d86d9e74ba779ad8c71f6b740",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line4/y": [
+   "17599c13bd6521e429417e56b684cbb705eaf0d84f9297e45167c7ec9d82e43f",
+   "<f8",
+   [
+    4081
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line5/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/line5/y": [
+   "cdead7b1f5591afe2bec9b0007e0c305402e0573f0807909c7b0dfc902b926c9",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/patch0/xy": [
+   "92e2492fff4dbeb4f51d4203ffb36806bc9192060943cc105bc51084b7c92fcc",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/patch1/xy": [
+   "97ad94fc5cca789b6d654e1a25bd1af8fe9cc9b79027610cf8a62484a4917af2",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
+  "main:fig/00:new_model_etco2.png/ax5/patch2/xy": [
+   "b95bab3f170526b32bc12f01fa43760fa9aa02cb788b03e878fa3b2163c1ebbe",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
   "main:fig/01:new_model_etco2_cycle1.png/ax0/line0/x": [
    "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
    "<f8",
@@ -991,6 +1099,112 @@
     2
    ]
   ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line0/x": [
+   "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line0/y": [
+   "61b2486ebf755ce512e7015033787fde93fc82ab9cf068aee48cc51fa60bc575",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line1/x": [
+   "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line1/y": [
+   "462808537340ce963372d78c2c8a62ed62c802bfc719267d7c5392ab22d820dd",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line2/x": [
+   "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line2/y": [
+   "263ce6f4efc089c36ae2c550aa758b76b39ec160081a29828e9612bf63c0adb5",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line3/x": [
+   "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line3/y": [
+   "aac00a389c38c5e6e899fd7a41b5b56f35ae73752a056ebf2d499019d64159a4",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line4/x": [
+   "ca7f3cfa643d520ae057eac1e51538a3712d4ca085781d385b8ffe4fd3260406",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line4/y": [
+   "5be0526ef87878336eceaaf86d8e23172eb9d1f7004e91716a35812cfd9f7a21",
+   "<f8",
+   [
+    581
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line5/x": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line5/y": [
+   "cdead7b1f5591afe2bec9b0007e0c305402e0573f0807909c7b0dfc902b926c9",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line6/x": [
+   "d1feeb99ec5f7bf09b9f242fef576a332f7c24429b77df60879b5eaf31b23c4b",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line6/y": [
+   "289166d8b463ce86492c51ca3749f2baea330d28687f55b4639462333d560005",
+   "<f8",
+   [
+    2
+   ]
+  ],
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/patch0/xy": [
+   "3541a59473c925ab1419e4b8246322c55bf8cc4dfe30618814710391f0e07e83",
+   "<f8",
+   [
+    5,
+    2
+   ]
+  ],
   "main:solve/0000/stats": [
    "0608273e303e9dc7d87d6b2785fb8104852fa3bf629f3a3f68087fc01783356c",
    "<i8",
@@ -1294,12 +1508,12 @@
   ]
  },
  "files": {
-  "new_model_etco2.png": "3c9ec36b1f2ee29c008c7d0716f2c820af5596457a351b5cfb44b6c1404e1e0c",
-  "new_model_etco2_cycle1.png": "5395c2bd0fa37b29b88b066bd2de5fe01ba9a817c7a829b16ee6ac0f3e0ce9cb"
+  "new_model_etco2.png": "f24a41ef2ec56a560d1babff773d0301a8e794f6ed40b3195c6031710e725f92",
+  "new_model_etco2_cycle1.png": "79fb80f3ec2d1413a76264ddf8c0a5690ff37ba505fb253284b179168322d703"
  },
  "id": "new.etco2",
  "rc": 0,
- "runtime_s": 32.5,
+ "runtime_s": 56.3,
  "texts": {
   "main:fig/00:new_model_etco2.png/ax0/axes": {
    "legend": [
@@ -1608,7 +1822,7 @@
     "",
     ""
    ],
-   "xlabel": "time [s]",
+   "xlabel": "",
    "ylabel": "ICP [mmHg]"
   },
   "main:fig/00:new_model_etco2.png/ax4/line0/style": {
@@ -1646,14 +1860,110 @@
    "label": "",
    "type": "Rectangle"
   },
+  "main:fig/00:new_model_etco2.png/ax5/axes": {
+   "legend": [
+    "arterial (sum of V_a)",
+    "venous (V_v)",
+    "cranial CSF (V1 + V2)",
+    "spinal CSF",
+    "net CSF in (cumulative)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "time [s]",
+   "ylabel": "volume change [mL]"
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#8c564bff",
+   "label": "arterial (sum of V_a)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous (V_v)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#17becfff",
+   "label": "cranial CSF (V1 + V2)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#bcbd22ff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line4/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "net CSF in (cumulative)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/line5/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child5",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/00:new_model_etco2.png/ax5/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax5/patch1/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
+  "main:fig/00:new_model_etco2.png/ax5/patch2/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
   "main:fig/00:new_model_etco2.png/figure": {
    "size": [
     11.0,
-    13.0
+    15.5
    ],
-   "suptitle": "New model: 5 % CO2, 3 x 180 s with 90 s of air. PLACEHOLDER input shape (first-order lag, tau 20 s, plateau 47.5 mmHg)\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. Pa = 100 mmHg"
+   "suptitle": "New model: 5 % CO2, 3 x 180 s with 90 s of air. PLACEHOLDER input shape (first-order lag, tau 20 s, plateau 47.5 mmHg)\nvs the current 10-s ramps. Inhalations shaded; t50, t90 of cycle 1 of the shaped run marked. Pa = 100 mmHg.\nBottom panel: volume changes from rest, shaped run."
   },
-  "main:fig/00:new_model_etco2.png/png_sha256": "3c9ec36b1f2ee29c008c7d0716f2c820af5596457a351b5cfb44b6c1404e1e0c",
+  "main:fig/00:new_model_etco2.png/png_sha256": "f24a41ef2ec56a560d1babff773d0301a8e794f6ed40b3195c6031710e725f92",
   "main:fig/01:new_model_etco2_cycle1.png/ax0/axes": {
    "legend": [
     "current input: 10-s ramps: CBF t90 69 s",
@@ -2113,7 +2423,7 @@
     "",
     ""
    ],
-   "xlabel": "time after the onset of inhalation 1 [s]",
+   "xlabel": "",
    "ylabel": "ICP [mmHg]"
   },
   "main:fig/01:new_model_etco2_cycle1.png/ax4/line0/style": {
@@ -2171,14 +2481,110 @@
    "label": "",
    "type": "Rectangle"
   },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/axes": {
+   "legend": [
+    "arterial (sum of V_a)",
+    "venous (V_v)",
+    "cranial CSF (V1 + V2)",
+    "spinal CSF",
+    "net CSF in (cumulative)"
+   ],
+   "scale": [
+    "linear",
+    "linear"
+   ],
+   "texts": [],
+   "title": [
+    "",
+    "",
+    ""
+   ],
+   "xlabel": "time after the onset of inhalation 1 [s]",
+   "ylabel": "volume change [mL]"
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line0/style": {
+   "alpha": null,
+   "color": "#8c564bff",
+   "label": "arterial (sum of V_a)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line1/style": {
+   "alpha": null,
+   "color": "#9467bdff",
+   "label": "venous (V_v)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line2/style": {
+   "alpha": null,
+   "color": "#17becfff",
+   "label": "cranial CSF (V1 + V2)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line3/style": {
+   "alpha": null,
+   "color": "#bcbd22ff",
+   "label": "spinal CSF",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line4/style": {
+   "alpha": null,
+   "color": "#000000ff",
+   "label": "net CSF in (cumulative)",
+   "ls": "-",
+   "lw": 1.2,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line5/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child5",
+   "ls": "-",
+   "lw": 0.6,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/line6/style": {
+   "alpha": null,
+   "color": "#4c4c4cff",
+   "label": "_child7",
+   "ls": ":",
+   "lw": 0.9,
+   "marker": "None",
+   "ms": 6.0,
+   "zorder": 2.0
+  },
+  "main:fig/01:new_model_etco2_cycle1.png/ax5/patch0/style": {
+   "fc": "#8080801f",
+   "label": "",
+   "type": "Rectangle"
+  },
   "main:fig/01:new_model_etco2_cycle1.png/figure": {
    "size": [
     9.0,
-    13.0
+    15.5
    ],
-   "suptitle": "New model: cycle 1 of 5 % CO2, close-up. PLACEHOLDER end-tidal shapes (first-order lag, tau 5 / 20 / 40 s, plateau 47.5 mmHg)\nvs the current 10-s ramps. Dots: t90 of each curve; dotted line: 60 s after the onset; inhalation shaded. Pa = 100 mmHg"
+   "suptitle": "New model: cycle 1 of 5 % CO2, close-up. PLACEHOLDER end-tidal shapes (first-order lag, tau 5 / 20 / 40 s, plateau 47.5 mmHg)\nvs the current 10-s ramps. Dots: t90 of each curve; dotted line: 60 s after the onset; inhalation shaded. Pa = 100 mmHg.\nBottom panel: volume changes from rest, tau 20 s run."
   },
-  "main:fig/01:new_model_etco2_cycle1.png/png_sha256": "5395c2bd0fa37b29b88b066bd2de5fe01ba9a817c7a829b16ee6ac0f3e0ce9cb",
+  "main:fig/01:new_model_etco2_cycle1.png/png_sha256": "79fb80f3ec2d1413a76264ddf8c0a5690ff37ba505fb253284b179168322d703",
   "main:solve/0000/message": "The solver successfully reached the end of the integration interval.",
   "main:solve/0000/options": {
    "atol": "1e-09",
