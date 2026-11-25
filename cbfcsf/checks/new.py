@@ -5,9 +5,8 @@ Usage (from the repository root; the old form `python new_model.py [flags]` from
     python run.py new --calibrate       # + comparison with Vanek's raw compliances (K1), data-file check (K2) (3 min)
     python run.py new --sensitivity     # + phi_v sensitivity V1 of spec 7.5                             (about 7 min)
     python run.py new --params          # + parameter sensitivity SA of spec 7.8                         (about 2 min)
-    python run.py new --options         # + venous squeeze and sigmoid width of spec 7.10               (about 2 min)
+    python run.py new --options         # + sigmoid width of spec 7.10                                  (about 30 s)
     python run.py new --fit             # + LIT fitting tool on synthetic data of spec 7.10             (a few min, 8 processes)
-    python run.py new --fit-mismatch    # only: fit when the data come from a modified model, spec 7.13 (a few min)
     python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900
                                         # fit a measured LIT (CSV header, columns: time_s, pressure_mmHg)
     python run.py new --rest --co2 --lit  # only these parts of the default run (python run.py new --help)
@@ -26,7 +25,7 @@ from cbfcsf.common.report import Report
 from cbfcsf.common.signals import (EtCO2Protocol, etco2_curve, etco2_step, pulse, ramp, read_etco2_csv,
                                     write_etco2_csv)
 from cbfcsf.crosscheck import test_cross_lit, test_cross_more, test_cross_stroke
-from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit, test_fit_mismatch
+from cbfcsf.fit_lit import LIT_DEFAULT, LIT_TRUTH, fit_file, test_fit
 from cbfcsf.models.new_model import NAMES, Inputs, NewModel
 from cbfcsf.paths import ROOT, ZBYSEK_DATA, out_dir
 from cbfcsf.plots import plot_etco2, plot_etco2_onset, plot_fit, plot_recording, plot_run
@@ -316,33 +315,6 @@ def test_outputs(rep, r_rest, r_co2, r_stroke):
     rep.check("O4 occlusion: MCA_L velocity / rest", r_stroke["v_MCA"][j1, 0] / r_stroke["v_MCA"][j0, 0], 0, 0.15, "rel")
 
 
-def conservation_fails(rep_local):
-    return [row[0] for row in rep_local.rows if any(t in row[0] for t in ("T2", "T3", "T7")) and row[5] == "FAIL"]
-
-
-def test_venous_squeeze(rep, base_runs):
-    """V0-V4 (spec 7.10): venous squeeze option kappa_v."""
-    kappas = (0.0, 0.05, 0.1, 0.2)
-    res, fails, scen_fails = {}, [], {}
-    for k in kappas:
-        d = Report()
-        res[k] = test_lit(d, NewModel(kappa_v=k))
-        fails += conservation_fails(d)
-        scen_fails[k] = [row[0] for row in d.rows if row[5] == "FAIL" and row[0].startswith("L")]
-    rep.check("V0 kappa_v = 0: LIT CBV change vs default", abs(dcbv(res[0.0]) - dcbv(base_runs[SC_LIT])), 0, 1e-9, "mL")
-    rep.check("V1 kappa_v = 0.1: LIT stressed CBV change", dcbv(res[0.1]), -1.0, 0.0, "mL")
-    vals = [dcbv(res[k]) for k in kappas]
-    rep.check("V2 LIT CBV change strictly decreasing with kappa_v", float(all(np.diff(vals) < 0)), 1, 1, "")
-    d = Report()
-    co2 = test_co2_5pct(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
-    d = Report()
-    stroke = test_stroke(d, NewModel(kappa_v=0.1)); fails += conservation_fails(d)
-    rep.check("V3 kappa_v = 0.1: 5 % CO2 CBV change vs default", dcbv(co2) - dcbv(base_runs[SC_CO2_5]), -0.5, 0.5, "mL")
-    rep.check("V3 kappa_v = 0.1: stroke CBV change vs default", dcbv(stroke) - dcbv(base_runs[SC_STROKE]), -0.5, 0.5, "mL")
-    rep.check("V4 conservation checks failing in all runs", float(len(fails)), 0, 0, "")
-    return res, co2, stroke, scen_fails
-
-
 def onset_metrics(m):
     """Onset fraction at 10 s and steady CBF rise for a CO2 step; steady CBF fall for a pressure step."""
     r = m.simulate(Inputs(PaCO2=lambda t: ramp(t, [(0, 40), (1, 60)])), 600.0, t_eval=[0.0, 10.0, 600.0], max_step=2.0)
@@ -374,15 +346,6 @@ def main(argv=(), parts=None):
     --rest --lit ...); None = all of it. Stages need the whole default run, so they ignore parts."""
     if any(a in ETCO2_FLAGS for a in argv):   # opt-in scenario of spec 7.17: runs on its own, not with other flags
         return main_etco2(argv, parts)
-    if "--fit-mismatch" in argv:        # stand-alone stage (spec 7.13), does not need the base runs
-        repm = Report()
-        out = test_fit_mismatch(repm)
-        print("=== M: fit with the default model, data from a model with venous squeeze (spec 7.13) ===")
-        print(f"truth: R_out {LIT_TRUTH[0]}, spinal scale {LIT_TRUTH[1]}, P0 {LIT_TRUTH[2]}")
-        for f in out:
-            print(f"kappa_v {f['kappa']}: R_out {f['theta'][0]:.2f} (SE {100 * f['se_rel'][0]:.1f} %), scale {f['theta'][1]:.2f} "
-                  f"(SE {100 * f['se_rel'][1]:.1f} %), P0 {f['theta'][2]:.2f} (SE {f['se_P0']:.2f}), rms {f['rms']:.2f}, nfev {f['nfev']}")
-        return repm.show()
     do_cal = "--calibrate" in argv or "--all" in argv
     do_sens = "--sensitivity" in argv or "--all" in argv
     stage = any(f in argv for f in ("--calibrate", "--sensitivity", "--params", "--options", "--fit", "--fit-csv",
@@ -464,7 +427,7 @@ def main(argv=(), parts=None):
     if do_sens:
         n_fail += step_sensitivity(base_runs)
     if "--options" in argv or "--all" in argv:
-        n_fail += step_options(base_runs, fig_dir)
+        n_fail += step_options()
     if "--fit" in argv or "--all" in argv:
         n_fail += step_fit(fig_dir)
     if "--fit-csv" in argv:
@@ -480,20 +443,9 @@ def main(argv=(), parts=None):
     return n_fail
 
 
-def step_options(base_runs, fig_dir):
-    """Fifth step (spec 7.10): venous squeeze and sigmoid width."""
+def step_options():
+    """Fifth step (spec 7.10): sigmoid width."""
     rep3 = Report()
-    res, co2, stroke, scen_fails = test_venous_squeeze(rep3, base_runs)
-    print("\n=== V: venous squeeze kappa_v (spec 7.10) ===")
-    print(f"{'kappa_v':>8}{'LIT dCBV [mL]':>15}{'arterial':>10}{'venous':>9}{'CBF change':>12}{'ICP end [mmHg]':>16}   LIT scenario bounds failing")
-    for k, r in res.items():
-        i0, i1, _ = r["marks"]
-        print(f"{k:>8}{dcbv(r):>15.2f}{r['Va_total'][i1] - r['Va_total'][i0]:>10.2f}{r['Vv'][i1] - r['Vv'][i0]:>9.2f}"
-              f"{100 * (r['CBF'][i1] / r['CBF'][i0] - 1):>11.1f}%{r['ICP'][i1]:>16.2f}   {scen_fails[k] or '-'}")
-    print(f"kappa_v = 0.1: 5 % CO2 dCBV {dcbv(co2):+.2f} mL (default {dcbv(base_runs[SC_CO2_5]):+.2f}), "
-          f"stroke dCBV {dcbv(stroke):+.2f} mL (default {dcbv(base_runs[SC_STROKE]):+.2f})")
-    plot_run(res[0.1], NewModel(kappa_v=0.1), os.path.join(fig_dir, "new_model_lit_squeeze.png"),
-             "New model, venous squeeze kappa_v = 0.1. Lumbar infusion test (shaded)")
     rows = test_sigmoid_width(rep3)
     print("\n=== S: sigmoid width kC_scale (spec 7.10) ===")
     print(f"{'kC_scale':>9}{'onset at 10 s':>15}{'CBF rise, 60 mmHg':>19}{'CBF fall, Pa 80':>17}")

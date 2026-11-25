@@ -255,11 +255,6 @@
    "<f8",
    []
   ],
-  "direct:attrs/default/kappa_v": [
-   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
-   "<f8",
-   []
-  ],
   "direct:attrs/default/phi_a": [
    "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
    "<f8",
@@ -575,11 +570,6 @@
    "<f8",
    []
   ],
-  "direct:attrs/kC_scale_10/kappa_v": [
-   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
-   "<f8",
-   []
-  ],
   "direct:attrs/kC_scale_10/phi_a": [
    "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
    "<f8",
@@ -638,326 +628,6 @@
    []
   ],
   "direct:attrs/kC_scale_10/w": [
-   "5a7ecacc69f688bb68ca142e121ad5103ba0d8f2aa8ce447e1c6dce569045fd8",
-   "<f8",
-   [
-    4
-   ]
-  ],
-  "direct:attrs/kappa_v_0.1/C3C0": [
-   "d1927d884a99491f474b3f1b747e542980f5fd6f8ed96b408436695e90c45e19",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/C4T0": [
-   "4e3f332b73929881ebd311bffbbe62a38d0d02df1b02b9e4aff60419b70d16a3",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/C5L0": [
-   "277347f900e5dfee76c776d55614c8e7430df7954051849ffd827e803a3dfe46",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/CBV_total_n": [
-   "e64fe588614d57ae2d0cd371ca0c1ff3c943f5d1a366bd77ae4acbec9d82d139",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/C_min_frac": [
-   "023ba5bf85f3dcc47681d69ce9deeb9bdf3f691babfdc55545d15b9a140b1f42",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/C_n": [
-   "b5aed3c7d734750161a1b042f956b29fd233b4db9875c5de1c4ed14710614cab",
-   "<f8",
-   [
-    4
-   ]
-  ],
-  "direct:attrs/kappa_v_0.1/C_n_total": [
-   "f3dc7847f78a0a29c225c1dc1916867658d13027a87787029406aaebeaeb12fe",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/G_CO2": [
-   "4fe96f8aee7618d261c650ce231fd4c31b3a7016a5e4e135325d3c23f582bfd3",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/G_aut": [
-   "e1d4434de28429104a6ebc5257e6d69f610b2a93c6d0c7557ee1560684a028b8",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/P1_n": [
-   "da2a9c21a68746cb26a9c884e0c672b375401fba5951b8a0a8b803ee7cabb3c8",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/P2_n": [
-   "060bc8747042db41c407f42389b6de53ff1bb20c7db18443a2a5837817124597",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/PN_n": [
-   "0bb7380e12319f582dbb8f888615b99c64dcb7dd55599f44aff3e78da9e0f484",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/P_epi_n": [
-   "377e1c566a8c4e6b8952001f455c358467697862e785bf6fd9e172aa21acf2b0",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/P_v1": [
-   "e15359c0cd3d564b0353bded9c652096a73b122f03f4a33d3db68491c80c8369",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/PaCO2_n": [
-   "ca6c6055f8cfc7446fd7ad85197112c4c22e2ba69fb93846160c15066d20bd54",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pa_n": [
-   "31e1b362fadea9ac24d2472f12588483ec2f04eb4717579310468a717dd67507",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pc_n": [
-   "2d711caed60077176f1aa8d341a2b24958ea11d035c2b3281d6a74f8f6d07ccd",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pc_target": [
-   "a9644e8c5da3c9f275a4a4367bf6acd93d89f9858841568a86f8bc422e72a3b0",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pk_n": [
-   "b5c312d3b3fbd3c4aa9078d0216dde646532fca287eab8facbb9e484bc26d3c7",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pout_a_n": [
-   "060bc8747042db41c407f42389b6de53ff1bb20c7db18443a2a5837817124597",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pout_v_n": [
-   "060bc8747042db41c407f42389b6de53ff1bb20c7db18443a2a5837817124597",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pv_n": [
-   "4831919be612fdabd5497b399bef0a759537d5e8c40863719e656dea68912e0e",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/Pvs_n": [
-   "09f7aaceebf538c3f8610689d9c6a4ee59eece385340baf5eeed0a0cabc197d0",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R12": [
-   "3b8af4a64ca97bfeabe04fbfb51f30f03f75fa3df023c5b6023bd1a5356d85fc",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R23": [
-   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R34": [
-   "5747d38705981593ec0f242650bad785bf2ae8742cba37d66c6cc9e5bb90411a",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R45": [
-   "186b4ce7fc00a72bd6530e35af307df73e3acebb3bfdb56116fde39a8e0df89b",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_ICA": [
-   "09e936e6a6ccdc85a9640d9d7c99958143dc4d9c8ccb3581ec1953ca21eda80b",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_MCA": [
-   "3d32d666e4da5304f945003dd7655c70bc7c23532ff750d221ae7f3f5642909b",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_c": [
-   "e64fe588614d57ae2d0cd371ca0c1ff3c943f5d1a366bd77ae4acbec9d82d139",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_com": [
-   "286c02bc689e646f12d65a310b819d3196ecd537556cdd98f9e7c20df514f04f",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_n": [
-   "db661be3084543736ccffec4564d00b1cc08c223b26a2a0c7878e27d02f1fc87",
-   "<f8",
-   [
-    4
-   ]
-  ],
-  "direct:attrs/kappa_v_0.1/R_pv": [
-   "bfed67cb637b46b2d40405dc94fa6ab5438ae73ede58bf85a398022b48538186",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_rest": [
-   "00bda23ac0b39f4bfa5ff9ac872a5dec3326d81a8a4e9dbcec63a99e9caf67e4",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/R_vs1": [
-   "e1f2547dbbe0736481833fb798010c40b916d16a6aea156ff8ea400c8c372c19",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/S1": [
-   "1597546b7872bc102fcac6d2416a6d0cad6e6ae19aaf3ac694b2d8bf6430adbd",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/V10": [
-   "f1b690a22090c22148ba0611f37738e2a2176687b0d470043d1eef95816f70f3",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/V20": [
-   "ce68a0958de42ecdf0d5560c19be89ccd18443e9de0b27521e83d32fa541ddb0",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/V_n": [
-   "fb5c8914441f4f1d840cf26a5d427d56b533559f1c0b00c379f87791e329cb4c",
-   "<f8",
-   [
-    4
-   ]
-  ],
-  "direct:attrs/kappa_v_0.1/V_vn": [
-   "f76394202f38fad29337a2c0d3da12c24e3885cf95489a76b1e62447bd579324",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/a_sp": [
-   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/alpha": [
-   "90b36cd972d773620ae40bf3ba6d82f8f2579491277761b9268d5b10eebd75c5",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/b_CO2": [
-   "05bfac168a78c439eeacbce627585754d7d0eb0ee3a439ef771f1551f2db221d",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/c_sp_scale": [
-   "9708a52c56e6deb6ef42b0a9b9e6167f9c914d9270d4411a33360b1c431e9171",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/kC_scale": [
-   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/k_CO2": [
-   "286c02bc689e646f12d65a310b819d3196ecd537556cdd98f9e7c20df514f04f",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/k_E": [
-   "a060f4df41649de66316009f1d1fb890280716d186f4a370029ce30b78f14f29",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/k_MCA": [
-   "40c7ccc3ca878a948ef60da2366bcbd418d342208e6ee6bd789d0d89ecfcdea2",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/k_ven": [
-   "abcbec1e674ef6a159c57227b53f152e71b3879cfd3bccd87e4df05b11924880",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/kappa_v": [
-   "b157d1180d45ace10970698a92dd73cd88909b688f10920abcba9b0135ee990a",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/phi_a": [
-   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/phi_v": [
-   "f12f1de45222225adb090fcb2768c3347f9ea8dac4f06c252afa94b1ef832e89",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/q_n": [
-   "588156c609a326508b88439a47dfca3c9c8299f3de20709857857c625f215407",
-   "<f8",
-   [
-    4
-   ]
-  ],
-  "direct:attrs/kappa_v_0.1/q_n_total": [
-   "be0536ea3b6d1bc37ec43add78c89e80c8695c487f81409fc87ca02ec6fa5463",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/r_MCA_n": [
-   "56499030ebde5d4d72e3529f2cc9422f33317a5738793bd4e0869f22d2dc2b37",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/r_sp": [
-   "a406543d863ae18f267b69a49b5fb1cabd9af8abc4604bbf393e8dc0163ab777",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/sat1": [
-   "c0c6b4d9dae18f6dcc2caaf6b59ae2fac50dbfdc11231164b8a662e17d0895a9",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/sat2": [
-   "5747d38705981593ec0f242650bad785bf2ae8742cba37d66c6cc9e5bb90411a",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/tau_CO2": [
-   "ca6c6055f8cfc7446fd7ad85197112c4c22e2ba69fb93846160c15066d20bd54",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/tau_aut": [
-   "1471335897850e0e8f74c403da21d0ecef121dce937b5a7ada6c6c54ff51c6c4",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/u_n": [
-   "ee2a81b78cbd53158aca6ec4bf4944e88bdfa40007627a7fcaffce04e04859f9",
-   "<f8",
-   []
-  ],
-  "direct:attrs/kappa_v_0.1/w": [
    "5a7ecacc69f688bb68ca142e121ad5103ba0d8f2aa8ce447e1c6dce569045fd8",
    "<f8",
    [
@@ -1212,11 +882,6 @@
   ],
   "direct:attrs/phi_v_0.5/k_ven": [
    "abcbec1e674ef6a159c57227b53f152e71b3879cfd3bccd87e4df05b11924880",
-   "<f8",
-   []
-  ],
-  "direct:attrs/phi_v_0.5/kappa_v": [
-   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
    "<f8",
    []
   ],
@@ -1532,11 +1197,6 @@
   ],
   "direct:attrs/vanek_values/k_ven": [
    "abcbec1e674ef6a159c57227b53f152e71b3879cfd3bccd87e4df05b11924880",
-   "<f8",
-   []
-  ],
-  "direct:attrs/vanek_values/kappa_v": [
-   "7f772bdf682f6906072ec7863baeaa10b6816c258e6d9e6596fda954913a379a",
    "<f8",
    []
   ],
@@ -5610,7 +5270,7 @@
  "files": {},
  "id": "direct.new",
  "rc": 0,
- "runtime_s": 80.2,
+ "runtime_s": 48.2,
  "texts": {
   "direct:report/0/0": "T1 rest: max |ICP - 9.47|",
   "direct:report/0/4": "mmHg",

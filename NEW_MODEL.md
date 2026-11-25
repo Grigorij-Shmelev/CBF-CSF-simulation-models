@@ -258,7 +258,7 @@ CBV (CBV results differ by less than 0.06 mL between the two). `NewModel.vanek_v
 ### 3.7 Parameters
 
 Units: pressure mmHg, volume mL, flow mL/s, resistance mmHg·s/mL, compliance mL/mmHg. Any parameter can be overridden by
-keyword, e.g. `NewModel(kappa_v=0.1)`; the resting state is then recomputed.
+keyword, e.g. `NewModel(kC_scale=3.0)`; the resting state is then recomputed.
 
 | Parameter | Code name | Value | Category | Source |
 | ------ | ------ | ------ | ------ | ------ |
@@ -287,7 +287,7 @@ keyword, e.g. `NewModel(kappa_v=0.1)`; the resting state is then recomputed.
 | $V_{vn}$ | `V_vn` | 4.5 mL | unknown | Ursino "4–5 mL"; shifts $V_v$ by a constant |
 | $C_{min}$ | `C_min_frac` | 0.05 $C_n$ | unknown | bound against a negative compliance |
 | Total CBV at rest | `CBV_total_n` | 56 mL | placeholder | 4 mL/100 g × 1400 g, not from the project sources; sets the % output only |
-| $\kappa_v$, $s_C$ | `kappa_v`, `kC_scale` | 0, 1 | options | off by default (Section 4.9) |
+| $s_C$ | `kC_scale` | 1 | option | off by default (Section 4.9) |
 
 Note on $b_{CO_2}$: the printed Eq. 23 of Ursino & Giannessi reads differently from their text and from their own code. The
 form used here follows the text ($A \approx 1$ at rest). The literal reading changes no scenario result.
@@ -411,8 +411,9 @@ What this shows:
    (Eq. 8), which depends on the flow, not on ICP.
 5. Result: CBV **rises** slightly (+0.88 mL).
 
-A fall of CBV during an infusion test is often expected, because a higher ICP should squeeze the veins. In this model that
-needs an extra assumption that no source gives: the venous squeeze option $\kappa_v$ (Section 4.9) turns the result negative.
+A fall of CBV during an infusion test is often expected, because a higher ICP should squeeze the veins. In this model the
+veins follow the flow, not ICP (point 4), and autoregulation dilates mainly the arterioles, so CBV rises. An earlier option that
+added a venous squeeze to reverse the sign had no source and was removed (25 Nov 2026).
 
 ### 4.4 MCA occlusion (stroke)
 
@@ -521,17 +522,6 @@ $S \approx 0$: no effect.
 - `v_MCA`: MCA flow velocity (Ursino Eq. 19–20 with the transmural pressure). It is 60.9 cm/s at rest and rises by +32.1 % in
   5 % CO2.
 
-**Venous squeeze $\kappa_v$ (option, default 0).** The veins feel an extra pressure proportional to the ICP rise:
-$P_v = \dots + \kappa_v (P_2 - P_{2,n})$. No source gives $\kappa_v$. It decides the sign of the LIT answer and nothing else:
-5 % CO2 +3.39 vs +3.48 mL, stroke −2.44 vs −2.46 mL (`python run.py new --options`).
-
-| $\kappa_v$ | LIT stressed CBV change | arterial | venous | CBF | ICP at end of infusion |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| 0 (default, Ursino's law) | **+0.88 mL** | +0.96 | −0.08 | −1.9 % | 22.32 mmHg |
-| 0.05 | +0.25 mL | +0.91 | −0.67 | −1.8 % | 21.73 mmHg |
-| 0.1 | **−0.38 mL** | +0.86 | −1.24 | −1.6 % | 21.07 mmHg |
-| 0.2 | −1.54 mL | +0.76 | −2.30 | −1.4 % | 19.78 mmHg |
-
 **Sigmoid width $s_C$ (option, default 1).** It widens Ursino's $C(x)$ curve so that the CO2 response starts more slowly. The
 price is weaker autoregulation: the abrupt onset and the strong autoregulation come from the same steep curve.
 
@@ -557,12 +547,9 @@ the infusion starts and stops, and fits three numbers with their standard errors
 | noiseless | 13.00 | 2.50 | 11.00 |
 | noise 0.3 mmHg, seed 1 | 13.06 (SE 0.2 %) | 2.49 (SE 0.3 %) | 10.97 (SE 0.02) |
 | 8 noise seeds, mean error (sd) | +0.1 % (0.3 %) | −0.2 % (0.4 %) | −0.01 (0.02) |
-| data from the model with $\kappa_v$ = 0.1 | 12.85 (−1.2 %) | 3.07 (**+23 %**) | 11.23 |
-| data from the model with $\kappa_v$ = 0.2 | 12.82 (−1.4 %) | 3.59 (**+44 %**) | 11.32 |
 
-The last two rows (`--fit-mismatch`) show the limit. When the "patient" differs from the model, the outflow resistance stays
-right, but the storage absorbs the difference, and the standard errors (below 1 %) do not show it. They measure noise, not
-model error. Only real recordings can show the real uncertainty.
+The data come from the model itself, so this is the best case: the standard errors measure noise, not model error. Only real
+recordings can show the real uncertainty.
 
 ## 5. Limitations and open questions
 
@@ -571,22 +558,20 @@ model error. Only real recordings can show the real uncertainty.
    recording with ICP (for the pulse).
 2. **Stressed volume only.** The model gives volume changes in mL. A percentage of total CBV needs a baseline from perfusion
    imaging; the 56 mL in `CBV_pct` is a placeholder.
-3. **The sign of the LIT answer depends on the venous law.** With Ursino's collapsible veins, CBV rises. A venous squeeze
-   ($\kappa_v$) reverses it, but no source constrains $\kappa_v$.
-4. **ICA occlusion not validated:** there is no basilar inlet (Section 4.5). Adding a third inlet is open.
-5. **The ICP pulse is too large** (6.4 vs 3.6 mmHg with the data-file waveform), probably because the venous outflow cannot
+3. **ICA occlusion not validated:** there is no basilar inlet (Section 4.5). Adding a third inlet is open.
+4. **The ICP pulse is too large** (6.4 vs 3.6 mmHg with the data-file waveform), probably because the venous outflow cannot
    pulsate (Section 4.7). Likely remedies: a pulsatile venous outflow path, or large-artery compliance upstream.
-6. **The CO2 response is switch-like and saturates.** It has a fast onset (72 % of the response after 10 s) and saturation above
+5. **The CO2 response is switch-like and saturates.** It has a fast onset (72 % of the response after 10 s) and saturation above
    about 55 mmHg, both inherited from Ursino's steep sigmoid. $s_C$ trades the onset against autoregulation (Section 4.9).
    An end-tidal-shaped input removes the jump but makes the response slower: 90 % of the CBF rise takes at least about 64 s for any
    input, set by $\tau_{CO_2}$ (Section 4.2.1). Whether that is too slow needs measured response times.
-7. **The storage equals Ursino's only at rest.** Vaněk's wall law falls faster with pressure: at 22 mmHg (end of the LIT) the
+6. **The storage equals Ursino's only at rest.** Vaněk's wall law falls faster with pressure: at 22 mmHg (end of the LIT) the
    model has 0.26 mL/mmHg against Ursino's 0.58.
-8. **Brain volume is constant:** no edema and no tissue damage, so the stroke is fully reversible.
-9. **Not every volume drives the dynamics.** Only the arterial volumes do ($P = V/C$, $R \propto 1/V^2$). The venous
+7. **Brain volume is constant:** no edema and no tissue damage, so the stroke is fully reversible.
+8. **Not every volume drives the dynamics.** Only the arterial volumes do ($P = V/C$, $R \propto 1/V^2$). The venous
    resting volume $V_{vn}$ is an arbitrary offset. With the blood walls facing the SAS only, $V_1$ stays at 30 mL and $V_2$ is
    90 mL minus the change of blood volume.
-10. **The sigmoid allows a negative compliance.** Ursino's $\text{sat}_1 = 7$ lets $C(x)$ go negative; it is bounded here.
+9. **The sigmoid allows a negative compliance.** Ursino's $\text{sat}_1 = 7$ lets $C(x)$ go negative; it is bounded here.
     Whether 7 is a misprint in the paper is unknown. It does not affect the scenarios ($S$ = 0).
 
 ## 6. Reproducibility
@@ -601,9 +586,8 @@ from `mat_models/` takes the same flags).
 | `python run.py new --calibrate` | + Vaněk's raw spinal compliances, pulse check with Štěpáník's data file (needs the local file) | 3 min |
 | `python run.py new --sensitivity` | + test of $\varphi_v$ | 7 min |
 | `python run.py new --params` | + parameter sensitivity (Section 4.8) | 2 min |
-| `python run.py new --options` | + $\kappa_v$ and $s_C$ (Section 4.9), figure `new_model_lit_squeeze.png` | 2 min |
+| `python run.py new --options` | + $s_C$ (Section 4.9) | 30 s |
 | `python run.py new --fit` | + LIT fitting tool on synthetic data, figure `new_model_fit.png` (8 processes) | 7 min |
-| `python run.py new --fit-mismatch` | only: fit when the data come from a modified model. Ends with 1 failed check by design: $P_0$ for $\kappa_v$ = 0.2 is off by 0.32 mmHg against a pre-set bound of 0.3 | 5 min |
 | `python run.py new --fit-csv FILE --rate 1.5 --t-on 300 --t-off 900` | fit a measured LIT (CSV with the header `time_s, pressure_mmHg`) | |
 | `python run.py new --all` | default + calibrate + sensitivity + options + fit + params | 20 min |
 | `python run.py new --etco2` | only (not in `--all`): repeated 5 % CO2 with the end-tidal-shaped input (placeholder shape), the 10 s ramps for comparison, sweeps of $\tau$ and of the air interval; 51 checks; figures `new_model_etco2.png` and `new_model_etco2_cycle1.png` (Section 4.2.1) | 30 s |
@@ -651,6 +635,6 @@ References:
 | O1–O4 | outputs `v_MCA` and `CBV_pct` |
 
 The bounds and the expected behaviour were written down before each scenario was coded (X3, X4 and X2c: after exploratory
-runs, as regression bounds). Further stages add their own checks: calibration (K1, K2), the $\varphi_v$ test, options (V0–V4,
-S0–S2), fit (F1–F4) and mismatch (M1–M4). The opt-in end-tidal run has E0–E6 (input function, CSV reader, conservation
+runs, as regression bounds). Further stages add their own checks: calibration (K1, K2), the $\varphi_v$ test, options
+(S0–S2) and fit (F1–F4). The opt-in end-tidal run has E0–E6 (input function, CSV reader, conservation
 in every run, graded and repeatable response, recovery) and E7–E8 (informational: response times).

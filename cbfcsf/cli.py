@@ -38,9 +38,8 @@ NEW_STAGES = (
     ("calibrate", "+ Vanek's raw spinal compliances (K1) and the data-file pulse check (K2), about 3 min"),
     ("sensitivity", "+ phi_v sensitivity V1 (spec 7.5), about 7 min"),
     ("params", "+ parameter sensitivity SA (spec 7.8), about 2 min"),
-    ("options", "+ venous squeeze and sigmoid width (spec 7.10), about 2 min"),
+    ("options", "+ sigmoid width (spec 7.10), about 30 s"),
     ("fit", "+ LIT fitting tool on synthetic data (spec 7.10), about 7 min, 8 processes"),
-    ("fit-mismatch", "only: fit when the data come from a modified model (spec 7.13), about 5 min"),
     ("all", "default + calibrate + sensitivity + options + fit + params, about 20 min"),
 )
 SMALL = {

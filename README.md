@@ -42,7 +42,7 @@ Old commands (from `mat_models/`) and their new form (from the repository root):
 
 | Old command | New command |
 | ------ | ------ |
-| `python new_model.py` and its flags (`--calibrate`, `--sensitivity`, `--params`, `--options`, `--fit`, `--fit-mismatch`, `--all`, `--fit-csv FILE --rate R --t-on A --t-off B`) | `python run.py new` with the same flags |
+| `python new_model.py` and its flags (`--calibrate`, `--sensitivity`, `--params`, `--options`, `--fit`, `--all`, `--fit-csv FILE --rate R --t-on A --t-off B`) | `python run.py new` with the same flags |
 | `python ursino_2010_model.py` | `python run.py ursino --baseline` |
 | `python urs_steal_test.py` | `python run.py ursino --steal` |
 | `python urs_dynamic_pa_test.py check` | `python run.py ursino --aux-check` |

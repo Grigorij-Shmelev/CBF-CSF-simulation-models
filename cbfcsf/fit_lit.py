@@ -1,4 +1,4 @@
-"""LIT fitting tool of the new model (spec 7.10, 7.12-7.14): fit R_out, spinal scale and resting pressure to a
+"""LIT fitting tool of the new model (spec 7.10, 7.12): fit R_out, spinal scale and resting pressure to a
 lumbar infusion recording; tests on synthetic data."""
 import os
 
@@ -21,7 +21,7 @@ def lit_protocol(rate_ml_min=1.5, t_base=300.0, t_inf=600.0, t_post=300.0):
 
 def lit_curve(theta, t_eval, proto, **extra):
     """Lumbar pressure P5(t) of the model for theta = (R_out [mmHg min/mL], s, P0 [mmHg]); constant-rate infusion.
-    extra: further NewModel parameters, e.g. kappa_v=0.2 to generate data from a modified model."""
+    extra: further NewModel parameters, e.g. to generate data from a modified model."""
     R_out, s, P0 = theta
     alpha = 1.0 / (60.0 * R_out)
     m = NewModel(alpha=alpha, Pvs_n=P0 - LIT_S1 / alpha, c_sp_scale=s, **extra)
@@ -84,34 +84,10 @@ def _fit_task(kind, seed):
     return out
 
 
-def _mismatch_task(kappa):
-    """Data from a model with venous squeeze kappa, fitted with the default model (spec 7.13)."""
-    proto = lit_protocol()
-    t = np.arange(0.0, proto["t_end"], 2.0)
-    y = lit_curve(LIT_TRUTH, t, proto, kappa_v=kappa) + 0.3 * np.random.default_rng(1).standard_normal(len(t))
-    out = fit_lit(t, y, proto)
-    out.update(kappa=kappa)
-    return out
-
-
 def _one_thread_per_worker():
     """One BLAS thread per worker process: the linear algebra here is tiny and many threads per process slow it down."""
     for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
         os.environ[var] = "1"
-
-
-def test_fit_mismatch(rep, kappas=(0.1, 0.2)):
-    """M1-M4 (spec 7.13)."""
-    from concurrent.futures import ProcessPoolExecutor
-    _one_thread_per_worker()
-    with ProcessPoolExecutor(max_workers=len(kappas)) as ex:
-        out = list(ex.map(_mismatch_task, kappas))
-    for f in out:
-        rep.check(f"M1 kappa_v = {f['kappa']}: P0 error", f["theta"][2] - LIT_TRUTH[2], -0.3, 0.3, "mmHg")
-        rep.check(f"M2 kappa_v = {f['kappa']}: R_out error", f["theta"][0] / LIT_TRUTH[0] - 1, -0.25, 0.25, "rel")
-        rep.info(f"M3 kappa_v = {f['kappa']}: spinal scale error", f["theta"][1] / LIT_TRUTH[1] - 1, 0.0, np.inf, "rel")
-        rep.info(f"M4 kappa_v = {f['kappa']}: rms residual", f["rms"], 0.0, 0.35, "mmHg")
-    return out
 
 
 def test_fit(rep, n_seeds=8, workers=8):

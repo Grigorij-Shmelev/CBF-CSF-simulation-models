@@ -68,7 +68,6 @@ def group_new():
     m = nm.NewModel()
     put("attrs/default", attrs(m))
     put("attrs/vanek_values", attrs(nm.NewModel.vanek_values()))
-    put("attrs/kappa_v_0.1", attrs(nm.NewModel(kappa_v=0.1)))
     put("attrs/phi_v_0.5", attrs(nm.NewModel(phi_v=0.5)))
     put("attrs/kC_scale_10", attrs(nm.NewModel(kC_scale=10.0)))
     rep = nm.Report()

@@ -1,1 +1,1 @@
-direct.new: 809 arrays, 192 texts
+direct.new: 743 arrays, 192 texts

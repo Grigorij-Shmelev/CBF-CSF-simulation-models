@@ -109,7 +109,6 @@ class NewModel:
         self.k_E = k_E                                          # Ursino's elastance coefficient, storage target only
 
         # Switchable options (spec 7.10). Defaults reproduce the model without them exactly.
-        self.kappa_v = 0.0         # venous squeeze: extra venous pressure per mmHg of ICP rise. 0 = Ursino's law
         self.kC_scale = 1.0        # width of the C(x) sigmoid relative to Ursino's. 1 = Ursino
         # Outputs (spec 7.10)
         self.CBV_total_n = 56.0    # total CBV at rest [mL]. PLACEHOLDER: 4 mL/100 g x 1400 g, not from the project sources
@@ -193,7 +192,7 @@ class NewModel:
         Pout_a = self.phi_a * P2 + (1 - self.phi_a) * P1
         Pout_v = self.phi_v * P2 + (1 - self.phi_v) * P1
         Pk = Pout_a + e
-        Pv = Pout_v + wv + self.kappa_v * (P2 - self.P2_n)             # venous squeeze (spec 7.10), 0 by default
+        Pv = Pout_v + wv
         PN = np.array([PNL, PNL, PNR, PNR])
         R_feed = np.array([self.R_MCA * occ[0], self.R_rest, self.R_MCA * occ[1], self.R_rest])
         q_in = (PN - Pk) / (R_feed + R / 2.0)

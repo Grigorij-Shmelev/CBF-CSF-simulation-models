@@ -55,7 +55,6 @@ COMMANDS = [
     Cmd("new.params", new(["@run.py", "new", "--params"], NEW, "--params")),
     Cmd("new.options", new(["@run.py", "new", "--options"], NEW, "--options")),
     Cmd("new.fit", new(["@run.py", "new", "--fit"], NEW, "--fit"), masks=(T_FIT,), exclusive=True, stderr_unordered=True),
-    Cmd("new.fit_mismatch", new(["@run.py", "new", "--fit-mismatch"], NEW, "--fit-mismatch"), stderr_unordered=True),
     Cmd("new.fit_csv", new(["@run.py", "new", "--fit-csv", "@tests/fixtures/lit_synthetic.csv", "--rate", "1.5", "--t-on", "300", "--t-off", "900"], NEW, "--fit-csv", "@tests/fixtures/lit_synthetic.csv", "--rate", "1.5", "--t-on", "300",
                            "--t-off", "900")),
     Cmd("new.all", new(["@run.py", "new", "--all"], NEW, "--all"), masks=(T_FIT,), stderr_unordered=True),
